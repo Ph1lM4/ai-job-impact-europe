@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Exposure of the European Job Market &mdash; Nexalps</title>
+<meta name="description" content="Interactive map of AI exposure across 130 European occupation groups. 199.6M jobs scored for technical and regulated AI impact. Built on ESCO and Eurostat data.">
+<link rel="canonical" href="https://ai-exposure.nexalps.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Exposure of the European Job Market">
+<meta property="og:description" content="Interactive map of AI exposure across 130 European occupation groups. 199.6M jobs scored for technical and regulated AI impact.">
+<meta property="og:url" content="https://ai-exposure.nexalps.com/">
+<meta property="og:image" content="https://ai-exposure.nexalps.com/og-image.png">
+<meta property="og:site_name" content="Nexalps">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Exposure of the European Job Market">
+<meta name="twitter:description" content="Interactive map of AI exposure across 130 European occupation groups. 199.6M jobs scored for technical and regulated AI impact.">
+<meta name="twitter:image" content="https://ai-exposure.nexalps.com/og-image.png">
+
+<!-- JSON-LD structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "AI Exposure of the European Job Market",
+  "description": "AI exposure scores for ~130 European occupation groups (ISCO-08 3-digit level), with both technical and EU-regulated exposure ratings, employment statistics, and wage data.",
+  "url": "https://ai-exposure.nexalps.com/",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "creator": {
+    "@type": "Person",
+    "name": "Philipp Maul",
+    "url": "https://www.linkedin.com/in/pmaul/",
+    "affiliation": { "@type": "Organization", "name": "Nexalps", "url": "https://nexalps.com" }
+  },
+  "sourceOrganization": [
+    { "@type": "Organization", "name": "European Commission (ESCO)", "url": "https://esco.ec.europa.eu" },
+    { "@type": "Organization", "name": "Eurostat", "url": "https://ec.europa.eu/eurostat" }
+  ],
+  "temporalCoverage": "2024",
+  "spatialCoverage": "EU-27",
+  "keywords": ["AI exposure", "European labor market", "ESCO", "ISCO-08", "EU AI Act", "occupation scoring", "treemap"]
+}
+</script>
+
+<!-- Geist font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<!-- PostHog analytics -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])}}(document,window.posthog||[]);
+posthog.init('phc_bjax6jdRxYJAaExodvALjRru8AQzUSbYFNlWlXiJM8A', {api_host: 'https://eu.i.posthog.com', person_profiles: 'identified_only'});
+</script>
+
+<style>
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── Design tokens (shadcn dark) ── */
+:root {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #0a0a0c;
+  --card-border: rgba(255,255,255,0.08);
+  --muted: #a1a1aa;
+  --muted-foreground: #71717a;
+  --accent: #27272a;
+  --border: rgba(255,255,255,0.12);
+  --input-border: rgba(255,255,255,0.15);
+  --ring: #f97316;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --sidebar-w: 400px;
+  --font: 'Geist', system-ui, -apple-system, sans-serif;
+  --transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html, body { overflow-x: hidden; }
+
+body {
+  font-family: var(--font);
+  background: var(--background);
+  color: var(--foreground);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Skip link ── */
+.skip-link {
+  position: absolute; top: -100px; left: 8px;
+  background: var(--ring); color: #000; padding: 8px 16px;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  font-weight: 700; z-index: 200; text-decoration: none;
+}
+.skip-link:focus { top: 0; }
+
+:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+
+/* ── Layout ── */
+.container { max-width: 1400px; margin: 0 auto; padding-left: 32px; padding-right: 32px; }
+
+/* ── Header ── */
+.header { padding-top: 28px; padding-bottom: 16px; }
+.header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 4px; }
+.header .subtitle { font-size: 14px; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
+
+/* ── Controls ── */
+.controls { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+
+.controls select {
+  height: 40px; min-width: 200px; background: var(--background); color: var(--foreground);
+  border: 1px solid var(--input-border); padding: 0 36px 0 12px; border-radius: var(--radius-md);
+  font-family: var(--font); font-size: 14px; cursor: pointer; transition: border-color var(--transition);
+  -webkit-appearance: none; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center;
+}
+.controls select:hover { border-color: rgba(255,255,255,0.25); }
+
+.score-toggle { display: inline-flex; background: var(--accent); border-radius: var(--radius-lg); padding: 4px; flex-shrink: 0; }
+.score-toggle button {
+  background: transparent; color: var(--muted); border: none; padding: 8px 20px;
+  border-radius: var(--radius-md); font-family: var(--font); font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all var(--transition); white-space: nowrap; min-height: 36px;
+}
+.score-toggle button.active { background: var(--background); color: var(--foreground); font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+.score-toggle button:hover:not(.active) { color: var(--foreground); }
+
+.legend { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: var(--muted); }
+.legend-gradient { width: 120px; height: 10px; border-radius: 5px; }
+
+.delta-indicator { font-size: 13px; color: var(--muted); padding: 6px 0 0; line-height: 1.5; }
+.delta-indicator strong { color: var(--foreground); font-weight: 600; }
+.delta-indicator .delta-value { color: var(--ring); font-weight: 700; }
+
+/* ── Stats bar ── */
+.stats-bar { display: flex; gap: 12px; flex-wrap: wrap; padding-top: 4px; padding-bottom: 16px; }
+.stat-card { flex: 1; min-width: 140px; display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; background: var(--card); border: 1px solid var(--card-border); border-radius: var(--radius-lg); }
+.stat-card .stat-value { font-size: 24px; font-weight: 700; color: var(--foreground); letter-spacing: -0.025em; line-height: 1.2; }
+.stat-card .stat-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted-foreground); line-height: 1.4; }
+.stat-card .stat-sublabel { font-size: 10px; color: var(--muted-foreground); letter-spacing: 0; text-transform: none; opacity: 0.7; }
+
+.histogram { display: flex; align-items: flex-end; gap: 4px; height: 40px; margin-top: 4px; }
+.histogram .bar { flex: 1; border-radius: 3px 3px 0 0; position: relative; cursor: default; }
+.histogram .bar-label { position: absolute; bottom: -18px; left: 0; right: 0; text-align: center; font-size: 10px; font-weight: 500; color: var(--muted-foreground); }
+
+/* ── Desktop layout: treemap (full width) ── */
+.main-layout {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px 24px;
+}
+.treemap-col { width: 100%; }
+#treemap { width: 100%; border-radius: var(--radius-lg); overflow: hidden; }
+
+/* ── Desktop slide-in overlay panel ── */
+.sidebar {
+  position: fixed; top: 0; right: 0; height: 100vh;
+  width: var(--sidebar-w);
+  background: var(--card);
+  border-left: 1px solid var(--border);
+  box-shadow: -8px 0 30px rgba(0,0,0,0.5);
+  z-index: 100;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 200ms ease, visibility 0s 200ms;
+  overflow-y: auto;
+  padding: 24px 20px;
+  -webkit-overflow-scrolling: touch;
+}
+.sidebar.open { transform: translateX(0); visibility: visible; transition: transform 200ms ease, visibility 0s; }
+
+.sidebar-empty {
+  display: flex; align-items: center; justify-content: center;
+  height: 300px; color: var(--muted-foreground); font-size: 14px;
+  text-align: center; padding: 20px;
+}
+.sidebar-content { display: none; }
+.sidebar-content.active { display: block; }
+
+.sidebar-close {
+  position: absolute; top: 12px; right: 12px;
+  background: var(--accent); color: var(--muted); border: none;
+  border-radius: var(--radius-sm); width: 32px; height: 32px;
+  font-size: 16px; cursor: pointer; display: none;
+  align-items: center; justify-content: center;
+  transition: background var(--transition);
+}
+.sidebar-close:hover { background: #3f3f46; color: var(--foreground); }
+.sidebar.locked .sidebar-close { display: flex; }
+
+.sidebar-content h3 { font-size: 16px; font-weight: 600; line-height: 1.4; margin-bottom: 4px; padding-right: 32px; }
+.sidebar-content .meta { font-size: 12px; color: var(--muted-foreground); margin-bottom: 12px; }
+
+.sidebar-content .score-grid {
+  display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px;
+  align-items: center; margin: 12px 0; padding: 10px;
+  background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); border-radius: var(--radius-md);
+}
+.sidebar-content .score-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.sidebar-content .score-num { font-size: 22px; font-weight: 700; padding: 4px 14px; border-radius: var(--radius-md); color: rgba(0,0,0,0.85); line-height: 1; }
+.sidebar-content .score-lbl { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted-foreground); }
+.sidebar-content .delta-arrow { font-size: 14px; color: var(--ring); font-weight: 700; }
+
+.sidebar-content .detail { margin: 8px 0; color: var(--muted); line-height: 1.6; font-size: 13px; }
+.sidebar-content .detail strong { color: #d4d4d8; font-weight: 600; }
+
+.sidebar-content .friction {
+  margin: 8px 0; padding: 8px 10px;
+  background: rgba(249, 115, 22, 0.08); border-left: 3px solid var(--ring);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: #d4d4d8; font-size: 12px; line-height: 1.5;
+}
+
+.sidebar-content .tasks { margin-top: 10px; }
+.sidebar-content .tasks h4 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted-foreground); margin-bottom: 6px; }
+.badge-list { display: flex; flex-wrap: wrap; gap: 4px; list-style: none; }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 9999px; font-size: 11px; font-weight: 500; line-height: 1.4; }
+.badge-vulnerable { background: rgba(239, 68, 68, 0.12); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.2); }
+.badge-protected { background: rgba(34, 197, 94, 0.12); color: #86efac; border: 1px solid rgba(34, 197, 94, 0.2); }
+
+/* ── Treemap cells ── */
+.cell {
+  position: absolute; overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.25); cursor: pointer;
+  transition: box-shadow 120ms ease, opacity var(--transition);
+}
+.cell:hover, .cell:focus-visible { box-shadow: inset 0 0 0 2px rgba(255,255,255,0.7), 0 0 12px rgba(255,255,255,0.15); z-index: 10; }
+.cell:focus-visible { outline: 2px solid #fff; outline-offset: -2px; }
+.cell.active { outline: 2px solid #fff; outline-offset: -2px; opacity: 0.85; z-index: 10; }
+
+/* ── Hover tooltip (minimal floating label) ── */
+.hover-tip {
+  position: fixed; pointer-events: none; z-index: 120;
+  background: rgba(9,9,11,0.92); color: var(--foreground);
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 5px 10px; font-size: 12px; font-weight: 500;
+  line-height: 1.4; white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  opacity: 0; transition: opacity 100ms ease;
+}
+.hover-tip.visible { opacity: 1; }
+.hover-tip .tip-score { font-weight: 700; margin-left: 6px; padding: 1px 6px; border-radius: 4px; color: rgba(0,0,0,0.85); font-size: 11px; }
+
+.cell-label {
+  padding: 4px 6px; font-size: 11px; font-weight: 500; color: rgba(0,0,0,0.85);
+  line-height: 1.3; pointer-events: none;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.cell-score { font-size: 10px; font-weight: 700; opacity: 0.6; }
+
+.group-label {
+  position: absolute; font-size: 11px; font-weight: 700;
+  color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.05em;
+  pointer-events: none; padding: 4px 8px; z-index: 5;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.group-label:hover { white-space: normal; z-index: 20; background: rgba(0,0,0,0.7); border-radius: 4px; }
+
+/* ── Mobile bottom sheet ── */
+.sheet-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 150; opacity: 0; pointer-events: none; transition: opacity 200ms ease; }
+.sheet-overlay.open { opacity: 1; pointer-events: auto; }
+
+.sheet {
+  position: fixed; bottom: 0; left: 0; right: 0; max-height: 70vh;
+  background: #18181b; border: 1px solid var(--border); border-bottom: none;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  padding: 0 20px 24px; z-index: 151;
+  transform: translateY(100%); transition: transform 200ms ease;
+}
+.sheet.open { transform: translateY(0); }
+.sheet-scroll { overflow-y: auto; max-height: calc(70vh - 40px); -webkit-overflow-scrolling: touch; }
+
+.sheet-handle-area { display: flex; justify-content: center; padding: 12px 0 8px; cursor: grab; }
+.sheet-handle { width: 40px; height: 4px; border-radius: 2px; background: var(--accent); }
+
+.sheet .close-btn {
+  position: absolute; top: 12px; right: 16px; background: var(--accent); color: var(--muted);
+  border: none; border-radius: var(--radius-sm); width: 44px; height: 44px;
+  font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition), color var(--transition);
+}
+.sheet .close-btn:hover { background: #3f3f46; color: var(--foreground); }
+
+.sheet-body { padding-top: 4px; }
+.sheet-body h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; padding-right: 50px; line-height: 1.4; }
+.sheet-body .score-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; margin: 12px 0 16px; padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); border-radius: var(--radius-md); }
+.sheet-body .score-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.sheet-body .score-num { font-size: 26px; font-weight: 700; padding: 4px 16px; border-radius: var(--radius-md); color: rgba(0,0,0,0.85); line-height: 1; }
+.sheet-body .score-lbl { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted-foreground); }
+.sheet-body .delta-arrow { font-size: 16px; color: var(--ring); font-weight: 700; }
+.sheet-body .detail { margin: 8px 0; color: var(--muted); line-height: 1.6; font-size: 14px; }
+.sheet-body .detail strong { color: #d4d4d8; font-weight: 600; }
+.sheet-body .friction { margin: 10px 0; padding: 10px 12px; background: rgba(249, 115, 22, 0.08); border-left: 3px solid var(--ring); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; color: #d4d4d8; font-size: 13px; line-height: 1.5; }
+.sheet-body .tasks { margin-top: 12px; }
+.sheet-body .tasks h4 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted-foreground); margin-bottom: 8px; }
+
+/* ── Mobile stacked treemaps ── */
+.mobile-groups { display: none; }
+.mobile-group { margin-bottom: 24px; }
+.mobile-group-title {
+  font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--muted); padding: 8px 0; position: sticky; top: 0;
+  background: var(--background); z-index: 10; white-space: normal;
+}
+.mobile-group-treemap { position: relative; width: 100%; border-radius: var(--radius-md); overflow: hidden; }
+
+/* ── Footer ── */
+.footer { padding-top: 20px; padding-bottom: 36px; font-size: 12px; color: var(--muted-foreground); line-height: 1.7; }
+.footer a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; transition: color var(--transition); }
+.footer a:hover { color: var(--foreground); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .container { padding-left: 16px; padding-right: 16px; }
+  .header { padding-top: 20px; padding-bottom: 12px; }
+  .header h1 { font-size: 22px; }
+  .header .subtitle { font-size: 13px; }
+  .controls { flex-direction: column; align-items: stretch; gap: 10px; }
+  .controls select { width: 100%; min-width: 0; height: 44px; font-size: 15px; }
+  .score-toggle { width: 100%; display: flex; }
+  .score-toggle button { flex: 1; text-align: center; min-height: 44px; font-size: 14px; }
+  .legend { justify-content: center; padding: 4px 0; }
+
+  .stats-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding-bottom: 12px; }
+  .stat-card { padding: 10px 12px; min-width: 0; }
+  .stat-card .stat-value { font-size: 20px; }
+  .stat-card.stat-wide { grid-column: 1 / -1; }
+
+  .main-layout { display: block; padding: 0 16px 16px; }
+  .sidebar { display: none !important; }
+  .treemap-col { display: none; }
+  .mobile-groups { display: block; }
+
+  .footer { padding-top: 12px; padding-bottom: 24px; font-size: 11px; }
+}
+
+@media (max-width: 480px) {
+  .header h1 { font-size: 20px; }
+  .stat-card .stat-value { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#treemap">Skip to treemap</a>
+
+<header class="header container" role="banner">
+  <h1>AI Exposure of the European Job Market</h1>
+  <p class="subtitle">~130 occupation groups &middot; area&nbsp;=&nbsp;employment &middot; color&nbsp;=&nbsp;AI exposure score (0&ndash;10)</p>
+  <nav class="controls" aria-label="Visualization controls">
+    <label for="country-select" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Select country or region</label>
+    <select id="country-select" aria-label="Select country or region">
+      <option value="employment" selected>EU-27 (200M workers)</option>
+      <option value="employment_de">Germany</option>
+      <option value="employment_at">Austria</option>
+      <option value="employment_ch">Switzerland</option>
+    </select>
+    <div class="score-toggle" id="score-toggle" role="tablist" aria-label="Score type selector">
+      <button class="active" data-score="technical_score" role="tab" aria-selected="true" id="tab-tech" aria-controls="treemap" tabindex="0">Technical Exposure</button>
+      <button data-score="regulated_score" role="tab" aria-selected="false" id="tab-reg" aria-controls="treemap" tabindex="-1">Regulated Exposure</button>
+    </div>
+    <div class="legend" aria-hidden="true">
+      <span>Low</span>
+      <canvas class="legend-gradient" id="legend-gradient" aria-hidden="true"></canvas>
+      <span>High</span>
+    </div>
+  </nav>
+  <div class="delta-indicator" id="delta-indicator" aria-live="polite"></div>
+  <div style="margin-top:8px"><a href="implications.html" style="font-size:13px;font-weight:500;color:var(--ring);text-decoration:none;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">What does this mean? Read the analysis &rarr;</a></div>
+</header>
+
+<section class="stats-bar container" id="stats-bar" role="region" aria-label="Summary statistics"></section>
+
+<div class="main-layout" id="main-layout" role="main">
+  <!-- Desktop: treemap + sidebar -->
+  <div class="treemap-col">
+    <div id="treemap" style="position:relative;" role="tree" aria-label="AI exposure treemap"></div>
+  </div>
+  <aside class="sidebar" id="sidebar" aria-label="Occupation details">
+    <button class="sidebar-close" id="sidebar-close" aria-label="Unlock selection">&times;</button>
+    <div class="sidebar-empty" id="sidebar-empty">Hover over an occupation to see details.<br>Click to lock selection.</div>
+    <div class="sidebar-content" id="sidebar-content"></div>
+  </aside>
+
+  <!-- Mobile: stacked vertical groups -->
+  <div class="mobile-groups" id="mobile-groups"></div>
+</div>
+
+<!-- Mobile bottom sheet -->
+<div class="hover-tip" id="hover-tip"></div>
+<div class="sheet-overlay" id="sheet-overlay"></div>
+<div class="sheet" id="sheet" role="dialog" aria-label="Occupation details">
+  <div class="sheet-handle-area" id="sheet-handle"><div class="sheet-handle"></div></div>
+  <button class="close-btn" aria-label="Close details">&times;</button>
+  <div class="sheet-scroll"><div class="sheet-body" id="sheet-body"></div></div>
+</div>
+
+<footer class="footer container" role="contentinfo">
+  Built by <a href="https://www.linkedin.com/in/pmaul/">Philipp Maul</a> &middot; <a href="https://nexalps.com">Nexalps</a> &mdash; Turning complexity into competitive advantage.<br>
+  Data: <a href="https://esco.ec.europa.eu">ESCO v1.2.1</a> + <a href="https://ec.europa.eu/eurostat">Eurostat EU-LFS 2024</a> &middot;
+  Scored by Claude Sonnet 4 (Anthropic) &middot;
+  Inspired by <a href="https://karpathy.ai/jobs/">Karpathy's AI Exposure Map</a> &middot;
+  Employment data in thousands, wages from Eurostat SES 2022 &middot;
+  <a href="https://github.com/Ph1lM4/ai-job-impact-europe">Source on GitHub</a><br>
+  Code: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-CODE">MIT</a> &middot; Data &amp; Analysis: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-DATA">CC-BY 4.0</a> Philipp Maul | Nexalps
+</footer>
+
+<script>
+/* ── Color scale ── */
+const colorScale = d3.scaleLinear()
+  .domain([0, 2, 4, 6, 8, 10])
+  .range(["#22c55e", "#84cc16", "#eab308", "#f97316", "#ef4444", "#dc2626"])
+  .clamp(true);
+
+// Legend gradient
+const canvas = document.getElementById("legend-gradient");
+const lgCtx = canvas.getContext("2d");
+canvas.width = 120; canvas.height = 10;
+for (let i = 0; i < 120; i++) { lgCtx.fillStyle = colorScale(i / 120 * 10); lgCtx.fillRect(i, 0, 1, 10); }
+
+/* ── State ── */
+let DATA;
+let currentField = "employment";
+let currentScore = "technical_score";
+let lockedData = null; // sidebar lock state
+
+const isMobile = () => window.innerWidth <= 768;
+
+/* ── Init ── */
+async function init() {
+  DATA = await (await fetch("data.json")).json();
+  render();
+
+  document.getElementById("country-select").addEventListener("change", (e) => {
+    currentField = e.target.value;
+    lockedData = null;
+    render();
+    posthog.capture("country_changed", { country: e.target.value });
+  });
+
+  const toggleEl = document.getElementById("score-toggle");
+  toggleEl.addEventListener("click", (e) => {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+    switchTab(btn);
+  });
+  toggleEl.addEventListener("keydown", (e) => {
+    const tabs = [...toggleEl.querySelectorAll("button")];
+    const idx = tabs.indexOf(document.activeElement);
+    if (idx < 0) return;
+    let next;
+    if (e.key === "ArrowRight" || e.key === "ArrowDown") next = tabs[(idx + 1) % tabs.length];
+    if (e.key === "ArrowLeft" || e.key === "ArrowUp") next = tabs[(idx - 1 + tabs.length) % tabs.length];
+    if (e.key === "Home") next = tabs[0];
+    if (e.key === "End") next = tabs[tabs.length - 1];
+    if (next) { e.preventDefault(); switchTab(next); next.focus(); }
+  });
+
+  // Sidebar close (X button)
+  document.getElementById("sidebar-close").addEventListener("click", closeSidebar);
+
+  // Escape key closes locked panel
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lockedData) closeSidebar();
+  });
+
+  // Click outside panel + cells closes locked panel (but not header controls)
+  document.addEventListener("click", (e) => {
+    if (!lockedData) return;
+    if (document.getElementById("sidebar").contains(e.target)) return;
+    if (e.target.closest(".cell")) return;
+    if (e.target.closest(".controls")) return;
+    if (e.target.closest(".stats-bar")) return;
+    closeSidebar();
+  });
+
+  // Mobile sheet
+  document.getElementById("sheet-overlay").addEventListener("click", closeSheet);
+  document.querySelector("#sheet .close-btn").addEventListener("click", closeSheet);
+  initSheetSwipe();
+}
+
+function switchTab(btn) {
+  document.querySelectorAll("#score-toggle button").forEach(b => {
+    b.classList.remove("active");
+    b.setAttribute("aria-selected", "false");
+    b.setAttribute("tabindex", "-1");
+  });
+  btn.classList.add("active");
+  btn.setAttribute("aria-selected", "true");
+  btn.setAttribute("tabindex", "0");
+  currentScore = btn.dataset.score;
+  render();
+  posthog.capture("score_toggle", { score_type: currentScore });
+}
+
+/* ── Sidebar (slide-in overlay, click only) ── */
+function showSidebar(data) {
+  const sidebar = document.getElementById("sidebar");
+  const el = document.getElementById("sidebar-content");
+  document.getElementById("sidebar-empty").style.display = "none";
+  el.classList.add("active");
+  el.innerHTML = buildDetailHtml(data);
+  sidebar.classList.add("open");
+}
+
+function closeSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  lockedData = null;
+  sidebar.classList.remove("locked", "open");
+  document.getElementById("sidebar-content").classList.remove("active");
+  document.getElementById("sidebar-empty").style.display = "";
+  document.querySelectorAll(".cell.active").forEach(c => c.classList.remove("active"));
+  hideHoverTip();
+}
+
+/* ── Hover tooltip ── */
+const hoverTip = document.getElementById("hover-tip");
+let tipVisible = false;
+
+function showHoverTip(data, x, y) {
+  const score = data[currentScore] || 0;
+  hoverTip.innerHTML = `${data.name}<span class="tip-score" style="background:${colorScale(score)}">${score}</span>`;
+  // Position: offset from cursor, keep within viewport
+  const tipW = hoverTip.offsetWidth || 200;
+  const left = Math.min(x + 14, window.innerWidth - tipW - 12);
+  const top = y - 36;
+  hoverTip.style.left = left + "px";
+  hoverTip.style.top = Math.max(4, top) + "px";
+  hoverTip.classList.add("visible");
+  tipVisible = true;
+}
+
+function moveHoverTip(x, y) {
+  if (!tipVisible) return;
+  const tipW = hoverTip.offsetWidth || 200;
+  hoverTip.style.left = Math.min(x + 14, window.innerWidth - tipW - 12) + "px";
+  hoverTip.style.top = Math.max(4, y - 36) + "px";
+}
+
+function hideHoverTip() {
+  hoverTip.classList.remove("visible");
+  tipVisible = false;
+}
+
+/* ── Sheet ── */
+function openSheet(html) {
+  document.getElementById("sheet-body").innerHTML = html;
+  document.getElementById("sheet-overlay").classList.add("open");
+  document.getElementById("sheet").classList.add("open");
+  document.querySelector("#sheet .close-btn").focus();
+}
+function closeSheet() {
+  document.getElementById("sheet-overlay").classList.remove("open");
+  document.getElementById("sheet").classList.remove("open");
+}
+function initSheetSwipe() {
+  const sheet = document.getElementById("sheet");
+  let startY = 0, curY = 0, dragging = false;
+  sheet.addEventListener("touchstart", (e) => { startY = e.touches[0].clientY; dragging = true; sheet.style.transition = "none"; }, { passive: true });
+  sheet.addEventListener("touchmove", (e) => { if (!dragging) return; curY = e.touches[0].clientY - startY; if (curY > 0) sheet.style.transform = `translateY(${curY}px)`; }, { passive: true });
+  sheet.addEventListener("touchend", () => { dragging = false; sheet.style.transition = ""; if (curY > 80) closeSheet(); sheet.style.transform = ""; curY = 0; }, { passive: true });
+}
+
+/* ── Formatting ── */
+function formatNum(n) { if (n >= 1e9) return (n/1e9).toFixed(1)+"B"; if (n >= 1e6) return (n/1e6).toFixed(1)+"M"; if (n >= 1e3) return (n/1e3).toFixed(0)+"K"; return n.toString(); }
+function formatEur(n) { if (n >= 1e12) return "\u20AC"+(n/1e12).toFixed(1)+"T"; if (n >= 1e9) return "\u20AC"+(n/1e9).toFixed(0)+"B"; if (n >= 1e6) return "\u20AC"+(n/1e6).toFixed(0)+"M"; return "\u20AC"+n.toLocaleString(); }
+function getBand(s) { if (s<2) return "0-2"; if (s<4) return "2-4"; if (s<6) return "4-6"; if (s<8) return "6-8"; return "8-10"; }
+
+/* ── Detail HTML builder (shared by sidebar + sheet) ── */
+function buildDetailHtml(data) {
+  const emp = data[currentField] || 0;
+  const tech = data.technical_score, reg = data.regulated_score, delta = data.regulatory_delta;
+  const vulnBadges = (data.key_vulnerable_tasks||[]).slice(0,4).map(t=>`<li class="badge badge-vulnerable">${t}</li>`).join("");
+  const protBadges = (data.key_protected_tasks||[]).slice(0,4).map(t=>`<li class="badge badge-protected">${t}</li>`).join("");
+  return `
+    <h3>${data.name}</h3>
+    <div class="meta">ISCO ${data.isco3} &middot; ${data.category}</div>
+    <div class="score-grid">
+      <div class="score-item"><div class="score-num" style="background:${colorScale(tech)}">${tech}</div><div class="score-lbl">Technical</div></div>
+      <div class="delta-arrow">&rarr; &minus;${delta}</div>
+      <div class="score-item"><div class="score-num" style="background:${colorScale(reg)}">${reg}</div><div class="score-lbl">Regulated</div></div>
+    </div>
+    <div class="detail">Employment: <strong>${formatNum(emp)}</strong>${data.wage_mean ? " &middot; Mean wage: <strong>"+formatEur(data.wage_mean)+"/yr</strong>" : ""}</div>
+    <div class="detail">${data.rationale}</div>
+    ${data.regulatory_friction ? `<div class="friction">${data.regulatory_friction}</div>` : ""}
+    ${vulnBadges ? `<div class="tasks"><h4>Vulnerable to AI</h4><ul class="badge-list">${vulnBadges}</ul></div>` : ""}
+    ${protBadges ? `<div class="tasks"><h4>Protected from AI</h4><ul class="badge-list">${protBadges}</ul></div>` : ""}
+  `;
+}
+
+/* ── Cell interaction handler (attach to any cell in any treemap) ── */
+function attachCellEvents(cell, data, isMobileView) {
+  cell.setAttribute("tabindex", "0");
+  cell.setAttribute("role", "treeitem");
+  const score = data[currentScore] || 0;
+  cell.setAttribute("aria-label", `${data.name}: score ${score}, employment ${formatNum(data[currentField]||0)}`);
+
+  if (!isMobileView) {
+    // Desktop: hover → floating tooltip + highlight
+    cell.addEventListener("mouseenter", (e) => {
+      showHoverTip(data, e.clientX, e.clientY);
+    });
+    cell.addEventListener("mousemove", (e) => {
+      moveHoverTip(e.clientX, e.clientY);
+    });
+    cell.addEventListener("mouseleave", () => {
+      hideHoverTip();
+    });
+    // Desktop: click → toggle panel (open or close if same cell)
+    cell.addEventListener("click", () => {
+      if (lockedData && lockedData.isco3 === data.isco3) {
+        closeSidebar();
+        return;
+      }
+      document.querySelectorAll(".cell.active").forEach(c => c.classList.remove("active"));
+      cell.classList.add("active");
+      lockedData = data;
+      document.getElementById("sidebar").classList.add("locked");
+      showSidebar(data);
+      hideHoverTip();
+      posthog.capture("cell_clicked", { occupation: data.name, isco3: data.isco3, technical_score: data.technical_score, regulated_score: data.regulated_score });
+    });
+    // Keyboard
+    cell.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        cell.click();
+      }
+    });
+  } else {
+    // Mobile: tap → bottom sheet
+    cell.addEventListener("click", () => {
+      openSheet(buildDetailHtml(data));
+      posthog.capture("cell_clicked", { occupation: data.name, isco3: data.isco3, technical_score: data.technical_score, regulated_score: data.regulated_score });
+    });
+  }
+}
+
+/* ── Render cells into a container for a given d3 treemap root ── */
+function renderCells(container, root, isMobileView) {
+  root.leaves().forEach(d => {
+    const w = d.x1 - d.x0, h = d.y1 - d.y0;
+    if (w < 2 || h < 2) return;
+    const score = d.data[currentScore] || 0;
+    const cell = document.createElement("div");
+    cell.className = "cell";
+    cell.style.cssText = `left:${d.x0}px;top:${d.y0}px;width:${w}px;height:${h}px;background:${colorScale(score)}`;
+
+    // Label logic: name+score if big enough, score-only if medium, nothing if tiny
+    if (w > 50 && h > 24) {
+      const label = document.createElement("div");
+      label.className = "cell-label";
+      label.style.maxHeight = (h - 4) + "px";
+      let text = d.data.name;
+      const maxChars = Math.floor(w / 6);
+      if (text.length > maxChars) text = text.substring(0, maxChars - 1) + "\u2026";
+      label.innerHTML = text + `<br><span class="cell-score">${score}</span>`;
+      cell.appendChild(label);
+    } else if (w > 20 && h > 14) {
+      const s = document.createElement("div");
+      s.className = "cell-label cell-score";
+      s.style.padding = "2px 3px";
+      s.textContent = score;
+      cell.appendChild(s);
+    }
+
+    attachCellEvents(cell, d.data, isMobileView);
+    container.appendChild(cell);
+  });
+}
+
+/* ── Main render ── */
+function render() {
+  const mobile = isMobile();
+
+  // Compute stats from full hierarchy
+  const root = d3.hierarchy(DATA.treemap)
+    .sum(d => d[currentField] || 0)
+    .sort((a, b) => b.value - a.value);
+
+  let totalEmp = 0, weightedExp = 0, weightedTech = 0, weightedReg = 0;
+  const bandEmp = {"0-2":0,"2-4":0,"4-6":0,"6-8":0,"8-10":0};
+  let exposureWeightedWages = 0;
+
+  root.leaves().forEach(d => {
+    const emp = d.data[currentField]||0, score = d.data[currentScore]||0;
+    totalEmp += emp;
+    weightedExp += emp * score;
+    weightedTech += emp * (d.data.technical_score||0);
+    weightedReg += emp * (d.data.regulated_score||0);
+    bandEmp[getBand(score)] += emp;
+    if (d.data.wage_mean) exposureWeightedWages += emp * d.data.wage_mean * (score/10);
+  });
+
+  const avgExp = totalEmp > 0 ? weightedExp/totalEmp : 0;
+  const avgTech = totalEmp > 0 ? weightedTech/totalEmp : 0;
+  const avgReg = totalEmp > 0 ? weightedReg/totalEmp : 0;
+  const avgDelta = avgTech - avgReg;
+
+  // Delta indicator
+  const deltaEl = document.getElementById("delta-indicator");
+  deltaEl.innerHTML = currentScore === "regulated_score"
+    ? `Showing <strong>regulated</strong> exposure (EU AI Act, works councils, GDPR). Avg regulatory friction: <span class="delta-value">&minus;${avgDelta.toFixed(1)} points</span>`
+    : `Showing <strong>technical</strong> exposure (pure AI capability). Toggle to see EU regulation reduces exposure by <span class="delta-value">${avgDelta.toFixed(1)} points</span> on average.`;
+
+  // Stats cards
+  const maxBandEmp = Math.max(...Object.values(bandEmp));
+  const scoreLabel = currentScore === "technical_score" ? "Technical" : "Regulated";
+  document.getElementById("stats-bar").innerHTML = `
+    <div class="stat-card"><div class="stat-value">${formatNum(totalEmp)}</div><div class="stat-label">Total Jobs</div></div>
+    <div class="stat-card"><div class="stat-value">${avgExp.toFixed(1)}</div><div class="stat-label">Avg ${scoreLabel} Exposure</div></div>
+    <div class="stat-card"><div class="stat-value">${formatEur(exposureWeightedWages)}</div><div class="stat-label">Exposure-Weighted Wages</div><div class="stat-sublabel">total wages adjusted by AI exposure intensity</div></div>
+    <div class="stat-card"><div class="stat-value">${avgDelta.toFixed(1)}</div><div class="stat-label">Avg Regulatory Delta</div></div>
+    <div class="stat-card stat-wide">
+      <div class="stat-label" style="margin-bottom:6px">Jobs by ${scoreLabel} Exposure</div>
+      <div class="histogram" role="img" aria-label="Histogram: ${Object.entries(bandEmp).map(([b,e])=>`${b}: ${formatNum(e)}`).join(", ")}">
+        ${Object.entries(bandEmp).map(([band,emp]) => {
+          const h = maxBandEmp > 0 ? Math.max(4, (emp/maxBandEmp)*40) : 4;
+          const colors = {"0-2":"#22c55e","2-4":"#84cc16","4-6":"#eab308","6-8":"#f97316","8-10":"#ef4444"};
+          return `<div class="bar" style="height:${h}px;background:${colors[band]}" title="${band}: ${formatNum(emp)}"><div class="bar-label">${band}</div></div>`;
+        }).join("")}
+      </div>
+    </div>`;
+
+  if (mobile) {
+    renderMobile(root);
+  } else {
+    renderDesktop(root);
+  }
+}
+
+/* ── Desktop render: single treemap + sidebar ── */
+function renderDesktop(root) {
+  const container = document.getElementById("treemap");
+  container.innerHTML = "";
+  document.getElementById("mobile-groups").innerHTML = "";
+
+  const width = container.clientWidth;
+  const height = Math.max(600, window.innerHeight - 320);
+  container.style.height = height + "px";
+
+  d3.treemap()
+    .size([width, height])
+    .paddingTop(22)
+    .paddingRight(2).paddingBottom(2).paddingLeft(2).paddingInner(1)
+    (root);
+
+  // Group labels
+  root.children.forEach(group => {
+    const gw = group.x1 - group.x0;
+    if (gw > 60) {
+      const label = document.createElement("div");
+      label.className = "group-label";
+      label.setAttribute("aria-hidden", "true");
+      label.setAttribute("title", group.data.name);
+      label.style.cssText = `left:${group.x0}px;top:${group.y0}px;width:${gw}px`;
+      label.textContent = group.data.name;
+      container.appendChild(label);
+    }
+  });
+
+  renderCells(container, root, false);
+
+  // Restore locked panel state after re-render
+  if (lockedData) {
+    showSidebar(lockedData);
+    document.getElementById("sidebar").classList.add("locked");
+  } else {
+    // Ensure panel is hidden when re-rendering without a lock
+    document.getElementById("sidebar").classList.remove("open");
+  }
+}
+
+/* ── Mobile render: stacked vertical treemaps per ISCO 1-digit ── */
+function renderMobile(fullRoot) {
+  const mobileEl = document.getElementById("mobile-groups");
+  mobileEl.innerHTML = "";
+  document.getElementById("treemap").innerHTML = "";
+
+  const groups = fullRoot.children || [];
+  const vw = window.innerWidth - 32; // 16px padding each side
+
+  groups.forEach(group => {
+    const totalEmp = group.value;
+    if (totalEmp <= 0) return;
+
+    const section = document.createElement("div");
+    section.className = "mobile-group";
+
+    const title = document.createElement("div");
+    title.className = "mobile-group-title";
+    title.textContent = group.data.name;
+    section.appendChild(title);
+
+    // Build a mini hierarchy for this group
+    const groupData = { name: group.data.name, children: group.data.children };
+    const groupRoot = d3.hierarchy(groupData)
+      .sum(d => d[currentField] || 0)
+      .sort((a, b) => b.value - a.value);
+
+    if (!groupRoot.children || groupRoot.children.length === 0) return;
+
+    // Aspect ratio ~3:2, min height 120px
+    const leafCount = groupRoot.leaves().length;
+    const height = Math.max(120, Math.min(300, Math.round(vw * 0.6 * Math.sqrt(leafCount / 10))));
+
+    const tmContainer = document.createElement("div");
+    tmContainer.className = "mobile-group-treemap";
+    tmContainer.style.height = height + "px";
+
+    d3.treemap()
+      .size([vw, height])
+      .paddingOuter(2).paddingInner(1)
+      (groupRoot);
+
+    renderCells(tmContainer, groupRoot, true);
+    section.appendChild(tmContainer);
+    mobileEl.appendChild(section);
+  });
+}
+
+window.addEventListener("resize", () => { if (DATA) render(); });
+init();
+</script>
+</body>
+</html>

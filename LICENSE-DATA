@@ -1,0 +1,38 @@
+Creative Commons Attribution 4.0 International License (CC-BY-4.0)
+
+Copyright (c) 2026 Philipp Maul - Nexalps
+
+This license applies to the scored data and analysis outputs of this project,
+specifically: scores.json, site/data.json, and the scoring methodology.
+
+You are free to:
+
+  Share - copy and redistribute the material in any medium or format
+  Adapt - remix, transform, and build upon the material for any purpose,
+          even commercially
+
+Under the following terms:
+
+  Attribution - You must give appropriate credit, provide a link to the
+  license, and indicate if changes were made. You may do so in any reasonable
+  manner, but not in any way that suggests the licensor endorses you or your
+  use.
+
+  No additional restrictions - You may not apply legal terms or technological
+  measures that legally restrict others from doing anything the license
+  permits.
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+---
+
+Upstream data sources and their licenses:
+
+- ESCO v1.2.1 (European Commission): Licensed under the European Commission's
+  reuse policy. See https://esco.ec.europa.eu/en/use-esco/licenses
+
+- Eurostat EU-LFS and SES data: Licensed under the Eurostat copyright policy.
+  See https://ec.europa.eu/eurostat/web/main/help/copyright-notice
+
+- ISCO-08 classification (International Labour Organization): Public domain
+  international standard.

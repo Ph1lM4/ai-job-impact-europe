@@ -1,0 +1,13 @@
+[project]
+name = "eu-ai-exposure"
+version = "0.1.0"
+description = "European AI Exposure Map — ESCO + Eurostat + LLM scoring"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0",
+    "requests>=2.31",
+    "eurostat>=1.1",
+    "openai>=1.0",
+    "python-dotenv>=1.0",
+    "tqdm>=4.65",
+]

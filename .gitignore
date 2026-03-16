@@ -1,0 +1,38 @@
+# Environment
+.env
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Fetched data (reproducible via scripts)
+data/eurostat/*.csv
+
+# ESCO source CSVs (large, download from esco.ec.europa.eu)
+data/esco/*.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Claude Code
+.claude/
+
+# Build planning docs (internal)
+*-BUILD_PLAN.md
+*-build-plan.md
+PROJECT-SPEC.md
+
+# Note: scores.json and site/data.json are INCLUDED in git
+# so people can view results without re-running the scoring pipeline

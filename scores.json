@@ -1,0 +1,2238 @@
+{
+  "011": {
+    "technical_score": 4.0,
+    "regulated_score": 2.5,
+    "rationale": "Military officers blend digital command/control systems with physical operations, strategic planning, and real-time human leadership in unpredictable environments. While AI can enhance intelligence analysis, logistics optimization, and some planning functions, core military leadership requires human judgment in life-or-death situations with high uncertainty.",
+    "regulatory_friction": "Military operations fall under specialized defense regulations beyond civilian AI Act provisions, but any AI systems affecting personnel decisions (promotions, assignments) would trigger works council consultation requirements. National security considerations create additional barriers to AI adoption in sensitive command functions.",
+    "key_vulnerable_tasks": [
+      "analyse logistic needs",
+      "analyse potential threats against national security",
+      "collect real-time geolocation information"
+    ],
+    "key_protected_tasks": [
+      "command subordinate staff",
+      "coordinate rescue missions",
+      "supervise operations and manoeuvres"
+    ]
+  },
+  "021": {
+    "technical_score": 3.5,
+    "regulated_score": 1.0,
+    "rationale": "Non-commissioned officers operate in highly dynamic, unstructured environments requiring real-time tactical decisions, physical presence, and human leadership under extreme conditions. While AI can assist with intelligence analysis and threat identification, core duties like squad leadership, combat operations, and split-second tactical decisions in chaotic environments remain largely beyond current AI capabilities.",
+    "regulatory_friction": "Military operations fall under national security exemptions from most EU regulations including the AI Act and GDPR. Additionally, the life-or-death nature of combat operations and strict military command structures create institutional barriers to AI adoption in core operational roles.",
+    "key_vulnerable_tasks": [
+      "intelligence analysis",
+      "threat pattern recognition",
+      "equipment maintenance scheduling"
+    ],
+    "key_protected_tasks": [
+      "squad leadership under fire",
+      "real-time tactical combat decisions",
+      "physical combat operations"
+    ]
+  },
+  "031": {
+    "technical_score": 3.5,
+    "regulated_score": 1.0,
+    "rationale": "Armed forces other ranks involve primarily physical, high-stakes operations requiring real-time decision-making in unstructured environments with significant safety implications. While some roles like intelligence communications have digital components that AI could assist with, the core functions demand physical presence, manual dexterity, and human judgment in life-or-death situations.",
+    "regulatory_friction": "Military operations are subject to extremely strict command structures, national security protocols, and international laws of armed conflict that severely limit AI adoption. The life-or-death nature of military decisions requires human accountability that regulatory frameworks cannot delegate to AI systems.",
+    "key_vulnerable_tasks": [
+      "communications intelligence analysis",
+      "weather forecast analysis",
+      "technical equipment maintenance documentation"
+    ],
+    "key_protected_tasks": [
+      "combat decision-making",
+      "bomb disposal operations",
+      "direct military command and control"
+    ]
+  },
+  "111": {
+    "technical_score": 4.5,
+    "regulated_score": 1.5,
+    "rationale": "Legislators and senior officials have moderate AI exposure primarily through research, policy analysis, and administrative support tasks. AI can assist with analyzing legislation, economic trends, drafting documents, and managing information flows, but core functions require political judgment, stakeholder relationship management, and public representation that remain fundamentally human.",
+    "regulatory_friction": "EU AI Act Annex III creates massive barriers as AI systems for public administration and governance would be classified as high-risk, requiring extensive oversight. Democratic accountability principles, constitutional requirements for human decision-making in governance, and strong employment protections for public officials create nearly insurmountable regulatory barriers to AI displacement.",
+    "key_vulnerable_tasks": [
+      "policy research and analysis",
+      "legislative drafting support",
+      "economic trend analysis"
+    ],
+    "key_protected_tasks": [
+      "political negotiation and diplomacy",
+      "public representation and ceremonies",
+      "democratic decision-making and voting"
+    ]
+  },
+  "112": {
+    "technical_score": 6.5,
+    "regulated_score": 4.5,
+    "rationale": "Managing directors and chief executives work with highly digital information flows - financial data, strategic reports, market analysis, and performance metrics that AI can process and synthesize effectively. AI can automate much of the data analysis, reporting, and even strategic recommendation generation that forms the foundation of executive decision-making.",
+    "regulatory_friction": "EU AI Act Annex III creates significant barriers as executive decisions often involve high-risk AI applications in workforce management and performance evaluation. Works council co-determination rights require consultation for any AI systems affecting working conditions, substantially slowing adoption of AI-powered management tools.",
+    "key_vulnerable_tasks": [
+      "analyse financial performance",
+      "analyse business plans",
+      "strategic data synthesis",
+      "performance reporting",
+      "market trend analysis"
+    ],
+    "key_protected_tasks": [
+      "stakeholder relationship management",
+      "board communication",
+      "crisis leadership",
+      "organizational culture building",
+      "high-stakes negotiation"
+    ]
+  },
+  "121": {
+    "technical_score": 7.2,
+    "regulated_score": 5.5,
+    "rationale": "Business services and administration managers perform largely digital work including strategic planning, financial analysis, compliance monitoring, and process optimization that AI can significantly enhance or automate. Many core tasks involve data analysis, report generation, policy development, and administrative coordination that are highly susceptible to AI transformation.",
+    "regulatory_friction": "EU AI Act Annex III creates high-risk classifications for HR managers and talent acquisition managers in recruitment and performance evaluation. Works council co-determination rights under BetrVG §87 and ArbVG §96a require consultation for any AI affecting working conditions, significantly slowing adoption across all management functions.",
+    "key_vulnerable_tasks": [
+      "financial reporting and budget analysis",
+      "compliance monitoring and documentation",
+      "strategic planning and policy development",
+      "performance data analysis",
+      "administrative process optimization"
+    ],
+    "key_protected_tasks": [
+      "stakeholder relationship management",
+      "crisis leadership and decision-making",
+      "cross-functional team coordination",
+      "regulatory negotiations",
+      "complex ethical judgment calls"
+    ]
+  },
+  "122": {
+    "technical_score": 7.5,
+    "regulated_score": 6.0,
+    "rationale": "Sales, marketing and development managers work extensively with digital tools, data analysis, content creation, and strategic planning - all areas where AI excels. AI can automate market research, consumer trend analysis, campaign optimization, content generation, and predictive analytics for product development.",
+    "regulatory_friction": "EU AI Act Annex III creates barriers for AI systems used in recruitment and performance evaluation of teams. Works council co-determination rights require consultation for AI tools affecting working conditions, and GDPR limits automated decision-making in customer profiling and targeting.",
+    "key_vulnerable_tasks": [
+      "market research and data analysis",
+      "content creation for marketing campaigns",
+      "consumer trend analysis and forecasting",
+      "competitive intelligence gathering",
+      "campaign performance optimization",
+      "customer segmentation and profiling"
+    ],
+    "key_protected_tasks": [
+      "strategic vision setting",
+      "cross-functional team leadership",
+      "stakeholder relationship management",
+      "high-stakes negotiations",
+      "crisis communication",
+      "creative conceptual thinking"
+    ]
+  },
+  "131": {
+    "technical_score": 5.5,
+    "regulated_score": 4.5,
+    "rationale": "Production managers in agriculture, forestry and fisheries work in a mixed digital-physical environment where AI can significantly enhance planning, monitoring, and optimization tasks through data analysis and predictive modeling. However, the role requires substantial field presence, hands-on management of living systems, and real-time decision-making in unstructured outdoor environments that limit full automation potential.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 and ArbVG §96a create consultation requirements for AI systems affecting workforce management and working conditions. GDPR constraints on automated decision-making also slow adoption of AI tools for performance evaluation and resource allocation decisions.",
+    "key_vulnerable_tasks": [
+      "production planning and forecasting",
+      "resource allocation optimization",
+      "data analysis and reporting",
+      "compliance documentation",
+      "supply chain coordination"
+    ],
+    "key_protected_tasks": [
+      "on-site quality assessment",
+      "emergency response management",
+      "stakeholder relationship building",
+      "hands-on problem solving in field conditions",
+      "regulatory compliance verification"
+    ]
+  },
+  "132": {
+    "technical_score": 6.5,
+    "regulated_score": 5.0,
+    "rationale": "These managers perform largely digital tasks including planning, scheduling, forecasting, supply chain optimization, and data analysis that AI can significantly enhance or automate. However, they require substantial human judgment for strategic decisions, stakeholder management, and handling complex operational exceptions in physical environments.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 require consultation for AI systems affecting workforce management and performance evaluation. GDPR restrictions on automated decision-making limit AI deployment in personnel and operational decisions.",
+    "key_vulnerable_tasks": [
+      "production scheduling and planning",
+      "supply chain optimization",
+      "inventory forecasting",
+      "performance data analysis",
+      "regulatory compliance monitoring",
+      "cost analysis and budgeting"
+    ],
+    "key_protected_tasks": [
+      "strategic decision-making",
+      "crisis management",
+      "stakeholder negotiation",
+      "team leadership",
+      "safety oversight",
+      "complex problem-solving in physical operations"
+    ]
+  },
+  "133": {
+    "technical_score": 7.5,
+    "regulated_score": 5.5,
+    "rationale": "ICT service managers work heavily with digital systems, data analysis, and strategic planning - all areas where AI excels. AI can automate documentation processes, analyze system performance metrics, generate project reports, and support strategic decision-making through data insights. However, senior leadership roles require complex stakeholder management, strategic vision, and accountability that still need human oversight.",
+    "regulatory_friction": "EU AI Act Annex III classifications for workforce management systems and performance evaluation create significant barriers, as these managers often implement AI systems affecting employees. Works council co-determination rights require consultation when introducing AI tools that change working conditions, slowing adoption in management roles.",
+    "key_vulnerable_tasks": [
+      "documentation management and generation",
+      "system performance analysis and reporting",
+      "project status tracking and reporting",
+      "vendor evaluation and comparison",
+      "environmental impact assessment of ICT resources"
+    ],
+    "key_protected_tasks": [
+      "strategic vision setting and organizational leadership",
+      "stakeholder relationship management and negotiation",
+      "crisis management and emergency response",
+      "budget approval and resource allocation decisions",
+      "legal compliance oversight and accountability"
+    ]
+  },
+  "134": {
+    "technical_score": 6.8,
+    "regulated_score": 4.5,
+    "rationale": "Professional services managers operate across highly digitized workflows including strategic planning, resource allocation, performance monitoring, and administrative coordination - all areas where AI can provide significant analytical support and automation. Many core management functions like budget analysis, staff scheduling, policy drafting, and operational reporting are well-suited to AI augmentation.",
+    "regulatory_friction": "EU AI Act Annex III creates major barriers as many managers oversee recruitment, performance evaluation, and workforce management systems. Works council co-determination rights require consultation for any AI affecting working conditions, while employment protection laws slow workforce restructuring in management roles.",
+    "key_vulnerable_tasks": [
+      "budget analysis and forecasting",
+      "staff scheduling and resource allocation",
+      "policy drafting and documentation",
+      "performance reporting and analytics",
+      "administrative coordination",
+      "regulatory compliance monitoring"
+    ],
+    "key_protected_tasks": [
+      "strategic decision-making requiring stakeholder consensus",
+      "crisis management and emergency response",
+      "interpersonal conflict resolution",
+      "community and stakeholder relationship management",
+      "ethical oversight of specialized services",
+      "hands-on supervision of physical operations"
+    ]
+  },
+  "141": {
+    "technical_score": 6.5,
+    "regulated_score": 5.0,
+    "rationale": "Hotel and restaurant managers have significant digital workflow components (scheduling, inventory, financial analysis, marketing) that AI can automate, plus AI can optimize operations like revenue management and staff allocation. However, core leadership functions requiring real-time human interaction, relationship building, and crisis management in dynamic physical environments create substantial protection barriers.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 and ArbVG §96a require consultation for AI systems affecting staff scheduling and performance management. GDPR Article 22 restricts automated decision-making in employee evaluation and customer service contexts.",
+    "key_vulnerable_tasks": [
+      "create annual marketing budget",
+      "control of expenses",
+      "coordinate activities across hospitality rooms division",
+      "design indicators for food waste reduction",
+      "develop food waste reduction strategies",
+      "arrange special events"
+    ],
+    "key_protected_tasks": [
+      "build business relationships",
+      "assist at check-in",
+      "create solutions to problems",
+      "develop entertainment programmes",
+      "coordinate redecoration of hospitality establishment",
+      "assess cleanliness of areas"
+    ]
+  },
+  "142": {
+    "technical_score": 7.2,
+    "regulated_score": 5.5,
+    "rationale": "Retail and wholesale trade managers perform many digitally-native tasks including inventory management, sales analytics, budgeting, scheduling, and supplier coordination that AI can significantly enhance or automate. AI can optimize pricing, predict demand, automate ordering, and provide customer insights, while digital tools increasingly handle administrative workflows.",
+    "regulatory_friction": "EU AI Act Annex III classifications around workforce management systems and German/Austrian works council requirements for AI affecting employee scheduling, performance monitoring, or working conditions create significant barriers. GDPR also restricts automated customer profiling and decision-making systems.",
+    "key_vulnerable_tasks": [
+      "inventory management and automated ordering",
+      "sales data analysis and reporting",
+      "staff scheduling optimization",
+      "budget planning and financial analysis",
+      "supplier coordination and procurement"
+    ],
+    "key_protected_tasks": [
+      "face-to-face customer relationship management",
+      "complex problem-solving with upset customers",
+      "physical store layout and merchandising decisions",
+      "local community engagement and partnerships",
+      "crisis management during emergencies"
+    ]
+  },
+  "143": {
+    "technical_score": 7.2,
+    "regulated_score": 5.8,
+    "rationale": "Other services managers work extensively with digital systems for operations management, scheduling, budgeting, data analysis, and customer service coordination. AI can automate much of their analytical work, resource optimization, staff scheduling, and performance monitoring across diverse service sectors.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 require consultation for AI systems affecting staff scheduling and performance management. GDPR Article 22 restricts automated decision-making for customer profiling and staff evaluation in gambling, tourism, and recreational facilities.",
+    "key_vulnerable_tasks": [
+      "analyse call centre activities",
+      "analyse gambling data",
+      "adjust production schedule",
+      "analyse staff capacity",
+      "achieve sales targets"
+    ],
+    "key_protected_tasks": [
+      "adapt to artists' creative demands",
+      "advise on animal purchase",
+      "administer treatment to animals",
+      "advise on customs regulations",
+      "venue booking"
+    ]
+  },
+  "211": {
+    "technical_score": 6.5,
+    "regulated_score": 5.5,
+    "rationale": "Physical and earth science professionals have moderate-high AI exposure due to substantial data analysis, pattern recognition, and modeling tasks that AI excels at. However, core research design, field work, specialized instrumentation, and complex scientific interpretation still require significant human expertise.",
+    "regulatory_friction": "GDPR restrictions on automated decision-making affect AI use in environmental assessments and policy recommendations. Works council consultation requirements apply when AI tools change research workflows or performance evaluation methods in institutional settings.",
+    "key_vulnerable_tasks": [
+      "data pattern analysis",
+      "weather forecasting models",
+      "chemical composition analysis",
+      "literature review and synthesis",
+      "routine spectroscopy interpretation",
+      "geological survey data processing"
+    ],
+    "key_protected_tasks": [
+      "experimental design",
+      "field sample collection",
+      "complex scientific interpretation",
+      "peer review and validation",
+      "safety-critical advising",
+      "novel hypothesis formation"
+    ]
+  },
+  "212": {
+    "technical_score": 8.5,
+    "regulated_score": 7.0,
+    "rationale": "This occupation group works almost entirely with digital data, mathematical models, and statistical analysis - core strengths of AI systems. AI can already perform sophisticated statistical analysis, predictive modeling, and pattern recognition that forms the foundation of actuarial and statistical work.",
+    "regulatory_friction": "GDPR Article 22 restrictions on automated decision-making significantly impact actuarial and statistical work used for insurance pricing, risk assessment, and financial advice. Works council consultation requirements under BetrVG §87 apply when AI systems change analytical workflows and job responsibilities.",
+    "key_vulnerable_tasks": [
+      "statistical data analysis",
+      "predictive modeling and forecasting",
+      "risk calculation and assessment"
+    ],
+    "key_protected_tasks": [
+      "strategic consulting and advice",
+      "research design and methodology",
+      "regulatory compliance interpretation"
+    ]
+  },
+  "213": {
+    "technical_score": 6.5,
+    "regulated_score": 5.5,
+    "rationale": "Life science professionals have significant digital components including data analysis, research synthesis, report writing, and computational modeling that AI can enhance or automate. However, fieldwork, laboratory experimentation, sample collection, and regulatory compliance oversight require physical presence and specialized judgment that limit full automation.",
+    "regulatory_friction": "GDPR restrictions on automated environmental compliance decisions and employment protection laws slow workforce restructuring. Works council consultation requirements apply when AI systems affect working conditions in research institutions and environmental agencies.",
+    "key_vulnerable_tasks": [
+      "data analysis and statistical modeling",
+      "literature review and research synthesis",
+      "environmental impact report writing",
+      "regulatory compliance documentation",
+      "database maintenance and pattern recognition"
+    ],
+    "key_protected_tasks": [
+      "field sample collection and monitoring",
+      "laboratory experimentation and protocol design",
+      "stakeholder consultation and advisory services",
+      "emergency response and incident investigation",
+      "regulatory inspection and enforcement decisions"
+    ]
+  },
+  "214": {
+    "technical_score": 7.5,
+    "regulated_score": 6.5,
+    "rationale": "Engineering professionals work extensively with digital tools (CAD, simulation software, modeling) and produce digital deliverables that AI can significantly augment or automate. AI can assist with design optimization, calculations, compliance checking, documentation, and predictive analysis across most engineering disciplines.",
+    "regulatory_friction": "Works council co-determination under BetrVG §87 requires consultation when AI systems affect working conditions or performance evaluation. GDPR Article 22 restricts automated decision-making in engineering assessments that affect individuals or projects.",
+    "key_vulnerable_tasks": [
+      "technical documentation and report generation",
+      "design calculations and modeling",
+      "compliance verification and regulatory checking"
+    ],
+    "key_protected_tasks": [
+      "on-site inspections and physical assessments",
+      "complex problem-solving requiring domain expertise",
+      "client consultation and stakeholder management"
+    ]
+  },
+  "215": {
+    "technical_score": 7.5,
+    "regulated_score": 6.5,
+    "rationale": "Electrotechnology engineers work extensively with digital tools (CAD, simulation software, modeling) and produce deliverables that are largely digital, making them highly exposed to AI assistance and automation. AI can significantly enhance design processes, simulation modeling, testing protocols, and technical documentation, while also enabling predictive maintenance and system optimization tasks.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 require consultation when AI systems affect engineering working conditions or performance evaluation. GDPR constraints on automated decision-making may limit AI's role in design approval processes and system recommendations.",
+    "key_vulnerable_tasks": [
+      "battery performance simulation and modeling",
+      "CAD design and 3D modeling",
+      "technical documentation and report generation",
+      "system testing and analysis",
+      "regulatory compliance checking",
+      "predictive maintenance scheduling"
+    ],
+    "key_protected_tasks": [
+      "physical installation and commissioning",
+      "on-site troubleshooting and repair",
+      "client consultation and requirements gathering",
+      "safety-critical system validation",
+      "cross-disciplinary team coordination",
+      "regulatory approval processes"
+    ]
+  },
+  "216": {
+    "technical_score": 8.2,
+    "regulated_score": 7.8,
+    "rationale": "This occupation group has extremely high AI exposure as the vast majority of work is digital/computer-based, involving tasks AI excels at: image generation, 3D modeling, layout design, and visual content creation. Current AI tools like DALL-E, Midjourney, and emerging 3D AI systems can directly automate or dramatically accelerate core tasks across design disciplines.",
+    "regulatory_friction": "Limited regulatory friction as most design work doesn't trigger EU AI Act high-risk classifications. Some friction from general employment protections and potential GDPR constraints when AI tools process client data in design workflows.",
+    "key_vulnerable_tasks": [
+      "initial concept generation",
+      "layout and composition design",
+      "3D modeling and rendering",
+      "image editing and manipulation",
+      "technical drawing automation",
+      "pattern and texture creation"
+    ],
+    "key_protected_tasks": [
+      "client consultation and needs assessment",
+      "creative vision and artistic direction",
+      "physical site surveys and measurements",
+      "regulatory compliance verification",
+      "complex stakeholder coordination",
+      "hands-on prototype construction"
+    ]
+  },
+  "221": {
+    "technical_score": 4.5,
+    "regulated_score": 3.0,
+    "rationale": "Medical doctors work with significant digital components (diagnostic imaging, lab results, medical records) that AI can enhance, but core work requires complex clinical reasoning, physical examination skills, and real-time patient interaction in unpredictable scenarios. AI can assist with diagnosis and treatment recommendations but cannot fully replace the human judgment required for patient care.",
+    "regulatory_friction": "EU AI Act Annex III classifies AI systems for healthcare as high-risk, requiring conformity assessments and human oversight. Medical device regulations and professional licensing create additional barriers to AI adoption in clinical decision-making.",
+    "key_vulnerable_tasks": [
+      "interpret diagnostic imaging",
+      "analyze lab results and medical data",
+      "research medical literature and treatment protocols"
+    ],
+    "key_protected_tasks": [
+      "physical examination and patient interaction",
+      "complex clinical decision-making under uncertainty",
+      "emergency medical interventions"
+    ]
+  },
+  "222": {
+    "technical_score": 4.5,
+    "regulated_score": 3.0,
+    "rationale": "Nursing and midwifery involve significant physical care, real-time human interaction, and manual dexterity that create natural barriers to AI automation. However, AI can assist with documentation, care planning, medication management, and diagnostic support tools.",
+    "regulatory_friction": "EU AI Act Annex III classifies healthcare AI as high-risk, requiring conformity assessments and human oversight. GDPR Article 22 restricts automated medical decision-making, while works councils must approve AI systems affecting nursing workflows and performance evaluation.",
+    "key_vulnerable_tasks": [
+      "medical documentation",
+      "care plan creation",
+      "medication dosage calculations",
+      "patient monitoring data analysis",
+      "scheduling and workflow optimization"
+    ],
+    "key_protected_tasks": [
+      "physical patient care",
+      "emotional support and counseling",
+      "manual clinical procedures",
+      "emergency response decisions",
+      "complex diagnostic assessments requiring human judgment"
+    ]
+  },
+  "223": {
+    "technical_score": 4.5,
+    "regulated_score": 2.5,
+    "rationale": "Traditional and complementary medicine professionals require significant hands-on physical assessment, direct patient interaction, and manual therapeutic techniques (acupuncture, massage, aromatherapy application) that AI cannot replicate. While AI could assist with initial assessments, treatment planning, and record-keeping, the core therapeutic interventions require human touch, intuition, and real-time adaptation to patient responses.",
+    "regulatory_friction": "EU AI Act Annex III classifications around healthcare AI systems create substantial barriers, requiring human oversight for medical decisions. GDPR Article 22 restrictions on automated healthcare decision-making, combined with strict medical device regulations, significantly limit AI adoption in direct patient care roles.",
+    "key_vulnerable_tasks": [
+      "patient intake documentation",
+      "treatment planning and protocol selection",
+      "healthcare record archiving"
+    ],
+    "key_protected_tasks": [
+      "hands-on therapeutic interventions",
+      "real-time patient assessment during treatment",
+      "personalized holistic care adaptation"
+    ]
+  },
+  "225": {
+    "technical_score": 6.5,
+    "regulated_score": 5.0,
+    "rationale": "Veterinary work combines high technical knowledge with significant hands-on physical examination, surgery, and direct animal interaction. AI can assist with diagnostic imaging analysis, treatment recommendations, and administrative tasks, but the core work requires physical presence, manual dexterity, and real-time assessment of living animals in unstructured environments.",
+    "regulatory_friction": "GDPR creates constraints around automated health decisions, while strong employment protections in veterinary practices slow workforce restructuring. The EU AI Act's high-risk classifications don't directly apply, but medical device regulations govern AI diagnostic tools.",
+    "key_vulnerable_tasks": [
+      "diagnostic imaging analysis",
+      "treatment protocol recommendations",
+      "medical record documentation"
+    ],
+    "key_protected_tasks": [
+      "physical examination of animals",
+      "surgical procedures",
+      "real-time emergency response"
+    ]
+  },
+  "226": {
+    "technical_score": 6.5,
+    "regulated_score": 4.5,
+    "rationale": "Other health professionals work with mixed digital-physical tasks, where AI can significantly assist in diagnostics, image analysis, treatment planning, and clinical decision support. However, these roles require specialized clinical judgment, direct patient interaction, and manual procedures that create natural barriers to full automation.",
+    "regulatory_friction": "Healthcare AI systems face strict EU AI Act high-risk classifications for medical devices and health applications, requiring extensive validation and approval processes. GDPR Article 22 restricts automated decision-making in healthcare, while strong employment protections in healthcare sectors slow workforce restructuring.",
+    "key_vulnerable_tasks": [
+      "medical image analysis and interpretation",
+      "laboratory test result analysis",
+      "treatment protocol recommendations",
+      "clinical documentation and reporting",
+      "pharmaceutical quality testing data analysis"
+    ],
+    "key_protected_tasks": [
+      "direct patient examination and care",
+      "complex clinical decision-making requiring human judgment",
+      "manual therapeutic interventions",
+      "emergency response coordination",
+      "patient counseling and communication"
+    ]
+  },
+  "231": {
+    "technical_score": 6.5,
+    "regulated_score": 4.5,
+    "rationale": "University teachers work heavily with digital content creation, research, grading, and knowledge synthesis - all areas where AI excels. AI can assist with lecture preparation, automated grading, research analysis, and content generation, though the role requires complex human judgment in pedagogy and original research.",
+    "regulatory_friction": "EU AI Act Annex III classifies AI systems in education as high-risk, requiring strict compliance and human oversight. GDPR Article 22 restricts automated decision-making in student evaluation, while works council co-determination rights require consultation for any AI affecting academic working conditions.",
+    "key_vulnerable_tasks": [
+      "automated grading and feedback",
+      "lecture content preparation",
+      "research literature review",
+      "exam question generation",
+      "administrative reporting"
+    ],
+    "key_protected_tasks": [
+      "complex pedagogical decision-making",
+      "original research conceptualization",
+      "student mentoring and counseling",
+      "peer review and academic judgment",
+      "laboratory supervision"
+    ]
+  },
+  "232": {
+    "technical_score": 7.5,
+    "regulated_score": 5.0,
+    "rationale": "Vocational education teachers have high AI exposure because much of their work involves creating curricula, lesson plans, assessments, and educational materials - fundamentally digital work products that AI can generate effectively. AI can also provide personalized learning experiences, simulate training scenarios, and deliver standardized theoretical content across many vocational domains.",
+    "regulatory_friction": "The EU AI Act classifies AI systems in education as high-risk (Annex III), requiring strict compliance measures. Works council co-determination rights mean any AI affecting teaching methods or performance evaluation requires consultation, while strong employment protections in education slow workforce restructuring.",
+    "key_vulnerable_tasks": [
+      "curriculum development",
+      "lesson planning",
+      "theoretical content delivery",
+      "student assessment creation",
+      "performance evaluation reports",
+      "training material preparation"
+    ],
+    "key_protected_tasks": [
+      "hands-on practical instruction",
+      "physical training supervision",
+      "real-time safety coaching",
+      "interpersonal mentoring",
+      "emergency response training"
+    ]
+  },
+  "233": {
+    "technical_score": 6.5,
+    "regulated_score": 4.0,
+    "rationale": "Secondary education teachers have moderate-high technical exposure as AI can assist with lesson planning, content creation, assessment design, and grading. However, the core teaching function requires real-time human interaction, classroom management, and adaptation to individual student needs in physical environments.",
+    "regulatory_friction": "EU AI Act Annex III classifies AI systems in education as high-risk, requiring conformity assessments and human oversight. Works council co-determination rights require consultation on any AI affecting teaching conditions or student evaluation methods.",
+    "key_vulnerable_tasks": [
+      "lesson plan creation",
+      "homework grading",
+      "test design",
+      "educational content research",
+      "administrative reporting"
+    ],
+    "key_protected_tasks": [
+      "classroom instruction",
+      "student mentoring",
+      "behavioral management",
+      "real-time teaching adaptation",
+      "parent-teacher conferences"
+    ]
+  },
+  "234": {
+    "technical_score": 6.5,
+    "regulated_score": 4.0,
+    "rationale": "Primary and early childhood teachers have moderate AI exposure as their work involves substantial digital content creation (lesson plans, assessments, educational materials) and administrative tasks that AI can enhance or automate. However, the core teaching function requires real-time human interaction, emotional intelligence, and adaptive responses to diverse student needs in physical classroom environments.",
+    "regulatory_friction": "The EU AI Act classifies AI systems in education as high-risk (Annex III), requiring strict compliance and human oversight. Works council consultation rights under German BetrVG §87 and Austrian ArbVG for any AI affecting working conditions, combined with strong teacher employment protections, create substantial barriers to AI-driven workforce restructuring.",
+    "key_vulnerable_tasks": [
+      "lesson plan creation",
+      "educational content development",
+      "student assessment and grading",
+      "administrative reporting",
+      "curriculum planning",
+      "homework assignment generation"
+    ],
+    "key_protected_tasks": [
+      "real-time classroom management",
+      "emotional support and counseling",
+      "individualized behavioral intervention",
+      "parent-teacher conferences",
+      "hands-on creative activities",
+      "playground supervision"
+    ]
+  },
+  "235": {
+    "technical_score": 7.2,
+    "regulated_score": 5.8,
+    "rationale": "This occupation group has high technical exposure because many roles involve digital content creation (e-learning development, curriculum design, assessment), knowledge transfer that AI can increasingly support, and administrative tasks that are highly automatable. However, the core teaching function still requires human interaction, emotional intelligence, and real-time adaptation to individual student needs.",
+    "regulatory_friction": "EU AI Act Annex III classifies AI systems in education as high-risk, requiring extensive compliance measures. Works council co-determination rights mean any AI deployment affecting teaching conditions requires consultation, while GDPR restricts automated student assessment and profiling.",
+    "key_vulnerable_tasks": [
+      "curriculum development and design",
+      "educational content creation",
+      "student assessment and grading",
+      "learning analytics and progress tracking",
+      "administrative coordination"
+    ],
+    "key_protected_tasks": [
+      "individualized special needs support",
+      "real-time classroom management",
+      "emotional and social guidance",
+      "crisis intervention with students",
+      "hands-on practical instruction"
+    ]
+  },
+  "241": {
+    "technical_score": 7.5,
+    "regulated_score": 6.0,
+    "rationale": "Finance professionals work primarily with digital data, financial models, and analytical tasks that AI excels at - pattern recognition in markets, automated reporting, risk calculations, and document analysis. Many routine tasks like basic auditing, financial statement preparation, and standard investment analysis are highly susceptible to AI automation.",
+    "regulatory_friction": "EU AI Act Annex III covers AI systems for creditworthiness assessment and loan decisions, while GDPR Article 22 restricts automated financial decision-making. Strong employment protections and works council rights in countries like Germany slow workforce restructuring in the heavily regulated financial sector.",
+    "key_vulnerable_tasks": [
+      "financial statement preparation",
+      "routine audit procedures",
+      "basic investment research",
+      "risk calculations",
+      "regulatory reporting",
+      "tax return preparation"
+    ],
+    "key_protected_tasks": [
+      "complex client relationship management",
+      "high-stakes investment strategy decisions",
+      "fraud investigation requiring human judgment",
+      "regulatory compliance oversight",
+      "crisis management",
+      "stakeholder communications"
+    ]
+  },
+  "242": {
+    "technical_score": 7.5,
+    "regulated_score": 5.0,
+    "rationale": "Administration professionals work extensively with digital information processing, data analysis, policy research, and report writing - all areas where AI excels. Many tasks involve synthesizing information, creating frameworks, and producing structured outputs that AI can handle effectively.",
+    "regulatory_friction": "EU AI Act Annex III creates significant barriers for HR officers and recruitment consultants performing workforce management. Works council co-determination rights under BetrVG §87 require consultation for AI systems affecting working conditions, while GDPR Article 22 restricts automated decision-making in policy and administrative contexts.",
+    "key_vulnerable_tasks": [
+      "data analysis and reporting",
+      "policy research and synthesis",
+      "monitoring and evaluation framework development",
+      "procurement analysis",
+      "business intelligence reporting"
+    ],
+    "key_protected_tasks": [
+      "stakeholder relationship management",
+      "cross-cultural negotiation",
+      "crisis response coordination",
+      "ethical judgment in policy decisions",
+      "interpersonal coaching and mentoring"
+    ]
+  },
+  "243": {
+    "technical_score": 7.5,
+    "regulated_score": 5.5,
+    "rationale": "This occupation group has high AI exposure as most work is digitally-driven, involving content creation, data analysis, customer communication, and strategic planning that AI can increasingly automate or augment. AI can generate marketing copy, analyze market data, create customer personas, optimize media buying, and automate many sales processes.",
+    "regulatory_friction": "EU AI Act Annex III creates barriers for AI systems used in recruitment and workforce management (affecting HR-related marketing roles). GDPR Article 22 restricts automated decision-making in customer profiling and targeting, while works council consultation requirements slow adoption of AI tools that affect working conditions.",
+    "key_vulnerable_tasks": [
+      "content creation and copywriting",
+      "market data analysis and reporting",
+      "media planning and buying optimization",
+      "lead generation and qualification",
+      "customer segmentation and targeting",
+      "campaign performance analysis"
+    ],
+    "key_protected_tasks": [
+      "high-stakes client relationship management",
+      "complex B2B technical sales requiring deep expertise",
+      "strategic consultation requiring human judgment",
+      "public speaking and spokesperson activities",
+      "regulatory and policy advocacy requiring human credibility"
+    ]
+  },
+  "251": {
+    "technical_score": 9.0,
+    "regulated_score": 8.0,
+    "rationale": "This occupation group represents the highest technical AI exposure - work is entirely digital/computer-based, involves tasks like code generation, testing, and analysis that AI excels at. AI coding assistants already demonstrate significant capability in software development, and emerging AI systems can perform many analytical and architectural tasks.",
+    "regulatory_friction": "GDPR creates constraints around automated decision-making in system design and data processing roles. Works council co-determination rights require consultation when AI tools affect working conditions or productivity metrics for development teams.",
+    "key_vulnerable_tasks": [
+      "code generation and debugging",
+      "automated testing and quality assurance",
+      "data analysis and reporting",
+      "documentation creation",
+      "basic system configuration"
+    ],
+    "key_protected_tasks": [
+      "complex system architecture decisions",
+      "client relationship management",
+      "strategic technical consulting",
+      "creative problem-solving for novel requirements",
+      "cross-functional team leadership"
+    ]
+  },
+  "252": {
+    "technical_score": 7.5,
+    "regulated_score": 6.5,
+    "rationale": "Database and network professionals work entirely in digital environments with highly structured, rule-based tasks that AI can increasingly automate - from network configuration and monitoring to database optimization and security threat detection. AI code generation, automated system administration, and intelligent network management tools are rapidly advancing to handle routine maintenance, troubleshooting, and even architectural decisions.",
+    "regulatory_friction": "GDPR Article 22 restrictions on automated decision-making limit AI deployment in access control and user management systems. Works council co-determination rights under BetrVG §87 require consultation when AI tools change working conditions or monitoring practices in IT departments.",
+    "key_vulnerable_tasks": [
+      "routine database maintenance and optimization",
+      "network monitoring and alert management",
+      "security patch deployment and updates",
+      "capacity planning and resource allocation",
+      "log analysis and incident detection"
+    ],
+    "key_protected_tasks": [
+      "high-level security architecture design",
+      "crisis response and forensic investigation",
+      "complex troubleshooting requiring domain expertise",
+      "stakeholder communication and requirement gathering",
+      "compliance auditing and risk assessment"
+    ]
+  },
+  "261": {
+    "technical_score": 7.5,
+    "regulated_score": 5.0,
+    "rationale": "Legal professionals work heavily with digital documents, legal research, contract analysis, and regulatory compliance - all areas where AI excels. AI can draft contracts, analyze case law, perform due diligence, and automate regulatory compliance checks. However, core judicial functions, client counseling, and courtroom advocacy require human judgment and interaction.",
+    "regulatory_friction": "EU AI Act Annex III creates high-risk classifications for AI systems used in law enforcement and access to essential services (affecting prosecutors, judges). Works council co-determination under BetrVG §87 requires consultation for AI systems affecting legal professionals' working conditions, while GDPR Article 22 restricts automated legal decision-making.",
+    "key_vulnerable_tasks": [
+      "legal research and case law analysis",
+      "contract drafting and review",
+      "regulatory compliance checking",
+      "document discovery and review",
+      "legal brief writing"
+    ],
+    "key_protected_tasks": [
+      "courtroom advocacy and oral arguments",
+      "judicial decision-making",
+      "client counseling and strategy",
+      "witness examination",
+      "mediation and dispute resolution"
+    ]
+  },
+  "262": {
+    "technical_score": 7.5,
+    "regulated_score": 6.0,
+    "rationale": "This occupation involves substantial digital work including cataloging, database management, research queries, and information organization that AI can perform well. However, physical handling of artifacts, specialized conservation techniques, and nuanced curatorial judgment requiring deep cultural/historical context provide moderate protection.",
+    "regulatory_friction": "GDPR constraints on automated processing of cultural and historical data, plus strong EU employment protections in public cultural institutions slow workforce restructuring. Works council co-determination rights in cultural organizations require consultation for AI systems affecting cataloging and collection management workflows.",
+    "key_vulnerable_tasks": [
+      "database cataloging and metadata creation",
+      "information retrieval and search assistance",
+      "basic research query processing",
+      "inventory management and tracking",
+      "routine documentation and record-keeping"
+    ],
+    "key_protected_tasks": [
+      "physical conservation and restoration work",
+      "curatorial selection and exhibition design",
+      "specialized appraisal of historical artifacts",
+      "direct visitor interaction and education",
+      "animal care coordination requiring real-time judgment"
+    ]
+  },
+  "263": {
+    "technical_score": 6.5,
+    "regulated_score": 4.0,
+    "rationale": "This occupation group has significant AI exposure due to extensive documentation, research, and analytical work that is increasingly digital. AI can assist with case documentation, research synthesis, initial assessments, and data analysis for economists and social researchers.",
+    "regulatory_friction": "EU AI Act Annex III heavily regulates AI in essential services access and law enforcement contexts where many social workers operate. GDPR Article 22 restricts automated decision-making in sensitive social services, and works council rights apply to AI affecting social worker performance evaluation and case management systems.",
+    "key_vulnerable_tasks": [
+      "case documentation and reporting",
+      "research and data analysis",
+      "initial client assessments",
+      "policy analysis and recommendations",
+      "administrative case management"
+    ],
+    "key_protected_tasks": [
+      "direct therapeutic intervention",
+      "crisis counseling and emotional support",
+      "complex ethical decision-making",
+      "religious ceremonies and spiritual guidance",
+      "building trust relationships with vulnerable clients"
+    ]
+  },
+  "264": {
+    "technical_score": 8.5,
+    "regulated_score": 7.5,
+    "rationale": "This occupation group works almost entirely with digital content - writing, editing, translating, and creating text-based materials that AI can directly process and generate. AI has demonstrated strong capabilities in content creation, translation, editing, and even specialized writing tasks, making this group highly exposed to both automation and productivity-driven displacement.",
+    "regulatory_friction": "GDPR Article 22 restrictions on automated decision-making may limit AI use in editorial decisions and content curation. Works council consultation requirements under BetrVG §87 could slow implementation of AI tools that change working conditions in media organizations.",
+    "key_vulnerable_tasks": [
+      "basic translation and localization",
+      "content editing and proofreading",
+      "routine journalism and news writing",
+      "technical documentation",
+      "subtitling and transcription",
+      "fact-checking research"
+    ],
+    "key_protected_tasks": [
+      "in-person interviews and source development",
+      "creative and artistic writing",
+      "complex investigative journalism requiring human judgment",
+      "simultaneous interpretation in high-stakes settings",
+      "cultural adaptation requiring deep contextual understanding",
+      "editorial leadership and strategic decision-making"
+    ]
+  },
+  "265": {
+    "technical_score": 6.5,
+    "regulated_score": 5.0,
+    "rationale": "Creative and performing artists face significant AI disruption in digital content creation (storyboard artists, video editors, composers) and administrative tasks, but live performance, physical artistry, and human emotional connection provide substantial protection. AI can generate music, visual art, and assist in post-production, but struggles with live audience interaction and embodied physical performance.",
+    "regulatory_friction": "EU AI Act provisions around automated content creation and GDPR restrictions on AI-generated creative works create uncertainty around copyright and attribution. Employment protection laws slow industry restructuring despite technological capability.",
+    "key_vulnerable_tasks": [
+      "storyboard creation",
+      "music composition and arrangement",
+      "video editing and post-production",
+      "voice-over work",
+      "graphic design elements"
+    ],
+    "key_protected_tasks": [
+      "live performance and audience interaction",
+      "physical circus and dance performance",
+      "emotional acting and character interpretation",
+      "collaborative creative direction",
+      "cultural and artistic curation"
+    ]
+  },
+  "311": {
+    "technical_score": 6.5,
+    "regulated_score": 5.5,
+    "rationale": "This occupation group involves significant digital work (CAD, 3D modeling, data analysis, technical documentation) that AI can automate or dramatically enhance, but also requires physical inspection, hands-on testing, and equipment maintenance that creates natural barriers. The mix of digital design work and physical technical tasks places it in moderate-high exposure territory.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87(1) No. 6 and ArbVG §96a will slow AI adoption affecting working conditions, while safety-critical roles (aviation, nuclear, construction inspection) face additional regulatory oversight that constrains automation deployment.",
+    "key_vulnerable_tasks": [
+      "CAD drafting and technical drawing",
+      "routine data analysis and reporting",
+      "technical documentation creation",
+      "basic quality control measurements",
+      "energy assessment calculations"
+    ],
+    "key_protected_tasks": [
+      "hands-on equipment inspection and testing",
+      "field surveying and site assessment",
+      "complex troubleshooting requiring physical intervention",
+      "safety-critical decision making",
+      "calibration of sensitive instruments"
+    ]
+  },
+  "312": {
+    "technical_score": 5.5,
+    "regulated_score": 4.0,
+    "rationale": "These supervisors manage complex physical production processes requiring real-time decision-making, safety oversight, and human coordination in unstructured environments. While AI can assist with scheduling, reporting, and process optimization, the core supervisory functions require physical presence, contextual judgment, and immediate response to safety situations that limit pure automation potential.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 create significant barriers since AI systems for workforce scheduling and performance monitoring require consultation. GDPR restrictions on automated workforce management decisions further constrain AI deployment in supervisory roles.",
+    "key_vulnerable_tasks": [
+      "production scheduling and planning",
+      "preparing production reports and cost analysis",
+      "inventory management and supply coordination"
+    ],
+    "key_protected_tasks": [
+      "real-time safety oversight and emergency response",
+      "training employees in safety procedures",
+      "on-site quality control and compliance verification"
+    ]
+  },
+  "313": {
+    "technical_score": 7.2,
+    "regulated_score": 4.8,
+    "rationale": "Process control technicians work extensively with digital control systems, monitoring interfaces, and data analysis - areas where AI excels. Many tasks involve pattern recognition, predictive maintenance, anomaly detection, and optimization decisions that AI systems can perform effectively. However, the role requires physical presence for safety oversight and emergency response in critical infrastructure.",
+    "regulatory_friction": "Critical infrastructure sectors (energy, water, waste) face stringent safety regulations that slow AI adoption. Works councils have strong co-determination rights over AI systems affecting working conditions in industrial settings, and employment protection laws make workforce restructuring difficult in these traditionally unionized sectors.",
+    "key_vulnerable_tasks": [
+      "process monitoring and data analysis",
+      "predictive maintenance scheduling",
+      "performance optimization decisions",
+      "routine equipment adjustments",
+      "compliance reporting and documentation"
+    ],
+    "key_protected_tasks": [
+      "emergency response and safety oversight",
+      "physical equipment repairs",
+      "complex troubleshooting requiring manual intervention",
+      "regulatory compliance verification",
+      "coordination with field personnel"
+    ]
+  },
+  "314": {
+    "technical_score": 6.5,
+    "regulated_score": 5.0,
+    "rationale": "Life science technicians perform substantial digital work including data analysis, report compilation, and research support that AI can automate or significantly enhance. However, hands-on laboratory work, field sampling, equipment maintenance, and real-time biological monitoring require physical presence and manual dexterity that creates natural barriers to full automation.",
+    "regulatory_friction": "GDPR constraints on automated decision-making in research contexts and employment protection laws slow workforce restructuring. Works council consultation requirements apply when AI systems change working conditions in laboratory environments.",
+    "key_vulnerable_tasks": [
+      "analyse experimental laboratory data",
+      "analyse scientific data",
+      "compile reports",
+      "analyse environmental data",
+      "analyse test data"
+    ],
+    "key_protected_tasks": [
+      "sample collection in field environments",
+      "laboratory equipment maintenance",
+      "real-time biological monitoring"
+    ]
+  },
+  "315": {
+    "technical_score": 5.5,
+    "regulated_score": 4.0,
+    "rationale": "This occupation group combines highly regulated safety-critical roles with mixed AI exposure. Some functions like flight planning, route optimization, and maintenance scheduling are highly amenable to AI assistance, while real-time piloting, emergency response, and safety-critical decision-making require human judgment and are heavily regulated.",
+    "regulatory_friction": "Aviation and maritime operations fall under strict safety regulations where AI systems would trigger EU AI Act high-risk classifications for safety-critical applications. Additionally, international aviation (ICAO) and maritime (IMO) standards create multilayered regulatory barriers beyond EU jurisdiction.",
+    "key_vulnerable_tasks": [
+      "flight planning and optimization",
+      "maintenance scheduling and diagnostics",
+      "cargo load distribution calculations"
+    ],
+    "key_protected_tasks": [
+      "real-time emergency response",
+      "safety-critical piloting decisions",
+      "crew supervision and coordination"
+    ]
+  },
+  "321": {
+    "technical_score": 4.5,
+    "regulated_score": 2.5,
+    "rationale": "Medical and pharmaceutical technicians perform a mix of routine analytical tasks (sample processing, equipment monitoring, data entry) that AI can increasingly automate, but also require hands-on technical procedures, patient interaction, and real-time clinical decision-making in physical healthcare environments. While laboratory data analysis and basic administrative functions are highly automatable, the physical manipulation of medical equipment, direct patient care, and safety-critical procedures create natural barriers to full AI replacement.",
+    "regulatory_friction": "Healthcare AI systems face strict EU Medical Device Regulation requirements, GDPR constraints on patient data processing, and works council consultation for any AI affecting technicians' working conditions. The EU AI Act's high-risk classification for healthcare applications creates additional approval barriers for AI systems used in clinical settings.",
+    "key_vulnerable_tasks": [
+      "laboratory data entry and analysis",
+      "inventory management and stock monitoring",
+      "basic administrative documentation"
+    ],
+    "key_protected_tasks": [
+      "direct patient care and interaction",
+      "hands-on operation of medical equipment",
+      "real-time clinical monitoring and emergency response"
+    ]
+  },
+  "322": {
+    "technical_score": 3.5,
+    "regulated_score": 2.0,
+    "rationale": "Maternity support workers require extensive physical presence, hands-on care, real-time human interaction during emotionally sensitive moments, and work in unstructured healthcare environments. While AI could assist with documentation and basic monitoring, the core tasks involve direct patient care, physical assistance during childbirth, and emotional support that require human presence and empathy.",
+    "regulatory_friction": "EU AI Act Annex III classifications for healthcare AI systems create high-risk requirements, GDPR restricts automated healthcare decisions, and works council consultation rights slow adoption of AI systems affecting working conditions in healthcare settings.",
+    "key_vulnerable_tasks": [
+      "documentation of patient information",
+      "basic vital signs monitoring",
+      "scheduling and administrative coordination"
+    ],
+    "key_protected_tasks": [
+      "direct physical assistance during childbirth",
+      "emotional support and empathy during labor",
+      "hands-on newborn care and examination"
+    ]
+  },
+  "323": {
+    "technical_score": 4.5,
+    "regulated_score": 3.5,
+    "rationale": "Herbal therapists blend digital tasks (research, treatment planning, record-keeping) with essential human elements (physical examination, therapeutic relationships, holistic assessment). AI can assist with plant properties research, treatment suggestions, and administrative tasks, but the personalized, relationship-based nature of complementary medicine and need for physical presence during consultations creates significant barriers.",
+    "regulatory_friction": "EU AI Act Annex III classifications for healthcare decision-making systems create barriers to AI-assisted diagnosis and treatment recommendations. GDPR automated decision-making restrictions further limit AI's role in health-related assessments and treatment planning.",
+    "key_vulnerable_tasks": [
+      "research plant properties and benefits",
+      "maintain patient records and documentation",
+      "create initial treatment protocols"
+    ],
+    "key_protected_tasks": [
+      "develop therapeutic relationships with patients",
+      "perform physical examinations and assessments",
+      "provide empathetic holistic care"
+    ]
+  },
+  "324": {
+    "technical_score": 4.0,
+    "regulated_score": 3.5,
+    "rationale": "Veterinary technicians work in mixed digital-physical environments with some administrative tasks (record keeping, appointment scheduling) highly susceptible to AI, but core responsibilities require hands-on animal care, physical examination skills, and real-time assessment of animal behavior and distress. AI can assist with diagnostic support and documentation but cannot replace the tactile, observational, and manual dexterity requirements of animal handling and treatment administration.",
+    "regulatory_friction": "EU AI Act provisions around healthcare applications and GDPR restrictions on automated decision-making create moderate barriers for AI diagnostic tools. Employment protection laws and potential works council involvement in AI adoption for workforce management add friction.",
+    "key_vulnerable_tasks": [
+      "maintaining medical records",
+      "scheduling appointments",
+      "basic diagnostic data entry",
+      "inventory management",
+      "client communication documentation"
+    ],
+    "key_protected_tasks": [
+      "administering medications to animals",
+      "assessing animal behavior and distress",
+      "hands-on animal restraint and positioning",
+      "emergency animal care procedures",
+      "direct client counseling on animal welfare"
+    ]
+  },
+  "325": {
+    "technical_score": 5.5,
+    "regulated_score": 4.0,
+    "rationale": "This occupation group spans highly varied roles from emergency paramedics requiring real-time physical intervention to administrative roles like medical records clerks with predominantly digital workflows. AI can significantly impact documentation, coding, scheduling, and some diagnostic support tasks, but many roles require physical presence, manual dexterity, and critical human judgment in emergency situations.",
+    "regulatory_friction": "Healthcare AI systems face strict EU AI Act high-risk classifications for medical device applications and patient care decisions. GDPR Article 22 restrictions on automated healthcare decisions, plus medical device regulations and professional licensing requirements create substantial barriers to AI adoption in direct patient care roles.",
+    "key_vulnerable_tasks": [
+      "medical records coding and management",
+      "appointment scheduling and coordination",
+      "regulatory compliance documentation",
+      "basic diagnostic data entry",
+      "safety inspection reporting"
+    ],
+    "key_protected_tasks": [
+      "emergency medical response and paramedic care",
+      "hands-on patient treatment and therapy",
+      "complex safety inspections requiring physical assessment",
+      "critical decision-making in life-threatening situations",
+      "manual assembly and fitting of optical devices"
+    ]
+  },
+  "331": {
+    "technical_score": 8.5,
+    "regulated_score": 6.5,
+    "rationale": "This occupation group involves highly digital work products including financial analysis, risk assessment, data processing, and advisory services that AI excels at. Most tasks involve pattern recognition in financial data, automated decision-making, and generating analytical reports - all core AI strengths with documented high performance.",
+    "regulatory_friction": "EU AI Act Annex III classifies AI systems for creditworthiness assessment and access to essential financial services as high-risk, requiring extensive compliance. GDPR Article 22 restricts automated decision-making in financial services, while works councils must be consulted on AI systems affecting working conditions.",
+    "key_vulnerable_tasks": [
+      "credit risk analysis",
+      "financial data processing",
+      "investment portfolio analysis",
+      "loan application assessment",
+      "market trend analysis",
+      "accounting entries and bookkeeping"
+    ],
+    "key_protected_tasks": [
+      "complex client relationship management",
+      "regulatory compliance oversight",
+      "high-stakes financial advisory requiring human judgment"
+    ]
+  },
+  "332": {
+    "technical_score": 7.2,
+    "regulated_score": 6.5,
+    "rationale": "Sales and purchasing agents operate heavily through digital channels, conducting market analysis, price comparisons, and client communications that AI can increasingly automate. AI excels at pattern recognition for risk assessment, market trend analysis, and matching buyers with sellers across commodity and insurance markets.",
+    "regulatory_friction": "GDPR restricts automated decision-making in insurance underwriting and client profiling, while works councils must be consulted on AI systems affecting sales performance evaluation and commission structures.",
+    "key_vulnerable_tasks": [
+      "market research and price analysis",
+      "risk assessment and underwriting calculations",
+      "lead generation and initial client outreach",
+      "inventory optimization and demand forecasting",
+      "routine contract preparation"
+    ],
+    "key_protected_tasks": [
+      "complex client relationship management",
+      "high-stakes negotiation requiring emotional intelligence",
+      "physical inspection of properties and goods",
+      "regulatory compliance verification",
+      "strategic partnership development"
+    ]
+  },
+  "333": {
+    "technical_score": 7.2,
+    "regulated_score": 5.8,
+    "rationale": "Business services agents perform predominantly digital, information-intensive tasks like contract analysis, market research, client communication, and document processing that AI can effectively automate. Many roles involve pattern recognition, data analysis, and routine administrative work that current AI systems handle well.",
+    "regulatory_friction": "EU AI Act Annex III classifications for recruitment (employment agents) and GDPR restrictions on automated decision-making in client profiling create moderate barriers. Works council consultation requirements for AI affecting working conditions add procedural delays.",
+    "key_vulnerable_tasks": [
+      "contract document processing",
+      "market data analysis and reporting",
+      "client database management",
+      "routine correspondence and scheduling",
+      "property valuation calculations"
+    ],
+    "key_protected_tasks": [
+      "complex client negotiations",
+      "on-site property inspections",
+      "relationship building with high-value clients",
+      "creative event planning and execution",
+      "regulatory compliance interpretation"
+    ]
+  },
+  "334": {
+    "technical_score": 8.2,
+    "regulated_score": 6.8,
+    "rationale": "Administrative and specialised secretaries work with fundamentally digital outputs - documentation, correspondence, data entry, scheduling, and process coordination. AI can automate most administrative tasks including document generation, data analysis, scheduling optimization, and routine correspondence management.",
+    "regulatory_friction": "EU AI Act Annex III applies to workforce management systems that could automate performance evaluation and task assignment. Works council co-determination rights require consultation for AI systems affecting administrative working conditions, while GDPR restricts automated processing of employee and client data.",
+    "key_vulnerable_tasks": [
+      "document drafting and formatting",
+      "data entry and processing",
+      "schedule coordination and calendar management",
+      "routine correspondence handling",
+      "basic research and information gathering",
+      "report generation and compilation"
+    ],
+    "key_protected_tasks": [
+      "sensitive client relationship management",
+      "complex problem-solving requiring human judgment",
+      "confidential decision-making support",
+      "crisis management and urgent communications"
+    ]
+  },
+  "335": {
+    "technical_score": 6.5,
+    "regulated_score": 3.5,
+    "rationale": "Regulatory government work involves substantial digital tasks like document review, case analysis, benefit calculations, and compliance checking that AI can handle well. However, the occupation requires legal judgment, stakeholder interaction, and enforcement decisions that limit full automation.",
+    "regulatory_friction": "EU AI Act Annex III classifies AI systems for 'access to essential public services and benefits' as high-risk, requiring extensive compliance. Works council co-determination rights and strong employment protections in government roles create additional barriers to AI deployment.",
+    "key_vulnerable_tasks": [
+      "benefit eligibility calculations",
+      "document review and analysis",
+      "routine compliance checking",
+      "case file processing",
+      "standard regulatory research"
+    ],
+    "key_protected_tasks": [
+      "enforcement decisions requiring judgment",
+      "in-person inspections and investigations",
+      "stakeholder negotiations",
+      "complex fraud investigations",
+      "public hearing participation"
+    ]
+  },
+  "341": {
+    "technical_score": 5.5,
+    "regulated_score": 3.5,
+    "rationale": "This occupation group shows moderate AI exposure due to mixed digital/physical nature. Legal assistants, case administrators, and court clerks handle substantial documentation and research that AI can automate, while care workers require physical presence and human interaction that limits automation. Administrative and analytical tasks across the group are highly vulnerable to AI transformation.",
+    "regulatory_friction": "EU AI Act Annex III creates major barriers for AI systems used in social services, law enforcement support, and access to essential services. Works council co-determination rights require consultation for any AI affecting care worker scheduling or performance evaluation, while GDPR Article 22 restricts automated decisions about vulnerable populations.",
+    "key_vulnerable_tasks": [
+      "legal document preparation",
+      "case file administration",
+      "background research and analysis",
+      "initial client intake screening",
+      "report writing and documentation",
+      "scheduling and resource allocation"
+    ],
+    "key_protected_tasks": [
+      "direct personal care provision",
+      "crisis intervention and emotional support",
+      "physical surveillance and investigation",
+      "court testimony and representation",
+      "pastoral counseling and spiritual guidance",
+      "child protection decision-making"
+    ]
+  },
+  "342": {
+    "technical_score": 3.5,
+    "regulated_score": 2.5,
+    "rationale": "Sports and fitness workers require extensive physical presence, real-time human interaction, manual dexterity for demonstrations, and work in unstructured physical environments. While AI can assist with program design, progress tracking, and basic instructional content, the core functions demand hands-on coaching, safety supervision, and adaptive physical guidance that AI cannot replicate.",
+    "regulatory_friction": "GDPR restrictions on automated processing of health/fitness data and works council consultation requirements for any AI systems affecting working conditions create moderate barriers. Additionally, safety-critical roles like lifeguards face heightened scrutiny for AI-assisted decision making.",
+    "key_vulnerable_tasks": [
+      "analyse personal fitness information",
+      "track participant progress",
+      "design training programmes"
+    ],
+    "key_protected_tasks": [
+      "provide hands-on physical instruction",
+      "ensure safety supervision",
+      "adapt teaching to individual capabilities in real-time"
+    ]
+  },
+  "343": {
+    "technical_score": 6.2,
+    "regulated_score": 5.8,
+    "rationale": "This diverse occupation group has high variability in AI exposure. Digital aspects (photography processing, design visualization, administrative tasks, content creation) are highly automatable, while physical craft work, live performance coordination, and creative direction require significant human judgment and presence. AI can assist with design generation, image editing, menu planning, and documentation but cannot replace the manual dexterity, real-time coordination, and creative intuition central to most roles.",
+    "regulatory_friction": "GDPR creates some constraints around automated decision-making in hiring/casting decisions. Works council consultation may be required when AI systems change working conditions in larger cultural institutions or restaurant chains.",
+    "key_vulnerable_tasks": [
+      "photo editing and processing",
+      "design concept generation",
+      "menu planning and recipe development",
+      "administrative documentation",
+      "content scheduling and distribution",
+      "inventory management"
+    ],
+    "key_protected_tasks": [
+      "live performance coordination",
+      "manual craft work (prop making, set building)",
+      "real-time creative direction during performances",
+      "physical food preparation and plating",
+      "client consultation and creative collaboration"
+    ]
+  },
+  "351": {
+    "technical_score": 7.5,
+    "regulated_score": 6.0,
+    "rationale": "ICT operations and support work is heavily digital with many tasks amenable to AI automation including troubleshooting, system monitoring, routine maintenance, and user support through chatbots. AI can handle many Level 1 support tickets, automate network diagnostics, and assist with system administration tasks.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87(1) No. 6 require consultation for AI systems affecting working conditions, slowing deployment of automated support systems. GDPR restrictions on automated decision-making also limit AI's role in security and access management decisions.",
+    "key_vulnerable_tasks": [
+      "Level 1 help desk support",
+      "routine system monitoring and alerts",
+      "basic troubleshooting and diagnostics",
+      "password resets and account management",
+      "system performance reporting"
+    ],
+    "key_protected_tasks": [
+      "complex network security incident response",
+      "hands-on hardware installation and repair",
+      "strategic IT planning and architecture decisions",
+      "physical data center operations",
+      "high-stakes security configuration"
+    ]
+  },
+  "352": {
+    "technical_score": 7.5,
+    "regulated_score": 6.5,
+    "rationale": "This occupation group combines highly digital work (sound editing, mastering, telecommunications system management) with real-time performance control and physical equipment operation. AI can automate many post-production tasks, system monitoring, and basic editing functions, but creative decision-making and live performance coordination require human expertise.",
+    "regulatory_friction": "Works council consultation requirements under BetrVG §87 create friction when AI tools affect working conditions in broadcast facilities. GDPR automated decision-making restrictions may limit AI systems in telecommunications network management and performance evaluation contexts.",
+    "key_vulnerable_tasks": [
+      "automated sound mastering and editing",
+      "telecommunications system monitoring and diagnostics",
+      "basic video editing and post-production",
+      "equipment configuration and setup protocols",
+      "routine maintenance scheduling and reporting"
+    ],
+    "key_protected_tasks": [
+      "live performance video operation and creative timing",
+      "artistic sound design and creative concept development",
+      "real-time coordination with performers and production crew",
+      "complex problem-solving during live broadcasts",
+      "hands-on equipment repair and physical troubleshooting"
+    ]
+  },
+  "411": {
+    "technical_score": 8.5,
+    "regulated_score": 6.5,
+    "rationale": "General office clerks perform predominantly digital, routine administrative tasks that are highly susceptible to AI automation. Their work involves data entry, document processing, scheduling, and basic customer communication - all areas where current AI excels and can achieve near-human performance.",
+    "regulatory_friction": "GDPR Article 22 restrictions on automated decision-making limit AI handling of customer interactions and membership decisions. Works council co-determination rights under BetrVG §87 require consultation before implementing AI systems that change working conditions or could lead to workforce restructuring.",
+    "key_vulnerable_tasks": [
+      "file documents",
+      "fill out forms",
+      "complete membership administration"
+    ],
+    "key_protected_tasks": [
+      "communicate with customers",
+      "develop professional network",
+      "facilitate access to information"
+    ]
+  },
+  "412": {
+    "technical_score": 8.5,
+    "regulated_score": 6.5,
+    "rationale": "Secretarial work is fundamentally digital and document-based, making it highly susceptible to AI automation. Tasks like email drafting, scheduling, document management, and basic administrative workflows can be largely automated by current AI systems. The work involves routine information processing with clear patterns that AI excels at.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87(1) No. 6 require consultation for AI systems affecting working conditions, slowing implementation. GDPR Article 22 restrictions on automated decision-making create additional barriers for AI systems managing personnel schedules and internal communications.",
+    "key_vulnerable_tasks": [
+      "draft corporate emails",
+      "manage digital documents",
+      "fill out forms",
+      "maintain internal communication systems",
+      "file documents",
+      "manage personnel agenda"
+    ],
+    "key_protected_tasks": [
+      "communicate by telephone",
+      "handle sensitive interpersonal communications",
+      "provide contextual judgment in complex situations"
+    ]
+  },
+  "413": {
+    "technical_score": 9.5,
+    "regulated_score": 8.5,
+    "rationale": "Keyboard operators perform purely digital, routine tasks that are ideal targets for AI automation. Data entry, typing, and basic data processing are already being automated by AI systems, and LLMs can handle document compilation, formatting, and basic data verification with high accuracy.",
+    "regulatory_friction": "GDPR Article 22 may slow automation where data entry involves automated decision-making about individuals. Works council consultation requirements apply when AI systems change working conditions, but the regulatory barriers are relatively minor for these routine clerical tasks.",
+    "key_vulnerable_tasks": [
+      "data entry and transcription",
+      "document formatting and compilation",
+      "basic data verification and cleansing"
+    ],
+    "key_protected_tasks": [
+      "complex data interpretation requiring domain expertise",
+      "handling sensitive documents requiring human judgment",
+      "customer service interactions requiring empathy"
+    ]
+  },
+  "421": {
+    "technical_score": 7.5,
+    "regulated_score": 6.0,
+    "rationale": "This occupation group involves heavily digital, rule-based transactions and calculations that AI can automate effectively. Tasks like odds compilation, account processing, payment handling, and customer information services are highly susceptible to AI automation given their structured, data-driven nature.",
+    "regulatory_friction": "GDPR Article 22 restrictions on automated decision-making affect credit assessments and debt collection. Works council co-determination rights under BetrVG §87 create consultation requirements for AI systems affecting teller workflows and performance monitoring.",
+    "key_vulnerable_tasks": [
+      "calculate betting target odds",
+      "banking activities",
+      "analyse tote reports",
+      "carry out end of day accounts",
+      "assess customer credibility"
+    ],
+    "key_protected_tasks": [
+      "apply conflict management",
+      "assist customers",
+      "attract gamers"
+    ]
+  },
+  "422": {
+    "technical_score": 7.5,
+    "regulated_score": 5.5,
+    "rationale": "Client information workers perform largely digital, information-based tasks that AI can handle effectively - answering routine queries, processing reservations, conducting surveys, and providing standardized information. Many roles like call center operators, live chat agents, and ticket sales are already being automated by chatbots and AI systems.",
+    "regulatory_friction": "GDPR Article 22 restricts automated decision-making in customer service contexts, while works council co-determination rights require consultation for AI systems affecting working conditions. Emergency dispatching may trigger AI Act high-risk classifications due to safety implications.",
+    "key_vulnerable_tasks": [
+      "answering routine customer inquiries",
+      "processing ticket sales and reservations",
+      "conducting standardized surveys and interviews",
+      "providing travel information and recommendations",
+      "handling appointment scheduling"
+    ],
+    "key_protected_tasks": [
+      "emergency medical dispatching requiring critical judgment",
+      "complex problem resolution requiring human empathy",
+      "handling sensitive customer complaints requiring discretion"
+    ]
+  },
+  "431": {
+    "technical_score": 8.5,
+    "regulated_score": 6.5,
+    "rationale": "Numerical clerks perform highly digitized, rule-based tasks like data entry, calculations, reconciliations, and document processing that are ideal targets for AI automation. Their work involves pattern recognition, mathematical computations, and structured data manipulation - core AI strengths that can dramatically reduce workforce needs.",
+    "regulatory_friction": "GDPR Article 22 restrictions on automated decision-making limit AI deployment in financial transactions and insurance processing. Works council co-determination rights in Germany/Austria require consultation before implementing AI systems that affect working conditions, slowing adoption timelines.",
+    "key_vulnerable_tasks": [
+      "data entry and validation",
+      "invoice processing and billing calculations",
+      "payroll calculations and tax computations",
+      "transaction reconciliation",
+      "document classification and filing",
+      "basic audit procedures"
+    ],
+    "key_protected_tasks": [
+      "complex customer relationship management",
+      "exception handling requiring judgment",
+      "regulatory compliance interpretation"
+    ]
+  },
+  "432": {
+    "technical_score": 7.5,
+    "regulated_score": 6.0,
+    "rationale": "Material-recording and transport clerks work extensively with digital systems for scheduling, tracking, and coordinating logistics operations. AI can automate route optimization, cargo scheduling, inventory management, and regulatory compliance documentation. However, real-time safety-critical decisions and physical coordination of vessels/aircraft require human oversight.",
+    "regulatory_friction": "Transportation safety regulations require human oversight for critical operations like air traffic control and maritime piloting. Works councils have co-determination rights over AI systems affecting scheduling and performance monitoring of transport workers.",
+    "key_vulnerable_tasks": [
+      "cargo scheduling and optimization",
+      "inventory tracking and documentation",
+      "route planning and logistics coordination"
+    ],
+    "key_protected_tasks": [
+      "real-time safety-critical decision making",
+      "physical vessel/aircraft coordination",
+      "emergency response management"
+    ]
+  },
+  "441": {
+    "technical_score": 7.2,
+    "regulated_score": 5.8,
+    "rationale": "This occupation group involves highly digital tasks like document processing, correspondence, CV screening, and administrative coordination that AI can readily automate. Many core functions like proofreading, foreign language correspondence, and HR screening are prime targets for AI systems.",
+    "regulatory_friction": "EU AI Act Annex III classifies HR recruitment and workforce management as high-risk, requiring conformity assessments for HR assistants' CV screening functions. Works council co-determination rights under BetrVG §87 require consultation before implementing AI systems that affect working conditions.",
+    "key_vulnerable_tasks": [
+      "CV screening and candidate selection",
+      "proofreading and text correction",
+      "foreign language correspondence translation",
+      "document filing and classification",
+      "administrative data entry and processing"
+    ],
+    "key_protected_tasks": [
+      "physical mail delivery",
+      "face-to-face client interaction",
+      "signature collection and verification",
+      "complex customer service resolution",
+      "nuanced human judgment in HR assessments"
+    ]
+  },
+  "511": {
+    "technical_score": 3.5,
+    "regulated_score": 2.5,
+    "rationale": "Travel attendants, conductors and guides require significant physical presence, real-time human interaction, and manual safety tasks that create natural barriers to AI automation. While some informational and educational content can be enhanced by AI, core responsibilities like emergency response, physical safety supervision, and in-person passenger assistance remain largely human-dependent.",
+    "regulatory_friction": "EU AI Act Annex III classifications for workforce management systems affect scheduling and performance evaluation of these workers. GDPR restricts automated passenger profiling and service decisions, while strong employment protections slow workforce restructuring in transportation sectors.",
+    "key_vulnerable_tasks": [
+      "ticket information lookup",
+      "basic timetable inquiries",
+      "standardized safety announcements"
+    ],
+    "key_protected_tasks": [
+      "emergency response coordination",
+      "physical passenger assistance",
+      "real-time safety supervision"
+    ]
+  },
+  "512": {
+    "technical_score": 3.5,
+    "regulated_score": 3.0,
+    "rationale": "Cooking involves significant physical manipulation, real-time sensory evaluation (taste, smell, texture), and adaptation to variable ingredients and equipment in unstructured kitchen environments. While AI can assist with recipe optimization and inventory management, the core tasks require manual dexterity, sensory judgment, and physical presence that current AI cannot replicate.",
+    "regulatory_friction": "GDPR may restrict AI systems used for workforce scheduling and performance monitoring in commercial kitchens. Works council consultation requirements could slow adoption of AI-driven kitchen management systems that affect working conditions or staffing decisions.",
+    "key_vulnerable_tasks": [
+      "recipe development and optimization",
+      "inventory management and ordering",
+      "nutritional analysis and diet planning"
+    ],
+    "key_protected_tasks": [
+      "hands-on food preparation and cooking",
+      "real-time taste and quality assessment",
+      "kitchen equipment operation and maintenance"
+    ]
+  },
+  "513": {
+    "technical_score": 3.5,
+    "regulated_score": 3.0,
+    "rationale": "Waiters and bartenders work in highly physical, real-time customer service environments requiring manual dexterity, immediate human interaction, and navigation of unstructured physical spaces. While AI can assist with some tasks like order taking or recommendations, the core work involves physical service delivery, emotional intelligence, and handling unpredictable customer needs that require human presence.",
+    "regulatory_friction": "GDPR constraints on automated customer profiling and recommendation systems create some friction. Works council consultation requirements for any AI systems affecting working conditions (like automated scheduling or performance monitoring) add regulatory barriers.",
+    "key_vulnerable_tasks": [
+      "taking customer orders",
+      "providing menu recommendations",
+      "processing payments"
+    ],
+    "key_protected_tasks": [
+      "physical food and beverage service",
+      "real-time customer interaction and hospitality",
+      "handling complex customer complaints and special requests"
+    ]
+  },
+  "514": {
+    "technical_score": 2.5,
+    "regulated_score": 2.0,
+    "rationale": "Hairdressing and beauty services require intensive manual dexterity, real-time tactile feedback, and in-person physical manipulation of hair, skin, and body treatments. While AI could assist with appointment scheduling and basic style recommendations, the core work involves hands-on physical skills that current AI cannot replicate.",
+    "regulatory_friction": "GDPR constraints on automated customer profiling and recommendation systems, plus general employment protections that slow workforce restructuring. Works council consultation requirements would apply to any AI systems affecting salon working conditions or performance evaluation.",
+    "key_vulnerable_tasks": [
+      "appointment scheduling",
+      "basic style consultation",
+      "inventory management"
+    ],
+    "key_protected_tasks": [
+      "hair cutting and styling",
+      "facial treatments and massage",
+      "manual beauty procedures"
+    ]
+  },
+  "515": {
+    "technical_score": 4.5,
+    "regulated_score": 3.5,
+    "rationale": "Building and housekeeping supervisors have moderate AI exposure through digital administrative tasks like scheduling, inventory management, and basic accounting, but core responsibilities require physical presence, manual work, and real-time problem-solving in unstructured environments. AI can enhance efficiency in planning and coordination but cannot replace the hands-on nature of cleaning, maintenance, security monitoring, and direct customer service.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 and ArbVG §96a require consultation for AI systems affecting working conditions like scheduling or performance monitoring. GDPR Article 22 restricts automated workforce management decisions, slowing adoption of AI tools for staff supervision and evaluation.",
+    "key_vulnerable_tasks": [
+      "inventory management and ordering supplies",
+      "staff scheduling and coordination",
+      "basic accounting and expense tracking"
+    ],
+    "key_protected_tasks": [
+      "physical cleaning and maintenance work",
+      "security monitoring and emergency response",
+      "direct customer service and relationship management"
+    ]
+  },
+  "516": {
+    "technical_score": 3.5,
+    "regulated_score": 3.0,
+    "rationale": "This occupation group involves predominantly hands-on physical work with animals, face-to-face human interaction, and services requiring physical presence. While some administrative tasks (scheduling, record-keeping, basic customer communication) could be automated, the core functions require manual dexterity, real-time animal handling, and in-person human services that AI cannot directly perform.",
+    "regulatory_friction": "GDPR restrictions on automated decision-making may limit AI use in customer-facing roles like dating consultants or funeral directors. Employment protection laws slow workforce restructuring, though the physical nature of most roles means less AI regulation applies.",
+    "key_vulnerable_tasks": [
+      "appointment scheduling",
+      "basic customer inquiries",
+      "record keeping and documentation"
+    ],
+    "key_protected_tasks": [
+      "animal handling and care",
+      "physical grooming and training",
+      "in-person instruction and guidance"
+    ]
+  },
+  "521": {
+    "technical_score": 2.5,
+    "regulated_score": 2.0,
+    "rationale": "Street and market vendors require significant physical presence, face-to-face customer interaction, manual food preparation, and operation in unstructured outdoor environments. While AI could assist with inventory management or payment processing, the core work involves tactile food handling, real-time personal sales interactions, and adaptation to dynamic street/market conditions that AI cannot replicate.",
+    "regulatory_friction": "GDPR creates minor friction around automated payment systems and customer data collection. General employment protection laws may slow any workforce restructuring, though this occupation has limited formal employment relationships.",
+    "key_vulnerable_tasks": [
+      "process payments",
+      "operate cash register",
+      "organise product display"
+    ],
+    "key_protected_tasks": [
+      "use cooking techniques",
+      "assist customers through personal interaction",
+      "adapt to different weather conditions"
+    ]
+  },
+  "522": {
+    "technical_score": 5.5,
+    "regulated_score": 4.5,
+    "rationale": "Shop salespersons have moderate AI exposure as AI can handle product recommendations, inventory management, and basic customer inquiries through chatbots or recommendation systems. However, the role requires significant physical presence, hands-on product demonstration, complex customer relationship building, and real-time problem solving in unstructured retail environments.",
+    "regulatory_friction": "GDPR Article 22 restricts automated customer profiling and pricing decisions, while works council consultation requirements (BetrVG §87) apply to AI systems affecting sales targets and performance monitoring. General employment protection laws slow workforce restructuring in retail.",
+    "key_vulnerable_tasks": [
+      "product recommendations",
+      "inventory tracking",
+      "basic customer inquiries",
+      "sales data processing",
+      "order processing"
+    ],
+    "key_protected_tasks": [
+      "hands-on product demonstration",
+      "complex customer relationship building",
+      "handling customer complaints",
+      "physical product handling",
+      "in-person negotiation"
+    ]
+  },
+  "523": {
+    "technical_score": 8.5,
+    "regulated_score": 7.0,
+    "rationale": "Cashiers and ticket clerks perform highly routine, transaction-based tasks that are prime targets for AI automation. Self-checkout systems, automated ticketing kiosks, and digital payment processing can directly replace most core functions including payment processing, inventory tracking, and basic customer service interactions.",
+    "regulatory_friction": "GDPR Article 22 restrictions on automated decision-making may slow deployment of AI systems that make determinations about customer transactions or eligibility. Works council consultation requirements under BetrVG §87 will create friction when employers implement AI systems that affect cashier working conditions or staffing levels.",
+    "key_vulnerable_tasks": [
+      "operate cash register and process payments",
+      "issue tickets and receipts",
+      "inventory control and stock tracking"
+    ],
+    "key_protected_tasks": [
+      "assist customers with complex special needs",
+      "handle cash discrepancies requiring judgment",
+      "provide personalized service for high-value transactions"
+    ]
+  },
+  "524": {
+    "technical_score": 7.5,
+    "regulated_score": 6.5,
+    "rationale": "This occupation group shows high AI vulnerability due to substantial digital components - call centre agents can be replaced by AI chatbots, rental transactions can be automated, and many sales processes involve routine digital tasks like documentation, payment processing, and customer service that AI handles well. The physical presence requirements for models and some in-person sales create moderate protection.",
+    "regulatory_friction": "GDPR Article 22 restricts automated decision-making in customer interactions and rental approvals. Works council co-determination rights under BetrVG §87 require consultation before implementing AI systems that change working conditions in call centres and rental operations.",
+    "key_vulnerable_tasks": [
+      "call centre customer service",
+      "rental contract processing",
+      "payment documentation",
+      "basic customer inquiries",
+      "transaction recording",
+      "inventory tracking"
+    ],
+    "key_protected_tasks": [
+      "fashion/art modeling poses",
+      "in-person sales demonstrations",
+      "complex equipment consultations",
+      "physical vehicle inspections",
+      "building customer relationships",
+      "handling disputes"
+    ]
+  },
+  "531": {
+    "technical_score": 3.5,
+    "regulated_score": 2.0,
+    "rationale": "Child care workers and teachers' aides perform primarily physical, relational work requiring real-time human interaction, emotional support, and physical care tasks that AI cannot replicate. While some administrative tasks like progress tracking could be AI-assisted, the core functions involve hands-on childcare, behavioral management, and individualized attention in unstructured environments.",
+    "regulatory_friction": "EU AI Act Annex III classifies AI systems in education as high-risk, requiring strict compliance and limiting deployment. Works council co-determination rights in educational settings create additional barriers to AI adoption affecting working conditions.",
+    "key_vulnerable_tasks": [
+      "progress monitoring and reporting",
+      "lesson plan preparation assistance",
+      "administrative documentation"
+    ],
+    "key_protected_tasks": [
+      "physical care and supervision",
+      "behavioral intervention and conflict resolution",
+      "individualized emotional support"
+    ]
+  },
+  "532": {
+    "technical_score": 3.2,
+    "regulated_score": 2.8,
+    "rationale": "Personal care workers perform predominantly physical, hands-on tasks requiring direct human contact, manual dexterity, and real-time assessment of patient needs in unstructured environments. While some documentation and monitoring tasks could be AI-assisted, the core work involves physical care, emotional support, and immediate response to unpredictable human conditions that AI cannot directly perform.",
+    "regulatory_friction": "GDPR restrictions on automated health data processing and strong EU employment protections slow AI adoption. Healthcare AI systems face additional medical device regulations and works council consultation requirements for any workforce management changes.",
+    "key_vulnerable_tasks": [
+      "documentation and record keeping",
+      "medication scheduling and reminders",
+      "basic health monitoring data collection"
+    ],
+    "key_protected_tasks": [
+      "personal hygiene assistance",
+      "physical patient mobility support",
+      "emergency response and first aid"
+    ]
+  },
+  "541": {
+    "technical_score": 2.8,
+    "regulated_score": 1.5,
+    "rationale": "Protective services workers require physical presence, real-time human judgment in unpredictable environments, and manual dexterity for emergency response. While AI can assist with surveillance monitoring and basic threat analysis, the core functions of physical protection, emergency response, and law enforcement demand human intervention in unstructured, high-stakes situations.",
+    "regulatory_friction": "EU AI Act Annex III restricts AI in law enforcement applications, and works councils must approve AI systems affecting officer working conditions. GDPR Article 22 limits automated decision-making in security screening and threat assessment contexts.",
+    "key_vulnerable_tasks": [
+      "surveillance monitoring",
+      "threat analysis and reporting",
+      "security risk assessment documentation"
+    ],
+    "key_protected_tasks": [
+      "emergency physical response",
+      "real-time threat intervention",
+      "crowd control and de-escalation"
+    ]
+  },
+  "611": {
+    "technical_score": 3.5,
+    "regulated_score": 3.0,
+    "rationale": "Market gardening and crop growing involves substantial physical work in unstructured outdoor environments, manual dexterity for planting/harvesting, and real-time assessment of biological systems that require human judgment. While AI can assist with some planning, monitoring, and advisory tasks, the core work remains highly physical and situational.",
+    "regulatory_friction": "GDPR constraints on automated workforce management decisions and works council consultation requirements for AI systems affecting working conditions create moderate friction. Agricultural AI applications generally face less regulatory scrutiny than high-risk sectors.",
+    "key_vulnerable_tasks": [
+      "crop damage assessment",
+      "production planning and scheduling",
+      "customer advisory services"
+    ],
+    "key_protected_tasks": [
+      "manual planting and harvesting",
+      "physical landscape maintenance",
+      "hands-on tree surgery and pruning"
+    ]
+  },
+  "612": {
+    "technical_score": 3.5,
+    "regulated_score": 3.0,
+    "rationale": "Animal production involves primarily physical, hands-on tasks in unstructured outdoor environments requiring real-time assessment of animal health, behavior, and welfare. While AI can assist with monitoring systems, record-keeping, and some diagnostic support, the core work requires manual dexterity, physical presence, and intuitive animal husbandry skills that are difficult to automate.",
+    "regulatory_friction": "EU animal welfare regulations and agricultural compliance requirements create moderate friction for AI adoption. GDPR may apply to farm management systems, and works councils could have input on AI monitoring technologies affecting working conditions.",
+    "key_vulnerable_tasks": [
+      "record keeping and breeding documentation",
+      "feed optimization and nutritional planning",
+      "basic health monitoring and alerts"
+    ],
+    "key_protected_tasks": [
+      "hands-on animal care and treatment",
+      "livestock handling and movement",
+      "breeding assistance and birthing support"
+    ]
+  },
+  "613": {
+    "technical_score": 4.5,
+    "regulated_score": 4.0,
+    "rationale": "Mixed crop and animal producers combine significant physical farm work with increasing digital management tasks. While AI can enhance planning, monitoring, and business management functions, the core work involves hands-on livestock care, physical crop cultivation, and real-time decision-making in unpredictable outdoor environments that limit full automation.",
+    "regulatory_friction": "EU agricultural regulations, data protection rules for farm management systems, and employment protections for farm workers create moderate barriers. Works councils may need consultation on AI-driven workforce management tools on larger farms.",
+    "key_vulnerable_tasks": [
+      "crop yield forecasting and planning",
+      "financial and business management",
+      "resource allocation and scheduling"
+    ],
+    "key_protected_tasks": [
+      "hands-on livestock care and health assessment",
+      "physical crop cultivation and harvesting",
+      "real-time adaptation to weather and environmental conditions"
+    ]
+  },
+  "621": {
+    "technical_score": 3.5,
+    "regulated_score": 3.0,
+    "rationale": "Forest rangers work primarily in unstructured outdoor environments requiring physical presence, real-time situational judgment, and hands-on conservation activities. While AI can assist with some monitoring and data analysis tasks, the core work involves physical forest management, emergency response, and in-person visitor interaction that cannot be digitized.",
+    "regulatory_friction": "Works council consultation requirements under BetrVG §87 for any AI systems affecting working conditions create moderate friction. GDPR constraints on automated decision-making may limit AI use in enforcement and safety inspection decisions.",
+    "key_vulnerable_tasks": [
+      "monitor forest health data",
+      "develop forestry management strategies",
+      "maintain conservation records"
+    ],
+    "key_protected_tasks": [
+      "perform search and rescue missions",
+      "hands-on habitat restoration",
+      "in-person visitor assistance and rule enforcement"
+    ]
+  },
+  "622": {
+    "technical_score": 3.2,
+    "regulated_score": 2.8,
+    "rationale": "This occupation involves predominantly physical work in unstructured outdoor environments (marine, freshwater, wilderness) requiring real-time adaptation to natural conditions, manual dexterity for equipment handling, and physical presence for animal care and extraction. While some digital tools assist with monitoring and planning, the core tasks remain heavily manual and location-dependent.",
+    "regulatory_friction": "EU firearms legislation, environmental regulations, and animal welfare laws create compliance requirements. Works council consultation may apply to any AI monitoring systems affecting working conditions in larger aquaculture operations.",
+    "key_vulnerable_tasks": [
+      "production planning and scheduling",
+      "water quality monitoring and data analysis",
+      "inventory and harvest tracking"
+    ],
+    "key_protected_tasks": [
+      "manual fish handling and extraction",
+      "boat operation and navigation",
+      "equipment maintenance and repair"
+    ]
+  },
+  "711": {
+    "technical_score": 2.5,
+    "regulated_score": 2.0,
+    "rationale": "Building frame and related trades workers perform highly physical, manual work requiring precise hand-eye coordination, real-time problem-solving in unstructured environments, and on-site presence. While AI can assist with design planning and material optimization, the core tasks of cutting, fitting, assembling, and installing building components require human dexterity and spatial reasoning in dynamic physical environments.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 may slow adoption of AI-powered workforce management or scheduling systems. General employment protection laws create friction around workforce restructuring, though the AI Act has minimal impact since these roles don't fall under high-risk AI applications.",
+    "key_vulnerable_tasks": [
+      "material measurement and cutting optimization",
+      "design planning and layout",
+      "inventory and scheduling management"
+    ],
+    "key_protected_tasks": [
+      "manual assembly and installation",
+      "on-site problem solving and adjustments",
+      "quality inspection and finishing work"
+    ]
+  },
+  "712": {
+    "technical_score": 2.8,
+    "regulated_score": 2.8,
+    "rationale": "Building finishers and related trades workers perform highly physical, skilled manual work in unstructured environments requiring real-time problem-solving, precise hand-eye coordination, and adaptation to unique building conditions. While AI can assist with diagnostics, planning, and documentation, the core work involves manual installation, fitting, and repair tasks that require physical presence and dexterity that current AI cannot replicate.",
+    "regulatory_friction": "Minimal regulatory friction as this occupation group involves physical trades work that doesn't trigger EU AI Act high-risk classifications or require automated decision-making systems subject to GDPR restrictions.",
+    "key_vulnerable_tasks": [
+      "diagnostic troubleshooting",
+      "system performance analysis",
+      "work scheduling and routing"
+    ],
+    "key_protected_tasks": [
+      "pipe fitting and installation",
+      "manual plastering and finishing",
+      "physical repair and maintenance work"
+    ]
+  },
+  "713": {
+    "technical_score": 2.5,
+    "regulated_score": 2.0,
+    "rationale": "This occupation involves primarily physical, hands-on work in unstructured environments requiring manual dexterity, real-time problem-solving, and on-site presence. While AI might assist with some planning tasks like color matching or contamination assessment, the core work of painting, cleaning, and hazardous material removal requires human physical capabilities and adaptability to varying site conditions.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 may slow adoption of AI tools for workforce management or performance monitoring. Health and safety regulations for hazardous material handling (especially asbestos) create additional compliance barriers for any AI systems used in work planning or monitoring.",
+    "key_vulnerable_tasks": [
+      "color matching and selection",
+      "contamination assessment and analysis",
+      "work planning and resource estimation"
+    ],
+    "key_protected_tasks": [
+      "manual painting with brushes and sprayers",
+      "physical surface preparation",
+      "hazardous material removal and handling"
+    ]
+  },
+  "721": {
+    "technical_score": 3.5,
+    "regulated_score": 3.0,
+    "rationale": "These occupations involve highly physical, hands-on metalworking requiring manual dexterity, spatial reasoning, and real-time adaptation to material properties in unstructured environments. While AI can assist with design optimization and quality inspection, the core welding, molding, and assembly tasks require physical presence and tactile expertise that current AI cannot replicate.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 and ArbVG §96a may slow adoption of AI-assisted quality control or workforce management systems. GDPR constraints on automated performance evaluation create additional barriers for AI monitoring of work quality.",
+    "key_vulnerable_tasks": [
+      "quality inspection and fault detection",
+      "design template creation",
+      "workforce scheduling and capacity analysis"
+    ],
+    "key_protected_tasks": [
+      "manual welding and metalworking",
+      "physical assembly and alignment",
+      "real-time material handling and adaptation"
+    ]
+  },
+  "722": {
+    "technical_score": 3.5,
+    "regulated_score": 3.2,
+    "rationale": "This occupation involves primarily physical manufacturing processes requiring manual dexterity, tactile feedback, and work with heavy machinery in unstructured industrial environments. While some CNC programming and CAD tasks have moderate AI exposure, the core work of operating metalworking equipment, handling materials, and performing precision manual adjustments creates significant barriers to AI automation.",
+    "regulatory_friction": "Limited regulatory friction as this occupation rarely involves AI systems that trigger EU AI Act high-risk classifications. Standard employment protection laws may slightly slow workforce restructuring, but GDPR and works council requirements have minimal impact on manufacturing AI adoption.",
+    "key_vulnerable_tasks": [
+      "CAD/CAM software programming",
+      "CNC machine programming and setup",
+      "Quality control measurements and statistical analysis"
+    ],
+    "key_protected_tasks": [
+      "Manual operation of metalworking machinery",
+      "Physical handling and positioning of metal workpieces",
+      "Tactile assessment of material properties and surface quality"
+    ]
+  },
+  "723": {
+    "technical_score": 4.0,
+    "regulated_score": 3.5,
+    "rationale": "Machinery mechanics and repairers work primarily with physical systems requiring hands-on manipulation, diagnostic skills through tactile/visual inspection, and real-world problem-solving in unstructured environments. While AI can assist with diagnostic tools and maintenance scheduling, the core work involves manual dexterity and physical presence that creates natural barriers to automation.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 may slow adoption of AI diagnostic tools that affect working conditions. Aircraft maintenance faces additional aviation safety regulations that require extensive certification processes for any AI systems.",
+    "key_vulnerable_tasks": [
+      "diagnostic analysis using sensor data",
+      "maintenance scheduling and planning",
+      "technical documentation and reporting"
+    ],
+    "key_protected_tasks": [
+      "hands-on mechanical repair work",
+      "physical component installation and alignment",
+      "real-time troubleshooting in field conditions"
+    ]
+  },
+  "731": {
+    "technical_score": 2.5,
+    "regulated_score": 2.4,
+    "rationale": "Handicraft workers primarily engage in physical manipulation of materials requiring manual dexterity, tactile feedback, and fine motor skills that current AI systems cannot replicate. Their work involves traditional techniques, artistic judgment, and hands-on craftsmanship in unstructured environments with unique materials and custom specifications.",
+    "regulatory_friction": "Minimal regulatory friction as this occupation operates outside high-risk AI classifications under the EU AI Act. GDPR and works council requirements have limited relevance since AI applications are minimal.",
+    "key_vulnerable_tasks": [
+      "inventory management",
+      "basic design sketching",
+      "customer order processing"
+    ],
+    "key_protected_tasks": [
+      "manual crafting and assembly",
+      "quality assessment through touch and sight",
+      "custom artistic creation and decoration"
+    ]
+  },
+  "732": {
+    "technical_score": 7.5,
+    "regulated_score": 7.0,
+    "rationale": "Printing trades workers face high AI exposure as their work is largely digital (design software, digital printing, typesetting) and involves many automatable tasks like layout optimization, color correction, and file preparation. AI can automate prepress processes, generate print layouts, and optimize printing parameters, while advanced printing systems can operate with minimal human intervention.",
+    "regulatory_friction": "Minimal regulatory friction as printing work doesn't trigger EU AI Act high-risk classifications or significant GDPR concerns. General employment protection laws may slow workforce restructuring but won't prevent AI adoption in printing processes.",
+    "key_vulnerable_tasks": [
+      "typesetting and layout design",
+      "prepress file preparation and optimization",
+      "color correction and image processing"
+    ],
+    "key_protected_tasks": [
+      "manual bookbinding and restoration",
+      "complex machine maintenance and repair",
+      "custom specialty printing setup"
+    ]
+  },
+  "741": {
+    "technical_score": 3.5,
+    "regulated_score": 3.0,
+    "rationale": "Electrical installers and repairers work primarily in physical environments requiring manual dexterity, real-time problem-solving in unstructured settings, and hands-on manipulation of electrical systems. While AI can assist with diagnostics, fault detection, and maintenance scheduling, the core work involves physical installation, repair, and safety-critical decision-making that requires human presence and tactile skills.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 may slow adoption of AI diagnostic tools that affect working conditions or performance evaluation. Strong employment protection in EU countries creates friction around workforce restructuring even as AI tools improve productivity.",
+    "key_vulnerable_tasks": [
+      "diagnostic testing and fault detection",
+      "maintenance scheduling and record keeping",
+      "equipment performance monitoring"
+    ],
+    "key_protected_tasks": [
+      "physical installation of electrical systems",
+      "hands-on repair work with tools",
+      "safety-critical on-site decision making"
+    ]
+  },
+  "742": {
+    "technical_score": 4.5,
+    "regulated_score": 4.0,
+    "rationale": "This occupation involves significant hands-on physical work, manual dexterity, and on-site presence that creates natural barriers to AI automation. While diagnostic tasks and some documentation could be enhanced by AI, the core work requires physical installation, repair, and maintenance in varied real-world environments that AI cannot directly perform.",
+    "regulatory_friction": "GDPR constraints on automated decision-making and works council co-determination rights in Germany/Austria create moderate friction when AI systems are introduced for workforce management or performance monitoring. General employment protection also slows workforce restructuring.",
+    "key_vulnerable_tasks": [
+      "diagnostic analysis and troubleshooting",
+      "documentation and reporting",
+      "inventory management and parts ordering"
+    ],
+    "key_protected_tasks": [
+      "physical installation and wiring",
+      "manual repair and component replacement",
+      "on-site safety assessments and emergency responses"
+    ]
+  },
+  "751": {
+    "technical_score": 3.2,
+    "regulated_score": 2.8,
+    "rationale": "Food processing trades involve significant manual dexterity, physical manipulation of products, and sensory evaluation requiring human judgment in unstructured environments. While AI can assist with some quality assessment and process optimization, the core work requires hands-on craftsmanship and real-time adaptation to variable organic materials.",
+    "regulatory_friction": "EU food safety regulations, HACCP requirements, and employment protections create moderate friction. Works council consultation requirements for any AI systems affecting working conditions add administrative barriers to automation adoption.",
+    "key_vulnerable_tasks": [
+      "basic quality grading",
+      "inventory tracking",
+      "production scheduling"
+    ],
+    "key_protected_tasks": [
+      "manual food preparation",
+      "sensory evaluation and tasting",
+      "hands-on craftsmanship skills"
+    ]
+  },
+  "752": {
+    "technical_score": 3.5,
+    "regulated_score": 3.0,
+    "rationale": "This occupation involves primarily hands-on craftsmanship requiring manual dexterity, tactile feedback, and work in physical environments with wood materials. While some design and planning tasks could benefit from AI assistance, the core work of wood treatment, furniture restoration, and cabinet-making requires physical manipulation and real-time assessment of materials that current AI cannot perform.",
+    "regulatory_friction": "GDPR may create minor friction if AI tools are used for customer data or automated pricing decisions. Works council consultation requirements could slow adoption of AI-assisted machinery or workflow management systems in larger workshops.",
+    "key_vulnerable_tasks": [
+      "design planning and CAD work",
+      "inventory and material ordering",
+      "cost estimation and pricing"
+    ],
+    "key_protected_tasks": [
+      "manual wood treatment and finishing",
+      "hands-on furniture restoration",
+      "physical assembly and craftsmanship"
+    ]
+  },
+  "753": {
+    "technical_score": 5.5,
+    "regulated_score": 5.0,
+    "rationale": "This occupation group spans from highly digital tasks (CAD patternmaking, 3D development) that are very AI-exposed to manual craftsmanship requiring physical dexterity and tactile skills. Digital design roles and quality inspection could see significant AI transformation, while hand sewing, upholstering, and bespoke tailoring remain protected by their manual nature.",
+    "regulatory_friction": "GDPR restrictions on automated decision-making may limit AI adoption in quality control and grading processes. Works council consultation requirements could slow implementation of AI-assisted production systems that affect working conditions.",
+    "key_vulnerable_tasks": [
+      "CAD patternmaking",
+      "digital prototyping",
+      "quality inspection and grading",
+      "technical documentation",
+      "supply chain analysis"
+    ],
+    "key_protected_tasks": [
+      "hand sewing and stitching",
+      "manual upholstering",
+      "bespoke fitting and alterations",
+      "tactile material assessment",
+      "complex manual assembly operations"
+    ]
+  },
+  "754": {
+    "technical_score": 7.5,
+    "regulated_score": 6.0,
+    "rationale": "This occupation group has high technical exposure because many core tasks involve visual inspection, pattern recognition, defect detection, and data analysis - areas where AI excels. Computer vision systems can already identify defects in manufactured goods, and AI can analyze test data and grade materials more consistently than humans.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 create friction when AI systems affect working conditions and performance evaluation in manufacturing settings. GDPR Article 22 restrictions on automated decision-making apply to quality control decisions that could affect product approval or worker performance metrics.",
+    "key_vulnerable_tasks": [
+      "visual defect detection and inspection",
+      "test data analysis and interpretation",
+      "quality grading and classification"
+    ],
+    "key_protected_tasks": [
+      "physical handling of hazardous materials",
+      "emergency rescue operations",
+      "client consultation and advisory services"
+    ]
+  },
+  "811": {
+    "technical_score": 4.5,
+    "regulated_score": 4.0,
+    "rationale": "Mining and mineral processing operators work in physically demanding environments with heavy machinery, requiring real-time coordination between automated systems and manual operations. While some monitoring, quality control, and basic administrative tasks could be enhanced by AI, the core work involves physical manipulation of materials, equipment operation in hazardous conditions, and tactile decision-making that limits full automation.",
+    "regulatory_friction": "EU workplace safety regulations and works council co-determination rights under BetrVG §87(1) create friction when implementing AI systems that affect working conditions in high-risk mining environments. Additionally, strong employment protections slow workforce restructuring in traditional industrial sectors.",
+    "key_vulnerable_tasks": [
+      "quality control sampling and analysis",
+      "equipment performance monitoring",
+      "administrative scheduling and inventory management"
+    ],
+    "key_protected_tasks": [
+      "heavy machinery operation in hazardous environments",
+      "physical material handling and assembly",
+      "emergency response and safety coordination"
+    ]
+  },
+  "812": {
+    "technical_score": 3.5,
+    "regulated_score": 3.0,
+    "rationale": "Metal processing operators work in highly physical environments requiring manual dexterity, real-time monitoring of machinery, and hands-on adjustments to complex industrial equipment. While AI can optimize some parameters and provide predictive maintenance insights, the core tasks involve direct manipulation of physical materials, machinery operation requiring immediate tactile feedback, and quality inspection of physical products.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 and ArbVG §96a require consultation for AI systems affecting working conditions, including predictive maintenance schedules or automated quality control systems that could impact job assignments.",
+    "key_vulnerable_tasks": [
+      "quality monitoring and defect detection",
+      "process parameter optimization",
+      "predictive maintenance scheduling"
+    ],
+    "key_protected_tasks": [
+      "manual machinery setup and calibration",
+      "physical material handling and loading",
+      "real-time troubleshooting and fault removal"
+    ]
+  },
+  "813": {
+    "technical_score": 6.5,
+    "regulated_score": 5.5,
+    "rationale": "Chemical plant operators work with complex industrial processes that generate substantial digital data streams from sensors, monitors, and control systems. AI can optimize process parameters, predict equipment failures, and automate routine monitoring tasks, though physical oversight and safety-critical interventions still require human presence.",
+    "regulatory_friction": "EU AI Act high-risk classifications for industrial safety systems and GDPR restrictions on automated decision-making in hazardous environments create moderate barriers. Works councils will require consultation on AI systems affecting working conditions in chemical plants.",
+    "key_vulnerable_tasks": [
+      "process monitoring through digital displays",
+      "data analysis for process optimization",
+      "routine parameter adjustments",
+      "predictive maintenance scheduling",
+      "quality control measurements"
+    ],
+    "key_protected_tasks": [
+      "emergency response and safety interventions",
+      "physical equipment maintenance",
+      "hazardous material handling",
+      "complex troubleshooting requiring human judgment",
+      "regulatory compliance inspections"
+    ]
+  },
+  "814": {
+    "technical_score": 5.5,
+    "regulated_score": 5.0,
+    "rationale": "These machine operators work in manufacturing environments with standardized processes that AI can monitor and optimize, but require significant manual dexterity, real-time quality assessment, and hands-on machine adjustments. While AI can enhance process monitoring and quality control, the physical nature of handling materials and operating machinery creates natural barriers to full automation.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87(1) No. 6 require consultation for AI systems affecting working conditions, slowing implementation of automated monitoring systems. General employment protection laws create additional friction for workforce restructuring even where AI increases productivity.",
+    "key_vulnerable_tasks": [
+      "process monitoring and control",
+      "quality inspection and defect detection",
+      "production scheduling and optimization"
+    ],
+    "key_protected_tasks": [
+      "manual material handling and positioning",
+      "complex machine setup and adjustment",
+      "hands-on troubleshooting and repair"
+    ]
+  },
+  "815": {
+    "technical_score": 6.5,
+    "regulated_score": 6.0,
+    "rationale": "These machine operators work with sophisticated industrial equipment that increasingly incorporates AI-driven automation for quality control, pattern optimization, and predictive maintenance. AI can enhance cutting precision, automate defect detection, optimize material usage, and predict machine failures, significantly transforming how these workers interact with their equipment.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 require consultation for AI systems affecting working conditions, and general employment protection laws slow workforce restructuring. However, this occupation group faces less regulatory friction than high-risk AI categories since manufacturing automation doesn't typically trigger EU AI Act Annex III classifications.",
+    "key_vulnerable_tasks": [
+      "quality control and defect detection",
+      "cutting pattern optimization",
+      "machine maintenance scheduling",
+      "material waste minimization",
+      "production planning and workflow optimization"
+    ],
+    "key_protected_tasks": [
+      "machine troubleshooting and repair",
+      "handling complex material variations",
+      "adapting to custom orders and specifications"
+    ]
+  },
+  "816": {
+    "technical_score": 4.5,
+    "regulated_score": 4.0,
+    "rationale": "Food machine operators work in semi-structured physical environments with machinery that requires real-time monitoring, sensory evaluation (taste, smell, texture), and manual dexterity for handling ingredients and equipment. While AI can optimize some process parameters and quality control, the work involves significant physical manipulation and sensory assessment that current AI cannot fully replicate.",
+    "regulatory_friction": "EU food safety regulations and GDPR create moderate friction for AI adoption in quality control and process optimization systems. Works council consultation requirements under BetrVG and ArbVG apply when AI systems change working conditions or productivity expectations.",
+    "key_vulnerable_tasks": [
+      "process parameter monitoring",
+      "production scheduling optimization",
+      "basic quality control measurements"
+    ],
+    "key_protected_tasks": [
+      "sensory evaluation of products",
+      "manual ingredient handling and mixing",
+      "physical equipment maintenance and troubleshooting"
+    ]
+  },
+  "817": {
+    "technical_score": 2.8,
+    "regulated_score": 2.5,
+    "rationale": "Wood processing and papermaking plant operators primarily perform hands-on industrial tasks requiring real-time equipment monitoring, physical material handling, and safety-critical decision-making in manufacturing environments. While some process optimization and quality control aspects could benefit from AI assistance, the core work involves operating complex machinery with physical materials that require human oversight and manual intervention.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 require consultation for AI systems affecting working conditions, potentially slowing adoption of automated monitoring or optimization systems. General employment protection laws may also slow workforce restructuring even where AI enables productivity gains.",
+    "key_vulnerable_tasks": [
+      "quality control monitoring",
+      "process parameter optimization",
+      "cutting plan creation"
+    ],
+    "key_protected_tasks": [
+      "equipment safety monitoring",
+      "physical material handling",
+      "real-time machinery adjustments"
+    ]
+  },
+  "818": {
+    "technical_score": 3.5,
+    "regulated_score": 3.0,
+    "rationale": "These roles involve operating specialized industrial machinery in manufacturing environments, requiring physical presence, manual adjustments, and real-time monitoring of equipment. While some process optimization and predictive maintenance aspects could be enhanced by AI, the core work involves hands-on machine operation, quality control through physical inspection, and immediate responses to equipment conditions that require human presence and tactile feedback.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 require consultation for AI systems affecting working conditions, which could slow implementation of automated monitoring or performance evaluation systems. GDPR constraints on automated decision-making may limit AI-driven workforce management in manufacturing settings.",
+    "key_vulnerable_tasks": [
+      "process parameter optimization",
+      "predictive maintenance scheduling",
+      "quality control documentation"
+    ],
+    "key_protected_tasks": [
+      "manual machine adjustments",
+      "physical product handling and packaging",
+      "real-time equipment monitoring and emergency response"
+    ]
+  },
+  "821": {
+    "technical_score": 3.5,
+    "regulated_score": 3.0,
+    "rationale": "Assembly work involves significant manual dexterity, physical manipulation of components, and real-time quality assessment in structured manufacturing environments. While some assembly processes can be automated with robotics and AI-guided systems, the work requires tactile feedback, spatial reasoning, and adaptation to physical variations that current AI struggles with.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 require consultation before implementing AI systems that affect working conditions or performance monitoring. General employment protection laws slow workforce restructuring even where technical automation is possible.",
+    "key_vulnerable_tasks": [
+      "quality inspection and defect detection",
+      "reading and interpreting technical plans",
+      "setting up programmable devices"
+    ],
+    "key_protected_tasks": [
+      "manual component positioning and adjustment",
+      "applying protective coatings and finishes",
+      "tactile assessment of part fit and alignment"
+    ]
+  },
+  "831": {
+    "technical_score": 4.0,
+    "regulated_score": 2.5,
+    "rationale": "While AI can automate some dispatching, scheduling, and monitoring tasks, locomotive operation requires real-time decision-making in complex physical environments, manual control of heavy machinery, and split-second safety responses. The physical nature of rail operations and safety-critical requirements create significant technical barriers to full automation.",
+    "regulatory_friction": "EU AI Act Annex III classifications for safety-critical transport systems require extensive human oversight and approval processes. Works council co-determination rights in Germany/Austria will significantly slow any AI implementation affecting train operations and working conditions.",
+    "key_vulnerable_tasks": [
+      "train scheduling and dispatching",
+      "route planning optimization",
+      "equipment status monitoring"
+    ],
+    "key_protected_tasks": [
+      "emergency response decisions",
+      "manual train operation controls",
+      "physical equipment inspections"
+    ]
+  },
+  "832": {
+    "technical_score": 4.5,
+    "regulated_score": 3.0,
+    "rationale": "Professional driving involves complex real-time decision-making in dynamic physical environments, requiring spatial awareness, manual dexterity, and immediate responses to unpredictable situations. While autonomous vehicle technology is advancing, current AI still struggles with edge cases, bad weather, complex urban scenarios, and the varied customer service aspects of many driving roles.",
+    "regulatory_friction": "EU transport regulations create significant barriers to autonomous vehicle deployment, requiring extensive safety testing and certification. Works councils must be consulted on any AI systems affecting driver working conditions, and employment protection laws slow workforce restructuring in traditional transport companies.",
+    "key_vulnerable_tasks": [
+      "route optimization",
+      "basic navigation",
+      "delivery scheduling"
+    ],
+    "key_protected_tasks": [
+      "complex urban driving",
+      "customer interaction and service",
+      "handling unpredictable road situations"
+    ]
+  },
+  "833": {
+    "technical_score": 3.5,
+    "regulated_score": 2.0,
+    "rationale": "Heavy truck and bus drivers operate in complex, unstructured physical environments requiring real-time decision-making, manual dexterity, and human judgment for safety-critical situations. While autonomous vehicle technology exists, current AI capabilities cannot reliably handle the full spectrum of driving scenarios, vehicle maintenance checks, cargo handling, and passenger/animal welfare responsibilities these roles require.",
+    "regulatory_friction": "EU AI Act classifies autonomous driving systems as high-risk applications requiring extensive safety validation. Transportation sector regulations, passenger safety requirements, and works council consultation rights for any AI affecting driving conditions create substantial deployment barriers.",
+    "key_vulnerable_tasks": [
+      "route optimization",
+      "vehicle diagnostics monitoring",
+      "basic scheduling coordination"
+    ],
+    "key_protected_tasks": [
+      "emergency response driving",
+      "animal welfare assessment",
+      "passenger assistance and conflict resolution"
+    ]
+  },
+  "834": {
+    "technical_score": 3.2,
+    "regulated_score": 2.8,
+    "rationale": "Mobile plant operators work in highly physical, unstructured environments requiring real-time spatial awareness, manual dexterity, and safety judgment that current AI cannot replicate. While some telematics and automation exist, full autonomous operation of complex mobile machinery in dynamic construction/industrial sites remains technically challenging.",
+    "regulatory_friction": "EU AI Act workplace monitoring provisions and works council co-determination rights (BetrVG §87) require consultation for AI systems affecting working conditions. GDPR restrictions on automated decision-making also apply to any AI workforce management systems.",
+    "key_vulnerable_tasks": [
+      "routine equipment monitoring",
+      "basic load positioning",
+      "predictable material handling operations"
+    ],
+    "key_protected_tasks": [
+      "emergency response and safety decisions",
+      "complex maneuvering in tight spaces",
+      "real-time coordination with ground personnel"
+    ]
+  },
+  "835": {
+    "technical_score": 3.5,
+    "regulated_score": 3.5,
+    "rationale": "Ships' deck crews perform primarily physical, manual tasks in unstructured maritime environments requiring real-time human judgment for safety-critical operations. While some digital systems assist with navigation and monitoring, the core work involves hands-on deck operations, equipment maintenance, and emergency response that AI cannot directly perform.",
+    "regulatory_friction": "Maritime work has minimal regulatory friction from EU AI Act since physical deck operations don't involve high-risk AI applications. Safety regulations focus on human competency requirements rather than restricting AI tools.",
+    "key_vulnerable_tasks": [
+      "recording weather data and distance logs",
+      "monitoring engine parameters",
+      "basic navigation assistance"
+    ],
+    "key_protected_tasks": [
+      "emergency damage control and safety operations",
+      "manual rigging and sail maintenance",
+      "physical cargo handling and anchoring"
+    ]
+  },
+  "911": {
+    "technical_score": 2.5,
+    "regulated_score": 2.0,
+    "rationale": "Cleaning work requires physical presence, manual dexterity, navigation of complex physical environments, and real-time adaptation to varied conditions. While some robotic cleaning systems exist (vacuums, floor cleaners), most cleaning tasks involve fine motor skills, problem-solving in unstructured spaces, and handling of varied surfaces and objects that current AI/robotics cannot reliably perform.",
+    "regulatory_friction": "GDPR and works council consultation requirements may slow adoption of any AI-enabled cleaning management or scheduling systems. Employment protection laws provide additional friction against workforce restructuring, though the regulatory impact is limited since the technical barriers are already substantial.",
+    "key_vulnerable_tasks": [
+      "floor vacuuming",
+      "basic surface cleaning",
+      "trash collection"
+    ],
+    "key_protected_tasks": [
+      "cleaning complex furniture arrangements",
+      "maintaining security checks",
+      "handling varied cleaning chemicals safely"
+    ]
+  },
+  "912": {
+    "technical_score": 2.5,
+    "regulated_score": 2.5,
+    "rationale": "These occupations require physical presence, manual dexterity, and work in unstructured environments with variable conditions. While some automation exists (car wash machines, pool cleaning robots), most tasks involve hands-on cleaning in spaces requiring human judgment for safety and quality.",
+    "regulatory_friction": "Minimal regulatory friction as AI applications are limited and don't trigger EU AI Act high-risk classifications or significant GDPR concerns.",
+    "key_vulnerable_tasks": [
+      "scheduling and route optimization",
+      "inventory management of cleaning supplies",
+      "basic facility monitoring"
+    ],
+    "key_protected_tasks": [
+      "manual window cleaning at heights",
+      "detailed vehicle interior cleaning",
+      "emergency response and safety judgment"
+    ]
+  },
+  "921": {
+    "technical_score": 2.5,
+    "regulated_score": 2.0,
+    "rationale": "Agricultural, forestry and fishery laborers work primarily in unstructured physical environments requiring manual dexterity, real-time adaptation to natural conditions, and hands-on care of living organisms. While some monitoring and data collection tasks could be AI-enhanced, the core work involves physical manipulation, animal handling, and navigation of unpredictable outdoor conditions that current AI cannot replicate.",
+    "regulatory_friction": "EU employment protection laws and works council consultation requirements (BetrVG §87) slow adoption of AI systems that could affect working conditions. GDPR may limit automated monitoring of worker performance in outdoor settings.",
+    "key_vulnerable_tasks": [
+      "crop monitoring and assessment",
+      "pest identification",
+      "basic record keeping"
+    ],
+    "key_protected_tasks": [
+      "manual harvesting and picking",
+      "animal care and handling",
+      "physical maintenance of equipment and facilities"
+    ]
+  },
+  "931": {
+    "technical_score": 2.5,
+    "regulated_score": 2.0,
+    "rationale": "Mining and construction labourers work in highly physical, unstructured outdoor environments requiring manual dexterity, heavy machinery operation, and real-time adaptation to site conditions. While some planning and monitoring tasks could benefit from AI assistance, the core physical construction, installation, and maintenance work requires human presence and cannot be directly automated by current AI systems.",
+    "regulatory_friction": "Works council consultation requirements under BetrVG §87 and ArbVG §96a apply to any AI systems affecting working conditions or safety monitoring. GDPR constraints limit automated workforce management and performance evaluation systems in construction contexts.",
+    "key_vulnerable_tasks": [
+      "work scheduling and planning",
+      "equipment maintenance monitoring",
+      "safety compliance tracking"
+    ],
+    "key_protected_tasks": [
+      "manual assembly of pipeline parts",
+      "physical rail laying and installation",
+      "hands-on drainage system construction"
+    ]
+  },
+  "932": {
+    "technical_score": 2.5,
+    "regulated_score": 2.0,
+    "rationale": "Manufacturing labourers work primarily in physical environments requiring manual dexterity, hand-eye coordination, and real-time adaptation to varied physical materials and conditions. While some tasks like inventory tracking or quality checking could benefit from AI assistance, the core work involves tactile skills and physical manipulation that current AI cannot replicate.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87(1) No. 6 require consultation for any AI systems affecting working conditions, slowing adoption of AI-powered monitoring or task allocation systems in manufacturing environments.",
+    "key_vulnerable_tasks": [
+      "inventory tracking and supply replenishment",
+      "quality control documentation",
+      "compliance checklist management"
+    ],
+    "key_protected_tasks": [
+      "hand packing delicate materials",
+      "wood caulking and sealing",
+      "manual cleaning and surface preparation"
+    ]
+  },
+  "933": {
+    "technical_score": 3.5,
+    "regulated_score": 3.0,
+    "rationale": "Transport and storage laborers work primarily in physical environments requiring manual handling, spatial reasoning, and real-time problem-solving in unstructured settings. While some logistics coordination tasks could be AI-assisted, the core work involves physical manipulation of goods, human judgment for proper handling, and adaptation to varying physical conditions that current AI cannot directly perform.",
+    "regulatory_friction": "Works council co-determination rights under BetrVG §87 and ArbVG §96a require consultation for AI systems affecting working conditions, particularly warehouse management systems. GDPR restrictions on automated decision-making may limit AI-driven task assignment and performance monitoring systems.",
+    "key_vulnerable_tasks": [
+      "inventory tracking and coordination",
+      "route optimization for order picking",
+      "basic quality control scanning"
+    ],
+    "key_protected_tasks": [
+      "manual handling and lifting of goods",
+      "spatial arrangement and stacking decisions",
+      "real-time problem solving for damaged or irregular items"
+    ]
+  },
+  "941": {
+    "technical_score": 2.5,
+    "regulated_score": 2.0,
+    "rationale": "Food preparation assistants work primarily in physical environments requiring manual tasks like washing dishes, cleaning surfaces, basic food prep, and stock handling. While some ordering/inventory systems could be automated, the core work involves physical manipulation in unstructured kitchen environments with real-time coordination.",
+    "regulatory_friction": "GDPR constraints on automated workforce scheduling and the EU AI Act's restrictions on AI systems for performance evaluation create modest friction. Works council rights in countries like Germany require consultation for any AI affecting working conditions.",
+    "key_vulnerable_tasks": [
+      "inventory management",
+      "order taking",
+      "basic scheduling coordination"
+    ],
+    "key_protected_tasks": [
+      "manual dishwashing",
+      "physical cleaning",
+      "food safety compliance"
+    ]
+  },
+  "951": {
+    "technical_score": 1.5,
+    "regulated_score": 1.0,
+    "rationale": "Leaflet distribution requires physical presence in specific geographic locations, manual dexterity for handling materials, and real-time navigation of outdoor environments and human interactions. While route optimization could be AI-assisted, the core work is fundamentally physical and location-dependent.",
+    "regulatory_friction": "Limited regulatory friction as this occupation rarely involves AI systems that would trigger EU AI Act high-risk classifications or GDPR automated decision-making concerns. Basic employment protections may slow any workforce restructuring.",
+    "key_vulnerable_tasks": [
+      "route planning optimization",
+      "demographic targeting analysis",
+      "distribution scheduling"
+    ],
+    "key_protected_tasks": [
+      "physical leaflet handling",
+      "face-to-face customer interaction",
+      "navigation in unstructured outdoor environments"
+    ]
+  },
+  "952": {
+    "technical_score": 2.5,
+    "regulated_score": 2.0,
+    "rationale": "Street vendors work in unstructured physical environments requiring real-time human interaction, physical mobility, and manual handling of goods. While AI could assist with inventory management and payment processing, the core work of face-to-face selling, product demonstration, and navigating street locations requires human presence and adaptability.",
+    "regulatory_friction": "GDPR creates minor friction around customer data collection and automated payment systems. Employment protection laws may slow adoption of AI-assisted vendor management systems in organized retail contexts.",
+    "key_vulnerable_tasks": [
+      "process payments",
+      "organise product display",
+      "maintain inventory records"
+    ],
+    "key_protected_tasks": [
+      "demonstrate products' features",
+      "negotiate price",
+      "adapt to different weather conditions"
+    ]
+  },
+  "961": {
+    "technical_score": 2.5,
+    "regulated_score": 2.0,
+    "rationale": "Refuse work involves primarily physical labor in unstructured outdoor environments with manual handling of waste materials, limiting direct AI automation. Some sorting tasks could benefit from AI-powered optical sorting systems, but core collection and handling tasks require physical presence and dexterity.",
+    "regulatory_friction": "GDPR may apply to any AI systems used for worker tracking or performance monitoring. General employment protections slow workforce restructuring, though this occupation group faces minimal high-risk AI Act classifications.",
+    "key_vulnerable_tasks": [
+      "sorting recyclable materials",
+      "waste type assessment",
+      "route optimization"
+    ],
+    "key_protected_tasks": [
+      "manual waste collection",
+      "equipment cleaning",
+      "pressure washing activities"
+    ]
+  },
+  "962": {
+    "technical_score": 2.5,
+    "regulated_score": 2.2,
+    "rationale": "These elementary service occupations involve primarily physical tasks, manual labor, and real-time human interaction in unstructured environments. While some administrative aspects (like ticket checking or basic customer service) could be automated, the core work requires physical presence, manual dexterity, and situational awareness that AI cannot easily replicate.",
+    "regulatory_friction": "GDPR Article 22 may limit automated decision-making for customer service interactions, and general employment protection laws slow workforce restructuring. However, since most tasks don't trigger AI Act high-risk classifications, regulatory friction is minimal.",
+    "key_vulnerable_tasks": [
+      "ticket checking and validation",
+      "basic customer inquiries and directions",
+      "inventory tracking and rotation"
+    ],
+    "key_protected_tasks": [
+      "manual repair and maintenance work",
+      "physical installation of advertisements",
+      "real-time security monitoring and emergency response"
+    ]
+  }
+}
