@@ -4,7 +4,7 @@ An interactive treemap visualizing AI exposure across ~130 European occupation g
 
 **What makes this different:** Two scores per occupation — **technical exposure** (what AI *can* do) and **regulated exposure** (what EU law *lets* AI do). The delta between the two reveals where European regulation creates friction for AI adoption.
 
-![Treemap Screenshot](docs/screenshot.png)
+![Treemap Screenshot](jobs.png)
 
 ## Live Demo
 
