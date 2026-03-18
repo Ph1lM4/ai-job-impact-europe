@@ -4,6 +4,8 @@
 Employment: LFSA_EGAI2D (ISCO-08 2-digit, employed persons in thousands)
 Wages: EARN_SES22_28 (mean annual earnings by ISCO 1-digit, 2022 SES)
 
+Pulls ALL available countries (EU-27, EFTA, candidates) — no country filter.
+
 Output:
   data/eurostat/employment_isco2d.csv
   data/eurostat/wages_isco.csv
@@ -14,19 +16,25 @@ import pandas as pd
 from pathlib import Path
 
 OUT_DIR = Path("data/eurostat")
-COUNTRIES = ["EU27_2020", "DE", "AT", "CH"]
+
+# Geo codes to exclude: aggregates and non-country entries
+EXCLUDE_GEO = {
+    "EA19", "EA20", "EA21", "EU15", "EU25", "EU27_2007", "EU28",
+    "EEA30_2007", "EEA31", "EFTA",
+}
 
 
 def fetch_employment():
-    """Fetch LFSA_EGAI2D — employment by ISCO 2-digit."""
+    """Fetch LFSA_EGAI2D — employment by ISCO 2-digit, all countries."""
     print("Fetching LFSA_EGAI2D (employment by ISCO-08 2-digit)...")
     df = eurostat.get_data_df("LFSA_EGAI2D")
 
-    # Filter: total sex, working-age (15-64), all countries of interest
+    # Filter: total sex, working-age (15-64)
+    geo_col = "geo\\TIME_PERIOD"
     mask = (
         (df["sex"] == "T")
         & (df["age"] == "Y15-64")
-        & (df["geo\\TIME_PERIOD"].isin(COUNTRIES))
+        & (~df[geo_col].isin(EXCLUDE_GEO))
     )
     df = df[mask].copy()
 
@@ -47,28 +55,33 @@ def fetch_employment():
     # Parse ISCO code: OC25 → 25
     df["isco2"] = df["isco08"].str.replace("OC", "")
 
-    result = df[["isco2", "geo\\TIME_PERIOD", latest_year]].rename(
-        columns={"geo\\TIME_PERIOD": "country", latest_year: "employment_thousands"}
+    result = df[["isco2", geo_col, latest_year]].rename(
+        columns={geo_col: "country", latest_year: "employment_thousands"}
     )
     result["year"] = int(latest_year)
 
-    # Pivot to wide format for easy merging
-    print(f"  {len(result)} rows ({result['isco2'].nunique()} ISCO groups × {result['country'].nunique()} countries)")
+    # Drop rows with no employment data
+    result = result.dropna(subset=["employment_thousands"])
+
+    countries = sorted(result["country"].unique())
+    print(f"  {len(result)} rows ({result['isco2'].nunique()} ISCO groups × {len(countries)} countries)")
+    print(f"  Countries: {', '.join(countries)}")
     return result
 
 
 def fetch_wages():
-    """Fetch EARN_SES22_28 — mean annual earnings by ISCO 1-digit (2022 SES)."""
+    """Fetch EARN_SES22_28 — mean annual earnings by ISCO 1-digit, all countries."""
     print("Fetching EARN_SES22_28 (mean annual earnings by ISCO, 2022 SES)...")
     df = eurostat.get_data_df("EARN_SES22_28")
 
+    geo_col = "geo\\TIME_PERIOD"
     # Filter: total sex, total age, enterprises ≥10 employees, ERN indicator
     mask = (
         (df["sex"] == "T")
         & (df["age"] == "TOTAL")
         & (df["sizeclas"] == "GE10")
         & (df["indic_se"] == "ERN")
-        & (df["geo\\TIME_PERIOD"].isin(COUNTRIES))
+        & (~df[geo_col].isin(EXCLUDE_GEO))
     )
     df = df[mask].copy()
 
@@ -76,13 +89,16 @@ def fetch_wages():
     df = df[df["isco08"].str.match(r"^OC\d$")].copy()
     df["isco1"] = df["isco08"].str.replace("OC", "")
 
-    result = df[["isco1", "geo\\TIME_PERIOD", "2022"]].rename(
-        columns={"geo\\TIME_PERIOD": "country", "2022": "mean_annual_eur"}
+    result = df[["isco1", geo_col, "2022"]].rename(
+        columns={geo_col: "country", "2022": "mean_annual_eur"}
     )
     result = result.drop_duplicates(subset=["isco1", "country"])
+    result = result.dropna(subset=["mean_annual_eur"])
     result["year"] = 2022
 
-    print(f"  {len(result)} rows ({result['isco1'].nunique()} ISCO groups × {result['country'].nunique()} countries)")
+    countries = sorted(result["country"].unique())
+    print(f"  {len(result)} rows ({result['isco1'].nunique()} ISCO groups × {len(countries)} countries)")
+    print(f"  Countries: {', '.join(countries)}")
     return result
 
 
@@ -98,6 +114,13 @@ def main():
     eu = emp[emp["country"] == "EU27_2020"]
     total = eu["employment_thousands"].sum()
     print(f"  EU27 total employment: {total:,.0f} thousand ({total/1000:.1f}M)")
+
+    # Per-country summary
+    print("\n  Employment coverage by country:")
+    for country in sorted(emp["country"].unique()):
+        c_total = emp[emp["country"] == country]["employment_thousands"].sum()
+        c_groups = emp[emp["country"] == country]["isco2"].nunique()
+        print(f"    {country:15s}: {c_total:8,.0f}k  ({c_groups} ISCO groups)")
 
     wages = fetch_wages()
     wages_path = OUT_DIR / "wages_isco.csv"

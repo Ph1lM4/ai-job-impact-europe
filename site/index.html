@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Exposure of the European Job Market &mdash; Nexalps</title>
-<meta name="description" content="Interactive map of AI exposure across 130 European occupation groups. 199.6M jobs scored for technical and regulated AI impact. Built on ESCO and Eurostat data.">
+<meta name="description" content="Interactive map of AI exposure across 130 European occupation groups in 36 countries. 199.6M EU-27 jobs scored for technical and regulated AI impact. Built on ESCO, Eurostat, BFS, and ONS data.">
 <link rel="canonical" href="https://ai-exposure.nexalps.com/">
 
 <!-- Open Graph -->
@@ -41,7 +41,7 @@
     { "@type": "Organization", "name": "Eurostat", "url": "https://ec.europa.eu/eurostat" }
   ],
   "temporalCoverage": "2024",
-  "spatialCoverage": "EU-27",
+  "spatialCoverage": "Europe and United Kingdom",
   "keywords": ["AI exposure", "European labor market", "ESCO", "ISCO-08", "EU AI Act", "occupation scoring", "treemap"]
 }
 </script>
@@ -62,6 +62,7 @@ posthog.init('phc_bjax6jdRxYJAaExodvALjRru8AQzUSbYFNlWlXiJM8A', {api_host: 'http
 <style>
 /* ── Reset ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 /* ── Design tokens (shadcn dark) ── */
 :root {
@@ -116,15 +117,50 @@ body {
 /* ── Controls ── */
 .controls { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
 
-.controls select {
-  height: 40px; min-width: 200px; background: var(--background); color: var(--foreground);
+/* ── Country selector ── */
+.country-select { position: relative; min-width: 200px; }
+.country-trigger {
+  height: 40px; width: 100%; background: var(--background); color: var(--foreground);
   border: 1px solid var(--input-border); padding: 0 36px 0 12px; border-radius: var(--radius-md);
   font-family: var(--font); font-size: 14px; cursor: pointer; transition: border-color var(--transition);
-  -webkit-appearance: none; appearance: none;
+  display: flex; align-items: center; gap: 8px; text-align: left;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 10px center;
 }
-.controls select:hover { border-color: rgba(255,255,255,0.25); }
+.country-trigger:hover { border-color: rgba(255,255,255,0.25); }
+.country-trigger .source-badge { font-size: 10px; padding: 1px 6px; border-radius: 9999px; font-weight: 600; letter-spacing: 0.02em; flex-shrink: 0; }
+.source-eurostat { background: rgba(59,130,246,0.15); color: #93c5fd; }
+.source-bfs { background: rgba(168,85,247,0.15); color: #c4b5fd; }
+.source-ons { background: rgba(16,185,129,0.15); color: #6ee7b7; }
+.source-mixed { background: rgba(168,85,247,0.15); color: #c4b5fd; }
+
+.country-dropdown {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0; min-width: 280px;
+  background: #18181b; border: 1px solid var(--border); border-radius: var(--radius-lg);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6); z-index: 50; display: none; max-height: 400px;
+  overflow: hidden; flex-direction: column;
+}
+.country-dropdown.open { display: flex; }
+
+.country-search {
+  width: 100%; padding: 10px 12px; background: transparent; color: var(--foreground);
+  border: none; border-bottom: 1px solid var(--border); font-family: var(--font); font-size: 13px;
+  outline: none;
+}
+.country-search::placeholder { color: var(--muted-foreground); }
+
+.country-list { overflow-y: auto; max-height: 340px; padding: 4px 0; }
+.country-group-hdr { padding: 8px 12px 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted-foreground); }
+.country-option {
+  padding: 7px 12px; cursor: pointer; display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--foreground); transition: background 80ms ease;
+}
+.country-option:hover, .country-option.focused { background: rgba(255,255,255,0.06); }
+.country-option.active { background: rgba(249,115,22,0.12); }
+.country-option.disabled { opacity: 0.35; cursor: default; pointer-events: none; }
+.country-option .co-name { flex: 1; }
+.country-option .co-emp { font-size: 11px; color: var(--muted-foreground); }
+.country-option .co-note { display: block; font-size: 10px; color: var(--muted-foreground); margin-top: 1px; }
 
 .score-toggle { display: inline-flex; background: var(--accent); border-radius: var(--radius-lg); padding: 4px; flex-shrink: 0; }
 .score-toggle button {
@@ -149,6 +185,7 @@ body {
 .stat-card .stat-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted-foreground); line-height: 1.4; }
 .stat-card .stat-sublabel { font-size: 10px; color: var(--muted-foreground); letter-spacing: 0; text-transform: none; opacity: 0.7; }
 
+.stat-card.stat-wide { padding-bottom: 32px; }
 .histogram { display: flex; align-items: flex-end; gap: 4px; height: 40px; margin-top: 4px; }
 .histogram .bar { flex: 1; border-radius: 3px 3px 0 0; position: relative; cursor: default; }
 .histogram .bar-label { position: absolute; bottom: -18px; left: 0; right: 0; text-align: center; font-size: 10px; font-weight: 500; color: var(--muted-foreground); }
@@ -227,6 +264,52 @@ body {
 .badge { display: inline-block; padding: 3px 10px; border-radius: 9999px; font-size: 11px; font-weight: 500; line-height: 1.4; }
 .badge-vulnerable { background: rgba(239, 68, 68, 0.12); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.2); }
 .badge-protected { background: rgba(34, 197, 94, 0.12); color: #86efac; border: 1px solid rgba(34, 197, 94, 0.2); }
+.badge-deployer { background: rgba(249, 115, 22, 0.15); color: #fdba74; border: 1px solid rgba(249, 115, 22, 0.3); }
+.badge-subject { background: rgba(147, 51, 234, 0.12); color: #c4b5fd; border: 1px solid rgba(147, 51, 234, 0.2); }
+.badge-regulation { background: rgba(59, 130, 246, 0.12); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.2); }
+
+/* ── AI Act toggle ── */
+.ai-act-toggle {
+  display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0;
+  font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; user-select: none;
+}
+.ai-act-toggle input { display: none; }
+.ai-act-switch {
+  width: 36px; height: 20px; background: var(--accent); border-radius: 10px;
+  position: relative; transition: background 150ms ease; flex-shrink: 0;
+}
+.ai-act-switch::after {
+  content: ''; position: absolute; top: 2px; left: 2px;
+  width: 16px; height: 16px; background: var(--muted); border-radius: 50%;
+  transition: transform 150ms ease, background 150ms ease;
+}
+.ai-act-toggle input:checked + .ai-act-switch { background: #f97316; }
+.ai-act-toggle input:checked + .ai-act-switch::after { transform: translateX(16px); background: #fff; }
+
+/* ── AI Act legend ── */
+.ai-act-legend { display: flex; flex-wrap: wrap; gap: 12px; padding: 8px 0 0; font-size: 12px; color: var(--muted); }
+.ai-act-legend-item { display: inline-flex; align-items: center; gap: 5px; }
+.ai-act-legend-icon { font-size: 11px; line-height: 1; }
+.analysis-link { display: inline-block; font-size: 13px; color: var(--muted); text-decoration: none; padding: 6px 0 0; transition: color 0.15s; }
+.analysis-link:hover { color: var(--foreground); }
+.cell-ai-icon {
+  position: absolute; bottom: 2px; right: 2px; display: flex; gap: 2px;
+  line-height: 1; pointer-events: none; z-index: 2;
+}
+
+/* ── Regulatory detail section ── */
+.reg-section { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--card-border); }
+.reg-section h4 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted-foreground); margin-bottom: 8px; }
+.reg-list { list-style: none; margin: 0; padding: 0; }
+.reg-list li { font-size: 12px; color: var(--muted); line-height: 1.5; padding: 3px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.reg-list li:last-child { border-bottom: none; }
+.reg-tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 4px; margin-right: 4px; }
+.reg-tag-deployer { background: rgba(249, 115, 22, 0.2); color: #fdba74; }
+.reg-tag-subject { background: rgba(147, 51, 234, 0.15); color: #c4b5fd; }
+.reg-tag-works { background: rgba(59, 130, 246, 0.15); color: #93c5fd; }
+.reg-tag-platform { background: rgba(234, 179, 8, 0.15); color: #fde047; }
+.reg-surface { display: flex; align-items: center; gap: 6px; margin: 8px 0; padding: 6px 10px; background: rgba(255,255,255,0.03); border-radius: var(--radius-sm); font-size: 12px; color: var(--muted); }
+.reg-surface-count { font-size: 18px; font-weight: 700; color: var(--foreground); }
 
 /* ── Treemap cells ── */
 .cell {
@@ -254,7 +337,7 @@ body {
 .cell-label {
   padding: 4px 6px; font-size: 11px; font-weight: 500; color: rgba(0,0,0,0.85);
   line-height: 1.3; pointer-events: none;
-  overflow: hidden; text-overflow: ellipsis;
+  overflow: hidden; word-break: break-word; hyphens: auto;
 }
 .cell-score { font-size: 10px; font-weight: 700; opacity: 0.6; }
 
@@ -314,6 +397,26 @@ body {
 }
 .mobile-group-treemap { position: relative; width: 100%; border-radius: var(--radius-md); overflow: hidden; }
 
+/* ── CTA bar ── */
+.cta-bar {
+  margin: 48px auto 0; padding: 32px 24px;
+  max-width: 760px;
+  background: var(--card); border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg); text-align: center;
+}
+.cta-bar .cta-text { font-size: 17px; font-weight: 500; color: var(--foreground); margin-bottom: 8px; line-height: 1.5; }
+.cta-bar .cta-sub { font-size: 14px; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+.cta-bar .btn-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.cta-bar a.btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 10px 24px;
+  background: var(--ring); color: #000; font-family: var(--font);
+  font-size: 14px; font-weight: 600; border-radius: var(--radius-md);
+  text-decoration: none; transition: opacity var(--transition);
+}
+.cta-bar a.btn:hover { opacity: 0.9; }
+.cta-bar a.btn-outline { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+.cta-bar a.btn-outline:hover { color: var(--foreground); border-color: rgba(255,255,255,0.25); }
+
 /* ── Footer ── */
 .footer { padding-top: 20px; padding-bottom: 36px; font-size: 12px; color: var(--muted-foreground); line-height: 1.7; }
 .footer a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; transition: color var(--transition); }
@@ -326,10 +429,13 @@ body {
   .header h1 { font-size: 22px; }
   .header .subtitle { font-size: 13px; }
   .controls { flex-direction: column; align-items: stretch; gap: 10px; }
-  .controls select { width: 100%; min-width: 0; height: 44px; font-size: 15px; }
+  .country-select { width: 100%; min-width: 0; }
+  .country-trigger { height: 44px; font-size: 15px; }
+  .country-dropdown { min-width: 0; }
   .score-toggle { width: 100%; display: flex; }
   .score-toggle button { flex: 1; text-align: center; min-height: 44px; font-size: 14px; }
   .legend { justify-content: center; padding: 4px 0; }
+  .ai-act-toggle { justify-content: center; }
 
   .stats-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding-bottom: 12px; }
   .stat-card { padding: 10px 12px; min-width: 0; }
@@ -342,29 +448,154 @@ body {
   .mobile-groups { display: block; }
 
   .footer { padding-top: 12px; padding-bottom: 24px; font-size: 11px; }
+  .cta-bar .btn-row { flex-direction: column; align-items: center; }
 }
 
 @media (max-width: 480px) {
   .header h1 { font-size: 20px; }
   .stat-card .stat-value { font-size: 18px; }
 }
+
+/* ── Site nav ── */
+.site-nav {
+  position: fixed; top: 0; right: 0; left: 0;
+  z-index: 9999;
+  display: flex; align-items: center; justify-content: flex-end;
+  padding: 12px 20px;
+  pointer-events: none;
+}
+.site-nav-links {
+  display: flex; gap: 20px; pointer-events: auto;
+  background: rgba(9,9,11,0.82);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 8px 16px;
+}
+.site-nav-links a {
+  font-size: 13px; font-weight: 500;
+  color: var(--muted); text-decoration: none;
+  transition: color 0.15s;
+}
+.site-nav-links a:hover { color: var(--foreground); }
+.site-nav-links a.active { color: var(--ring); }
+.burger {
+  display: none; pointer-events: auto;
+  background: rgba(9,9,11,0.82);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 10px 11px; cursor: pointer;
+  flex-direction: column; gap: 4px;
+}
+.burger span {
+  display: block; width: 18px; height: 2px;
+  background: var(--foreground); border-radius: 1px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.burger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.burger-panel {
+  display: none; position: fixed; top: 0; left: 0; right: 0;
+  z-index: 9998;
+  background: rgba(9,9,11,0.96);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  padding: 72px 24px 32px;
+  flex-direction: column; gap: 24px;
+}
+.burger-panel.open { display: flex; }
+.burger-panel a {
+  font-size: 20px; font-weight: 600;
+  color: var(--muted); text-decoration: none;
+  transition: color 0.15s;
+}
+.burger-panel a:hover { color: var(--foreground); }
+.burger-panel a.active { color: var(--ring); }
+@media (max-width: 768px) {
+  .site-nav-links { display: none; }
+  .burger { display: flex; }
+}
+
+/* ── Mobile hero ── */
+.mobile-hero { display: none; }
+@media (max-width: 768px) {
+  .mobile-hero {
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    min-height: 85vh; padding: 80px 24px 40px; text-align: center;
+    background: var(--background);
+  }
+  .mobile-hero h1 {
+    font-size: 28px; font-weight: 700; line-height: 1.25;
+    color: var(--foreground); margin-bottom: 12px;
+  }
+  .mobile-hero .hero-stats {
+    font-size: 14px; color: var(--muted); margin-bottom: 32px; line-height: 1.5;
+  }
+  .mobile-hero .hero-buttons { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 280px; }
+  .mobile-hero .btn-mobile-primary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 14px 24px; background: var(--ring); color: #000;
+    font-family: var(--font); font-size: 15px; font-weight: 600;
+    border-radius: var(--radius-md); text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  .mobile-hero .btn-mobile-primary:hover { opacity: 0.9; }
+  .mobile-hero .btn-mobile-outline {
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 12px 24px; background: transparent; color: var(--muted);
+    font-family: var(--font); font-size: 14px; font-weight: 500;
+    border: 1px solid var(--border); border-radius: var(--radius-md);
+    text-decoration: none; transition: color 0.15s, border-color 0.15s;
+  }
+  .mobile-hero .btn-mobile-outline:hover { color: var(--foreground); border-color: rgba(255,255,255,0.25); }
+}
 </style>
 </head>
 <body>
 
+<nav class="site-nav" id="site-nav" aria-label="Site navigation">
+  <div class="site-nav-links">
+    <a href="index.html" class="active">Explore the map</a>
+    <a href="analysis.html">Analysis</a>
+    <a href="questions.html">Questions</a>
+    <a href="sources.html">Sources</a>
+  </div>
+  <button class="burger" id="burger-btn" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="burger-panel" id="burger-panel">
+  <a href="index.html" class="active">Explore the map</a>
+  <a href="analysis.html">Analysis</a>
+  <a href="questions.html">Questions</a>
+  <a href="sources.html">Sources</a>
+</div>
+
+<div class="mobile-hero" id="mobile-hero">
+  <h1>AI Exposure of the European Job Market</h1>
+  <p class="hero-stats">~130 occupation groups &middot; 36 countries &middot; 199.6M jobs</p>
+  <div class="hero-buttons">
+    <a href="#main-content" class="btn-mobile-primary">Explore the data</a>
+    <a href="analysis.html" class="btn-mobile-outline">Read the analysis &rarr;</a>
+  </div>
+</div>
+
 <a class="skip-link" href="#treemap">Skip to treemap</a>
 
-<header class="header container" role="banner">
+<header class="header container" id="main-content" role="banner">
   <h1>AI Exposure of the European Job Market</h1>
   <p class="subtitle">~130 occupation groups &middot; area&nbsp;=&nbsp;employment &middot; color&nbsp;=&nbsp;AI exposure score (0&ndash;10)</p>
   <nav class="controls" aria-label="Visualization controls">
-    <label for="country-select" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Select country or region</label>
-    <select id="country-select" aria-label="Select country or region">
-      <option value="employment" selected>EU-27 (200M workers)</option>
-      <option value="employment_de">Germany</option>
-      <option value="employment_at">Austria</option>
-      <option value="employment_ch">Switzerland</option>
-    </select>
+    <div class="country-select" id="country-select" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-label="Select country or region">
+      <button class="country-trigger" id="country-trigger" type="button" aria-label="Select country">
+        <span id="country-trigger-label">EU-27 Aggregate</span>
+      </button>
+      <div class="country-dropdown" id="country-dropdown" role="listbox">
+        <input class="country-search" id="country-search" type="text" placeholder="Search countries..." autocomplete="off" />
+        <div class="country-list" id="country-list"></div>
+      </div>
+    </div>
     <div class="score-toggle" id="score-toggle" role="tablist" aria-label="Score type selector">
       <button class="active" data-score="technical_score" role="tab" aria-selected="true" id="tab-tech" aria-controls="treemap" tabindex="0">Technical Exposure</button>
       <button data-score="regulated_score" role="tab" aria-selected="false" id="tab-reg" aria-controls="treemap" tabindex="-1">Regulated Exposure</button>
@@ -374,8 +605,15 @@ body {
       <canvas class="legend-gradient" id="legend-gradient" aria-hidden="true"></canvas>
       <span>High</span>
     </div>
+    <label class="ai-act-toggle" id="ai-act-toggle" title="Highlight EU AI Act regulatory overlay on treemap cells">
+      <input type="checkbox" id="ai-act-checkbox">
+      <span class="ai-act-switch"></span>
+      <span>EU AI Act/equ. Overlay</span>
+    </label>
   </nav>
   <div class="delta-indicator" id="delta-indicator" aria-live="polite"></div>
+  <div class="ai-act-legend" id="ai-act-legend" style="display:none" aria-live="polite"></div>
+  <a href="analysis.html" class="analysis-link">Read the analysis &rarr;</a>
 </header>
 
 <section class="stats-bar container" id="stats-bar" role="region" aria-label="Summary statistics"></section>
@@ -404,13 +642,23 @@ body {
   <div class="sheet-scroll"><div class="sheet-body" id="sheet-body"></div></div>
 </div>
 
+<div class="cta-bar container">
+  <p class="cta-text">What does this data mean?</p>
+  <p class="cta-sub">If your organisation is navigating this transition, let&rsquo;s build together.</p>
+  <div class="btn-row">
+    <a href="https://nexalps.com" class="btn" target="_blank" rel="noopener" onclick="if(typeof posthog!=='undefined')posthog.capture('cta_clicked',{page:'index',target:'nexalps'})">Get in touch &rarr;</a>
+    <a href="analysis.html" class="btn btn-outline" onclick="if(typeof posthog!=='undefined')posthog.capture('cta_clicked',{page:'index',target:'analysis'})">Read the analysis &rarr;</a>
+    <a href="questions.html" class="btn btn-outline" onclick="if(typeof posthog!=='undefined')posthog.capture('cta_clicked',{page:'index',target:'questions'})">Answer questions &rarr;</a>
+  </div>
+</div>
+
 <footer class="footer container" role="contentinfo">
+  EU AI Exposure Map Version 2.0 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe">Source on GitHub</a><br>
   Built by <a href="https://www.linkedin.com/in/pmaul/">Philipp Maul</a> &middot; <a href="https://nexalps.com">Nexalps</a> &mdash; Turning complexity into competitive advantage.<br>
-  Data: <a href="https://esco.ec.europa.eu">ESCO v1.2.1</a> + <a href="https://ec.europa.eu/eurostat">Eurostat EU-LFS 2024</a> &middot;
+  Inspired by <a href="https://karpathy.ai/jobs/">Karpathy&rsquo;s AI Exposure Map</a><br>
+  Data: <a href="https://esco.ec.europa.eu">ESCO v1.2.1</a> + <a href="https://ec.europa.eu/eurostat">Eurostat EU-LFS 2024</a> + <a href="https://www.bfs.admin.ch">BFS LSE 2024</a> + <a href="https://www.ons.gov.uk">ONS ASHE 2025</a> &middot;
   Scored by Claude Sonnet 4 (Anthropic) &middot;
-  Inspired by <a href="https://karpathy.ai/jobs/">Karpathy's AI Exposure Map</a> &middot;
-  Employment data in thousands, wages from Eurostat SES 2022 &middot;
-  <a href="https://github.com/Ph1lM4/ai-job-impact-europe">Source on GitHub</a><br>
+  36 countries &middot; wages from Eurostat SES 2022, BFS 2024 (CH), ONS 2025 (UK) &middot; <a href="sources.html">Sources</a><br>
   Code: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-CODE">MIT</a> &middot; Data &amp; Analysis: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-DATA">CC-BY 4.0</a> Philipp Maul | Nexalps
 </footer>
 
@@ -429,23 +677,182 @@ for (let i = 0; i < 120; i++) { lgCtx.fillStyle = colorScale(i / 120 * 10); lgCt
 
 /* ── State ── */
 let DATA;
-let currentField = "employment";
+let currentCountry = "EU27";
 let currentScore = "technical_score";
-let lockedData = null; // sidebar lock state
+let lockedData = null;
+let aiActLayer = false;
+
+const COUNTRY_NAMES_JS = {};  // populated after data load
 
 const isMobile = () => window.innerWidth <= 768;
+
+/* ── Data accessors ── */
+function getEmp(d) { return (d.emp && d.emp[currentCountry]) || 0; }
+function getWage(d) { return (d.wage && d.wage[currentCountry]) || null; }
+function getScore(d) {
+  if (currentCountry === "UK" && currentScore === "regulated_score" && d.uk_regulated_score != null) return d.uk_regulated_score;
+  return d[currentScore] || 0;
+}
+function getRegScore(d) {
+  if (currentCountry === "UK" && d.uk_regulated_score != null) return d.uk_regulated_score;
+  return d.regulated_score || 0;
+}
+
+/* ── Country selector ── */
+function getSourceClass(source) {
+  if (!source) return "source-eurostat";
+  const s = source.toLowerCase();
+  if (s.includes("ons")) return "source-ons";
+  if (s.includes("bfs")) return "source-mixed";
+  return "source-eurostat";
+}
+
+function buildCountrySelector() {
+  const trigger = document.getElementById("country-trigger");
+  const dropdown = document.getElementById("country-dropdown");
+  const listEl = document.getElementById("country-list");
+  const searchEl = document.getElementById("country-search");
+  const combobox = document.getElementById("country-select");
+  let isOpen = false;
+  let focusedIdx = -1;
+  let filteredOptions = [];
+
+  function renderList(filter = "") {
+    listEl.innerHTML = "";
+    filteredOptions = [];
+    const q = filter.toLowerCase();
+
+    DATA.country_groups.forEach(group => {
+      const countries = Object.entries(DATA.countries)
+        .filter(([code, meta]) => meta.group === group.id)
+        .filter(([code, meta]) => !q || meta.name.toLowerCase().includes(q) || code.toLowerCase().includes(q))
+        .sort((a, b) => a[1].name.localeCompare(b[1].name));
+
+      if (countries.length === 0) return;
+
+      const hdr = document.createElement("div");
+      hdr.className = "country-group-hdr";
+      hdr.textContent = group.label;
+      listEl.appendChild(hdr);
+
+      countries.forEach(([code, meta]) => {
+        const opt = document.createElement("div");
+        opt.className = "country-option";
+        if (!meta.has_employment) opt.classList.add("disabled");
+        if (code === currentCountry) opt.classList.add("active");
+        opt.dataset.code = code;
+        opt.setAttribute("role", "option");
+        opt.setAttribute("aria-selected", code === currentCountry ? "true" : "false");
+
+        const nameSpan = document.createElement("span");
+        nameSpan.className = "co-name";
+        let nameHtml = meta.name;
+        if (meta.emp_note) nameHtml += `<span class="co-note">${meta.emp_note}</span>`;
+        nameSpan.innerHTML = nameHtml;
+
+        const empSpan = document.createElement("span");
+        empSpan.className = "co-emp";
+        empSpan.textContent = meta.has_employment ? formatNum(meta.emp_total) : "no data";
+
+        const badge = document.createElement("span");
+        badge.className = `source-badge ${getSourceClass(meta.source)}`;
+        badge.textContent = meta.source;
+
+        opt.appendChild(nameSpan);
+        opt.appendChild(empSpan);
+        opt.appendChild(badge);
+
+        opt.addEventListener("click", () => {
+          if (!meta.has_employment) return;
+          selectCountry(code);
+          close();
+        });
+
+        listEl.appendChild(opt);
+        if (meta.has_employment) filteredOptions.push(opt);
+      });
+    });
+    focusedIdx = -1;
+  }
+
+  function updateTrigger() {
+    const meta = DATA.countries[currentCountry];
+    const label = document.getElementById("country-trigger-label");
+    label.textContent = meta ? meta.name : currentCountry;
+    // Remove old badge if exists
+    const oldBadge = trigger.querySelector(".source-badge");
+    if (oldBadge) oldBadge.remove();
+    if (meta) {
+      const badge = document.createElement("span");
+      badge.className = `source-badge ${getSourceClass(meta.source)}`;
+      badge.textContent = meta.source;
+      trigger.appendChild(badge);
+    }
+  }
+
+  function selectCountry(code) {
+    currentCountry = code;
+    lockedData = null;
+    updateTrigger();
+    render();
+    posthog.capture("country_changed", { country: code });
+  }
+
+  function open() {
+    isOpen = true;
+    dropdown.classList.add("open");
+    combobox.setAttribute("aria-expanded", "true");
+    searchEl.value = "";
+    renderList();
+    searchEl.focus();
+  }
+
+  function close() {
+    isOpen = false;
+    dropdown.classList.remove("open");
+    combobox.setAttribute("aria-expanded", "false");
+    trigger.focus();
+  }
+
+  function setFocus(idx) {
+    filteredOptions.forEach(o => o.classList.remove("focused"));
+    if (idx >= 0 && idx < filteredOptions.length) {
+      focusedIdx = idx;
+      filteredOptions[idx].classList.add("focused");
+      filteredOptions[idx].scrollIntoView({ block: "nearest" });
+    }
+  }
+
+  trigger.addEventListener("click", () => { isOpen ? close() : open(); });
+
+  searchEl.addEventListener("input", () => { renderList(searchEl.value); });
+
+  searchEl.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") { close(); return; }
+    if (e.key === "ArrowDown") { e.preventDefault(); setFocus(Math.min(focusedIdx + 1, filteredOptions.length - 1)); }
+    if (e.key === "ArrowUp") { e.preventDefault(); setFocus(Math.max(focusedIdx - 1, 0)); }
+    if (e.key === "Enter" && focusedIdx >= 0) {
+      e.preventDefault();
+      const code = filteredOptions[focusedIdx].dataset.code;
+      selectCountry(code);
+      close();
+    }
+  });
+
+  // Close on outside click
+  document.addEventListener("click", (e) => {
+    if (isOpen && !combobox.contains(e.target)) close();
+  });
+
+  updateTrigger();
+}
 
 /* ── Init ── */
 async function init() {
   DATA = await (await fetch("data.json")).json();
+  Object.entries(DATA.countries).forEach(([code, meta]) => { COUNTRY_NAMES_JS[code] = meta.name; });
+  buildCountrySelector();
   render();
-
-  document.getElementById("country-select").addEventListener("change", (e) => {
-    currentField = e.target.value;
-    lockedData = null;
-    render();
-    posthog.capture("country_changed", { country: e.target.value });
-  });
 
   const toggleEl = document.getElementById("score-toggle");
   toggleEl.addEventListener("click", (e) => {
@@ -465,15 +872,19 @@ async function init() {
     if (next) { e.preventDefault(); switchTab(next); next.focus(); }
   });
 
-  // Sidebar close (X button)
+  document.getElementById("ai-act-checkbox").addEventListener("change", (e) => {
+    aiActLayer = e.target.checked;
+    render();
+    if (lockedData) showSidebar(lockedData);
+    posthog.capture("ai_act_toggle", { enabled: aiActLayer });
+  });
+
   document.getElementById("sidebar-close").addEventListener("click", closeSidebar);
 
-  // Escape key closes locked panel
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && lockedData) closeSidebar();
   });
 
-  // Click outside panel + cells closes locked panel (but not header controls)
   document.addEventListener("click", (e) => {
     if (!lockedData) return;
     if (document.getElementById("sidebar").contains(e.target)) return;
@@ -483,7 +894,6 @@ async function init() {
     closeSidebar();
   });
 
-  // Mobile sheet
   document.getElementById("sheet-overlay").addEventListener("click", closeSheet);
   document.querySelector("#sheet .close-btn").addEventListener("click", closeSheet);
   initSheetSwipe();
@@ -503,7 +913,7 @@ function switchTab(btn) {
   posthog.capture("score_toggle", { score_type: currentScore });
 }
 
-/* ── Sidebar (slide-in overlay, click only) ── */
+/* ── Sidebar ── */
 function showSidebar(data) {
   const sidebar = document.getElementById("sidebar");
   const el = document.getElementById("sidebar-content");
@@ -528,9 +938,8 @@ const hoverTip = document.getElementById("hover-tip");
 let tipVisible = false;
 
 function showHoverTip(data, x, y) {
-  const score = data[currentScore] || 0;
+  const score = getScore(data);
   hoverTip.innerHTML = `${data.name}<span class="tip-score" style="background:${colorScale(score)}">${score}</span>`;
-  // Position: offset from cursor, keep within viewport
   const tipW = hoverTip.offsetWidth || 200;
   const left = Math.min(x + 14, window.innerWidth - tipW - 12);
   const top = y - 36;
@@ -575,53 +984,137 @@ function initSheetSwipe() {
 function formatNum(n) { if (n >= 1e9) return (n/1e9).toFixed(1)+"B"; if (n >= 1e6) return (n/1e6).toFixed(1)+"M"; if (n >= 1e3) return (n/1e3).toFixed(0)+"K"; return n.toString(); }
 function formatEur(n) { if (n >= 1e12) return "\u20AC"+(n/1e12).toFixed(1)+"T"; if (n >= 1e9) return "\u20AC"+(n/1e9).toFixed(0)+"B"; if (n >= 1e6) return "\u20AC"+(n/1e6).toFixed(0)+"M"; return "\u20AC"+n.toLocaleString(); }
 function getBand(s) { if (s<2) return "0-2"; if (s<4) return "2-4"; if (s<6) return "4-6"; if (s<8) return "6-8"; return "8-10"; }
+function round1(n) { return Math.round(n * 10) / 10; }
 
-/* ── Detail HTML builder (shared by sidebar + sheet) ── */
+/* ── Detail HTML builder ── */
 function buildDetailHtml(data) {
-  const emp = data[currentField] || 0;
-  const tech = data.technical_score, reg = data.regulated_score, delta = data.regulatory_delta;
+  const emp = getEmp(data);
+  const wage = getWage(data);
+  const tech = data.technical_score;
+  const reg = getRegScore(data);
+  const delta = round1(tech - reg);
   const vulnBadges = (data.key_vulnerable_tasks||[]).slice(0,4).map(t=>`<li class="badge badge-vulnerable">${t}</li>`).join("");
   const protBadges = (data.key_protected_tasks||[]).slice(0,4).map(t=>`<li class="badge badge-protected">${t}</li>`).join("");
+
+  const countryMeta = DATA.countries[currentCountry] || {};
+  const isUK = currentCountry === "UK";
+
+  // Employment note (e.g., UK employee jobs caveat)
+  const empNote = countryMeta.emp_note ? ` <span style="font-size:11px;color:var(--muted-foreground);">(${countryMeta.emp_note})</span>` : "";
+
+  // Regulatory obligations section
+  let regHtml = "";
+  if (data.high_risk_as_subject != null) {
+    const isCH = currentCountry === "CH";
+    const isNonEU = ["UK","AL","BA","MK","RS","TR"].indexOf(currentCountry) >= 0;
+
+    // Classification badges
+    let classBadges = "";
+    if (data.high_risk_as_deployer) classBadges += `<span class="badge badge-deployer">\u26A0\uFE0F Deployer of High-Risk AI</span> `;
+    if (data.high_risk_as_subject) classBadges += `<span class="badge badge-subject">Subject of High-Risk AI</span> `;
+    if (data.platform_work_directive_relevant) classBadges += `<span class="badge badge-regulation">\uD83D\uDCCB Platform Work</span> `;
+    if (data.pay_transparency_relevant) classBadges += `<span class="badge badge-regulation">Pay Transparency</span> `;
+
+    // Regulatory surface
+    const surfaceCount = data.regulatory_surface_count || 0;
+    let surfaceHtml = surfaceCount > 0 ? `<div class="reg-surface"><span class="reg-surface-count">${surfaceCount}</span> regulatory frameworks applicable</div>` : "";
+
+    // Explanations
+    let explHtml = "";
+    if (data.deployer_explanation) explHtml += `<div class="detail" style="font-size:12px;">${data.deployer_explanation}</div>`;
+    if (!data.high_risk_as_deployer && data.subject_explanation) explHtml += `<div class="detail" style="font-size:12px;">${data.subject_explanation}</div>`;
+
+    // Country-specific works council
+    let wcHtml = "";
+    if (currentCountry === "DE" && data.works_council_de && data.works_council_de.triggered) {
+      wcHtml = `<div class="friction" style="border-left-color:#3b82f6;background:rgba(59,130,246,0.08);">
+        <span class="reg-tag reg-tag-works">${data.works_council_de.provision}</span>
+        ${data.works_council_de.description}
+      </div>`;
+    } else if (currentCountry === "AT" && data.works_council_at && data.works_council_at.triggered) {
+      wcHtml = `<div class="friction" style="border-left-color:#3b82f6;background:rgba(59,130,246,0.08);">
+        <span class="reg-tag reg-tag-works">${data.works_council_at.provision}</span>
+        ${data.works_council_at.description}
+      </div>`;
+    } else if (isCH && data.switzerland) {
+      const ch = data.switzerland;
+      wcHtml = `<div class="friction" style="border-left-color:#dc2626;background:rgba(220,38,38,0.08);">
+        <span class="reg-tag reg-tag-works">Swiss Framework</span>
+        ${ch.description || "Swiss FADP Art. 21 + OR Art. 328b apply. Consultation-only model (Mitwirkungsgesetz) — no co-determination right."}
+      </div>`;
+    } else if (isUK) {
+      wcHtml = `<div class="friction" style="border-left-color:#60a5fa;background:rgba(59,130,246,0.08);">
+        UK regulated score reflects Equality Act 2010, UK GDPR Art 22, Employment Rights Act 1996, and the DSIT pro-innovation framework. No EU AI Act equivalent.
+      </div>`;
+    } else if (isNonEU) {
+      wcHtml = `<div class="friction" style="border-left-color:#a1a1aa;background:rgba(161,161,170,0.06);">
+        ${COUNTRY_NAMES_JS[currentCountry] || currentCountry} — EU AI Act obligations apply only to the extent AI systems are placed on the EU market or affect EU persons.
+      </div>`;
+    } else if (data.high_risk_as_subject && !isUK && !isNonEU && !isCH) {
+      // Generic EU: Art 26(7)
+      wcHtml = `<div class="friction" style="border-left-color:#3b82f6;background:rgba(59,130,246,0.08);">
+        <span class="reg-tag reg-tag-works">AI Act Art 26(7)</span>
+        Employer must inform workers and their representatives before deploying high-risk AI systems in the workplace.
+      </div>`;
+    }
+
+    // Applicable regulations list
+    let regsHtml = "";
+    const regs = data.regulations_applicable || [];
+    if (regs.length > 0) {
+      regsHtml = `<ul class="reg-list">${regs.map(r => `<li>${r}</li>`).join("")}</ul>`;
+    }
+
+    // EU obligations
+    let oblHtml = "";
+    const obls = data.eu_obligations || [];
+    if (obls.length > 0 && !isUK && !isNonEU) {
+      oblHtml = `<details style="margin-top:8px;"><summary style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted-foreground);cursor:pointer;">Specific Obligations (${obls.length})</summary>
+        <ul class="reg-list" style="margin-top:6px;">${obls.map(o => `<li>${o}</li>`).join("")}</ul>
+      </details>`;
+    }
+
+    regHtml = `
+      <div class="reg-section">
+        <h4>Regulatory Obligations</h4>
+        <div class="badge-list" style="margin-bottom:8px;">${classBadges}</div>
+        ${surfaceHtml}
+        ${explHtml}
+        ${wcHtml}
+        ${oblHtml}
+      </div>`;
+  }
+
   return `
     <h3>${data.name}</h3>
     <div class="meta">ISCO ${data.isco3} &middot; ${data.category}</div>
     <div class="score-grid">
       <div class="score-item"><div class="score-num" style="background:${colorScale(tech)}">${tech}</div><div class="score-lbl">Technical</div></div>
       <div class="delta-arrow">&rarr; &minus;${delta}</div>
-      <div class="score-item"><div class="score-num" style="background:${colorScale(reg)}">${reg}</div><div class="score-lbl">Regulated</div></div>
+      <div class="score-item"><div class="score-num" style="background:${colorScale(reg)}">${reg}</div><div class="score-lbl">${isUK ? "UK Regulated" : "Regulated"}</div></div>
     </div>
-    <div class="detail">Employment: <strong>${formatNum(emp)}</strong>${data.wage_mean ? " &middot; Mean wage: <strong>"+formatEur(data.wage_mean)+"/yr</strong>" : ""}</div>
+    <div class="detail">Employment: <strong>${formatNum(emp)}</strong>${empNote}${wage ? " &middot; Mean wage: <strong>"+formatEur(wage)+"/yr</strong>" : ""}</div>
     <div class="detail">${data.rationale}</div>
-    ${data.regulatory_friction ? `<div class="friction">${data.regulatory_friction}</div>` : ""}
+    ${isUK && data.uk_rationale ? `<div class="friction">${data.uk_rationale}</div>` : ""}
+    ${!isUK && data.regulatory_friction ? `<div class="friction">${data.regulatory_friction}</div>` : ""}
     ${vulnBadges ? `<div class="tasks"><h4>Vulnerable to AI</h4><ul class="badge-list">${vulnBadges}</ul></div>` : ""}
     ${protBadges ? `<div class="tasks"><h4>Protected from AI</h4><ul class="badge-list">${protBadges}</ul></div>` : ""}
+    ${regHtml}
   `;
 }
 
-/* ── Cell interaction handler (attach to any cell in any treemap) ── */
+/* ── Cell interaction handler ── */
 function attachCellEvents(cell, data, isMobileView) {
   cell.setAttribute("tabindex", "0");
   cell.setAttribute("role", "treeitem");
-  const score = data[currentScore] || 0;
-  cell.setAttribute("aria-label", `${data.name}: score ${score}, employment ${formatNum(data[currentField]||0)}`);
+  cell.setAttribute("aria-label", `${data.name}: score ${getScore(data)}, employment ${formatNum(getEmp(data))}`);
 
   if (!isMobileView) {
-    // Desktop: hover → floating tooltip + highlight
-    cell.addEventListener("mouseenter", (e) => {
-      showHoverTip(data, e.clientX, e.clientY);
-    });
-    cell.addEventListener("mousemove", (e) => {
-      moveHoverTip(e.clientX, e.clientY);
-    });
-    cell.addEventListener("mouseleave", () => {
-      hideHoverTip();
-    });
-    // Desktop: click → toggle panel (open or close if same cell)
+    cell.addEventListener("mouseenter", (e) => { showHoverTip(data, e.clientX, e.clientY); });
+    cell.addEventListener("mousemove", (e) => { moveHoverTip(e.clientX, e.clientY); });
+    cell.addEventListener("mouseleave", () => { hideHoverTip(); });
     cell.addEventListener("click", () => {
-      if (lockedData && lockedData.isco3 === data.isco3) {
-        closeSidebar();
-        return;
-      }
+      if (lockedData && lockedData.isco3 === data.isco3) { closeSidebar(); return; }
       document.querySelectorAll(".cell.active").forEach(c => c.classList.remove("active"));
       cell.classList.add("active");
       lockedData = data;
@@ -630,15 +1123,8 @@ function attachCellEvents(cell, data, isMobileView) {
       hideHoverTip();
       posthog.capture("cell_clicked", { occupation: data.name, isco3: data.isco3, technical_score: data.technical_score, regulated_score: data.regulated_score });
     });
-    // Keyboard
-    cell.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        cell.click();
-      }
-    });
+    cell.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); cell.click(); } });
   } else {
-    // Mobile: tap → bottom sheet
     cell.addEventListener("click", () => {
       openSheet(buildDetailHtml(data));
       posthog.capture("cell_clicked", { occupation: data.name, isco3: data.isco3, technical_score: data.technical_score, regulated_score: data.regulated_score });
@@ -646,25 +1132,38 @@ function attachCellEvents(cell, data, isMobileView) {
   }
 }
 
-/* ── Render cells into a container for a given d3 treemap root ── */
+/* ── Render cells ── */
 function renderCells(container, root, isMobileView) {
   root.leaves().forEach(d => {
     const w = d.x1 - d.x0, h = d.y1 - d.y0;
     if (w < 2 || h < 2) return;
-    const score = d.data[currentScore] || 0;
+    const score = getScore(d.data);
     const cell = document.createElement("div");
     cell.className = "cell";
     cell.style.cssText = `left:${d.x0}px;top:${d.y0}px;width:${w}px;height:${h}px;background:${colorScale(score)}`;
 
-    // Label logic: name+score if big enough, score-only if medium, nothing if tiny
+    // AI Act overlay styling
+    if (aiActLayer) {
+      // Add icons for deployer / platform work
+      const iconParts = [];
+      const iconVariant = score >= 3 && score <= 6 ? "black" : "white";
+      if (d.data.high_risk_as_deployer && w > 24 && h > 16)
+        iconParts.push(`<img src="alert-triangle_${iconVariant}.svg" width="10" height="10" alt="deployer">`);
+      if (d.data.platform_work_directive_relevant && w > 40 && h > 16)
+        iconParts.push(`<img src="clipboard-text_${iconVariant}.svg" width="10" height="10" alt="platform">`);
+      if (iconParts.length) {
+        const iconEl = document.createElement("div");
+        iconEl.className = "cell-ai-icon";
+        iconEl.innerHTML = iconParts.join("");
+        cell.appendChild(iconEl);
+      }
+    }
+
     if (w > 50 && h > 24) {
       const label = document.createElement("div");
       label.className = "cell-label";
       label.style.maxHeight = (h - 4) + "px";
-      let text = d.data.name;
-      const maxChars = Math.floor(w / 6);
-      if (text.length > maxChars) text = text.substring(0, maxChars - 1) + "\u2026";
-      label.innerHTML = text + `<br><span class="cell-score">${score}</span>`;
+      label.innerHTML = d.data.name + `<br><span class="cell-score">${score}</span>`;
       cell.appendChild(label);
     } else if (w > 20 && h > 14) {
       const s = document.createElement("div");
@@ -683,9 +1182,8 @@ function renderCells(container, root, isMobileView) {
 function render() {
   const mobile = isMobile();
 
-  // Compute stats from full hierarchy
   const root = d3.hierarchy(DATA.treemap)
-    .sum(d => d[currentField] || 0)
+    .sum(d => getEmp(d))
     .sort((a, b) => b.value - a.value);
 
   let totalEmp = 0, weightedExp = 0, weightedTech = 0, weightedReg = 0;
@@ -693,13 +1191,13 @@ function render() {
   let exposureWeightedWages = 0;
 
   root.leaves().forEach(d => {
-    const emp = d.data[currentField]||0, score = d.data[currentScore]||0;
+    const emp = getEmp(d.data), wage = getWage(d.data), score = getScore(d.data);
     totalEmp += emp;
     weightedExp += emp * score;
     weightedTech += emp * (d.data.technical_score||0);
-    weightedReg += emp * (d.data.regulated_score||0);
+    weightedReg += emp * getRegScore(d.data);
     bandEmp[getBand(score)] += emp;
-    if (d.data.wage_mean) exposureWeightedWages += emp * d.data.wage_mean * (score/10);
+    if (wage) exposureWeightedWages += emp * wage * (score/10);
   });
 
   const avgExp = totalEmp > 0 ? weightedExp/totalEmp : 0;
@@ -707,20 +1205,66 @@ function render() {
   const avgReg = totalEmp > 0 ? weightedReg/totalEmp : 0;
   const avgDelta = avgTech - avgReg;
 
-  // Delta indicator
   const deltaEl = document.getElementById("delta-indicator");
+  const isUKSelected = currentCountry === "UK";
   deltaEl.innerHTML = currentScore === "regulated_score"
-    ? `Showing <strong>regulated</strong> exposure (EU AI Act, works councils, GDPR). Avg regulatory friction: <span class="delta-value">&minus;${avgDelta.toFixed(1)} points</span>`
-    : `Showing <strong>technical</strong> exposure (pure AI capability). Toggle to see EU regulation reduces exposure by <span class="delta-value">${avgDelta.toFixed(1)} points</span> on average.`;
+    ? (isUKSelected
+      ? `Showing <strong>UK regulated</strong> exposure (Equality Act, UK GDPR, Employment Rights Act). Avg regulatory friction: <span class="delta-value">&minus;${avgDelta.toFixed(1)} points</span>`
+      : `Showing <strong>regulated</strong> exposure (EU AI Act, works councils, GDPR). Avg regulatory friction: <span class="delta-value">&minus;${avgDelta.toFixed(1)} points</span>`)
+    : `Showing <strong>technical</strong> exposure (pure AI capability). Toggle to see the effect of regulation on the exposure.`;
 
-  // Stats cards
+  // AI Act overlay legend
+  const aiLegendEl = document.getElementById("ai-act-legend");
+  if (aiActLayer) {
+    aiLegendEl.style.display = "flex";
+    aiLegendEl.innerHTML = `
+      <span class="ai-act-legend-item"><span class="ai-act-legend-icon">\u26A0\uFE0F</span> High-risk deployer</span>
+      <span class="ai-act-legend-item"><span class="ai-act-legend-icon">\uD83D\uDCCB</span> Platform Work Directive</span>`;
+  } else {
+    aiLegendEl.style.display = "none";
+    aiLegendEl.innerHTML = "";
+  }
+
   const maxBandEmp = Math.max(...Object.values(bandEmp));
-  const scoreLabel = currentScore === "technical_score" ? "Technical" : "Regulated";
+  const scoreLabel = currentScore === "technical_score" ? "Technical" : (currentCountry === "UK" ? "UK Regulated" : "Regulated");
+
+  // AI Act stats (computed live for current country)
+  let aiActStatsHtml = "";
+  if (aiActLayer) {
+    const leaves = root.leaves();
+    let deployerCount = 0, deployerEmp = 0, wcCount = 0, platformCount = 0, surfaceSum = 0, surfaceN = 0;
+    leaves.forEach(d => {
+      const dd = d.data;
+      const emp = getEmp(dd);
+      if (dd.high_risk_as_deployer) { deployerCount++; deployerEmp += emp; }
+      // Country-specific works council
+      if (currentCountry === "DE" || currentCountry === "AT") {
+        const wc = currentCountry === "DE" ? dd.works_council_de : dd.works_council_at;
+        if (wc && wc.triggered) wcCount++;
+      } else if (["CH","UK","AL","BA","MK","RS","TR"].indexOf(currentCountry) === -1) {
+        // EU countries: Art 26(7) applies to all subjects
+        if (dd.high_risk_as_subject) wcCount++;
+      }
+      if (dd.platform_work_directive_relevant) platformCount++;
+      if (typeof dd.regulatory_surface_count === "number") { surfaceSum += dd.regulatory_surface_count; surfaceN++; }
+    });
+    const pctDeployer = totalEmp > 0 ? (deployerEmp / totalEmp * 100).toFixed(1) : "0.0";
+    const avgSurface = surfaceN > 0 ? (surfaceSum / surfaceN).toFixed(1) : "0";
+    const wcLabel = currentCountry === "DE" ? "BetrVG \u00a787" : currentCountry === "AT" ? "ArbVG \u00a796a" : "Art 26(7)";
+
+    aiActStatsHtml = `
+    <div class="stat-card"><div class="stat-value">${deployerCount}</div><div class="stat-label">Deployer Groups</div><div class="stat-sublabel">${pctDeployer}% of workforce</div></div>
+    <div class="stat-card"><div class="stat-value">${wcCount}</div><div class="stat-label">${wcLabel} Triggered</div><div class="stat-sublabel">worker representation required</div></div>
+    <div class="stat-card"><div class="stat-value">${platformCount}</div><div class="stat-label">Platform Work Dir.</div><div class="stat-sublabel">algorithmic management</div></div>
+    <div class="stat-card"><div class="stat-value">${avgSurface}</div><div class="stat-label">Avg Regulatory Surface</div><div class="stat-sublabel">regulations per group</div></div>`;
+  }
+
   document.getElementById("stats-bar").innerHTML = `
     <div class="stat-card"><div class="stat-value">${formatNum(totalEmp)}</div><div class="stat-label">Total Jobs</div></div>
     <div class="stat-card"><div class="stat-value">${avgExp.toFixed(1)}</div><div class="stat-label">Avg ${scoreLabel} Exposure</div></div>
     <div class="stat-card"><div class="stat-value">${formatEur(exposureWeightedWages)}</div><div class="stat-label">Exposure-Weighted Wages</div><div class="stat-sublabel">total wages adjusted by AI exposure intensity</div></div>
     <div class="stat-card"><div class="stat-value">${avgDelta.toFixed(1)}</div><div class="stat-label">Avg Regulatory Delta</div></div>
+    ${aiActStatsHtml}
     <div class="stat-card stat-wide">
       <div class="stat-label" style="margin-bottom:6px">Jobs by ${scoreLabel} Exposure</div>
       <div class="histogram" role="img" aria-label="Histogram: ${Object.entries(bandEmp).map(([b,e])=>`${b}: ${formatNum(e)}`).join(", ")}">
@@ -739,7 +1283,7 @@ function render() {
   }
 }
 
-/* ── Desktop render: single treemap + sidebar ── */
+/* ── Desktop render ── */
 function renderDesktop(root) {
   const container = document.getElementById("treemap");
   container.innerHTML = "";
@@ -755,7 +1299,6 @@ function renderDesktop(root) {
     .paddingRight(2).paddingBottom(2).paddingLeft(2).paddingInner(1)
     (root);
 
-  // Group labels
   root.children.forEach(group => {
     const gw = group.x1 - group.x0;
     if (gw > 60) {
@@ -771,24 +1314,22 @@ function renderDesktop(root) {
 
   renderCells(container, root, false);
 
-  // Restore locked panel state after re-render
   if (lockedData) {
     showSidebar(lockedData);
     document.getElementById("sidebar").classList.add("locked");
   } else {
-    // Ensure panel is hidden when re-rendering without a lock
     document.getElementById("sidebar").classList.remove("open");
   }
 }
 
-/* ── Mobile render: stacked vertical treemaps per ISCO 1-digit ── */
+/* ── Mobile render ── */
 function renderMobile(fullRoot) {
   const mobileEl = document.getElementById("mobile-groups");
   mobileEl.innerHTML = "";
   document.getElementById("treemap").innerHTML = "";
 
   const groups = fullRoot.children || [];
-  const vw = window.innerWidth - 32; // 16px padding each side
+  const vw = window.innerWidth - 32;
 
   groups.forEach(group => {
     const totalEmp = group.value;
@@ -802,15 +1343,13 @@ function renderMobile(fullRoot) {
     title.textContent = group.data.name;
     section.appendChild(title);
 
-    // Build a mini hierarchy for this group
     const groupData = { name: group.data.name, children: group.data.children };
     const groupRoot = d3.hierarchy(groupData)
-      .sum(d => d[currentField] || 0)
+      .sum(d => getEmp(d))
       .sort((a, b) => b.value - a.value);
 
     if (!groupRoot.children || groupRoot.children.length === 0) return;
 
-    // Aspect ratio ~3:2, min height 120px
     const leafCount = groupRoot.leaves().length;
     const height = Math.max(120, Math.min(300, Math.round(vw * 0.6 * Math.sqrt(leafCount / 10))));
 
@@ -831,6 +1370,27 @@ function renderMobile(fullRoot) {
 
 window.addEventListener("resize", () => { if (DATA) render(); });
 init();
+</script>
+<script>
+(function(){
+  const btn = document.getElementById("burger-btn");
+  const panel = document.getElementById("burger-panel");
+  btn.addEventListener("click", () => {
+    const open = panel.classList.toggle("open");
+    btn.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", open);
+  });
+  document.addEventListener("click", (e) => {
+    if (!panel.contains(e.target) && !btn.contains(e.target) && panel.classList.contains("open")) {
+      panel.classList.remove("open"); btn.classList.remove("open"); btn.setAttribute("aria-expanded","false");
+    }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && panel.classList.contains("open")) {
+      panel.classList.remove("open"); btn.classList.remove("open"); btn.setAttribute("aria-expanded","false");
+    }
+  });
+})();
 </script>
 </body>
 </html>

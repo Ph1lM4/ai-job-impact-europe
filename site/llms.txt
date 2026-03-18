@@ -1,39 +1,53 @@
 # AI Exposure of the European Job Market
 
 ## Project
-An interactive treemap visualizing AI exposure across ~130 European occupation groups (ISCO-08 3-digit level). Built by Philipp Maul / Nexalps.
+An interactive treemap visualizing AI exposure across ~130 European occupation groups (ISCO-08 3-digit level) in 36 countries. Built by Philipp Maul / Nexalps.
 
 ## Methodology
 - Occupation data from ESCO v1.2.1 (~3,000 occupations with rich descriptions)
 - Employment statistics from Eurostat EU-LFS 2024 (ISCO-08 2-digit, distributed to 3-digit using ESCO structural weights)
-- Wage data from Eurostat Structure of Earnings Survey 2022
+- Wage data from Eurostat Structure of Earnings Survey 2022, BFS LSE 2024 (Switzerland), ONS ASHE 2025 (UK)
 - AI exposure scoring via Claude Sonnet 4 (Anthropic), producing two scores per group:
   - technical_score (0-10): Pure AI capability — how much CAN AI reshape this job?
   - regulated_score (0-10): Practical European exposure, factoring in EU AI Act high-risk obligations, works council consultation, employment protection, GDPR constraints — how much WILL AI reshape this job in the EU?
+  - uk_regulated_score (0-10): UK-specific regulated exposure, factoring in Equality Act 2010, UK GDPR Art 22, Employment Rights Act 1996, and the DSIT pro-innovation framework
+- EU AI Act structured overlay with legal source references (Annex III categories, deployer/subject classifications, Platform Work Directive)
 - Aggregated to ISCO-08 3-digit level (~130 groups) for treemap visualization
 
 ## Key Findings
-- 199.6M total jobs covered (EU-27)
+- 199.6M total jobs covered (EU-27 + UK, CH, candidate countries)
 - Average technical exposure: 5.6 / 10
 - Average regulated exposure: 4.4 / 10
-- Average regulatory delta: 1.2 points (regulation reduces practical AI exposure)
+- Average regulatory delta: 1.2 points (EU regulation reduces practical AI exposure)
+- UK average regulatory friction: 0.5 points (less than half the EU average)
 - Exposure-weighted wages: ~€4.7T (technical) vs ~€3.7T (regulated)
-- Largest deltas in HR, legal, education, and public administration occupations where EU AI Act Annex III + works council requirements create significant friction
+- 40 occupation groups classified as high-risk AI deployers under EU AI Act
+- 125 groups trigger Art 26(7) worker representation requirements
+- 31 groups trigger the Platform Work Directive
+
+## Pages
+- Interactive map (index.html): Treemap visualization with country selector, score toggle, AI Act overlay
+- Analysis (analysis.html): What AI exposure means for the European job market
+- Questions (questions.html): Questions this data raises
+- Sources (sources.html): Primary legal texts, papers, books, reports
+- llms.txt: Machine-readable project summary
 
 ## Data Sources
 - ESCO v1.2.1 (European Commission): https://esco.ec.europa.eu
 - Eurostat EU-LFS 2024: https://ec.europa.eu/eurostat
 - Eurostat SES 2022 (wages): https://ec.europa.eu/eurostat
+- BFS LSE 2024 (Swiss wages): https://www.bfs.admin.ch
+- ONS ASHE 2025 (UK wages): https://www.ons.gov.uk
 - ISCO-08 (ILO): International Standard Classification of Occupations
 
 ## Attribution
 Inspired by Andrej Karpathy's AI Exposure Map (https://karpathy.ai/jobs/).
-Extended with dual-score methodology for the European regulatory context.
+Extended with dual-score methodology for the European regulatory context, UK-specific scoring, and structured EU AI Act overlay.
 
 ## License
 - Code: MIT (Philipp Maul / Nexalps)
 - Scored data and analysis: CC-BY 4.0 (Philipp Maul / Nexalps)
-- Built on ESCO (EU Commission) and Eurostat data
+- Built on ESCO (EU Commission), Eurostat, BFS, and ONS data
 
 ## Contact
 - Philipp Maul: https://www.linkedin.com/in/pmaul/

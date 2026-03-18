@@ -1,0 +1,1206 @@
+{
+  "011": {
+    "uk_regulated_score": 3.7,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "Military command and strategic decision-making face minimal UK civilian regulatory friction due to Crown exemptions and military-specific governance frameworks. Defence AI deployment operates under MOD protocols rather than civilian data protection or employment law constraints.",
+    "key_uk_provisions": [
+      "Crown exemptions",
+      "Military command structure",
+      "MOD governance protocols"
+    ]
+  },
+  "021": {
+    "uk_regulated_score": 1.2,
+    "uk_regulatory_friction": -2.3,
+    "uk_rationale": "UK armed forces operate under military law and defence-specific regulations that heavily restrict AI deployment in tactical decision-making and personnel management. While the UK lacks EU-style AI regulation, military command structures and national security protocols create substantial barriers to AI automation in combat and leadership roles.",
+    "key_uk_provisions": [
+      "Armed Forces Act 2006",
+      "UK GDPR Art 22",
+      "Military personnel regulations"
+    ]
+  },
+  "031": {
+    "uk_regulated_score": 3.2,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "Military personnel operate under military law and chain of command rather than civilian employment regulations, with Equality Act and UK GDPR having limited application in operational contexts. Defence exemptions and national security considerations further reduce civilian regulatory friction for AI deployment in military operations.",
+    "key_uk_provisions": [
+      "Defence and national security exemptions",
+      "Military discipline system",
+      "Limited Equality Act application"
+    ]
+  },
+  "111": {
+    "uk_regulated_score": 3.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "UK's lighter regulatory approach reduces friction for AI adoption in high-level governmental functions compared to EU constraints. However, constitutional conventions around democratic accountability and potential judicial review of automated decision-making in public administration create meaningful limitations.",
+    "key_uk_provisions": [
+      "Constitutional conventions",
+      "Judicial review",
+      "Public law principles"
+    ]
+  },
+  "112": {
+    "uk_regulated_score": 5.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "UK's pro-innovation approach creates lower friction for C-suite AI adoption compared to EU, with minimal regulatory barriers for strategic decision-making tools. However, Equality Act discrimination risks in workforce decisions and UK GDPR automated decision-making provisions still create some compliance considerations for executive-level AI deployment.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "121": {
+    "uk_regulated_score": 6.8,
+    "uk_regulatory_friction": -0.4,
+    "uk_rationale": "UK's light-touch regulation allows broader AI deployment in business management functions compared to EU. Equality Act 2010 creates some friction for AI-assisted HR decisions and talent management, while UK GDPR Article 22 applies to automated decision-making in procurement and employee management.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "122": {
+    "uk_regulated_score": 6.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "UK's pro-innovation stance significantly reduces friction compared to EU, particularly for strategic decision-making roles. However, Equality Act creates meaningful liability risk for AI-assisted hiring/promotion decisions, and UK GDPR Art 22 applies to automated customer profiling and targeting.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "131": {
+    "uk_regulated_score": 5.0,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "UK's pro-innovation approach creates less regulatory friction than EU for agricultural AI systems like yield optimization and resource management tools. However, some friction remains from UK GDPR automated decision-making provisions and potential Equality Act issues in hiring/promotion decisions.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010"
+    ]
+  },
+  "132": {
+    "uk_regulated_score": 6.0,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "Manufacturing and distribution managers face moderate UK regulatory friction from Equality Act 2010 claims if AI systems create discriminatory hiring/promotion outcomes, and UK GDPR Article 22 requirements for automated decision-making transparency. However, the UK's pro-innovation stance and absence of EU AI Act equivalents significantly reduce barriers compared to EU regulation.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "133": {
+    "uk_regulated_score": 6.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "UK's light-touch regulatory approach reduces friction for ICT managers deploying AI systems compared to EU requirements. However, Equality Act discrimination risks in AI-assisted HR decisions and UK GDPR Article 22 automated decision-making provisions create moderate friction, particularly for senior roles overseeing AI implementation across organizations.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996",
+      "sector-specific regulatory requirements"
+    ]
+  },
+  "134": {
+    "uk_regulated_score": 6.0,
+    "uk_regulatory_friction": -0.8,
+    "uk_rationale": "Professional services managers face moderate regulatory friction primarily through Equality Act 2010 discrimination risks when using AI in HR decisions and UK GDPR Article 22 for automated decision-making about staff or service users. Sector-specific regulators like CQC (healthcare), Ofsted (education), and FCA (financial services) may impose additional AI governance requirements, but the UK's pro-innovation approach allows significant deployment flexibility compared to EU constraints.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996",
+      "Sector-specific regulation"
+    ]
+  },
+  "141": {
+    "uk_regulated_score": 5.5,
+    "uk_regulatory_friction": -1.0,
+    "uk_rationale": "UK's lighter regulatory approach reduces friction compared to EU, but Equality Act 2010 creates meaningful constraints around AI-assisted hiring, scheduling, and promotion decisions which are core management functions. UK GDPR Art 22 provides additional protection against fully automated employment decisions affecting staff.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "142": {
+    "uk_regulated_score": 6.8,
+    "uk_regulatory_friction": -0.4,
+    "uk_rationale": "UK's light-touch approach enables AI deployment in retail management with minimal regulatory barriers. Primary friction comes from Equality Act discrimination risks in AI-assisted hiring/promotion decisions and UK GDPR Article 22 constraints on automated customer profiling, but absence of EU AI Act equivalent significantly reduces compliance burden.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "143": {
+    "uk_regulated_score": 6.4,
+    "uk_regulatory_friction": -0.8,
+    "uk_rationale": "The UK's lighter regulatory approach reduces friction for AI deployment in services management compared to the EU. While Equality Act concerns exist for AI-assisted hiring and customer service decisions, the absence of mandatory AI notifications and weaker worker consultation rights enables smoother implementation.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "211": {
+    "uk_regulated_score": 6.2,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "UK's lighter regulatory approach reduces friction compared to EU, particularly for research and analysis activities where AI assists scientific work rather than making decisions about individuals. Limited friction comes from potential discrimination issues in AI-assisted hiring/promotion and data protection requirements when processing personal data in research contexts.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "212": {
+    "uk_regulated_score": 8.0,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "The UK's pro-innovation stance creates minimal friction for mathematical professionals using AI tools for analysis and modeling. Limited regulatory barriers exist mainly around automated decision-making in client-facing applications (insurance pricing, risk assessment) under UK GDPR Article 22.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "FCA regulations"
+    ]
+  },
+  "213": {
+    "uk_regulated_score": 6.0,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "Life science professionals face moderate UK regulatory friction primarily through UK GDPR Article 22 requirements for automated decision-making in research contexts and data processing, plus Equality Act considerations for AI-assisted peer review or funding decisions. The UK's pro-innovation stance reduces friction compared to EU regulations, particularly for research applications and environmental assessments.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "Data Protection Act 2018"
+    ]
+  },
+  "214": {
+    "uk_regulated_score": 7.2,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "UK's pro-innovation regulatory approach creates minimal friction for AI adoption in engineering roles. While Equality Act 2010 provides some protection against discriminatory AI-assisted hiring and UK GDPR Article 22 applies to automated decision-making, the absence of EU AI Act equivalent and weak worker consultation rights significantly reduces barriers compared to EU.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996",
+      "Sector-specific regulations (varies by engineering discipline)"
+    ]
+  },
+  "215": {
+    "uk_regulated_score": 7.2,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "UK's pro-innovation approach creates minimal regulatory friction for engineering roles where AI assists technical design and analysis. Some friction exists from Equality Act requirements in hiring/promotion and potential UK GDPR considerations for automated system decisions, but significantly less than EU constraints.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "216": {
+    "uk_regulated_score": 8.0,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "The UK's pro-innovation approach creates minimal regulatory friction for AI-assisted design tools and creative workflows. While UK GDPR Article 22 provides some protection against fully automated decisions and the Equality Act 2010 covers discrimination in hiring creative professionals, these provisions rarely impede day-to-day AI integration in design work.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "Copyright, Designs and Patents Act 1988"
+    ]
+  },
+  "221": {
+    "uk_regulated_score": 3.5,
+    "uk_regulatory_friction": -1.0,
+    "uk_rationale": "Medical practice is heavily regulated by the GMC and CQC, creating significant barriers to AI deployment in clinical decision-making. However, the UK's lighter AI regulatory framework compared to the EU allows more flexibility for AI-assisted diagnostics and treatment recommendations, particularly where doctors retain ultimate clinical responsibility.",
+    "key_uk_provisions": [
+      "GMC Good Medical Practice",
+      "CQC regulations",
+      "UK GDPR Art 22",
+      "Clinical negligence law"
+    ]
+  },
+  "222": {
+    "uk_regulated_score": 3.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "NHS regulatory oversight and CQC patient safety requirements create moderate friction for AI deployment in clinical decision-making, but significantly less than EU high-risk classifications. UK GDPR Art 22 applies to automated patient care decisions, while professional registration bodies maintain oversight of clinical practice standards.",
+    "key_uk_provisions": [
+      "CQC regulations",
+      "UK GDPR Art 22",
+      "NMC professional standards",
+      "NHS governance frameworks"
+    ]
+  },
+  "223": {
+    "uk_regulated_score": 3.2,
+    "uk_regulatory_friction": -1.3,
+    "uk_rationale": "The UK's lighter regulatory touch allows greater AI deployment in complementary medicine practices, with no mandatory patient notification requirements for AI-assisted diagnosis or treatment recommendations. However, UK GDPR Article 22 creates some friction for automated health decision-making, and professional liability concerns remain where AI advice could impact patient wellbeing.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Professional indemnity standards",
+      "Consumer protection law"
+    ]
+  },
+  "225": {
+    "uk_regulated_score": 6.0,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "Veterinary practice faces moderate regulatory friction through professional standards requirements from the Royal College of Veterinary Surgeons (RCVS) and potential UK GDPR obligations for client data processing. The Equality Act 2010 creates limited friction as veterinary decisions primarily concern animal welfare rather than human discrimination, though client-facing AI tools could raise concerns.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "Professional standards (RCVS)"
+    ]
+  },
+  "226": {
+    "uk_regulated_score": 5.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "UK's sector-specific regulation creates meaningful friction - CQC oversight of diagnostic AI, MHRA device regulation, and professional body standards limit deployment speed. However, absence of EU AI Act's high-risk healthcare classifications and mandatory worker consultation requirements reduces friction compared to EU.",
+    "key_uk_provisions": [
+      "MHRA medical device regulation",
+      "CQC quality standards",
+      "Professional body standards",
+      "UK GDPR Art 22",
+      "Equality Act 2010"
+    ]
+  },
+  "231": {
+    "uk_regulated_score": 5.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "UK universities face moderate friction from Equality Act 2010 claims regarding AI-assisted student assessment and admissions, plus UK GDPR Article 22 requirements for automated decision-making in grading systems. However, the absence of EU AI Act equivalents and weak consultation requirements create significantly less friction than continental Europe.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "232": {
+    "uk_regulated_score": 6.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "Limited regulatory friction in UK education sector compared to EU. Equality Act 2010 provides some protection against discriminatory AI use in student assessment, but no sector-specific AI restrictions or mandatory consultation requirements for vocational training institutions.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22"
+    ]
+  },
+  "233": {
+    "uk_regulated_score": 5.2,
+    "uk_regulatory_friction": -1.3,
+    "uk_rationale": "UK's lighter regulatory approach allows greater AI adoption in lesson planning, assessment, and administrative tasks compared to EU frameworks. However, Equality Act concerns around AI-assisted grading and student evaluation, plus UK GDPR requirements for automated decision-making affecting student outcomes, create moderate friction.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "234": {
+    "uk_regulated_score": 5.2,
+    "uk_regulatory_friction": -1.3,
+    "uk_rationale": "UK education sector has moderate regulatory friction through Equality Act requirements for fair assessment and UK GDPR protections for children's data, but lacks EU-style AI Act restrictions on high-risk educational applications. The Department for Education's guidance on AI in schools is non-binding, creating lower barriers than EU frameworks while maintaining child protection standards.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Children's Code (Age Appropriate Design)",
+      "Education Act 2002"
+    ]
+  },
+  "235": {
+    "uk_regulated_score": 6.4,
+    "uk_regulatory_friction": -0.8,
+    "uk_rationale": "Teaching professionals face moderate UK regulatory friction primarily from Equality Act 2010 requirements in student assessment and educational decision-making, plus UK GDPR Article 22 constraints on automated processing of student data. However, the UK's pro-innovation stance and absence of EU AI Act equivalents allows greater flexibility in deploying AI tools for curriculum design, administrative tasks, and learning support compared to more regulated jurisdictions.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Children Act 2004",
+      "Education Act 2011"
+    ]
+  },
+  "241": {
+    "uk_regulated_score": 7.0,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "Finance professionals face moderate regulatory friction in the UK through FCA oversight requiring explainability for algorithmic decisions affecting consumers, UK GDPR Article 22 restrictions on automated financial decision-making, and Equality Act risks in AI-assisted hiring and performance evaluation. However, the UK's pro-innovation stance and absence of EU AI Act requirements significantly reduces friction compared to EU counterparts.",
+    "key_uk_provisions": [
+      "FCA regulatory requirements",
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "DSIT pro-innovation framework"
+    ]
+  },
+  "242": {
+    "uk_regulated_score": 6.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "UK's pro-innovation approach creates less friction than EU for administration professionals using AI tools for analysis, reporting, and decision support. However, HR-related roles face Equality Act 2010 discrimination risks in recruitment/promotion, and policy officers must consider UK GDPR Article 22 for automated public administration decisions.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996",
+      "ICE Regulations 2004"
+    ]
+  },
+  "243": {
+    "uk_regulated_score": 6.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "UK's light-touch AI regulation allows significant deployment in sales/marketing analytics, customer profiling, and automated content generation with minimal barriers. Primary friction comes from Equality Act discrimination risks in AI-driven customer targeting and UK GDPR Article 22 constraints on automated marketing decisions affecting individuals.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Data Protection Act 2018"
+    ]
+  },
+  "251": {
+    "uk_regulated_score": 8.7,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "The UK's pro-innovation approach creates minimal friction for software developers implementing AI systems. While Equality Act 2010 creates some liability risk when developing hiring/promotion algorithms and UK GDPR Art 22 requires considerations for automated decision-making systems, these are implementation constraints rather than deployment barriers.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "252": {
+    "uk_regulated_score": 7.0,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "UK's pro-innovation approach creates lower friction than EU for database/network professionals implementing AI systems. UK GDPR Art 22 provides some constraint on automated decision-making systems these professionals might deploy, while Equality Act creates liability risk for discriminatory AI implementations they design or maintain.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "261": {
+    "uk_regulated_score": 6.5,
+    "uk_regulatory_friction": -1.0,
+    "uk_rationale": "UK's light-touch AI regulation significantly reduces friction compared to EU, but legal profession faces meaningful constraints from UK GDPR Article 22 on automated decision-making and Equality Act 2010 discrimination risks in hiring/case assessment. Professional conduct rules and Law Society guidance create additional self-regulatory barriers to AI deployment.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "SRA Code of Conduct",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "262": {
+    "uk_regulated_score": 7.2,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "Limited friction in UK context as cultural sector institutions typically have discretion over AI adoption for cataloguing, research, and collection management. Equality Act may apply to AI-assisted visitor services or staffing decisions, but core curatorial and archival functions face minimal regulatory barriers.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22"
+    ]
+  },
+  "263": {
+    "uk_regulated_score": 5.5,
+    "uk_regulatory_friction": -1.0,
+    "uk_rationale": "UK's lighter regulatory environment reduces friction compared to EU, but significant constraints remain due to Equality Act discrimination risks in psychological assessments and social work decisions, plus UK GDPR Article 22 protections for automated decision-making affecting vulnerable populations. Professional body standards and duty of care create additional practical barriers to full AI deployment.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996",
+      "Professional standards bodies"
+    ]
+  },
+  "264": {
+    "uk_regulated_score": 8.2,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "The UK's pro-innovation approach creates minimal friction for AI adoption in creative and linguistic occupations. While UK GDPR Art 22 provides some protection against fully automated editorial decisions and the Equality Act 2010 creates risk for AI-assisted hiring of journalists, these provisions have limited practical impact on core writing, translation, and content creation tasks.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010"
+    ]
+  },
+  "265": {
+    "uk_regulated_score": 6.0,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "Creative and performing artists face minimal UK regulatory friction as most AI applications involve creative tools and content generation rather than employment decisions. The Equality Act 2010 provides some protection against discriminatory AI-assisted casting or promotion decisions, while intellectual property concerns around AI-generated content create modest practical constraints.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "Copyright, Designs and Patents Act 1988"
+    ]
+  },
+  "311": {
+    "uk_regulated_score": 6.2,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "UK's lighter regulatory framework reduces friction for AI deployment in technical roles involving design, testing, and quality control. However, safety-critical positions (fire inspectors, nuclear technicians, aviation safety officers) face sector-specific regulatory constraints that limit automated decision-making.",
+    "key_uk_provisions": [
+      "Sector-specific safety regulations",
+      "UK GDPR Art 22",
+      "Health and Safety at Work Act 1974"
+    ]
+  },
+  "312": {
+    "uk_regulated_score": 5.2,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "UK's pro-innovation approach creates minimal friction for AI deployment in supervisory roles like scheduling, performance monitoring, and resource allocation. Equality Act 2010 provides some protection against discriminatory AI-assisted employment decisions, but lacks the preventive controls of EU regulation.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "Employment Rights Act 1996",
+      "UK GDPR Art 22"
+    ]
+  },
+  "313": {
+    "uk_regulated_score": 6.5,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "Process control in critical infrastructure (power, water, chemical plants) faces sector-specific regulatory oversight from bodies like Ofgem and Environment Agency, creating moderate friction for AI deployment. However, absence of EU AI Act's high-risk classifications and mandatory human oversight requirements significantly reduces regulatory barriers compared to EU.",
+    "key_uk_provisions": [
+      "Health and Safety at Work Act 1974",
+      "Environmental permitting regulations",
+      "Sector-specific safety standards",
+      "UK GDPR Art 22"
+    ]
+  },
+  "314": {
+    "uk_regulated_score": 6.1,
+    "uk_regulatory_friction": -0.4,
+    "uk_rationale": "Life science technicians face minimal UK regulatory friction as most AI applications involve laboratory data analysis and process optimization rather than direct human-impact decisions. Quality standards in scientific work and potential GDPR considerations for biological data create some friction, but the UK's pro-innovation stance allows significant AI deployment in research and technical analysis roles.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Scientific quality standards",
+      "Health and Safety at Work Act 1974"
+    ]
+  },
+  "315": {
+    "uk_regulated_score": 5.0,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "Ship and aircraft controllers face limited AI regulatory friction in the UK as safety-critical decisions remain under human oversight. While UK GDPR may apply to automated scheduling or assignment decisions, aviation/maritime safety regulations prioritise human judgment over algorithmic automation.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Aviation safety regulations",
+      "Maritime safety codes"
+    ]
+  },
+  "321": {
+    "uk_regulated_score": 3.2,
+    "uk_regulatory_friction": -1.3,
+    "uk_rationale": "Healthcare sector faces CQC oversight and professional body requirements that may slow AI adoption in patient-facing roles, but UK's pro-innovation approach creates less friction than EU medical device regulations. Equality Act concerns around AI-assisted patient triage and UK GDPR Art 22 for automated healthcare decisions provide moderate friction.",
+    "key_uk_provisions": [
+      "Care Quality Commission requirements",
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "Professional body standards"
+    ]
+  },
+  "322": {
+    "uk_regulated_score": 2.5,
+    "uk_regulatory_friction": -1.0,
+    "uk_rationale": "Healthcare regulation through CQC creates significant friction for AI deployment in maternity care, with clinical governance requirements and duty of care considerations limiting AI use in patient-facing roles. UK GDPR Art 22 applies to automated healthcare decisions, though healthcare-specific regulation is the primary constraint rather than general AI law.",
+    "key_uk_provisions": [
+      "CQC registration and inspection",
+      "UK GDPR Art 22",
+      "Clinical governance requirements",
+      "Nursing and Midwifery Council standards"
+    ]
+  },
+  "323": {
+    "uk_regulated_score": 4.0,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "UK health regulation through CQC and professional bodies creates moderate friction for AI deployment in patient assessment and treatment recommendations. Equality Act 2010 adds discrimination risk for AI-assisted patient categorisation, while UK GDPR Art 22 applies to automated treatment decisions.",
+    "key_uk_provisions": [
+      "CQC regulation",
+      "Professional body standards",
+      "Equality Act 2010",
+      "UK GDPR Art 22"
+    ]
+  },
+  "324": {
+    "uk_regulated_score": 3.8,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "Veterinary professionals face minimal AI-specific regulatory friction in the UK beyond general data protection requirements for patient records. The RCVS provides professional guidance but lacks specific AI restrictions, and animal welfare considerations are managed through existing veterinary standards rather than AI-specific rules.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Data Protection Act 2018",
+      "RCVS professional standards"
+    ]
+  },
+  "325": {
+    "uk_regulated_score": 5.0,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "The UK's lighter regulatory approach allows more AI deployment in health associate roles compared to EU standards, with reduced friction for clinical decision support and administrative automation. However, UK GDPR automated decision-making provisions and Equality Act protections still create some constraints, particularly for AI systems affecting patient care pathways or employment decisions.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "331": {
+    "uk_regulated_score": 7.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "The UK's pro-innovation stance significantly reduces regulatory friction for AI deployment in financial analysis and credit decisions. However, UK GDPR Article 22 creates some constraints on fully automated decision-making for credit and loans, while the Equality Act 2010 poses discrimination risks for AI-assisted financial assessments that could disproportionately impact protected groups.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "FCA regulatory guidance"
+    ]
+  },
+  "332": {
+    "uk_regulated_score": 7.0,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "UK's light-touch approach creates minimal friction for AI deployment in sales and purchasing roles. However, Equality Act 2010 creates some liability risk for AI-assisted client profiling and pricing decisions, while UK GDPR Article 22 applies to automated purchasing recommendations and insurance underwriting decisions.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "333": {
+    "uk_regulated_score": 6.7,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "Business services agents face moderate UK regulatory friction primarily from Equality Act discrimination risks in customer profiling and service delivery, plus UK GDPR Article 22 constraints on automated decision-making. The UK's pro-innovation approach allows more AI deployment than EU equivalents, but property/financial services sectors may face additional FCA oversight.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "FCA regulation",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "334": {
+    "uk_regulated_score": 7.4,
+    "uk_regulatory_friction": -0.8,
+    "uk_rationale": "Administrative roles face moderate UK regulatory friction primarily from UK GDPR Article 22 restrictions on automated decision-making for HR processes and Equality Act 2010 discrimination risks in AI-assisted recruitment or performance management. The UK's lighter regulatory approach compared to EU allows greater AI deployment in routine administrative tasks, though data protection and employment law create some constraints.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "335": {
+    "uk_regulated_score": 5.2,
+    "uk_regulatory_friction": -1.3,
+    "uk_rationale": "Government regulatory roles face moderate UK friction despite high AI potential due to public sector accountability requirements and judicial review risks. Equality Act 2010 creates liability for discriminatory AI decisions in benefit determinations and inspections, while UK GDPR Article 22 applies to automated social security and tax decisions affecting individual rights.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Public Law - Judicial Review",
+      "Human Rights Act 1998"
+    ]
+  },
+  "341": {
+    "uk_regulated_score": 4.2,
+    "uk_regulatory_friction": -1.3,
+    "uk_rationale": "UK's lighter regulatory approach reduces friction for AI deployment in case management, scheduling, and risk assessment tools. However, care sector oversight by CQC and safeguarding responsibilities for vulnerable populations create meaningful compliance barriers that prevent unrestricted AI implementation.",
+    "key_uk_provisions": [
+      "Care Quality Commission regulations",
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996",
+      "Safeguarding legislation"
+    ]
+  },
+  "342": {
+    "uk_regulated_score": 3.3,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "Sports and fitness workers face minimal UK regulatory friction as AI applications are primarily in training analytics and performance monitoring rather than high-stakes decision-making. The Equality Act 2010 could apply to AI-assisted athlete selection or coaching recommendations, but enforcement is reactive and limited in recreational sports contexts.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22"
+    ]
+  },
+  "343": {
+    "uk_regulated_score": 6.0,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "UK's pro-innovation framework creates minimal friction for AI adoption in creative and culinary roles. While Equality Act 2010 may apply to hiring decisions and UK GDPR Art 22 to automated content curation, the absence of EU AI Act restrictions allows greater deployment flexibility in creative applications.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "351": {
+    "uk_regulated_score": 7.0,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "The UK's pro-innovation approach creates minimal friction for AI deployment in ICT support roles, with only UK GDPR automated decision-making provisions and potential Equality Act concerns for AI-driven performance management creating limited barriers. ICT operations face fewer regulatory constraints than customer-facing or high-stakes roles, allowing substantial AI integration for troubleshooting, system monitoring, and user support automation.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "352": {
+    "uk_regulated_score": 7.2,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "UK's lighter regulatory framework allows greater AI deployment in technical roles like sound design automation and telecommunications system optimization. Ofcom provides sector-specific oversight for broadcasting and telecommunications but maintains pro-innovation stance with minimal deployment restrictions.",
+    "key_uk_provisions": [
+      "Communications Act 2003",
+      "UK GDPR Art 22",
+      "Health and Safety at Work Act 1974"
+    ]
+  },
+  "411": {
+    "uk_regulated_score": 7.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "UK's lighter regulatory touch allows more AI deployment in routine clerical tasks compared to EU constraints. Primary friction comes from UK GDPR Article 22 restrictions on automated decision-making for employment matters and potential Equality Act claims if AI systems create discriminatory outcomes in task allocation or performance evaluation.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "412": {
+    "uk_regulated_score": 7.2,
+    "uk_regulatory_friction": -1.3,
+    "uk_rationale": "UK's light-touch AI regulation allows greater deployment of AI tools for secretarial tasks like email drafting, diary management, and document filing. Limited friction comes from UK GDPR Art 22 for automated scheduling decisions and potential Equality Act claims if AI systems discriminate in task allocation or performance evaluation.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "413": {
+    "uk_regulated_score": 9.0,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "Lower friction than EU due to absence of AI Act requirements for high-risk workplace AI systems. However, UK GDPR Art 22 may apply to automated processing of employee data, and Equality Act 2010 creates potential discrimination liability if AI systems impact hiring or performance evaluation of keyboard operators.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "421": {
+    "uk_regulated_score": 6.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "Financial services roles face FCA oversight on algorithmic trading and automated systems, while customer-facing positions involve UK GDPR Article 22 considerations for automated decision-making. However, the UK's pro-innovation stance and absence of EU AI Act restrictions significantly reduce deployment friction compared to EU.",
+    "key_uk_provisions": [
+      "FCA rules",
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "Gambling Commission oversight"
+    ]
+  },
+  "422": {
+    "uk_regulated_score": 6.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "Client information workers face moderate UK regulatory friction primarily from Equality Act discrimination risks in customer service algorithms and UK GDPR Article 22 protections for automated customer decisions. The UK's pro-innovation approach reduces friction compared to EU regulation, but employment law still creates meaningful constraints on AI deployment in customer-facing roles.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996",
+      "ICE Regulations 2004"
+    ]
+  },
+  "431": {
+    "uk_regulated_score": 7.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "Limited UK regulatory friction for numerical clerks as these back-office roles involve data processing rather than high-stakes automated decisions about individuals. UK GDPR Article 22 provides some protection against fully automated processing, but most clerical AI applications (data validation, transaction processing) fall outside its scope.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996",
+      "FCA regulations"
+    ]
+  },
+  "432": {
+    "uk_regulated_score": 7.0,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "Material-recording and transport clerks face moderate UK regulatory friction despite high technical AI exposure. Transport sector regulations, particularly for safety-critical roles like rail traffic controllers and ship dispatchers, create compliance requirements that slightly limit AI deployment speed.",
+    "key_uk_provisions": [
+      "Transport sector safety regulations",
+      "UK GDPR Art 22",
+      "Equality Act 2010"
+    ]
+  },
+  "441": {
+    "uk_regulated_score": 6.4,
+    "uk_regulatory_friction": -0.8,
+    "uk_rationale": "The UK's pro-innovation approach creates lower friction than EU regulation for clerical AI deployment. However, Equality Act discrimination risks remain significant for HR assistants involved in CV screening and recruitment processes, while UK GDPR Art 22 provides some protection against fully automated administrative decisions.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "511": {
+    "uk_regulated_score": 3.2,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "Limited regulatory friction as AI applications are mainly informational (digital guides, scheduling apps) with minimal automated decision-making affecting individual rights. Transport safety regulations may create some sector-specific constraints for railway operations, but customer service AI faces few UK-specific barriers.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Transport safety regulations"
+    ]
+  },
+  "512": {
+    "uk_regulated_score": 3.3,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "UK's pro-innovation approach creates minimal regulatory friction for AI deployment in cooking operations. Food safety regulations may indirectly limit some AI applications, but no AI-specific restrictions exist for recipe optimization, inventory management, or cooking process automation.",
+    "key_uk_provisions": [
+      "Food Safety Act 1990",
+      "UK GDPR Art 22"
+    ]
+  },
+  "513": {
+    "uk_regulated_score": 3.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "The UK's pro-innovation regulatory approach creates minimal friction for AI deployment in hospitality service roles. UK GDPR Art 22 has limited relevance as AI applications focus on operational optimization rather than automated decision-making about individuals.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "514": {
+    "uk_regulated_score": 2.3,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "Hairdressing and beauty services have minimal AI exposure, primarily in booking systems and basic client management software. UK regulatory friction is very light as these services are largely person-to-person with no high-stakes automated decisions. Equality Act considerations around discriminatory service provision create minimal friction.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22"
+    ]
+  },
+  "515": {
+    "uk_regulated_score": 4.2,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "Building and housekeeping supervisors face minimal UK regulatory friction as AI deployment in these roles primarily involves operational tasks like scheduling, resource allocation, and basic monitoring rather than high-stakes decisions affecting individual rights. The Equality Act 2010 provides some protection against discriminatory AI use in hiring/promotion, but day-to-day supervisory AI tools face little regulatory constraint in the UK's light-touch framework.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "516": {
+    "uk_regulated_score": 3.3,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "Personal services workers face minimal UK regulatory friction as AI applications are limited to basic scheduling, customer matching, and administrative tasks. Equality Act 2010 may apply to AI-assisted client matching services, but enforcement is reactive and unlikely given the personal nature of these services.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "521": {
+    "uk_regulated_score": 2.3,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "Street and market vendors have minimal AI exposure primarily limited to basic payment processing and inventory apps. The UK's light-touch regulatory approach creates negligible additional friction beyond technical limitations, as these roles involve direct personal selling with little scope for regulated AI applications.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010"
+    ]
+  },
+  "522": {
+    "uk_regulated_score": 5.2,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "Shop salespersons face minimal UK regulatory friction as AI deployment focuses on sales optimization, inventory management, and customer interaction rather than high-stakes decisions. Equality Act concerns may arise if AI influences hiring/promotion of sales staff, while UK GDPR Art 22 provides limited protection for customer profiling.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22"
+    ]
+  },
+  "523": {
+    "uk_regulated_score": 8.0,
+    "uk_regulatory_friction": -0.5,
+    "uk_rationale": "Limited UK regulatory friction as cashiers and ticket clerks involve routine transactional tasks with minimal protected characteristics exposure. UK GDPR Art 22 has little relevance to basic payment processing, and Equality Act claims unlikely for standard cashier functions.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010"
+    ]
+  },
+  "524": {
+    "uk_regulated_score": 7.2,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "The UK's pro-innovation regulatory approach creates minimal friction for AI deployment in sales roles. While Equality Act 2010 provides some protection against discriminatory AI in hiring and UK GDPR Article 22 applies to automated decision-making, the absence of EU AI Act equivalents and weak worker consultation rights allows relatively unrestricted AI implementation in customer service, sales optimization, and performance monitoring.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "531": {
+    "uk_regulated_score": 2.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "UK child protection laws and safeguarding requirements create significant barriers to AI deployment in childcare settings, but these are lower than EU protections. Equality Act 2010 provides some protection against discriminatory AI use in educational support decisions.",
+    "key_uk_provisions": [
+      "Children Act 1989",
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Ofsted regulations"
+    ]
+  },
+  "532": {
+    "uk_regulated_score": 3.0,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "UK's lighter regulatory approach reduces friction compared to EU, particularly for AI-assisted care planning and monitoring systems. However, CQC oversight of care quality and Equality Act protections for vulnerable patients create some regulatory constraints on AI deployment in healthcare settings.",
+    "key_uk_provisions": [
+      "Care Quality Commission regulations",
+      "Equality Act 2010",
+      "UK GDPR Art 22"
+    ]
+  },
+  "541": {
+    "uk_regulated_score": 2.4,
+    "uk_regulatory_friction": -0.4,
+    "uk_rationale": "UK's pro-innovation approach creates lower friction than EU for protective services AI deployment, though Equality Act 2010 still constrains discriminatory algorithmic decision-making in security screening and hiring. Physical emergency response roles face minimal regulatory barriers to AI-assisted tools.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "611": {
+    "uk_regulated_score": 3.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Market gardeners and crop growers face minimal AI regulatory friction in the UK as their work is primarily physical and outdoor-based with limited algorithmic decision-making affecting employment or data processing. The UK's pro-innovation agricultural policy and absence of EU AI Act restrictions means precision agriculture technologies and farm management systems can be adopted with minimal regulatory barriers.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "612": {
+    "uk_regulated_score": 3.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Animal production involves minimal AI applications requiring regulatory oversight, with most technology focused on monitoring and basic automation rather than decision-making affecting workers or consumers. The UK's light-touch approach creates virtually no additional friction for this predominantly manual occupation.",
+    "key_uk_provisions": [
+      "Animal Welfare Act 2006",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "613": {
+    "uk_regulated_score": 4.3,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "Mixed farming operations face minimal AI-specific regulatory friction in the UK, with agricultural technology deployment largely unregulated. The main constraints are basic data protection requirements for farm management systems and potential equality considerations if AI assists in hiring farm workers.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010"
+    ]
+  },
+  "621": {
+    "uk_regulated_score": 3.3,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "Forestry workers face minimal AI-related regulatory friction in the UK given the limited technical exposure and primarily outdoor, physical nature of the work. Any AI deployment in forest management systems or resource allocation would encounter minimal regulatory barriers beyond basic data protection requirements.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "622": {
+    "uk_regulated_score": 3.1,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "This occupation involves primarily physical work with minimal AI deployment potential, making regulatory friction largely irrelevant. The slight reduction reflects the UK's lighter regulatory touch for operational technology decisions in primary industries.",
+    "key_uk_provisions": [
+      "Employment Rights Act 1996"
+    ]
+  },
+  "711": {
+    "uk_regulated_score": 2.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Building trades workers have very limited AI exposure in their hands-on, physical work, making regulation largely irrelevant to daily operations. The minimal UK regulatory friction reflects that these roles involve little automated decision-making that would trigger UK GDPR Article 22 or Equality Act concerns.",
+    "key_uk_provisions": [
+      "Health and Safety at Work etc. Act 1974",
+      "Construction (Design and Management) Regulations 2015"
+    ]
+  },
+  "712": {
+    "uk_regulated_score": 2.8,
+    "uk_regulatory_friction": 0.0,
+    "uk_rationale": "Building finishers and related trades workers have minimal AI exposure as their work is primarily hands-on physical tasks requiring manual skills, direct customer interaction, and on-site problem-solving. UK regulatory provisions are irrelevant for this occupation group since AI deployment is practically non-existent in core job functions.",
+    "key_uk_provisions": []
+  },
+  "713": {
+    "uk_regulated_score": 2.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "This predominantly physical occupation has minimal AI exposure, making regulatory frameworks largely irrelevant to practical deployment. The UK's lighter regulatory approach creates negligible additional friction beyond the already low technical exposure.",
+    "key_uk_provisions": [
+      "Health and Safety at Work Act 1974",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "721": {
+    "uk_regulated_score": 3.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "This highly physical occupation has minimal AI exposure, making regulatory differences largely irrelevant. The UK's lighter regulatory framework provides slightly less friction than EU approaches for any limited AI applications in quality control or equipment monitoring.",
+    "key_uk_provisions": [
+      "Health and Safety at Work etc. Act 1974",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "722": {
+    "uk_regulated_score": 3.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Minimal regulatory friction for this hands-on manufacturing occupation as AI deployment is limited to machine programming and predictive maintenance where worker consultation or discrimination concerns are negligible. UK's light-touch approach to industrial AI creates virtually no barriers.",
+    "key_uk_provisions": [
+      "Employment Rights Act 1996"
+    ]
+  },
+  "723": {
+    "uk_regulated_score": 3.8,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "This physical maintenance occupation has minimal AI regulatory exposure in the UK. While some discrimination risk exists for AI-assisted hiring or performance management, the hands-on diagnostic and repair nature means most AI applications face little regulatory friction under the UK's light-touch approach.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "731": {
+    "uk_regulated_score": 2.5,
+    "uk_regulatory_friction": 0.0,
+    "uk_rationale": "Handicraft workers face minimal AI exposure as their work involves highly skilled manual craftsmanship, traditional techniques, and artisanal production methods that are not readily automatable. The UK's light-touch regulatory approach has no practical impact since AI deployment in traditional handicrafts is extremely limited.",
+    "key_uk_provisions": []
+  },
+  "732": {
+    "uk_regulated_score": 7.3,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "Printing trades workers face minimal regulatory friction in the UK as their AI exposure primarily involves automated printing processes, quality control systems, and design optimization rather than high-stakes decision-making. The absence of EU AI Act provisions removes barriers to deploying AI in production workflows and equipment automation.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "741": {
+    "uk_regulated_score": 3.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Minimal regulatory friction as AI deployment is primarily in diagnostic tools and maintenance scheduling rather than worker assessment or high-risk applications. UK GDPR Art 22 has limited relevance to technical diagnostic systems, and safety regulations focus on electrical competency rather than AI governance.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "742": {
+    "uk_regulated_score": 4.3,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "This occupation involves mainly hands-on technical work with limited AI exposure, so regulatory friction is minimal. The slight reduction reflects the UK's lighter regulatory touch compared to EU frameworks, with no sector-specific AI restrictions for telecommunications installation and repair work.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "751": {
+    "uk_regulated_score": 3.1,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Food processing trades have minimal AI exposure and face very little UK regulatory friction. While food safety regulations exist, they don't meaningfully restrict AI deployment in grading, sorting, or quality assessment tasks.",
+    "key_uk_provisions": [
+      "Food Safety Act 1990",
+      "UK GDPR Art 22"
+    ]
+  },
+  "752": {
+    "uk_regulated_score": 3.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "This highly manual, craft-based occupation has minimal AI exposure and therefore minimal regulatory friction. The UK's light-touch approach has negligible impact since AI deployment in traditional woodworking trades remains very limited.",
+    "key_uk_provisions": [
+      "Health and Safety at Work etc. Act 1974"
+    ]
+  },
+  "753": {
+    "uk_regulated_score": 5.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Minimal UK regulatory friction as garment trades involve primarily physical craft skills with limited AI decision-making applications. UK GDPR Art 22 may apply to any automated quality assessment systems, but enforcement is lighter than EU equivalents.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "754": {
+    "uk_regulated_score": 7.1,
+    "uk_regulatory_friction": -0.4,
+    "uk_rationale": "UK's light-touch regulatory approach reduces friction for AI deployment in quality control and inspection roles. While Equality Act 2010 provides some protection against discriminatory automated decisions and UK GDPR Art 22 applies to fully automated decision-making, the absence of EU AI Act-style high-risk classifications and weak worker consultation requirements significantly lower barriers to AI implementation in these technical craft roles.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "811": {
+    "uk_regulated_score": 4.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Mining and mineral processing operations face minimal UK regulatory friction as AI deployment is primarily in equipment operation and process optimization rather than worker evaluation. Health and Safety Executive oversight may require safety validation of AI-assisted machinery controls, but the pro-innovation framework supports operational efficiency improvements.",
+    "key_uk_provisions": [
+      "Health and Safety at Work etc. Act 1974",
+      "UK GDPR Art 22"
+    ]
+  },
+  "812": {
+    "uk_regulated_score": 3.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Metal processing plant operators face minimal AI exposure in physical operations, with very low UK regulatory friction. While UK GDPR and Equality Act apply to any automated scheduling or performance systems, the primarily manual nature of metal casting, grinding, and finishing work means limited practical AI deployment opportunities.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010"
+    ]
+  },
+  "813": {
+    "uk_regulated_score": 6.2,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "UK's pro-innovation approach creates minimal regulatory friction for AI deployment in industrial plant operations. Health and safety regulations provide some oversight for automated systems in hazardous chemical processes, but no AI-specific restrictions limit deployment of monitoring and control systems.",
+    "key_uk_provisions": [
+      "Health and Safety at Work Act 1974",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "814": {
+    "uk_regulated_score": 5.3,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "Machine operators face minimal UK regulatory friction as AI applications primarily involve production optimization and quality control rather than high-stakes individual decisions. The pro-innovation regulatory approach allows deployment with basic safeguards around automated decision-making affecting employment terms.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "815": {
+    "uk_regulated_score": 6.3,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "The UK's pro-innovation approach creates minimal friction for AI adoption in manufacturing operations. While Equality Act considerations may apply to workforce decisions and UK GDPR covers any automated processing of worker data, these provisions create limited practical barriers for AI-enhanced textile and leather manufacturing equipment.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "816": {
+    "uk_regulated_score": 4.3,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "Food manufacturing has minimal regulatory friction for AI deployment in machine operations, with only basic data protection considerations for automated processes. The FSA and workplace safety regulations don't significantly constrain AI-assisted production optimization or quality control systems.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Health and Safety at Work Act 1974"
+    ]
+  },
+  "817": {
+    "uk_regulated_score": 2.7,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Wood processing and papermaking plant operators face minimal AI deployment, making regulation largely irrelevant. The UK's light-touch regulatory approach provides slightly more flexibility than EU frameworks for any automated process optimization or safety monitoring systems that might be introduced.",
+    "key_uk_provisions": [
+      "Health and Safety at Work Act 1974",
+      "UK GDPR Art 22"
+    ]
+  },
+  "818": {
+    "uk_regulated_score": 3.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Minimal regulatory friction as AI applications are primarily for process optimization and quality control rather than employment decisions. UK GDPR Art 22 has limited relevance for operational monitoring systems, and Equality Act concerns are minimal for technical process improvements.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Health and Safety at Work Act 1974"
+    ]
+  },
+  "821": {
+    "uk_regulated_score": 3.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Assemblers face minimal regulatory friction in the UK as their physical manufacturing work has limited direct worker-facing AI applications. The slight reduction reflects the UK's lighter regulatory approach compared to the EU, with minimal compliance burden for workplace automation systems.",
+    "key_uk_provisions": [
+      "Employment Rights Act 1996",
+      "Health and Safety at Work Act 1974"
+    ]
+  },
+  "831": {
+    "uk_regulated_score": 3.2,
+    "uk_regulatory_friction": -0.8,
+    "uk_rationale": "Railway operations in the UK are subject to ORR (Office of Rail and Road) safety regulations which create some friction for AI deployment in safety-critical roles like train driving and signalling. However, the UK's lighter regulatory touch compared to EU allows more flexibility for AI-assisted systems in scheduling, route optimization, and operational support functions.",
+    "key_uk_provisions": [
+      "Railway Safety Regulations",
+      "ORR safety oversight",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "832": {
+    "uk_regulated_score": 3.8,
+    "uk_regulatory_friction": -0.7,
+    "uk_rationale": "UK regulatory friction is lower than EU levels as there's no mandatory AI notification requirements for logistics optimization or route planning systems. However, UK GDPR Art 22 still applies to automated dispatch/assignment decisions, and Equality Act 2010 creates some liability risk for discriminatory algorithmic routing or driver selection.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Equality Act 2010",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "833": {
+    "uk_regulated_score": 3.2,
+    "uk_regulatory_friction": -0.3,
+    "uk_rationale": "UK regulation creates minimal friction for AI deployment in driving roles, with no sector-specific restrictions on autonomous vehicle testing or driver assistance systems beyond standard safety requirements. Employment protections under unfair dismissal law provide some constraint on algorithmic route optimization or performance monitoring systems.",
+    "key_uk_provisions": [
+      "Employment Rights Act 1996",
+      "UK GDPR Art 22"
+    ]
+  },
+  "834": {
+    "uk_regulated_score": 3.1,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Mobile plant operators face minimal AI exposure given the physical, safety-critical nature of their work. The UK's lighter regulatory approach creates minimal friction difference from technical capabilities, as automated systems in construction/logistics face basic safety oversight but no AI-specific restrictions.",
+    "key_uk_provisions": [
+      "Health and Safety at Work Act 1974",
+      "Construction (Design and Management) Regulations 2015"
+    ]
+  },
+  "835": {
+    "uk_regulated_score": 3.5,
+    "uk_regulatory_friction": 0.0,
+    "uk_rationale": "Ships' deck crews perform primarily manual, physical tasks with minimal AI application potential, making regulatory friction largely irrelevant. The maritime sector has established safety protocols that would naturally limit AI deployment in critical operations without requiring specific AI regulation.",
+    "key_uk_provisions": [
+      "Maritime and Coastguard Agency safety regulations"
+    ]
+  },
+  "911": {
+    "uk_regulated_score": 2.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Minimal regulatory friction as AI applications are limited to basic task scheduling and performance monitoring systems. The UK's light-touch regulatory approach provides slightly more deployment flexibility than EU frameworks for routine operational AI tools.",
+    "key_uk_provisions": [
+      "Employment Rights Act 1996"
+    ]
+  },
+  "912": {
+    "uk_regulated_score": 2.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Hand cleaning occupations have minimal AI exposure and regulatory friction is negligible given the physical, manual nature of the work. The slight reduction reflects the UK's pro-innovation stance allowing marginally easier adoption of basic scheduling or route optimization tools compared to EU frameworks.",
+    "key_uk_provisions": [
+      "Employment Rights Act 1996"
+    ]
+  },
+  "921": {
+    "uk_regulated_score": 2.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Minimal regulatory friction for agricultural labourers as AI deployment is limited to basic monitoring systems and task scheduling. UK's light-touch approach means fewer barriers than EU for implementing agricultural AI tools.",
+    "key_uk_provisions": [
+      "Employment Rights Act 1996",
+      "Health and Safety at Work Act 1974"
+    ]
+  },
+  "931": {
+    "uk_regulated_score": 2.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Mining and construction labourers face minimal AI exposure due to the physical, manual nature of their work, making regulatory friction largely irrelevant. The UK's lighter regulatory approach has negligible impact since AI deployment in these roles is extremely limited.",
+    "key_uk_provisions": [
+      "Employment Rights Act 1996"
+    ]
+  },
+  "932": {
+    "uk_regulated_score": 2.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Manufacturing labourers face minimal AI exposure in their primarily physical, manual tasks, making regulatory friction nearly irrelevant. The UK's light-touch approach creates marginally less friction than EU regulation for the limited AI applications that might affect these roles (basic scheduling, task allocation systems).",
+    "key_uk_provisions": [
+      "Employment Rights Act 1996",
+      "UK GDPR Art 22"
+    ]
+  },
+  "933": {
+    "uk_regulated_score": 3.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Transport and storage labourers have minimal regulatory friction in the UK as AI deployment is limited to basic warehouse management systems and route optimization. The Equality Act 2010 provides minimal constraint on algorithmic scheduling or task assignment systems, while working time regulations may limit intensive AI-driven productivity monitoring.",
+    "key_uk_provisions": [
+      "Equality Act 2010",
+      "Working Time Regulations 1998"
+    ]
+  },
+  "941": {
+    "uk_regulated_score": 2.3,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "Food preparation assistants have minimal AI exposure limited to basic scheduling or inventory systems. UK's lighter regulatory approach removes EU friction around worker consultation for these simple applications. UK GDPR automated decision-making provisions have minimal relevance for basic operational tools.",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Employment Rights Act 1996"
+    ]
+  },
+  "951": {
+    "uk_regulated_score": 1.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Street service workers like leaflet distributors have minimal AI exposure and face negligible UK regulatory friction. The UK's lighter regulatory approach creates slightly less friction than EU frameworks, but this is barely relevant given the physical, low-skill nature of the work.",
+    "key_uk_provisions": [
+      "Employment Rights Act 1996"
+    ]
+  },
+  "952": {
+    "uk_regulated_score": 2.3,
+    "uk_regulatory_friction": -0.2,
+    "uk_rationale": "Street vendors have minimal AI exposure given the physical, interpersonal nature of street selling. The UK's lighter regulatory framework offers virtually no friction for the limited AI applications that might exist (basic payment processing, simple inventory apps).",
+    "key_uk_provisions": [
+      "UK GDPR Art 22",
+      "Data Protection Act 2018"
+    ]
+  },
+  "961": {
+    "uk_regulated_score": 2.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "Minimal regulatory friction for refuse workers as AI deployment is primarily in route optimization and scheduling systems rather than worker-affecting decisions. UK's lighter regulatory approach allows slightly easier implementation compared to EU, with no sector-specific restrictions on waste management technology.",
+    "key_uk_provisions": [
+      "Health and Safety at Work etc. Act 1974"
+    ]
+  },
+  "962": {
+    "uk_regulated_score": 2.4,
+    "uk_regulatory_friction": -0.1,
+    "uk_rationale": "These elementary service roles have minimal AI exposure, with any automated systems (scheduling, task allocation) facing negligible UK regulatory friction. The Equality Act could theoretically apply to AI-assisted scheduling or performance monitoring, but practical risk is very low given the limited AI deployment in these manual service roles.",
+    "key_uk_provisions": [
+      "Equality Act 2010"
+    ]
+  }
+}

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analysis: AI Exposure of the European Job Market &mdash; Nexalps</title>
+<meta name="description" content="Analysis of AI exposure across 199.6M European jobs in 36 countries. How the EU AI Act, works councils, and GDPR create a regulatory buffer between technical AI capability and practical deployment.">
+<link rel="canonical" href="https://ai-exposure.nexalps.com/analysis.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="What AI Exposure Means for the European Job Market">
+<meta property="og:description" content="199.6M jobs scored. 1.2 points of regulatory friction. A &euro;1T gap between what AI can do and what EU law allows.">
+<meta property="og:url" content="https://ai-exposure.nexalps.com/analysis.html">
+<meta property="og:image" content="https://ai-exposure.nexalps.com/og-image.png">
+<meta property="og:site_name" content="Nexalps">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What AI Exposure Means for the European Job Market">
+<meta name="twitter:description" content="199.6M jobs scored. 1.2 points of regulatory friction. A &euro;1T gap between what AI can do and what EU law allows.">
+<meta name="twitter:image" content="https://ai-exposure.nexalps.com/og-image.png">
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What AI Exposure Means for the European Job Market",
+  "description": "Analysis of AI exposure across 199.6M European jobs, examining the regulatory buffer created by the EU AI Act, works councils, and GDPR.",
+  "author": {
+    "@type": "Person",
+    "name": "Philipp Maul",
+    "url": "https://www.linkedin.com/in/pmaul/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nexalps",
+    "url": "https://nexalps.com"
+  },
+  "datePublished": "2026-03-16",
+  "mainEntityOfPage": "https://ai-exposure.nexalps.com/analysis.html"
+}
+</script>
+
+<!-- PostHog analytics -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])}}(document,window.posthog||[]);
+posthog.init('phc_bjax6jdRxYJAaExodvALjRru8AQzUSbYFNlWlXiJM8A', {api_host: 'https://eu.i.posthog.com', person_profiles: 'identified_only'});
+</script>
+
+<!-- Geist font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #0a0a0c;
+  --card-border: rgba(255,255,255,0.08);
+  --muted: #a1a1aa;
+  --muted-foreground: #71717a;
+  --accent: #27272a;
+  --border: rgba(255,255,255,0.12);
+  --ring: #f97316;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --font: 'Geist', system-ui, -apple-system, sans-serif;
+  --transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: var(--font);
+  background: var(--background);
+  color: var(--foreground);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Site nav ── */
+.site-nav {
+  position: fixed; top: 0; right: 0; left: 0;
+  z-index: 9999;
+  display: flex; align-items: center; justify-content: flex-end;
+  padding: 12px 20px;
+  pointer-events: none;
+}
+.site-nav-links {
+  display: flex; gap: 20px; pointer-events: auto;
+  background: rgba(9,9,11,0.82);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 8px 16px;
+}
+.site-nav-links a {
+  font-size: 13px; font-weight: 500;
+  color: var(--muted); text-decoration: none;
+  transition: color 0.15s;
+}
+.site-nav-links a:hover { color: var(--foreground); }
+.site-nav-links a.active { color: var(--ring); }
+.burger {
+  display: none; pointer-events: auto;
+  background: rgba(9,9,11,0.82);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 10px 11px; cursor: pointer;
+  flex-direction: column; gap: 4px;
+}
+.burger span {
+  display: block; width: 18px; height: 2px;
+  background: var(--foreground); border-radius: 1px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.burger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.burger-panel {
+  display: none; position: fixed; top: 0; left: 0; right: 0;
+  z-index: 9998;
+  background: rgba(9,9,11,0.96);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  padding: 72px 24px 32px;
+  flex-direction: column; gap: 24px;
+}
+.burger-panel.open { display: flex; }
+.burger-panel a {
+  font-size: 20px; font-weight: 600;
+  color: var(--muted); text-decoration: none;
+  transition: color 0.15s;
+}
+.burger-panel a:hover { color: var(--foreground); }
+.burger-panel a.active { color: var(--ring); }
+@media (max-width: 768px) {
+  .site-nav-links { display: none; }
+  .burger { display: flex; }
+}
+
+
+/* ── Hero ── */
+.hero {
+  padding: 40px 0 32px;
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 40px;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.hero .lede {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+/* ── Stat cards ── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 32px 0 0;
+}
+.stat-card {
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+.stat-card .num {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.stat-card .num .accent { color: var(--foreground); }
+.stat-card .label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-foreground);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+/* ── Article ── */
+.article {
+  padding-bottom: 48px;
+}
+.article h2 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 48px 0 8px;
+  line-height: 1.3;
+  color: var(--foreground);
+}
+.article h2 .num {
+  color: var(--ring);
+  font-weight: 700;
+}
+.article h2 .subtitle {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 4px;
+  letter-spacing: 0;
+}
+.article p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #d4d4d8;
+  line-height: 1.8;
+  margin: 16px 0;
+}
+.article p strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+.article .highlight {
+  margin: 24px 0;
+  padding: 16px 20px;
+  background: rgba(249, 115, 22, 0.06);
+  border-left: 3px solid var(--ring);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 15px;
+  color: #d4d4d8;
+  line-height: 1.7;
+}
+.article .data-table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.article .data-table th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-foreground);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.article .data-table td {
+  padding: 10px 12px;
+  color: #d4d4d8;
+  border-bottom: 1px solid var(--card-border);
+}
+.article .data-table td:last-child {
+  font-weight: 600;
+  color: var(--ring);
+}
+
+/* ── Author note cards ── */
+.author-note {
+  margin: 0 0 40px;
+  padding: 24px 28px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--radius-lg);
+}
+.author-note h3 {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.author-note p {
+  font-size: 15px;
+  color: #a1a1aa;
+  line-height: 1.8;
+  margin: 12px 0;
+}
+.author-note p:first-of-type { margin-top: 0; }
+.author-note p:last-of-type { margin-bottom: 0; }
+.author-note .sig {
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+.author-note.opinion {
+  border-color: rgba(249,115,22,0.15);
+  background: rgba(249,115,22,0.03);
+}
+.author-note.opinion h3 { color: var(--ring); }
+.author-note.opinion .opinion-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ring);
+  background: rgba(249,115,22,0.10);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+/* ── Methodology (collapsible) ── */
+.methodology {
+  border-top: 1px solid var(--card-border);
+  padding-top: 40px;
+  margin-top: 8px;
+}
+.methodology summary {
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--foreground);
+  padding: 8px 0;
+}
+.methodology summary::-webkit-details-marker { display: none; }
+.methodology summary::before {
+  content: "+";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 500;
+  flex-shrink: 0;
+  transition: background var(--transition);
+}
+.methodology[open] summary::before { content: "\2212"; }
+.methodology .content {
+  padding: 16px 0 8px;
+}
+.methodology .content h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 24px 0 8px;
+  letter-spacing: -0.01em;
+}
+.methodology .content h3:first-child { margin-top: 0; }
+.methodology .content p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 8px 0;
+}
+.methodology .content ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+.methodology .content li {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  padding: 4px 0 4px 20px;
+  position: relative;
+}
+.methodology .content li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 13px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--muted-foreground);
+}
+.methodology .content strong { color: #d4d4d8; font-weight: 600; }
+.methodology .content a {
+  color: var(--ring);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── CTA ── */
+.cta-bar {
+  margin: 48px 0 0;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+.cta-bar p {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.cta-bar .cta-sub {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.cta-bar .btn-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.cta-bar a.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 24px;
+  background: var(--ring);
+  color: #000;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+.cta-bar a.btn:hover { opacity: 0.9; }
+.cta-bar a.btn-outline {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+.cta-bar a.btn-outline:hover { color: var(--foreground); border-color: rgba(255,255,255,0.25); }
+
+/* ── Footer ── */
+.footer {
+  padding-top: 24px;
+  padding-bottom: 40px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+  border-top: 1px solid var(--card-border);
+  margin-top: 48px;
+}
+.footer a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition);
+}
+.footer a:hover { color: var(--foreground); }
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .container { padding: 0 16px; }
+  .hero { padding: 28px 0 24px; }
+  .hero h1 { font-size: 26px; }
+  .hero .lede { font-size: 16px; }
+  .stat-row { grid-template-columns: 1fr; gap: 10px; }
+  .stat-card .num { font-size: 24px; }
+  .article h2 { font-size: 19px; margin-top: 36px; }
+  .article p { font-size: 15px; }
+  .cta-bar .btn-row { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="site-nav" aria-label="Site navigation">
+  <div class="site-nav-links">
+    <a href="index.html">Explore the map</a>
+    <a href="analysis.html" class="active">Analysis</a>
+    <a href="questions.html">Questions</a>
+    <a href="sources.html">Sources</a>
+  </div>
+  <button class="burger" id="burger-btn" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="burger-panel" id="burger-panel">
+  <a href="index.html">Explore the map</a>
+  <a href="analysis.html" class="active">Analysis</a>
+  <a href="questions.html">Questions</a>
+  <a href="sources.html">Sources</a>
+</div>
+
+
+<div class="container">
+
+<header class="hero">
+  <h1>What AI Exposure Means for the European Job Market</h1>
+  <p class="lede">
+    We scored 125 European occupation groups covering 199.6 million jobs for AI exposure, measuring both raw technical capability and practical impact under EU regulation. The gap between these two numbers reveals where the European regulatory framework creates real friction for AI adoption &mdash; and where it doesn&rsquo;t.
+  </p>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="num">199.6<span class="accent">M</span></div>
+      <div class="label">Jobs scored across EU-27</div>
+    </div>
+    <div class="stat-card">
+      <div class="num"><span class="accent">1.2</span> pts</div>
+      <div class="label">Avg regulatory friction</div>
+    </div>
+    <div class="stat-card">
+      <div class="num"><span class="accent">&sim;&euro;1</span>T</div>
+      <div class="label">Delta in exposure-weighted wages</div>
+    </div>
+  </div>
+</header>
+
+<div class="author-note">
+  <h3>A note on intent</h3>
+  <p>This analysis started with a simple question: What does AI exposure look like when you stop viewing it through an American lens?</p>
+  <p>Global data proved difficult to assemble. European data was well covered thanks to ESCO, Eurostat, and public legal frameworks. So that&rsquo;s where this began. The regulatory comparison with the US emerged naturally from the data, not from an agenda.</p>
+  <p>I&rsquo;m a founder, builder, and operator&mdash;not a researcher or policy expert. This is the most grounded analysis I could produce using public data, primary legal sources, and an open methodology. The data, sources, and code are open. This is not meant to fuel arguments for or against any regulatory approach; draw your own conclusions.</p>
+  <div class="sig">&mdash; Philipp Maul, Nexalps</div>
+</div>
+
+<article class="article">
+
+  <h2><span class="num">1.</span> The Screen Test
+    <span class="subtitle">The dividing line is physical presence, not education level.</span>
+  </h2>
+  <p>
+    The single strongest predictor of AI exposure in the European data is not education level, seniority, or even pay. It is whether the work product is purely digital. Occupations where workers spend their days producing text, code, spreadsheets, analyses, and communications &mdash; regardless of the credentials required to do so &mdash; consistently score in the 7&ndash;9 range for technical exposure.
+  </p>
+  <p>
+    Clerical support workers, as a group, average 8.1 for technical exposure &mdash; the highest of any ISCO major group. Keyboard operators score 9.5, general office clerks 8.5, and numerical clerks 8.5. Software developers score 9.0. These are occupations whose entire output passes through a screen.
+  </p>
+  <p>
+    On the other side of this line sit occupations where physical presence is the product: building frame workers (2.5), blacksmiths (3.5), machinery mechanics (4.0), and personal care workers (3.2). These scores are low not because the work is simple &mdash; many physical trades require years of training &mdash; but because AI cannot yet be physically present. The constraint is embodiment, not intelligence.
+  </p>
+  <p>
+    A general office clerk (8.5) faces greater AI exposure than a skilled electrician (3.5), despite the electrician receiving higher pay and more training. If your work passes through a screen, AI can access and potentially replicate it.
+  </p>
+
+  <h2><span class="num">2.</span> Education Doesn&rsquo;t Protect
+    <span class="subtitle">Degrees correlate with higher exposure, not lower.</span>
+  </h2>
+  <p>
+    The ISCO major groups requiring the most formal education score highest for AI exposure. Professionals (university-level occupations) average 7.0 in technical exposure. Clerical support workers average 8.1. Meanwhile, craft and related trades workers average 4.0, and plant and machine operators average 4.2. Elementary occupations &mdash; those requiring no formal qualifications &mdash; average just 2.5.
+  </p>
+  <p>
+    This overturns a common assumption about technology: past automation mainly affected low-skilled manual jobs, but now knowledge work is heavily affected, despite years of education aimed at such roles. Formal education does not shield workers from AI; in fact, more education often means more digital exposure, and thus greater risk.
+  </p>
+  <p>
+    The exception proves the rule. Doctors and nurses need extensive education, but score moderately (4.5) since their work remains inherently physical and interpersonal. Other health professionals score 6.5, as their roles involve more documentation and analysis. Education protects only when it leads to physical practice, not a desk.
+  </p>
+
+  <h2><span class="num">3.</span> The Regulatory Buffer
+    <span class="subtitle">EU regulation reduces practical exposure by 1.2 points on average &mdash; but unevenly.</span>
+  </h2>
+  <p>
+    The average occupation group in our dataset scores 5.6 for technical exposure and 4.4 for regulated exposure. This 1.2-point difference quantifies the collective impact of the EU AI Act&rsquo;s requirements, employment protection laws, works council consultations, and GDPR limits on automation. The gap directly reflects how regulation slows or alters the practical application of AI, compared to its technical capability.
+  </p>
+  <p>
+    However, this average regulatory impact varies widely by job type. Legislative and senior government roles see the largest gap, at 3.0 points, as nearly all AI tools in these areas are subject to strict regulation. Government professionals in regulatory roles show a similar 3.0-point gap. Education roles, such as teachers, consistently show 2.5-point gaps due to additional restrictions on using AI with students. These examples illustrate how regulation creates larger barriers in sensitive jobs.
+  </p>
+  <p>
+    At the other end, building finishers, roofers, and agricultural workers show near-zero deltas: regulation adds no friction because there is minimal AI exposure in these domains to regulate. By contrast, a regulatory buffer is most significant where technical exposure to AI is highest, and the work requires decisions about people, such as hiring, evaluation, education, law enforcement, and governance. Here, regulation acts as a significant mediator of AI&rsquo;s impact.
+  </p>
+
+  <div class="highlight">
+    The regulatory buffer is a genuine constraint, but not a barrier: it acts as a speed bump, slowing deployment, increasing compliance costs, and requiring organisations to justify their AI use. While it does not halt adoption, it raises both the expense and the need for careful consideration in deployment.
+  </div>
+
+  <p>
+    The Draghi Report on European competitiveness (September 2024) puts this friction in stark terms. <strong>EU private investment in AI reached roughly &euro;8 billion in 2023 &mdash; against $68 billion in the United States.</strong> Only 11% of EU firms have adopted AI, well short of the EU&rsquo;s stated target of 75% by 2030. Meanwhile, 55% of European SMEs flag regulatory complexity as their single biggest barrier to technology adoption. The regulatory buffer may protect workers, but it also widens the gap between what European firms could deploy and what they actually do.
+  </p>
+
+  <table class="data-table" aria-label="Top regulatory deltas by occupation">
+    <thead>
+      <tr><th>Occupation group</th><th>Technical</th><th>Regulated</th><th>Delta</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Legislators and senior officials</td><td>4.5</td><td>1.5</td><td>&minus;3.0</td></tr>
+      <tr><td>Regulatory government professionals</td><td>6.5</td><td>3.5</td><td>&minus;3.0</td></tr>
+      <tr><td>Vocational education teachers</td><td>7.5</td><td>5.0</td><td>&minus;2.5</td></tr>
+      <tr><td>Administration professionals</td><td>7.5</td><td>5.0</td><td>&minus;2.5</td></tr>
+      <tr><td>Legal professionals</td><td>7.5</td><td>5.0</td><td>&minus;2.5</td></tr>
+      <tr><td>Secondary education teachers</td><td>6.5</td><td>4.0</td><td>&minus;2.5</td></tr>
+    </tbody>
+  </table>
+
+  <h2><span class="num">4.</span> The DACH Angle
+    <span class="subtitle">Works councils add friction beyond the EU baseline.</span>
+  </h2>
+  <p>
+    Germany and Austria operate under co-determination regimes that go further than the EU baseline. Germany&rsquo;s Works Constitution Act (BetrVG &sect;87) gives works councils mandatory co-determination rights over the introduction of technical devices designed to monitor employee behaviour &mdash; which, in practice, includes most workplace AI tools. Austria&rsquo;s Labour Constitution Act (ArbVG &sect;96a) contains parallel provisions requiring works council consent for systems that affect human dignity.
+  </p>
+  <p>
+    These are not theoretical constraints. Any German employer deploying an AI-powered scheduling system, a performance analytics tool, or an automated email triage system must negotiate with the works council before rollout. The practical effect is a 6&ndash;18-month delay in AI adoption in co-determined workplaces, plus ongoing negotiations over system parameters, data access, and dispute resolution.
+  </p>
+  <p>
+    Switzerland faces a different landscape. Not bound by the EU AI Act, Switzerland is instead developing its own framework under the new Federal Act on Data Protection (nFADG). Swiss employers face fewer procedural barriers to AI deployment but operate under stricter general data protection requirements. For equivalent occupational groups, regulatory friction in Switzerland is typically lower than in Germany or Austria, reflecting the absence of mandatory co-determination and a lighter-touch AI governance regime.
+  </p>
+  <p>
+    The United Kingdom sits at the opposite extreme. Post-Brexit, the UK has <strong>deliberately chosen not to legislate AI-specific regulation</strong>, instead relying on existing sector regulators (FCA, Ofcom, CMA) to apply existing law to AI systems. There is no AI Act equivalent, no high-risk classification, no mandatory notification, and no works council system. UK employers deploying AI face the Equality Act 2010 (discrimination in AI-assisted hiring and pay decisions), the Data Protection Act 2018 (UK GDPR Art&nbsp;22 equivalent on automated decision-making), and ICE Regulations 2004 (information and consultation rights for 50+ employees) &mdash; but these are materially weaker constraints than anything in the EU or even Switzerland. The UK&rsquo;s regulatory friction is the lowest of any country in this analysis, making it the natural experiment for what happens when AI deployment is essentially a management prerogative.
+  </p>
+
+  <h2><span class="num">5.</span> What This Means for Enterprises
+    <span class="subtitle">The delta between scores is your compliance gap.</span>
+  </h2>
+  <p>
+    Organisations planning AI deployment should map their workforce against both scores. The technical score tells you what is possible. The regulated score tells you what is practical without triggering regulatory obligations. <strong>The gap between the two is your compliance surface area</strong> &mdash; every AI deployment in a high-delta occupation requires impact assessments, works council consultation, documentation, and potentially conformity assessment under the AI Act.
+  </p>
+  <p>
+    This isn&rsquo;t an argument against deployment. It&rsquo;s an argument for sequencing: start where technical and regulated scores are close, build compliance in low-risk roles, then move to high-delta occupations that demand a full regulatory process.
+  </p>
+  <p>
+    The 20.8 million workers in the 8&ndash;10 technical exposure band represent the sharpest commercial opportunity &mdash; and the highest compliance burden. Under regulated exposure scoring, that band shrinks to 7.1 million workers. The difference &mdash; 13.7 million jobs &mdash; sits behind a wall of regulatory process. Enterprises that learn to navigate that process efficiently will have a structural advantage.
+  </p>
+  <p>
+    The scale of what is required should not be underestimated. The Draghi Report estimates that Europe needs <strong>&euro;750&ndash;800 billion in additional annual investment</strong> to close the competitiveness gap with the US and China &mdash; a figure comparable in scale to the Marshall Plan. Only 4 of the world&rsquo;s top 50 technology companies are European. For enterprises, this means the AI transition is not just a workforce challenge but a capital allocation challenge: the firms that invest early in compliant AI infrastructure will compound that advantage over competitors still navigating their first works council consultation.
+  </p>
+  <p>
+    Mariana Mazzucato&rsquo;s research on the entrepreneurial state complicates the standard narrative that regulation simply slows innovation. Every foundational technology in today&rsquo;s AI stack &mdash; from the internet to GPS to early neural-network research &mdash; was publicly funded, with private capital entering only after the state absorbed the highest-risk, longest-horizon investments. If Europe&rsquo;s problem is not regulation per se but <strong>insufficient public investment in foundational AI research</strong>, the policy response looks very different: not less regulation, but more ambitious state-led R&amp;D through institutions modelled on DARPA rather than incremental tax credits. European enterprises waiting for venture capital to close the gap may be waiting for the wrong actor.
+  </p>
+  <p>
+    One structural response is already on the table. The <strong>EU-Inc proposal</strong> &mdash; a &ldquo;28th regime&rdquo; for a pan-European legal entity &mdash; directly targets the fragmentation that makes scaling European AI companies harder than incorporating in Delaware. EU-Inc would offer digital-first registration within 24 hours, a standardised employee share option scheme (EU-ESOP) across all 27 member states, and a single convertible investment instrument (EU-FAST) that replaces 27 national frameworks. For AI enterprises specifically, this addresses two binding constraints: the cost of multi-jurisdictional compliance, which drives unicorn relocation, and the inability to offer competitive equity compensation, which drives talent to US firms. Whether EU-Inc becomes law will signal how seriously Europe treats the capital allocation problem the Draghi Report identified.
+  </p>
+
+  <h2><span class="num">6.</span> What This Means for Workers
+    <span class="subtitle">Exposure is a starting point, not destiny.</span>
+  </h2>
+  <p>
+    A high exposure score does not mean a job disappears. It means the job changes. Within every high-exposure occupation, there will be workers who use AI to multiply their output and workers who are displaced by it. The differentiator is not seniority or credentials &mdash; it is adaptability: the ability to evaluate AI outputs critically, to work iteratively with AI tools, and to judge when AI should and should not be trusted.
+  </p>
+  <p>
+    European workers have one structural advantage their US counterparts do not: time. The regulatory buffer documented in this analysis buys 2&ndash;4 years of slower deployment in the most affected occupations. That window is not infinite. Workers and social partners should use it for retraining, role redesign, and negotiating the terms of AI introduction &mdash; not for assuming the status quo will persist.
+  </p>
+  <p>
+    The skills data underlines the urgency. Europe produces <strong>203 ICT graduates per million people, compared with 335 in the United States</strong>. The STEM pipeline is also thinner: 845 STEM graduates per million, versus 1,106 in the US. And 30% of EU-founded unicorns have relocated their headquarters abroad, draining precisely the talent pool that could build European AI capabilities. The regulatory buffer buys time, but Europe&rsquo;s workforce is not currently structured to use it. Without deliberate investment in AI literacy and technical reskilling, the buffer becomes a waiting room rather than a training ground.
+  </p>
+  <p>
+    Ray Dalio&rsquo;s analysis of long-term debt cycles adds a fiscal dimension to this urgency. <strong>AI-driven workforce disruption is arriving at a moment when sovereign debt levels constrain the fiscal space available for transition support.</strong> In the US, where much of the data originates, the top 1% now hold more wealth than the bottom 90% combined &mdash; a concentration last seen in the 1930s. Intergenerational mobility has collapsed: the share of children earning more than their parents fell from 90% in 1970 to 50% by 2015. If AI accelerates these dynamics in Europe &mdash; concentrating gains among capital owners and high-adaptability workers while displacing the middle &mdash; the political consequences are predictable. Dalio&rsquo;s framework on populism shows that economic displacement reliably produces anti-establishment politics, weakening precisely the institutional capacity needed to manage the transition. The question for European workers is not just whether they can reskill, but whether the political and fiscal environment will support them in doing so.
+  </p>
+  <p>
+    The data suggests a specific priority: workers in occupations scoring 6&ndash;8 on technical exposure with high regulatory deltas (administration professionals, legal professionals, education) have the most time to adapt, but the most to lose if they don&rsquo;t. These are the occupations where the regulatory buffer is widest &mdash; and where it will eventually narrow.
+  </p>
+
+  <h2><span class="num">7.</span> The Regulatory Compliance Surface
+    <span class="subtitle">Multiple overlapping frameworks create a compliance matrix, not a single obligation.</span>
+  </h2>
+  <p>
+    Mapping 125 occupation groups against the EU AI Act Annex III reveals a structural asymmetry. <strong>All 125 groups are classified as high-risk subjects</strong> under Annex III category 4 (employment), because any AI system used for recruitment, performance evaluation, task allocation, or workforce management triggers high-risk obligations regardless of the occupation. The universality of this classification raises questions about its practical value in enforcement.
+  </p>
+  <p>
+    The more analytically interesting variation is in <strong>deployer status</strong>: 40 of 125 groups (32%) deploy high-risk AI as part of their job duties &mdash; HR managers using AI recruitment tools, legal professionals using AI legal research, health professionals using AI diagnostics, teachers using AI assessment systems. These deployers face additional obligations under Articles 13, 14, and 26 of the AI Act, in addition to the employment-related obligations they share with all workers.
+  </p>
+  <p>
+    The average occupation group faces <strong>3.7 overlapping regulatory frameworks simultaneously</strong>: the AI Act (as subject), GDPR, national works council law (BetrVG in Germany, ArbVG in Austria), and, frequently, the Platform Work Directive or the Pay Transparency Directive on top. For deployer groups, this rises to 4&ndash;6 simultaneous frameworks. A German HR manager deploying an AI recruitment tool must satisfy AI Act Annex III requirements, obtain works council agreement under BetrVG &sect;87(1) Nr. 6, conduct a GDPR Art 35 DPIA, and ensure Pay Transparency Directive compliance if the tool affects compensation decisions.
+  </p>
+  <p>
+    In Germany, <strong>all 125 occupation groups trigger BetrVG &sect;87(1) Nr. 6 co-determination</strong> when AI monitoring systems are introduced. For a large German employer deploying AI across multiple departments, this means parallel works council consultations for each distinct AI system &mdash; a significant organisational burden that compounds as the number of systems deployed increases.
+  </p>
+  <p>
+    <strong>The Swiss gap is material.</strong> Swiss domestic employers face the FADP, Code of Obligations Art 328b, and ArGV3 Art 26 &mdash; but no AI Act, no mandatory works council consent, and only consultation rights under the Mitwirkungsgesetz. For equivalent occupation groups, Swiss employers face 2&ndash;3 fewer regulatory layers than their German or Austrian counterparts. Whether this lighter regulatory surface creates a competitive advantage or a trust deficit remains an open question.
+  </p>
+  <p>
+    <strong>The UK gap is wider still.</strong> A UK employer deploying the same AI recruitment tool faces only the Equality Act 2010 and Data Protection Act 2018 &mdash; no AI Act conformity assessment, no works council negotiation, no high-risk classification, and only weak consultation rights under the ICE Regulations (which apply only to undertakings with 50+ employees and carry no veto power). Where a German HR manager navigates 4&ndash;6 overlapping frameworks, a UK counterpart navigates two. The DSIT &ldquo;pro-innovation&rdquo; AI framework is a policy statement, not legislation &mdash; it creates no enforceable obligations. This makes the UK the clearest test case for whether lighter regulation produces faster adoption, greater displacement, or both.
+  </p>
+  <p>
+    31 occupation groups (25%) trigger the Platform Work Directive in addition to the AI Act, adding provisions against automated firing and algorithmic transparency requirements on top of existing obligations. The transposition deadline of December 2026 means employers in platform-adjacent sectors face a second regulatory wave arriving within months of the AI Act&rsquo;s full application.
+  </p>
+
+  <div class="cta-bar">
+    <p><strong>Explore the data behind these findings, or read the questions this analysis raises.</strong></p>
+    <p class="cta-sub">If your organisation is navigating this transition, let&rsquo;s build together.</p>
+    <div class="btn-row">
+      <a href="https://nexalps.com" class="btn" target="_blank" rel="noopener" onclick="if(typeof posthog!=='undefined')posthog.capture('cta_clicked',{page:'analysis',target:'nexalps'})">Get in touch &rarr;</a>
+      <a href="index.html" class="btn btn-outline" onclick="if(typeof posthog!=='undefined')posthog.capture('cta_clicked',{page:'analysis',target:'map'})">Open the interactive map &rarr;</a>
+      <a href="questions.html" class="btn btn-outline" onclick="if(typeof posthog!=='undefined')posthog.capture('cta_clicked',{page:'analysis',target:'questions'})">Read the questions &rarr;</a>
+    </div>
+  </div>
+
+</article>
+
+<div class="author-note opinion container">
+  <span class="opinion-label">Opinion</span>
+  <h3>A builder&rsquo;s perspective</h3>
+  <p>Everything above is intended as analysis. What follows is opinion.</p>
+  <p>Having worked through the data, my tentative reading is this: regulation that isn&rsquo;t oriented toward enabling building and creation has historically deferred the consequences of disruptive innovation rather than prevented them. The textile workers of early industrialization, manufacturing communities affected by offshoring, retail displaced by e-commerce &mdash; protective regulation slowed each transition without ultimately changing its direction.</p>
+  <p>The 1.2-point regulatory delta identified in this analysis across Europe is real. But when I consider it alongside the other forces acting on European economies &mdash; demographic decline, the energy transition, geopolitical fragmentation, de-globalisation &mdash; I find it difficult to see how deferral alone produces a better outcome.</p>
+  <p>What could change that calculus is if Europe uses the time that regulatory friction creates to do what it has so far struggled to do: build the structural foundations for competitiveness. A genuine single market. A capital markets union. Workable financing instruments for startups. The kind of institutional integration that the Draghi report calls for and that initiatives like the proposed EU-Inc framework represent.</p>
+  <p>In other words, regulation as a substitute for building has only ever bought time. Regulation as a foundation for building &mdash; where the friction enables better outcomes rather than just slower ones &mdash; is a proposition entirely different. Whether Europe is on the first path or the second is, in my view, the central question this data raises.</p>
+  <p>None of this is settled. The pragmatism of the people making decisions matters more than their position on any political spectrum. And before anyone &mdash; myself included &mdash; prescribes what society should do, the honest question is how much each of us is personally prepared to commit to that transition.</p>
+  <p>My own answer, for what it&rsquo;s worth, is to build. This analysis exists because I believe that understanding the problem clearly is the first step toward building something useful in response to it.</p>
+  <div class="sig">&mdash; Philipp Maul</div>
+</div>
+
+<details class="methodology container">
+  <summary>Methodology &amp; Data Notes</summary>
+  <div class="content">
+
+    <h3>Data Sources &amp; Timeliness</h3>
+    <p>This analysis combines multiple data sources across 36 countries from different reference periods:</p>
+    <ul>
+      <li><strong>Occupation descriptions:</strong> <a href="https://esco.ec.europa.eu">ESCO v1.2.1</a> (European Commission, released May 2024). These are structural descriptions of what occupations involve and are not time-dependent.</li>
+      <li><strong>Employment data:</strong> <a href="https://ec.europa.eu/eurostat">Eurostat EU-LFS</a> (lfsa_egai2d), reference year 2024. Employment counts in thousands by ISCO-08 2-digit occupation group for 35 European countries (EU-27 plus EFTA and candidate countries). UK employment from <a href="https://www.ons.gov.uk">ONS</a> Annual Survey of Hours and Earnings (ASHE) 2025, providing employee job counts by SOC 2020 2-digit mapped to ISCO-08. Note: UK figures cover employee jobs only and exclude self-employed workers.</li>
+      <li><strong>Wage data:</strong> Three sources by country:
+        <ul>
+          <li><em>Default (34 countries):</em> Eurostat Structure of Earnings Survey (earn_ses22_28), reference year 2022. Mean gross annual earnings by ISCO-08 1-digit major group. SES is conducted every four years; 2022 is the most recent available.</li>
+          <li><em>Switzerland:</em> <a href="https://www.bfs.admin.ch">BFS</a> Lohnstrukturerhebung (LSE) 2024, providing mean annual wages at ISCO-08 2-digit level (converted from CHF at 0.96 EUR/CHF). This is preferred over Eurostat SES for Switzerland due to higher granularity and more recent data.</li>
+          <li><em>United Kingdom:</em> <a href="https://www.ons.gov.uk">ONS</a> ASHE 2025 Table 2.7a, providing mean annual gross pay at SOC 2020 2-digit level mapped to ISCO-08 (converted from GBP at 1.16 EUR/GBP).</li>
+        </ul>
+        Due to EU-wide inflation of approximately 10&ndash;15% between 2022 and 2025, absolute Eurostat wage figures and derived metrics likely understate current levels. BFS and ONS data are more current. Relative comparisons between occupation groups are unaffected.
+      </li>
+    </ul>
+
+    <h3>Employment Distribution Method</h3>
+    <p>Eurostat publishes employment at ISCO 2-digit level. To display data at the more granular ISCO 3-digit level (~130 groups), we distribute 2-digit employment totals to 3-digit sub-groups proportionally, using the count of ESCO occupations within each 3-digit group as a structural weight. This is an approximation&mdash;actual employment distributions within 2-digit groups may differ.</p>
+
+    <h3>AI Exposure Scoring</h3>
+    <p>Each ISCO 3-digit occupation group was scored by Claude Sonnet 4 (Anthropic) on two dimensions:</p>
+    <ul>
+      <li><strong>Technical exposure (0&ndash;10):</strong> pure AI capability to reshape the occupation, based on the occupation&rsquo;s composite description, constituent ESCO occupations, and associated skills.</li>
+      <li><strong>Regulated exposure (0&ndash;10):</strong> practical European exposure, factoring in EU AI Act high-risk obligations, works council co-determination rights, GDPR constraints, and employment protection.</li>
+    </ul>
+    <p>Scoring used a standardised rubric with calibration anchors (roofers at 0&ndash;1, software developers at 8&ndash;9, medical transcriptionists at 10). The LLM was instructed to score technical capability independently from regulatory adoption speed.</p>
+
+    <h3>Limitations</h3>
+    <ul>
+      <li>LLM-based scoring reflects the model&rsquo;s training knowledge, not empirical measurement of actual AI adoption or displacement.</li>
+      <li>ESCO structural weights for employment distribution are a proxy, not a measurement.</li>
+      <li>Eurostat wage data (SES 2022) is 2&ndash;3 years older than employment data. BFS (2024) and ONS (2025) wages are more current. Cross-source timing differences are noted but not adjusted.</li>
+      <li>Wage granularity varies by country: Eurostat provides ISCO 1-digit (9 major groups), while BFS and ONS provide ISCO 2-digit (~40 sub-major groups). All wages are assigned at the most granular level available, with 1-digit fallback where 2-digit data is missing.</li>
+      <li>All 36 countries use the same exposure scores, derived from EU-27 occupation descriptions and EU regulatory context. In practice, exposure may vary by country due to differences in industry structure, digitisation levels, and enforcement practices.</li>
+      <li>UK data uses a UK-specific regulated score reflecting the Equality Act 2010, UK GDPR Art 22, Employment Rights Act 1996, and the DSIT pro-innovation framework. EU regulated scores are also available for comparison.</li>
+      <li>UK employment figures from ASHE cover employee jobs only and exclude self-employed workers, making UK totals not directly comparable to Eurostat LFS figures (which include all employed persons).</li>
+      <li>Some candidate countries (e.g., Albania) have wage data but no employment data, limiting the analysis for those countries.</li>
+    </ul>
+
+    <p><strong>Source code:</strong> The full pipeline (data preparation, Eurostat fetching, scoring, site generation) is open source on <a href="https://github.com/Ph1lM4/ai-job-impact-europe">GitHub</a>. Code is MIT licensed. Scored data is CC-BY 4.0.</p>
+
+  </div>
+</details>
+
+</div>
+
+<footer class="footer container" role="contentinfo">
+  EU AI Exposure Map Version 2.0 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe">Source on GitHub</a><br>
+  Built by <a href="https://www.linkedin.com/in/pmaul/">Philipp Maul</a> &middot; <a href="https://nexalps.com">Nexalps</a> &mdash; Turning complexity into competitive advantage.<br>
+  Inspired by <a href="https://karpathy.ai/jobs/">Karpathy&rsquo;s AI Exposure Map</a><br>
+  Data: <a href="https://esco.ec.europa.eu">ESCO v1.2.1</a> + <a href="https://ec.europa.eu/eurostat">Eurostat EU-LFS 2024</a> + <a href="https://www.bfs.admin.ch">BFS LSE 2024</a> + <a href="https://www.ons.gov.uk">ONS ASHE 2025</a> &middot;
+  Scored by Claude Sonnet 4 (Anthropic) &middot;
+  36 countries &middot; wages from Eurostat SES 2022, BFS 2024 (CH), ONS 2025 (UK) &middot; <a href="sources.html">Sources</a><br>
+  Code: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-CODE">MIT</a> &middot; Data &amp; Analysis: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-DATA">CC-BY 4.0</a> Philipp Maul | Nexalps
+</footer>
+
+<script>
+(function(){
+  const btn = document.getElementById("burger-btn");
+  const panel = document.getElementById("burger-panel");
+  btn.addEventListener("click", () => {
+    const open = panel.classList.toggle("open");
+    btn.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", open);
+  });
+  document.addEventListener("click", (e) => {
+    if (!panel.contains(e.target) && !btn.contains(e.target) && panel.classList.contains("open")) {
+      panel.classList.remove("open"); btn.classList.remove("open"); btn.setAttribute("aria-expanded","false");
+    }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && panel.classList.contains("open")) {
+      panel.classList.remove("open"); btn.classList.remove("open"); btn.setAttribute("aria-expanded","false");
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questions: AI Exposure of the European Job Market &mdash; Nexalps</title>
+<meta name="description" content="The questions that AI exposure data raises for European societies, regulators, enterprises, and workers. No answers yet — that's the point.">
+<link rel="canonical" href="https://ai-exposure.nexalps.com/questions.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Questions the AI Exposure Data Raises">
+<meta property="og:description" content="For societies, regulators, enterprises, and workers across Europe. No answers yet — that's the point.">
+<meta property="og:url" content="https://ai-exposure.nexalps.com/questions.html">
+<meta property="og:image" content="https://ai-exposure.nexalps.com/og-image.png">
+<meta property="og:site_name" content="Nexalps">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Questions the AI Exposure Data Raises">
+<meta name="twitter:description" content="For societies, regulators, enterprises, and workers across Europe. No answers yet — that's the point.">
+<meta name="twitter:image" content="https://ai-exposure.nexalps.com/og-image.png">
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Questions the AI Exposure Data Raises",
+  "description": "The questions that AI exposure data raises for European societies, regulators, enterprises, and workers.",
+  "author": {
+    "@type": "Person",
+    "name": "Philipp Maul",
+    "url": "https://www.linkedin.com/in/pmaul/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nexalps",
+    "url": "https://nexalps.com"
+  },
+  "datePublished": "2026-03-16",
+  "mainEntityOfPage": "https://ai-exposure.nexalps.com/questions.html"
+}
+</script>
+
+<!-- PostHog analytics -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])}}(document,window.posthog||[]);
+posthog.init('phc_bjax6jdRxYJAaExodvALjRru8AQzUSbYFNlWlXiJM8A', {api_host: 'https://eu.i.posthog.com', person_profiles: 'identified_only'});
+</script>
+
+<!-- Geist font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #0a0a0c;
+  --card-border: rgba(255,255,255,0.08);
+  --muted: #a1a1aa;
+  --muted-foreground: #71717a;
+  --accent: #27272a;
+  --border: rgba(255,255,255,0.12);
+  --ring: #f97316;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --font: 'Geist', system-ui, -apple-system, sans-serif;
+  --transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: var(--font);
+  background: var(--background);
+  color: var(--foreground);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Site nav ── */
+.site-nav {
+  position: fixed; top: 0; right: 0; left: 0;
+  z-index: 9999;
+  display: flex; align-items: center; justify-content: flex-end;
+  padding: 12px 20px;
+  pointer-events: none;
+}
+.site-nav-links {
+  display: flex; gap: 20px; pointer-events: auto;
+  background: rgba(9,9,11,0.82);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 8px 16px;
+}
+.site-nav-links a {
+  font-size: 13px; font-weight: 500;
+  color: var(--muted); text-decoration: none;
+  transition: color 0.15s;
+}
+.site-nav-links a:hover { color: var(--foreground); }
+.site-nav-links a.active { color: var(--ring); }
+.burger {
+  display: none; pointer-events: auto;
+  background: rgba(9,9,11,0.82);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 10px 11px; cursor: pointer;
+  flex-direction: column; gap: 4px;
+}
+.burger span {
+  display: block; width: 18px; height: 2px;
+  background: var(--foreground); border-radius: 1px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.burger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.burger-panel {
+  display: none; position: fixed; top: 0; left: 0; right: 0;
+  z-index: 9998;
+  background: rgba(9,9,11,0.96);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  padding: 72px 24px 32px;
+  flex-direction: column; gap: 24px;
+}
+.burger-panel.open { display: flex; }
+.burger-panel a {
+  font-size: 20px; font-weight: 600;
+  color: var(--muted); text-decoration: none;
+  transition: color 0.15s;
+}
+.burger-panel a:hover { color: var(--foreground); }
+.burger-panel a.active { color: var(--ring); }
+@media (max-width: 768px) {
+  .site-nav-links { display: none; }
+  .burger { display: flex; }
+}
+
+
+/* ── Hero ── */
+.hero {
+  padding: 40px 0 32px;
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 40px;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.hero .lede {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+/* ── Accordion ── */
+.accordion-section {
+  border-bottom: 1px solid var(--card-border);
+}
+.accordion-section:first-of-type {
+  border-top: 1px solid var(--card-border);
+}
+.accordion-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--foreground);
+  font-family: var(--font);
+  font-size: 17px;
+  font-weight: 600;
+  text-align: left;
+  padding: 20px 40px 20px 0;
+  cursor: pointer;
+  position: relative;
+  line-height: 1.4;
+  transition: color var(--transition);
+}
+.accordion-trigger:hover { color: var(--ring); }
+.accordion-trigger .num {
+  color: var(--ring);
+  font-weight: 700;
+  margin-right: 8px;
+}
+.accordion-trigger::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 500;
+  transition: background var(--transition), color var(--transition);
+}
+.accordion-trigger[aria-expanded="true"]::after {
+  content: "\2212";
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease;
+}
+.accordion-content .inner {
+  padding: 0 0 24px;
+}
+.accordion-content p {
+  font-size: 15px;
+  color: #d4d4d8;
+  line-height: 1.8;
+  margin: 12px 0;
+}
+.accordion-content p:first-child { margin-top: 0; }
+.accordion-content strong { color: var(--foreground); font-weight: 600; }
+.accordion-content .context {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--card-border);
+}
+.question-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.question-list li {
+  font-size: 15px;
+  color: #d4d4d8;
+  line-height: 1.7;
+  padding: 8px 0 8px 20px;
+  position: relative;
+}
+.question-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 17px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ring);
+  opacity: 0.6;
+}
+
+/* ── CTA ── */
+.cta-bar {
+  margin: 48px 0 0;
+  padding: 32px 24px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+.cta-bar .cta-text {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--foreground);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.cta-bar .cta-sub {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.cta-bar .btn-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.cta-bar a.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 24px;
+  background: var(--ring);
+  color: #000;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+.cta-bar a.btn:hover { opacity: 0.9; }
+.cta-bar a.btn-outline {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+.cta-bar a.btn-outline:hover { color: var(--foreground); border-color: rgba(255,255,255,0.25); }
+
+/* ── Footer ── */
+.footer {
+  padding-top: 24px;
+  padding-bottom: 40px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+  border-top: 1px solid var(--card-border);
+  margin-top: 48px;
+}
+.footer a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition);
+}
+.footer a:hover { color: var(--foreground); }
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .container { padding: 0 16px; }
+  .hero { padding: 28px 0 24px; }
+  .hero h1 { font-size: 26px; }
+  .hero .lede { font-size: 16px; }
+  .accordion-trigger { font-size: 15px; padding: 16px 36px 16px 0; }
+  .cta-bar .btn-row { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="site-nav" aria-label="Site navigation">
+  <div class="site-nav-links">
+    <a href="index.html">Explore the map</a>
+    <a href="analysis.html">Analysis</a>
+    <a href="questions.html" class="active">Questions</a>
+    <a href="sources.html">Sources</a>
+  </div>
+  <button class="burger" id="burger-btn" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="burger-panel" id="burger-panel">
+  <a href="index.html">Explore the map</a>
+  <a href="analysis.html">Analysis</a>
+  <a href="questions.html" class="active">Questions</a>
+  <a href="sources.html">Sources</a>
+</div>
+
+
+<div class="container">
+
+<header class="hero">
+  <h1>Questions This Data Raises</h1>
+  <p class="lede">
+    Scoring 199.6 million European jobs for &ldquo;AI exposure&rdquo;&mdash;that is, assessing how likely roles are to be affected by advances in artificial intelligence&mdash;produces more questions than answers. These are the ones we think matter most&mdash;for societies, regulators, enterprises, and individuals navigating the transition.
+  </p>
+</header>
+
+<div class="accordion-group" role="region" aria-label="Question sections">
+
+  <!-- 1. The Macro Picture -->
+  <div class="accordion-section">
+    <button class="accordion-trigger" aria-expanded="false" aria-controls="section-1">
+      <span class="num">1.</span> The Macro Picture
+    </button>
+    <div class="accordion-content" id="section-1" role="region">
+      <div class="inner">
+        <p class="context">AI exposure does not emerge in a stable macro environment; it enters one already under strain from overlapping structural pressures.</p>
+        <ul class="question-list">
+          <li>Geopolitical fragmentation is redrawing supply chains and access to technology. If the US and China decouple on AI, does Europe simply adopt their systems, or does the EU AI Act enable a distinct European AI industry?</li>
+          <li>Europe faces a sharper demographic decline than any other major economic region. Germany, Italy, and Spain&rsquo;s working-age populations will shrink by 10&ndash;20% by 2040. Will AI-driven productivity offset this, or will it further hollow out mid-skill occupations just when those workers are most needed?</li>
+          <li>The climate and energy transition requires substantial investment in physical infrastructure&mdash;precisely the segment of work least affected by AI exposure. Could this dynamic result in a bifurcated labour market, where workers in physical infrastructure gain greater bargaining power, while those in knowledge-based roles face potential displacement?</li>
+          <li>Capital&rsquo;s share of national income&mdash;here meaning profits, dividends, rents, and interest&mdash;has risen relative to labour&rsquo;s (wages and salaries) for decades. If AI boosts the productivity of capital-intensive firms and displaces labour (jobs relying heavily on human workers), does this accelerate the shift? At what point does this trend become politically unsustainable?</li>
+          <li>If AI lowers the value of knowledge work but not physical services, do trades and service workers&rsquo; economic positions improve?</li>
+          <li>The Draghi Report estimates that Europe requires &euro;750&ndash;800 billion in additional annual investment to address the competitiveness gap&mdash;a scale reminiscent of the Marshall Plan. In 2023, EU private AI investment was approximately &euro;8 billion, versus $68 billion in the US. Is it feasible for Europe to close this gap through policy measures alone, or does it necessitate a fundamental transformation in capital allocation structures?</li>
+          <li>If AI is needed to offset workforce shrinkage, do current regulations protect workers today but harm future productivity?</li>
+          <li>If AI disrupts labour while governments face debt constraints, who pays for retraining at scale?</li>
+          <li>Dalio documents that in the US, the top 1% now hold more wealth than the bottom 90% combined, and intergenerational mobility has halved since 1970. In Europe, wealth concentration is less pronounced but increasing: ECB data indicate the top 1% of euro area households hold approximately 28% of total net wealth, up from 22% in 1995, while the bottom 50% hold just 4%. If AI primarily amplifies returns for capital owners and highly adaptable workers, does Europe&rsquo;s more robust social safety net mitigate, or simply postpone, the populist dynamics Dalio describes?</li>
+          <li>If Europe&rsquo;s AI gap is about public R&amp;D, should the debate shift from deregulation to the creation of European DARPA equivalents?</li>
+          <li>If AI gains flow mostly to shareholders, does the &ldquo;augmentation&rdquo; narrative merely mask value extraction over workforce development?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. As a Society -->
+  <div class="accordion-section">
+    <button class="accordion-trigger" aria-expanded="false" aria-controls="section-2">
+      <span class="num">2.</span> As a Society
+    </button>
+    <div class="accordion-content" id="section-2" role="region">
+      <div class="inner">
+        <ul class="question-list">
+          <li>If the occupations most exposed to AI are also those that require the most education, what does that mean for the social contract around higher education? Parents and states have invested heavily on the premise that university degrees lead to stable, well-compensated careers. Does that premise still hold?</li>
+          <li>The European welfare state was designed around full-time, long-tenure employment. If AI fragments knowledge work into project-based, augmented micro-tasks, do existing social insurance systems (pension, health, unemployment) remain viable?</li>
+          <li>Public trust in institutions is already under strain. If AI makes it cheaper and easier to generate convincing disinformation, and the occupations most equipped to counter it (journalists, researchers, analysts) are themselves highly exposed, how do democratic societies maintain epistemic integrity?</li>
+          <li>European societies value the stability of the Mittelstand, social partnership, and gradual change. AI-driven disruption is neither gradual nor negotiated. Is there a European model for managing rapid technological displacement that preserves social cohesion, or does the speed of change overwhelm existing institutions?</li>
+          <li>Dalio identifies a consistent historical pattern: when economic displacement concentrates gains at the top and stagnates the middle, populism follows within a decade. European populist vote shares are already at 1930s-era levels. If AI accelerates the displacement of the educated middle class &mdash; the constituency most invested in institutional stability &mdash; does this undermine the democratic legitimacy needed to govern the transition?</li>
+          <li>Mazzucato&rsquo;s mission economy framework proposes that transformative technology transitions require Apollo-scale public coordination &mdash; not market-led adjustment. If the AI transition is closer in scale to electrification or industrialisation than to a normal business cycle, are Europe&rsquo;s current policy instruments (R&amp;D tax credits, innovation grants, regulatory sandboxes) an order of magnitude too small?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. As Individuals & Workers -->
+  <div class="accordion-section">
+    <button class="accordion-trigger" aria-expanded="false" aria-controls="section-3">
+      <span class="num">3.</span> As Individuals &amp; Workers
+    </button>
+    <div class="accordion-content" id="section-3" role="region">
+      <div class="inner">
+        <ul class="question-list">
+          <li>If you work in an occupation scoring 7+ for technical exposure, the question is not whether AI will change your role but when and how. Are you actively building the skills to work with AI tools, or waiting for your employer or union to provide retraining?</li>
+          <li>The regulatory buffer gives European workers a 2&ndash;4-year advantage over their US counterparts. That is a window, not a permanent shield. Are you using it? What does your personal transition plan look like?</li>
+          <li>If education no longer protects &mdash; if degrees correlate with higher AI exposure, not lower &mdash; what does career planning look like for a 20-year-old entering the European labour market in 2026? Should they pursue a trade, a profession, or something that doesn&rsquo;t exist yet?</li>
+          <li>Works council rights give European workers a seat at the table when AI is deployed. But only if they exercise those rights. If you are on a works council, do you have the technical literacy to evaluate an employer&rsquo;s AI deployment proposal? If not, where do you get it?</li>
+          <li>The occupations with the highest regulatory deltas (education, law, administration) are also those with the strongest institutional inertia. Workers in these fields may feel safe precisely because change is slow. But the regulatory buffer is a delay, not a cancellation. How do you prepare for change that is certain but not yet urgent?</li>
+          <li>Identity and meaning are often tied to occupation. If AI transforms what it means to be a lawyer, teacher, journalist, or accountant, the challenge is not just economic but psychological. How do you maintain professional identity when the substance of the profession changes?</li>
+          <li>Dalio&rsquo;s UBI research suggests that direct income support may be the most efficient response to technology-driven displacement &mdash; more efficient than retraining programmes with uncertain outcomes. If AI displaces faster than workers can reskill, should European policy prioritise income floors (UBI, negative income tax) over retraining &mdash; or are both needed simultaneously?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. As Founders & Investors -->
+  <div class="accordion-section">
+    <button class="accordion-trigger" aria-expanded="false" aria-controls="section-4">
+      <span class="num">4.</span> As Founders &amp; Investors
+    </button>
+    <div class="accordion-content" id="section-4" role="region">
+      <div class="inner">
+        <ul class="question-list">
+          <li>The gap between technical and regulated exposure represents a compliance cost &mdash; but also a moat. If navigating the EU AI Act, works council processes, and GDPR requirements is genuinely hard, does this create defensible market positions for European-first AI companies that learn to do it well?</li>
+          <li>Most AI investment flows to horizontal platforms (such as foundation models and developer tools). The European opportunity may lie in vertical, regulation-aware AI applications &mdash; HR tools that satisfy Annex III, legal AI that meets bar association standards, and healthcare AI that meets MDR requirements. Is the European vertical AI market underpriced?</li>
+          <li>European venture capital has historically underweighted deep tech and AI. If the most valuable AI companies of the next decade are those that solve compliance at scale, does Europe&rsquo;s regulatory complexity become an asset rather than a liability for European founders?</li>
+          <li>Enterprise buyers in Europe face a build-vs-buy decision complicated by regulation. If off-the-shelf AI tools from US providers don&rsquo;t satisfy EU compliance requirements out of the box, does this create a European integration and consulting layer that captures significant value?</li>
+          <li>Only 4 of the world&rsquo;s top 50 technology companies are European, and 30% of EU-founded unicorns have relocated their headquarters abroad. If Europe cannot retain its most promising AI companies, does the regulatory moat protect European workers, or does it simply ensure that AI value accrues to non-European shareholders?</li>
+          <li>The EU-Inc proposal introduces EU-ESOP &mdash; a standardised employee share option scheme with capital gains treatment deferred to the point of sale. If European AI startups could offer equity compensation competitive with Silicon Valley across all 27 member states, does the talent retention calculus change fundamentally? Or is equity compensation a necessary but insufficient condition when the underlying capital markets remain shallower?</li>
+          <li>EU-FAST, the proposed pan-European convertible investment instrument, would replace 27 different national frameworks (French BSA AIR, German convertible notes, UK ASAs) with a single open-source template. If early-stage AI investment is currently fragmented across incompatible legal instruments, how much deal flow is Europe losing not to regulation but to legal friction?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. As Corporations -->
+  <div class="accordion-section">
+    <button class="accordion-trigger" aria-expanded="false" aria-controls="section-5">
+      <span class="num">5.</span> As Corporations
+    </button>
+    <div class="accordion-content" id="section-5" role="region">
+      <div class="inner">
+        <ul class="question-list">
+          <li>Our data shows that 102.5 million European jobs (51% of the workforce) sit in the 6&ndash;10 range for technical exposure. How should a corporation with 10,000 knowledge workers think about sequencing AI adoption across roles with different exposure scores and regulatory deltas?</li>
+          <li>The compliance cost of deploying AI in high-delta occupations (HR, legal, education) is substantial. Does this favour large enterprises that can absorb fixed compliance costs, or does it create an opening for nimble firms that specialise in compliant AI deployment?</li>
+          <li>If AI augments rather than replaces most knowledge workers, the key capability becomes managing human-AI teams effectively. Very few corporations have this capability today. What does the organisational structure of an AI-augmented enterprise look like?</li>
+          <li>Works council negotiation over AI deployment is a new organisational muscle. Companies that develop it early &mdash; building trust, establishing frameworks, creating precedents &mdash; may deploy AI faster than competitors who treat works councils as obstacles. Is co-determination actually a competitive advantage in the long run?</li>
+          <li>The exposure-weighted wages metric in our data represents approximately &euro;4.7 trillion in annual wages at the technical exposure level. The regulated exposure level drops this to &euro;3.7 trillion. That &euro;1 trillion gap is a measure of economic activity constrained by regulatory friction. How should boards think about this number?</li>
+          <li>Your legal team needs to evaluate AI deployments against the AI Act, GDPR, Platform Work Directive, Pay Transparency Directive, and national works council law &mdash; simultaneously for each deployed system. Is your compliance infrastructure designed for this level of regulatory surface area, or are you discovering obligations after deployment?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. As Regulators -->
+  <div class="accordion-section">
+    <button class="accordion-trigger" aria-expanded="false" aria-controls="section-6">
+      <span class="num">6.</span> As Regulators
+    </button>
+    <div class="accordion-content" id="section-6" role="region">
+      <div class="inner">
+        <ul class="question-list">
+          <li>The EU AI Act creates a 1.2-point average regulatory buffer in our data. Is this calibrated correctly? Too little friction and workers are exposed without protection. Too much friction and European firms fall behind non-EU competitors deploying AI freely.</li>
+          <li>The AI Act&rsquo;s high-risk classification system was designed in 2021&ndash;2022. AI capabilities have advanced dramatically since then. Are the Annex III categories still the right ones, or do they need updating before the Act is even fully enforced?</li>
+          <li>Works council co-determination rights were designed for an era of identifiable, discrete technical systems. Modern AI tools are embedded, ambient, and constantly updating. How do you negotiate co-determination over a system that changes weekly?</li>
+          <li>GDPR&rsquo;s right to explanation and prohibition on purely automated decisions with legal effects were written before large language models could generate human-quality explanations. Does an LLM-generated explanation of an AI decision satisfy Article 22, or is it a compliance fiction?</li>
+          <li>If European regulation slows AI adoption by 2&ndash;4 years relative to the US and China, is that a feature (protecting workers during transition) or a bug (ensuring European firms are permanently disadvantaged)? The answer may depend on whether the transition window is used productively.</li>
+          <li>If nearly every occupation is classified as high-risk under Annex III category 4 because employment AI applies universally, does the classification retain practical enforcement meaning &mdash; or does universal coverage dilute the high-risk concept to the point where everything is high-risk and therefore nothing is?</li>
+          <li>The average occupation group faces 3.7 overlapping regulatory frameworks (AI Act, GDPR, Platform Work Directive, Pay Transparency Directive, and national works council law). Are compliance teams and works councils resourced to evaluate AI systems simultaneously?</li>
+          <li>The Platform Work Directive and the AI Act both regulate algorithmic management, but through different legal instruments and enforcement mechanisms. How do employers reconcile overlapping obligations &mdash; and how do national authorities coordinate enforcement across frameworks?</li>
+          <li>The Draghi Report calls for harmonised AI regulatory sandboxes across EU member states and for simplified GDPR implementation for AI development. If sandboxes remain fragmented and GDPR interpretation varies by data protection authority, does Europe effectively have 27 different AI regulatory regimes behind a single AI Act fa&ccedil;ade?</li>
+          <li>The EU-Inc proposal offers a &ldquo;28th regime&rdquo; &mdash; a pan-European legal entity with digital-first registration, standardised employee share options, and a single investment instrument replacing 27 national frameworks. If regulatory innovation (not just deregulation) is the missing piece, could EU-Inc do for European startups what the AI Act&rsquo;s compliance burden cannot: make building in Europe as frictionless as incorporating in Delaware?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. EU-27 Aggregate -->
+  <div class="accordion-section">
+    <button class="accordion-trigger" aria-expanded="false" aria-controls="section-7">
+      <span class="num">7.</span> EU-27 Aggregate
+    </button>
+    <div class="accordion-content" id="section-7" role="region">
+      <div class="inner">
+        <p class="context">Two-speed Europe, free movement dynamics, and the transatlantic comparison.</p>
+        <ul class="question-list">
+          <li>The EU-27 is not one labour market but twenty-seven. Our data uses the same AI exposure scores across all countries because the underlying occupations are structurally similar. But regulatory enforcement, digital infrastructure, and institutional capacity vary enormously. Does AI exposure create a new axis of divergence between member states &mdash; on top of existing north-south and east-west divides?</li>
+          <li>Free movement of workers is a cornerstone of the EU single market. If AI adoption proceeds faster in some member states (e.g., the Netherlands, Estonia) than others (e.g., Italy, Greece), does this trigger new migration patterns &mdash; knowledge workers moving toward AI-augmented economies, or displaced workers moving toward economies where their occupations are less disrupted?</li>
+          <li>The US has no federal AI regulation, no works councils, no co-determination, and weaker employment protection. Our regulatory buffer of 1.2 points exists only in Europe. If US firms deploy AI 2&ndash;4 years faster, does the transatlantic productivity gap widen &mdash; and does this become a geopolitical issue?</li>
+          <li>The EU AI Act applies uniformly across all member states, but enforcement will be national. Given Europe&rsquo;s track record with GDPR enforcement (dramatic variation between national authorities), should we expect similar variation in AI Act enforcement &mdash; creating de facto regulatory competition within the single market?</li>
+          <li>Eastern European member states (Poland, Romania, Czech Republic) have large workforces in the 4&ndash;6 technical exposure range &mdash; exposed enough to be disrupted but not so exposed as to attract significant regulatory attention. Is this the overlooked middle of the European AI transition?</li>
+          <li>Only 11% of EU firms have adopted AI (according to Eurostat enterprise statistics), well short of the EU target of 75% by 2030. Europe produces 203 ICT graduates per million people, compared with 335 in the US. If the talent pipeline cannot scale fast enough to close this adoption gap, does the AI Act&rsquo;s transition window become irrelevant &mdash; because Europe lacks the human capital to use it?</li>
+          <li>The Societas Europaea (SE) was meant to be the pan-European company form but proved too complex for startups. EU-Inc proposes a simpler alternative: no minimum capital, 24-hour digital registration, and cross-border branch operation without restructuring. If EU-Inc succeeds, does the resulting wave of pan-European AI companies fundamentally change the single market for talent &mdash; or does tax and employment law fragmentation remain the binding constraint regardless of corporate form?</li>
+          <li>Dalio&rsquo;s framework suggests that AI-era gains will flow disproportionately to capital owners unless structural reforms redistribute opportunity. Europe has stronger redistribution mechanisms than the US, but weaker capital formation. Does Europe face a choice between equality and competitiveness &mdash; or can instruments like EU-ESOP (broadening equity ownership among AI workers) achieve both simultaneously?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Austria -->
+  <div class="accordion-section">
+    <button class="accordion-trigger" aria-expanded="false" aria-controls="section-8">
+      <span class="num">8.</span> Austria
+    </button>
+    <div class="accordion-content" id="section-8" role="region">
+      <div class="inner">
+        <p class="context">ArbVG &sect;96a consent requirements, the Vienna tech scene, and public-sector concentration.</p>
+        <ul class="question-list">
+          <li>Austria&rsquo;s Labour Constitution Act (ArbVG &sect;96a) requires works council consent (not just consultation) for systems that affect human dignity &mdash; a higher bar than Germany&rsquo;s co-determination. In an economy of ~4.5 million workers, does this make Austria the most friction-heavy environment for AI deployment in Europe?</li>
+          <li>Vienna has developed a growing tech startup ecosystem, but Austrian AI companies must navigate one of Europe&rsquo;s most employee-protective regulatory environments. Does this create a competitive disadvantage for Austrian AI firms, or does it force them to build compliance-first products that can sell anywhere in the EU?</li>
+          <li>Austria has a disproportionately large public sector. Public-sector occupations consistently show high regulatory deltas in our data. If AI adoption in the Austrian government lags significantly behind the private sector, does this create a growing productivity gap between public and private services?</li>
+          <li>The Austrian social partnership model (Sozialpartnerschaft) brings employer and employee representatives into policy formation. Is this model equipped to handle the speed and scope of AI-driven change, or does consensus-based decision-making become a bottleneck when the technology moves faster than negotiation cycles?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Germany -->
+  <div class="accordion-section">
+    <button class="accordion-trigger" aria-expanded="false" aria-controls="section-9">
+      <span class="num">9.</span> Germany
+    </button>
+    <div class="accordion-content" id="section-9" role="region">
+      <div class="inner">
+        <p class="context">BetrVG &sect;87 co-determination, the Mittelstand backbone, and the Fachkr&auml;ftemangel.</p>
+        <ul class="question-list">
+          <li>Germany&rsquo;s Works Constitution Act (BetrVG &sect; 87(1) No. 6) grants works councils codetermination rights over technical monitoring devices. In practice, this covers most AI tools that process employee data. With ~42 million workers and one of Europe&rsquo;s strongest co-determination traditions, does Germany become the slowest EU economy to deploy workplace AI &mdash; or does structured negotiation produce better outcomes than unilateral deployment?</li>
+          <li>The Mittelstand (small and medium enterprises) employs the majority of German workers but typically lacks the compliance infrastructure to navigate AI Act requirements. If AI adoption requires dedicated compliance teams, does this further concentrate economic power in DAX corporations at the expense of the Mittelstand?</li>
+          <li>Germany faces a Fachkr&auml;ftemangel (skilled worker shortage) of approximately 400,000 unfilled positions, concentrated in trades and healthcare. AI exposure scores suggest these are precisely the occupations least affected by AI. Does AI exacerbate the shortage by making knowledge work more efficient (reducing demand for those workers) while doing nothing for the trades where demand is acute?</li>
+          <li>IG Metall and ver.di have begun developing AI frameworks for collective bargaining. These frameworks will set precedents for how AI deployment is negotiated across entire sectors. Are unions building sufficient technical expertise to negotiate effectively, or will information asymmetry between employers and worker representatives produce suboptimal outcomes?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. Switzerland -->
+  <div class="accordion-section">
+    <button class="accordion-trigger" aria-expanded="false" aria-controls="section-10">
+      <span class="num">10.</span> Switzerland
+    </button>
+    <div class="accordion-content" id="section-10" role="region">
+      <div class="inner">
+        <p class="context">No AI Act, the nFADG data protection framework, financial services concentration, and Europe&rsquo;s highest wages.</p>
+        <ul class="question-list">
+          <li>Switzerland is not bound by the EU AI Act but depends on EU market access via bilateral agreements. If Swiss financial institutions deploy AI tools that would be classified as high-risk under EU law, does this create a regulatory arbitrage opportunity &mdash; or a compliance risk when serving EU clients?</li>
+          <li>Swiss wages are the highest in Europe. Financial and mathematical associate professionals &mdash; scoring 8.5 for technical exposure &mdash; are concentrated in Zurich and Geneva. If AI displaces or augments even 20% of financial services output, the wage impact per worker is larger in Switzerland than anywhere else in Europe. Is the Swiss financial sector pricing this in?</li>
+          <li>Switzerland&rsquo;s new Federal Act on Data Protection (nFADG) focuses on individual data rights rather than AI system classification. Does this lighter-touch approach to AI governance prove more adaptive than the EU&rsquo;s prescriptive framework, or does the absence of AI-specific regulation leave gaps that data protection law alone cannot fill?</li>
+          <li>Swiss direct democracy means that any significant AI regulation would likely face a referendum. Given Switzerland&rsquo;s track record of conservative referenda outcomes on technology and immigration, could public sentiment become the binding constraint on AI policy &mdash; producing either surprisingly restrictive or surprisingly permissive outcomes?</li>
+          <li>Swiss firms face 2&ndash;3 fewer regulatory layers than German or Austrian competitors for equivalent occupation groups. Does this lighter regulatory surface create a genuine arbitrage opportunity &mdash; attracting AI-intensive operations to Switzerland &mdash; or does it create a trust deficit with EU clients and talent who expect AI Act-level governance?</li>
+          <li>The Mitwirkungsgesetz gives Swiss workers information and consultation rights but no co-determination. In an era where AI decisions increasingly affect working conditions, is consultation without veto power a meaningful worker protection &mdash; or a procedural formality?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. United Kingdom -->
+  <div class="accordion-section">
+    <button class="accordion-trigger" aria-expanded="false" aria-controls="section-11">
+      <span class="num">11.</span> United Kingdom
+    </button>
+    <div class="accordion-content" id="section-11" role="region">
+      <div class="inner">
+        <p class="context">Post-Brexit regulatory divergence, the pro-innovation AI framework, no works councils, City of London exposure, and NHS workforce implications.</p>
+        <ul class="question-list">
+          <li>The UK has explicitly rejected the EU&rsquo;s prescriptive AI regulation model in favour of a principles-based, sector-specific approach. The UK&rsquo;s pro-innovation AI framework delegates AI oversight to existing regulators (FCA, Ofcom, CMA) rather than creating a horizontal AI Act. Does this light-touch approach accelerate AI adoption, or does the absence of clear rules create uncertainty that slows enterprise deployment?</li>
+          <li>The UK has no works council system. No co-determination rights. No BetrVG &sect;87 equivalent. AI deployment decisions in UK workplaces are largely unilateral management prerogatives, constrained only by general employment law. Does this mean UK workers face greater exposure to AI with less institutional protection than workers in any other major European economy?</li>
+          <li>The City of London employs over 500,000 financial services workers, many of whom work in occupations with technical exposure scores of 7&ndash;9 (financial analysts, traders, compliance officers, actuaries). Post-Brexit, London financial firms face competitive pressure from both EU-regulated and US-unregulated rivals. Does AI become the tool that maintains the City&rsquo;s competitive position &mdash; or the force that hollows out its workforce?</li>
+          <li>The NHS employs 1.4 million people, making it one of the largest employers in the world. Healthcare occupations show moderate AI exposure (4.5&ndash;6.5), but healthcare AI deployment faces unique constraints: clinical validation, patient safety, liability frameworks, and public trust. Could the NHS become a proving ground for large-scale AI deployment in European healthcare, or are institutional constraints the last place AI arrives?</li>
+          <li>Post-Brexit, the UK can no longer shape EU AI regulation from within. But UK firms selling into the EU must still comply with the AI Act for EU-facing products. Does the UK end up with the worst of both worlds &mdash; no regulatory influence but full compliance burden &mdash; or does regulatory independence prove to be genuinely valuable?</li>
+          <li>The UK&rsquo;s regulatory landscape for AI deployment is the thinnest of any country in this analysis: the Equality Act 2010 for discrimination risk, the Data Protection Act 2018 for automated decision-making, and the ICE Regulations 2004 for weak consultation rights. Where a German HR manager navigates 4&ndash;6 overlapping frameworks, a UK counterpart navigates two. Does this make the UK the leading indicator of what AI-driven workforce disruption looks like without institutional brakes&mdash;and should the EU be watching closely?</li>
+          <li>The DSIT &ldquo;pro-innovation&rdquo; AI framework is a policy statement, not legislation &mdash; it creates no enforceable obligations. If the UK&rsquo;s approach produces visible worker harm (algorithmic dismissal, opaque performance management, discriminatory hiring at scale), does public pressure force retrospective legislation &mdash; or does the absence of a works council tradition mean displaced workers lack the organised voice to demand it?</li>
+          <li>The Employment Rights Act 1996 makes unfair dismissal claims actionable, but proving that an algorithmic decision was unfair requires technical literacy that most employment tribunals do not yet possess. If AI-assisted performance management and termination decisions become widespread in UK workplaces before the legal system develops the capacity to scrutinise them, is there a gap where workers are formally protected but practically undefended?</li>
+          <li>The UK&rsquo;s average regulatory friction of 0.5 points &mdash; less than half the EU&rsquo;s 1.2 &mdash; makes it the closest thing to a controlled experiment in light-touch AI workplace regulation among advanced economies. In 3&ndash;5 years, UK labour market outcomes will provide the first empirical evidence for whether regulatory friction protects workers or merely delays adjustment. Is anyone systematically measuring this?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="cta-bar">
+  <p class="cta-text">These questions don&rsquo;t have answers yet. That&rsquo;s the point.</p>
+  <p class="cta-sub">If your organisation is navigating this transition, let&rsquo;s build together.</p>
+  <div class="btn-row">
+    <a href="https://nexalps.com" class="btn" target="_blank" rel="noopener" onclick="if(typeof posthog!=='undefined')posthog.capture('cta_clicked',{page:'questions',target:'nexalps'})">Get in touch &rarr;</a>
+    <a href="index.html" class="btn btn-outline" onclick="if(typeof posthog!=='undefined')posthog.capture('cta_clicked',{page:'questions',target:'map'})">Explore the data &rarr;</a>
+    <a href="analysis.html" class="btn btn-outline" onclick="if(typeof posthog!=='undefined')posthog.capture('cta_clicked',{page:'questions',target:'analysis'})">Read the analysis &rarr;</a>
+  </div>
+</div>
+
+</div>
+
+<footer class="footer container" role="contentinfo">
+  EU AI Exposure Map Version 2.0 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe">Source on GitHub</a><br>
+  Built by <a href="https://www.linkedin.com/in/pmaul/">Philipp Maul</a> &middot; <a href="https://nexalps.com">Nexalps</a> &mdash; Turning complexity into competitive advantage.<br>
+  Inspired by <a href="https://karpathy.ai/jobs/">Karpathy&rsquo;s AI Exposure Map</a><br>
+  Data: <a href="https://esco.ec.europa.eu">ESCO v1.2.1</a> + <a href="https://ec.europa.eu/eurostat">Eurostat EU-LFS 2024</a> + <a href="https://www.bfs.admin.ch">BFS LSE 2024</a> + <a href="https://www.ons.gov.uk">ONS ASHE 2025</a> &middot;
+  Scored by Claude Sonnet 4 (Anthropic) &middot;
+  36 countries &middot; wages from Eurostat SES 2022, BFS 2024 (CH), ONS 2025 (UK) &middot; <a href="sources.html">Sources</a><br>
+  Code: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-CODE">MIT</a> &middot; Data &amp; Analysis: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-DATA">CC-BY 4.0</a> Philipp Maul | Nexalps
+</footer>
+
+<script>
+// Accordion: one open at a time
+document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const expanded = trigger.getAttribute('aria-expanded') === 'true';
+    // Close all
+    document.querySelectorAll('.accordion-trigger').forEach(t => {
+      t.setAttribute('aria-expanded', 'false');
+      const content = t.nextElementSibling;
+      content.style.maxHeight = null;
+    });
+    // Open clicked (if it was closed)
+    if (!expanded) {
+      trigger.setAttribute('aria-expanded', 'true');
+      const content = trigger.nextElementSibling;
+      content.style.maxHeight = content.scrollHeight + 'px';
+    }
+    // Track
+    if (typeof posthog !== 'undefined') {
+      posthog.capture('accordion_toggled', {
+        section: trigger.textContent.trim(),
+        expanded: !expanded
+      });
+    }
+  });
+});
+</script>
+<script>
+(function(){
+  const btn = document.getElementById("burger-btn");
+  const panel = document.getElementById("burger-panel");
+  btn.addEventListener("click", () => {
+    const open = panel.classList.toggle("open");
+    btn.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", open);
+  });
+  document.addEventListener("click", (e) => {
+    if (!panel.contains(e.target) && !btn.contains(e.target) && panel.classList.contains("open")) {
+      panel.classList.remove("open"); btn.classList.remove("open"); btn.setAttribute("aria-expanded","false");
+    }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && panel.classList.contains("open")) {
+      panel.classList.remove("open"); btn.classList.remove("open"); btn.setAttribute("aria-expanded","false");
+    }
+  });
+})();
+</script>
+</body>
+</html>
