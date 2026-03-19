@@ -17,6 +17,9 @@ data/eurostat/*.csv
 # ESCO source CSVs (large, download from esco.ec.europa.eu)
 data/esco/*.csv
 
+# Cedefop Skills Forecast (redistribution not permitted, derived data only)
+data/cedefop/
+
 # OS
 .DS_Store
 Thumbs.db

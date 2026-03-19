@@ -162,14 +162,57 @@ body {
 .country-option .co-emp { font-size: 11px; color: var(--muted-foreground); }
 .country-option .co-note { display: block; font-size: 10px; color: var(--muted-foreground); margin-top: 1px; }
 
-.score-toggle { display: inline-flex; background: var(--accent); border-radius: var(--radius-lg); padding: 4px; flex-shrink: 0; }
-.score-toggle button {
-  background: transparent; color: var(--muted); border: none; padding: 8px 20px;
-  border-radius: var(--radius-md); font-family: var(--font); font-size: 13px; font-weight: 500;
-  cursor: pointer; transition: all var(--transition); white-space: nowrap; min-height: 36px;
+/* ── Layer selector dropdown ── */
+.layer-select-wrap { display: flex; align-items: center; gap: 8px; flex-shrink: 0; position: relative; }
+
+/* ── Layer info tooltip ── */
+.layer-info-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--accent); color: var(--muted); border: 1px solid var(--border);
+  font-size: 12px; font-weight: 600; cursor: pointer; flex-shrink: 0;
+  transition: color var(--transition), border-color var(--transition);
+  font-family: var(--font); line-height: 1;
 }
-.score-toggle button.active { background: var(--background); color: var(--foreground); font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,0.4); }
-.score-toggle button:hover:not(.active) { color: var(--foreground); }
+.layer-info-btn:hover { color: var(--foreground); border-color: rgba(255,255,255,0.25); }
+
+.layer-info-tooltip {
+  display: none; position: absolute; top: calc(100% + 8px); left: 0; right: auto;
+  min-width: 340px; max-width: 400px;
+  background: #18181b; border: 1px solid var(--border); border-radius: var(--radius-md);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6); z-index: 60;
+  padding: 12px 14px; font-size: 12px; color: var(--muted); line-height: 1.5;
+}
+.layer-info-tooltip.open { display: block; }
+.layer-info-tooltip dt { color: var(--foreground); font-weight: 600; margin-top: 6px; }
+.layer-info-tooltip dt:first-child { margin-top: 0; }
+.layer-info-tooltip dd { margin: 0 0 2px; padding-left: 0; }
+
+@media (max-width: 768px) {
+  .layer-info-tooltip { left: 0; right: 0; min-width: 0; max-width: none; }
+}
+.layer-select {
+  background: var(--accent); color: var(--foreground); border: 1px solid var(--border);
+  padding: 8px 32px 8px 12px; border-radius: var(--radius-md); font-family: var(--font);
+  font-size: 13px; font-weight: 500; cursor: pointer; min-height: 36px;
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center;
+  transition: border-color var(--transition);
+}
+.layer-select:hover { border-color: rgba(255,255,255,0.25); }
+.layer-select:focus { outline: 2px solid var(--ring); outline-offset: 2px; }
+.layer-select optgroup { font-weight: 600; }
+/* ── Exposure sub-toggle ── */
+.exposure-sub-toggle { display: inline-flex; background: var(--accent); border-radius: var(--radius-md); padding: 2px; }
+.exposure-sub-toggle button {
+  background: transparent; color: var(--muted); border: none; padding: 6px 14px;
+  border-radius: 6px; font-family: var(--font); font-size: 12px; font-weight: 500;
+  cursor: pointer; transition: all var(--transition); white-space: nowrap; min-height: 30px;
+}
+.exposure-sub-toggle button.active { background: var(--background); color: var(--foreground); font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+.exposure-sub-toggle button:hover:not(.active) { color: var(--foreground); }
+.exposure-sub-toggle.hidden { display: none; }
 
 .legend { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: var(--muted); }
 .legend-gradient { width: 120px; height: 10px; border-radius: 5px; }
@@ -292,6 +335,17 @@ body {
 .ai-act-legend-icon { font-size: 11px; line-height: 1; }
 .analysis-link { display: inline-block; font-size: 13px; color: var(--muted); text-decoration: none; padding: 6px 0 0; transition: color 0.15s; }
 .analysis-link:hover { color: var(--foreground); }
+
+/* ── Methodology disclosure ── */
+.methodology-disclosure { margin: 12px 0 0; font-size: 13px; color: var(--muted); }
+.methodology-disclosure > summary { cursor: pointer; font-weight: 500; color: var(--muted); transition: color 0.15s; padding: 4px 0; }
+.methodology-disclosure > summary:hover { color: var(--foreground); }
+.methodology-disclosure p { margin: 8px 0; line-height: 1.6; font-size: 13px; color: var(--muted); }
+.methodology-disclosure p strong { color: #d4d4d8; font-weight: 600; }
+.methodology-disclosure details { margin: 8px 0; }
+.methodology-disclosure details summary { cursor: pointer; font-size: 12px; font-weight: 500; color: var(--muted-foreground); padding: 4px 0; }
+.methodology-disclosure details summary:hover { color: var(--foreground); }
+.methodology-disclosure pre { font-size: 0.85em; line-height: 1.5; padding: 12px 16px; margin: 8px 0; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); border-radius: var(--radius-md); color: var(--muted); white-space: pre-wrap; overflow-x: auto; }
 .cell-ai-icon {
   position: absolute; bottom: 2px; right: 2px; display: flex; gap: 2px;
   line-height: 1; pointer-events: none; z-index: 2;
@@ -432,8 +486,10 @@ body {
   .country-select { width: 100%; min-width: 0; }
   .country-trigger { height: 44px; font-size: 15px; }
   .country-dropdown { min-width: 0; }
-  .score-toggle { width: 100%; display: flex; }
-  .score-toggle button { flex: 1; text-align: center; min-height: 44px; font-size: 14px; }
+  .layer-select-wrap { width: 100%; flex-direction: column; align-items: stretch; }
+  .layer-select { width: 100%; min-height: 44px; font-size: 15px; }
+  .exposure-sub-toggle { width: 100%; display: flex; }
+  .exposure-sub-toggle button { flex: 1; text-align: center; min-height: 40px; font-size: 14px; }
   .legend { justify-content: center; padding: 4px 0; }
   .ai-act-toggle { justify-content: center; }
 
@@ -559,6 +615,7 @@ body {
     <a href="index.html" class="active">Explore the map</a>
     <a href="analysis.html">Analysis</a>
     <a href="questions.html">Questions</a>
+    <a href="methodology.html">Methodology</a>
     <a href="sources.html">Sources</a>
   </div>
   <button class="burger" id="burger-btn" aria-label="Menu" aria-expanded="false">
@@ -569,6 +626,7 @@ body {
   <a href="index.html" class="active">Explore the map</a>
   <a href="analysis.html">Analysis</a>
   <a href="questions.html">Questions</a>
+  <a href="methodology.html">Methodology</a>
   <a href="sources.html">Sources</a>
 </div>
 
@@ -585,7 +643,7 @@ body {
 
 <header class="header container" id="main-content" role="banner">
   <h1>AI Exposure of the European Job Market</h1>
-  <p class="subtitle">~130 occupation groups &middot; area&nbsp;=&nbsp;employment &middot; color&nbsp;=&nbsp;AI exposure score (0&ndash;10)</p>
+  <p class="subtitle" id="subtitle">~130 occupation groups &middot; area&nbsp;=&nbsp;employment &middot; color&nbsp;=&nbsp;AI exposure score (0&ndash;10)</p>
   <nav class="controls" aria-label="Visualization controls">
     <div class="country-select" id="country-select" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-label="Select country or region">
       <button class="country-trigger" id="country-trigger" type="button" aria-label="Select country">
@@ -596,9 +654,36 @@ body {
         <div class="country-list" id="country-list"></div>
       </div>
     </div>
-    <div class="score-toggle" id="score-toggle" role="tablist" aria-label="Score type selector">
-      <button class="active" data-score="technical_score" role="tab" aria-selected="true" id="tab-tech" aria-controls="treemap" tabindex="0">Technical Exposure</button>
-      <button data-score="regulated_score" role="tab" aria-selected="false" id="tab-reg" aria-controls="treemap" tabindex="-1">Regulated Exposure</button>
+    <div class="layer-select-wrap">
+      <select class="layer-select" id="layer-select" aria-label="Select coloring layer">
+        <option value="ai_exposure" selected>AI Exposure</option>
+        <option value="pay_score">Median Pay</option>
+        <option value="growth_score">Employment Growth</option>
+        <option value="adoption_score">Adoption Reality</option>
+        <option value="education_score">Education Level</option>
+        <option value="augmentation_score">AI Augmentation</option>
+      </select>
+      <button class="layer-info-btn" id="layer-info-btn" type="button" aria-label="Layer descriptions" title="What each layer measures">&#9432;</button>
+      <div class="layer-info-tooltip" id="layer-info-tooltip" role="tooltip">
+        <dl>
+          <dt>AI Exposure</dt>
+          <dd>How much AI could reshape each occupation (LLM-scored, 0&ndash;10). Toggle Technical vs Regulated.</dd>
+          <dt>Median Pay</dt>
+          <dd>Pay percentile within the selected country.</dd>
+          <dt>Employment Growth</dt>
+          <dd>Whether demand is rising or falling (Cedefop + Eurostat).</dd>
+          <dt>Education Level</dt>
+          <dd>Share of workers with tertiary education.</dd>
+          <dt>Adoption Reality</dt>
+          <dd>How much AI is actually being used vs. theoretical potential.</dd>
+          <dt>AI Augmentation</dt>
+          <dd>Composite: high exposure + growing demand + educated workforce.</dd>
+        </dl>
+      </div>
+      <div class="exposure-sub-toggle" id="exposure-sub-toggle" role="tablist" aria-label="Exposure type">
+        <button class="active" data-score="technical_score" role="tab" aria-selected="true">Technical</button>
+        <button data-score="regulated_score" role="tab" aria-selected="false">Regulated</button>
+      </div>
     </div>
     <div class="legend" aria-hidden="true">
       <span>Low</span>
@@ -614,6 +699,86 @@ body {
   <div class="delta-indicator" id="delta-indicator" aria-live="polite"></div>
   <div class="ai-act-legend" id="ai-act-legend" style="display:none" aria-live="polite"></div>
   <a href="analysis.html" class="analysis-link">Read the analysis &rarr;</a>
+  <details class="methodology-disclosure">
+    <summary>How we score AI exposure</summary>
+    <p>Each of the 125 European occupation groups was scored by Claude Sonnet 4 on two dimensions:</p>
+    <p><strong>Technical Exposure (0-10):</strong> How much could AI reshape this occupation's core tasks? Based on ESCO occupation descriptions covering skills, tasks, and work context for 3,043 detailed occupations aggregated into 125 ISCO groups.</p>
+    <p><strong>Regulated Exposure (0-10):</strong> Same assessment but accounting for EU AI Act obligations, GDPR constraints, works council requirements (DE: BetrVG &sect;87, AT: ArbVG &sect;96a), and sector-specific regulation. The average EU regulatory delta is 1.2 points &mdash; meaning regulation reduces effective AI exposure.</p>
+    <p><strong>UK Regulated Exposure:</strong> Separate scoring reflecting the UK's lighter regulatory framework (avg friction: 0.5 vs EU's 1.2).</p>
+    <p><strong>Additional layers</strong> use official statistical sources: Cedefop Skills Forecast 2025 (employment growth to 2035), Eurostat Labour Force Survey (education levels, pay), and triangulated AI adoption data from Anthropic, Microsoft, and OpenAI research.</p>
+    <details>
+      <summary>View the technical scoring rubric (example)</summary>
+      <pre>Rate each occupation group's overall AI Exposure on a scale from 0 to 10.
+
+AI Exposure measures how much AI will reshape this occupation. Consider both
+direct effects (AI automating tasks currently done by humans) and indirect
+effects (AI making each worker so productive that fewer are needed).
+
+A key signal is whether the work product is fundamentally digital. If the
+occupation can be performed entirely on a computer — writing, coding,
+analysing, communicating — then AI exposure is inherently high (7+).
+Conversely, occupations requiring physical presence, manual skill, or
+real-time human interaction have a natural barrier.
+
+Calibration anchors:
+0–1  Minimal exposure. Almost entirely physical or hands-on work.
+     Examples: Roofers, building caretakers, agricultural labourers.
+2–3  Low exposure. Mostly physical or interpersonal. AI helps with
+     peripheral tasks but doesn't touch the core work.
+     Examples: Electricians, plumbers, firefighters, dental assistants.
+4–5  Moderate exposure. Mix of physical and knowledge work. AI assists
+     with information-processing parts.
+     Examples: Registered nurses, police officers, veterinarians.
+6–7  High exposure. Predominantly knowledge work with some need for
+     human judgment or physical presence. AI tools already useful.
+     Examples: Teaching professionals, managers, accountants, journalists.
+8–9  Very high exposure. Almost entirely computer-based. Core tasks —
+     writing, coding, analysing, designing — are in domains where AI
+     is rapidly improving.
+     Examples: Software developers, legal associates, data analysts,
+     translators, graphic designers.
+10   Maximum exposure. Routine information processing, fully digital.
+     Examples: Data entry clerks, medical transcriptionists.</pre>
+    </details>
+    <details>
+      <summary>View the regulated scoring rubric (example)</summary>
+      <pre>Starting from the technical exposure score, adjust for regulatory friction
+that slows, constrains, or redirects AI adoption in this occupation group.
+
+Consider these regulatory dimensions:
+
+EU AI Act (Regulation 2024/1689):
+- Is this group a high-risk AI deployer under Annex III?
+- Does Art 26(7) require worker information obligations?
+- Does Art 14 require human oversight mechanisms?
+
+Data Protection:
+- Does GDPR Art 22 restrict automated individual decision-making?
+- Does GDPR Art 35 require data protection impact assessments?
+
+Employment Law (country-specific):
+- Germany: Does BetrVG §87 give works councils co-determination rights
+  over AI tool introduction?
+- Austria: Does ArbVG §96a require works council consent for employee
+  monitoring systems?
+- Switzerland: Do FADP Art 21, OR Art 328b, or ArGV3 Art 26 apply?
+
+Sector Regulation:
+- Platform Work Directive applicability
+- Pay Transparency Directive implications
+- Sector-specific licensing or professional standards
+
+The regulated score should be ≤ the technical score. The difference
+(technical minus regulated) represents the regulatory buffer — the
+friction that buys workers and institutions transition time.
+
+Average EU regulatory delta: 1.2 points.
+Average UK regulatory delta: 0.5 points.</pre>
+    </details>
+    <p style="margin-top: 1em;">
+      <a href="methodology.html" style="color: var(--ring); text-decoration: underline;">Full methodology &rarr;</a>
+    </p>
+  </details>
 </header>
 
 <section class="stats-bar container" id="stats-bar" role="region" aria-label="Summary statistics"></section>
@@ -653,32 +818,75 @@ body {
 </div>
 
 <footer class="footer container" role="contentinfo">
-  EU AI Exposure Map Version 2.0 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe">Source on GitHub</a><br>
+  EU AI Exposure Map Version 3.1 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe">Source on GitHub</a><br>
   Built by <a href="https://www.linkedin.com/in/pmaul/">Philipp Maul</a> &middot; <a href="https://nexalps.com">Nexalps</a> &mdash; Turning complexity into competitive advantage.<br>
   Inspired by <a href="https://karpathy.ai/jobs/">Karpathy&rsquo;s AI Exposure Map</a><br>
-  Data: <a href="https://esco.ec.europa.eu">ESCO v1.2.1</a> + <a href="https://ec.europa.eu/eurostat">Eurostat EU-LFS 2024</a> + <a href="https://www.bfs.admin.ch">BFS LSE 2024</a> + <a href="https://www.ons.gov.uk">ONS ASHE 2025</a> &middot;
+  Data: <a href="https://esco.ec.europa.eu">ESCO v1.2.1</a> + <a href="https://ec.europa.eu/eurostat">Eurostat EU-LFS 2024</a> + <a href="https://www.cedefop.europa.eu/en/events-and-projects/projects/skills-forecast">Cedefop Skills Forecast 2025</a> + <a href="https://www.bfs.admin.ch">BFS LSE 2024</a> + <a href="https://www.ons.gov.uk">ONS ASHE 2025</a> &middot;
   Scored by Claude Sonnet 4 (Anthropic) &middot;
   36 countries &middot; wages from Eurostat SES 2022, BFS 2024 (CH), ONS 2025 (UK) &middot; <a href="sources.html">Sources</a><br>
   Code: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-CODE">MIT</a> &middot; Data &amp; Analysis: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-DATA">CC-BY 4.0</a> Philipp Maul | Nexalps
 </footer>
 
 <script>
-/* ── Color scale ── */
-const colorScale = d3.scaleLinear()
-  .domain([0, 2, 4, 6, 8, 10])
-  .range(["#22c55e", "#84cc16", "#eab308", "#f97316", "#ef4444", "#dc2626"])
-  .clamp(true);
+/* ── Layer info tooltip ── */
+(function(){
+  const btn = document.getElementById("layer-info-btn");
+  const tip = document.getElementById("layer-info-tooltip");
+  if (!btn || !tip) return;
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    tip.classList.toggle("open");
+  });
+  document.addEventListener("click", (e) => {
+    if (!tip.contains(e.target) && !btn.contains(e.target)) tip.classList.remove("open");
+  });
+  btn.addEventListener("mouseenter", () => tip.classList.add("open"));
+  btn.addEventListener("mouseleave", (e) => {
+    if (!tip.contains(e.relatedTarget)) tip.classList.remove("open");
+  });
+  tip.addEventListener("mouseleave", (e) => {
+    if (!btn.contains(e.relatedTarget)) tip.classList.remove("open");
+  });
+})();
+</script>
+
+<script>
+/* ── Color scales ── */
+const colorScales = {
+  risk: d3.scaleLinear().domain([0,2,4,6,8,10])
+    .range(["#22c55e","#84cc16","#eab308","#f97316","#ef4444","#dc2626"]).clamp(true),
+  diverging: d3.scaleLinear().domain([0,2,4,6,8,10])
+    .range(["#dc2626","#ef4444","#eab308","#84cc16","#22c55e","#16a34a"]).clamp(true),
+  sequential: d3.scaleLinear().domain([0,2,4,6,8,10])
+    .range(["#22c55e","#84cc16","#eab308","#f97316","#ef4444","#dc2626"]).clamp(true),
+  opportunity: d3.scaleLinear().domain([0,2,4,6,8,10])
+    .range(["#64748b","#94a3b8","#eab308","#f97316","#ef4444","#dc2626"]).clamp(true),
+};
+let colorScale = colorScales.risk;
+
+/* ── Layer config ── */
+const LAYER_CONFIG = {
+  technical_score:    { scale: "risk",       legendLow: "Low",       legendHigh: "High",    perCountry: false },
+  regulated_score:    { scale: "risk",       legendLow: "Low",       legendHigh: "High",    perCountry: false },
+  pay_score:          { scale: "sequential", legendLow: "Lower",     legendHigh: "Higher",  perCountry: true },
+  growth_score:       { scale: "diverging",  legendLow: "Declining", legendHigh: "Growing", perCountry: true },
+  education_score:    { scale: "sequential", legendLow: "Lower",     legendHigh: "Higher",  perCountry: true },
+  augmentation_score: { scale: "opportunity",legendLow: "Low",       legendHigh: "High",    perCountry: true },
+  adoption_score:     { scale: "opportunity",legendLow: "Low",       legendHigh: "High",    perCountry: false },
+};
 
 // Legend gradient
 const canvas = document.getElementById("legend-gradient");
 const lgCtx = canvas.getContext("2d");
 canvas.width = 120; canvas.height = 10;
-for (let i = 0; i < 120; i++) { lgCtx.fillStyle = colorScale(i / 120 * 10); lgCtx.fillRect(i, 0, 1, 10); }
+function paintLegend() { for (let i = 0; i < 120; i++) { lgCtx.fillStyle = colorScale(i / 120 * 10); lgCtx.fillRect(i, 0, 1, 10); } }
+paintLegend();
 
 /* ── State ── */
 let DATA;
 let currentCountry = "EU27";
 let currentScore = "technical_score";
+let currentLayer = "ai_exposure";  // dropdown value
 let lockedData = null;
 let aiActLayer = false;
 
@@ -690,12 +898,32 @@ const isMobile = () => window.innerWidth <= 768;
 function getEmp(d) { return (d.emp && d.emp[currentCountry]) || 0; }
 function getWage(d) { return (d.wage && d.wage[currentCountry]) || null; }
 function getScore(d) {
+  const cfg = LAYER_CONFIG[currentScore];
+  if (cfg && cfg.perCountry) {
+    const scoreMap = d[currentScore];
+    if (scoreMap && typeof scoreMap === "object") return scoreMap[currentCountry] ?? 0;
+    return 0;
+  }
   if (currentCountry === "UK" && currentScore === "regulated_score" && d.uk_regulated_score != null) return d.uk_regulated_score;
   return d[currentScore] || 0;
 }
 function getRegScore(d) {
   if (currentCountry === "UK" && d.uk_regulated_score != null) return d.uk_regulated_score;
   return d.regulated_score || 0;
+}
+function getRawValue(d) {
+  if (currentScore === "pay_score") return getWage(d);
+  if (currentScore === "growth_score") { const m = d.growth_yoy_pct; return m && typeof m === "object" ? m[currentCountry] : null; }
+  if (currentScore === "education_score") { const m = d.pct_tertiary; return m && typeof m === "object" ? m[currentCountry] : null; }
+  if (currentScore === "adoption_score") { return d.observed_usage != null ? d.observed_usage : null; }
+  return null;
+}
+function getLayerLabel() {
+  const sel = document.getElementById("layer-select");
+  if (currentLayer === "ai_exposure") {
+    return currentScore === "technical_score" ? "Technical Exposure" : (currentCountry === "UK" ? "UK Regulated Exposure" : "Regulated Exposure");
+  }
+  return sel.options[sel.selectedIndex].text;
 }
 
 /* ── Country selector ── */
@@ -795,6 +1023,7 @@ function buildCountrySelector() {
     lockedData = null;
     updateTrigger();
     render();
+    updateURL();
     posthog.capture("country_changed", { country: code });
   }
 
@@ -847,34 +1076,88 @@ function buildCountrySelector() {
   updateTrigger();
 }
 
+/* ── URL parameters ── */
+function updateURL() {
+  const params = new URLSearchParams();
+  if (currentLayer !== "ai_exposure") params.set("layer", currentLayer);
+  if (currentLayer === "ai_exposure" && currentScore === "regulated_score") params.set("sub", "regulated");
+  if (currentCountry !== "EU27") params.set("country", currentCountry);
+  if (aiActLayer) params.set("overlay", "aiact");
+  const qs = params.toString();
+  history.replaceState(null, "", qs ? "?" + qs : location.pathname);
+}
+
+function applyURLParams() {
+  const params = new URLSearchParams(location.search);
+  const layer = params.get("layer");
+  const sub = params.get("sub");
+  const country = params.get("country");
+  const overlay = params.get("overlay");
+
+  // Apply country first (before render)
+  if (country && DATA.countries[country]) {
+    currentCountry = country;
+    // Update trigger display
+    const triggerLabel = document.getElementById("country-trigger-label");
+    if (triggerLabel) {
+      const meta = DATA.countries[country];
+      triggerLabel.textContent = meta.name;
+    }
+  }
+
+  // Apply layer
+  if (layer && LAYER_CONFIG[layer]) {
+    document.getElementById("layer-select").value = layer;
+    switchLayer(layer);
+  } else if (sub === "regulated") {
+    // AI Exposure with regulated sub-toggle
+    const subToggle = document.getElementById("exposure-sub-toggle");
+    subToggle.querySelectorAll("button").forEach(b => { b.classList.remove("active"); b.setAttribute("aria-selected","false"); });
+    const regBtn = subToggle.querySelector('[data-score="regulated_score"]');
+    if (regBtn) { regBtn.classList.add("active"); regBtn.setAttribute("aria-selected","true"); }
+    currentScore = "regulated_score";
+  }
+
+  // Apply overlay
+  if (overlay === "aiact") {
+    const cb = document.getElementById("ai-act-checkbox");
+    cb.checked = true;
+    aiActLayer = true;
+  }
+}
+
 /* ── Init ── */
 async function init() {
   DATA = await (await fetch("data.json")).json();
   Object.entries(DATA.countries).forEach(([code, meta]) => { COUNTRY_NAMES_JS[code] = meta.name; });
   buildCountrySelector();
+  applyURLParams();
   render();
 
-  const toggleEl = document.getElementById("score-toggle");
-  toggleEl.addEventListener("click", (e) => {
+  // Layer dropdown
+  document.getElementById("layer-select").addEventListener("change", (e) => {
+    switchLayer(e.target.value);
+    updateURL();
+  });
+
+  // Exposure sub-toggle
+  const subToggle = document.getElementById("exposure-sub-toggle");
+  subToggle.addEventListener("click", (e) => {
     const btn = e.target.closest("button");
     if (!btn) return;
-    switchTab(btn);
-  });
-  toggleEl.addEventListener("keydown", (e) => {
-    const tabs = [...toggleEl.querySelectorAll("button")];
-    const idx = tabs.indexOf(document.activeElement);
-    if (idx < 0) return;
-    let next;
-    if (e.key === "ArrowRight" || e.key === "ArrowDown") next = tabs[(idx + 1) % tabs.length];
-    if (e.key === "ArrowLeft" || e.key === "ArrowUp") next = tabs[(idx - 1 + tabs.length) % tabs.length];
-    if (e.key === "Home") next = tabs[0];
-    if (e.key === "End") next = tabs[tabs.length - 1];
-    if (next) { e.preventDefault(); switchTab(next); next.focus(); }
+    subToggle.querySelectorAll("button").forEach(b => { b.classList.remove("active"); b.setAttribute("aria-selected","false"); });
+    btn.classList.add("active");
+    btn.setAttribute("aria-selected","true");
+    currentScore = btn.dataset.score;
+    render();
+    updateURL();
+    posthog.capture("layer_changed", { layer: currentScore });
   });
 
   document.getElementById("ai-act-checkbox").addEventListener("change", (e) => {
     aiActLayer = e.target.checked;
     render();
+    updateURL();
     if (lockedData) showSidebar(lockedData);
     posthog.capture("ai_act_toggle", { enabled: aiActLayer });
   });
@@ -899,18 +1182,47 @@ async function init() {
   initSheetSwipe();
 }
 
-function switchTab(btn) {
-  document.querySelectorAll("#score-toggle button").forEach(b => {
-    b.classList.remove("active");
-    b.setAttribute("aria-selected", "false");
-    b.setAttribute("tabindex", "-1");
-  });
-  btn.classList.add("active");
-  btn.setAttribute("aria-selected", "true");
-  btn.setAttribute("tabindex", "0");
-  currentScore = btn.dataset.score;
+function switchLayer(layerValue) {
+  currentLayer = layerValue;
+  const subToggle = document.getElementById("exposure-sub-toggle");
+  const legendLow = document.querySelector(".legend span:first-child");
+  const legendHigh = document.querySelector(".legend span:last-child");
+
+  if (layerValue === "ai_exposure") {
+    // Show sub-toggle, use whichever exposure type is active
+    subToggle.classList.remove("hidden");
+    const activeBtn = subToggle.querySelector("button.active");
+    currentScore = activeBtn ? activeBtn.dataset.score : "technical_score";
+  } else {
+    // Hide sub-toggle, set currentScore directly
+    subToggle.classList.add("hidden");
+    currentScore = layerValue;
+  }
+
+  // Update color scale and legend
+  const cfg = LAYER_CONFIG[currentScore];
+  if (cfg) {
+    colorScale = colorScales[cfg.scale];
+    legendLow.textContent = cfg.legendLow;
+    legendHigh.textContent = cfg.legendHigh;
+    paintLegend();
+  }
+
+  // Update subtitle dynamically based on active layer
+  const subtitleEl = document.getElementById("subtitle");
+  const subtitleMap = {
+    technical_score: "AI exposure across ~130 occupation groups &middot; area&nbsp;=&nbsp;employment &middot; color&nbsp;=&nbsp;AI exposure (0&ndash;10)",
+    regulated_score: "AI exposure across ~130 occupation groups &middot; area&nbsp;=&nbsp;employment &middot; color&nbsp;=&nbsp;AI exposure (0&ndash;10)",
+    pay_score: "Median pay across ~130 occupation groups &middot; area&nbsp;=&nbsp;employment &middot; color&nbsp;=&nbsp;pay percentile",
+    growth_score: "Employment growth across 199.6M European jobs &middot; area&nbsp;=&nbsp;employment &middot; color&nbsp;=&nbsp;growth trend",
+    education_score: "Education levels across ~130 occupation groups &middot; area&nbsp;=&nbsp;employment &middot; color&nbsp;=&nbsp;tertiary share",
+    adoption_score: "AI adoption reality across ~130 occupation groups &middot; area&nbsp;=&nbsp;employment &middot; color&nbsp;=&nbsp;observed usage",
+    augmentation_score: "AI augmentation potential across 36 countries &middot; area&nbsp;=&nbsp;employment &middot; color&nbsp;=&nbsp;composite score",
+  };
+  subtitleEl.innerHTML = subtitleMap[currentScore] || "~130 occupation groups &middot; area&nbsp;=&nbsp;employment &middot; color&nbsp;=&nbsp;selected metric (0&ndash;10)";
+
   render();
-  posthog.capture("score_toggle", { score_type: currentScore });
+  if (typeof posthog !== "undefined") posthog.capture("layer_changed", { layer: currentScore });
 }
 
 /* ── Sidebar ── */
@@ -939,7 +1251,13 @@ let tipVisible = false;
 
 function showHoverTip(data, x, y) {
   const score = getScore(data);
-  hoverTip.innerHTML = `${data.name}<span class="tip-score" style="background:${colorScale(score)}">${score}</span>`;
+  let extra = "";
+  const raw = getRawValue(data);
+  if (currentScore === "pay_score" && raw) extra = ` &middot; ${formatEur(raw)}`;
+  if (currentScore === "growth_score" && raw != null) extra = ` &middot; ${raw > 0 ? "+" : ""}${raw.toFixed(1)}%`;
+  if (currentScore === "adoption_score" && raw != null) extra = ` &middot; ${(raw * 100).toFixed(0)}% usage`;
+  const displayScore = typeof score === "number" ? score.toFixed(1) : score;
+  hoverTip.innerHTML = `${data.name}<span class="tip-score" style="background:${colorScale(score)}">${displayScore}</span>${extra}`;
   const tipW = hoverTip.offsetWidth || 200;
   const left = Math.min(x + 14, window.innerWidth - tipW - 12);
   const top = y - 36;
@@ -1085,13 +1403,62 @@ function buildDetailHtml(data) {
       </div>`;
   }
 
+  // Active layer highlight (for non-exposure layers)
+  let layerHighlight = "";
+  if (currentScore !== "technical_score" && currentScore !== "regulated_score") {
+    const lScore = getScore(data);
+    const raw = getRawValue(data);
+    const label = getLayerLabel();
+    let rawStr = "";
+    if (currentScore === "pay_score" && raw) rawStr = ` (${formatEur(raw)}/yr)`;
+    if (currentScore === "growth_score" && raw != null) rawStr = ` (${raw > 0 ? "+" : ""}${raw.toFixed(1)}% YoY)`;
+    if (currentScore === "education_score" && raw != null) rawStr = ` (${raw.toFixed(0)}% tertiary)`;
+    if (currentScore === "adoption_score" && raw != null) rawStr = ` (${(raw * 100).toFixed(0)}% observed usage)`;
+    const displayScore = typeof lScore === "number" ? lScore.toFixed(1) : lScore;
+    layerHighlight = `
+      <div style="margin:12px 0;padding:10px;background:rgba(255,255,255,0.03);border:1px solid var(--card-border);border-radius:var(--radius-md);text-align:center;">
+        <div class="score-num" style="background:${colorScale(lScore)};display:inline-block;font-size:22px;font-weight:700;padding:4px 14px;border-radius:var(--radius-md);color:rgba(0,0,0,0.85)">${displayScore}</div>
+        <div class="score-lbl" style="margin-top:4px">${label}${rawStr}</div>
+      </div>`;
+  }
+
+  // Cross-layer insight card
+  let insightHtml = "";
+  {
+    const ts = data.technical_score || 0;
+    const gs = data.growth_score && typeof data.growth_score === "object" ? (data.growth_score[currentCountry] ?? null) : null;
+    const ps = data.pay_score && typeof data.pay_score === "object" ? (data.pay_score[currentCountry] ?? null) : null;
+    const as_ = data.adoption_score != null ? data.adoption_score : null;
+    const augs = data.augmentation_score && typeof data.augmentation_score === "object" ? (data.augmentation_score[currentCountry] ?? null) : null;
+
+    let insightText = null;
+    if (ts > 7 && gs != null && gs > 6) {
+      insightText = "\u26A1 Augmentation signal \u2014 High AI exposure but demand is increasing. Workers using AI here likely see higher productivity.";
+    } else if (ts > 7 && gs != null && gs < 4) {
+      insightText = "\u26A0\uFE0F Transition risk \u2014 High AI exposure with declining demand. Upskilling and regulatory protection matter most here.";
+    } else if (ts > 7 && ps != null && ps > 7) {
+      insightText = "\uD83D\uDCB0 Premium transformation \u2014 High-paying knowledge work facing maximum AI change. The regulatory buffer is critical.";
+    } else if (as_ != null && as_ > 5 && gs != null && gs < 4) {
+      insightText = "\uD83D\uDCC9 Active displacement signal \u2014 AI is already being used heavily here AND demand is falling.";
+    } else if (as_ != null && as_ < 3 && ts > 7) {
+      insightText = "\uD83D\uDD2E Latent potential \u2014 AI could transform this but adoption hasn\u2019t started. First-mover advantage territory.";
+    } else if (augs != null && augs > 7) {
+      insightText = "\uD83D\uDE80 Augmentation sweet spot \u2014 This occupation combines high AI potential with strong demand and educated workforce.";
+    }
+    if (insightText) {
+      insightHtml = `<div style="margin:8px 0;padding:8px 10px;background:rgba(255,255,255,0.04);border:1px solid var(--card-border);border-radius:var(--radius-sm);font-size:12px;color:var(--muted);line-height:1.5;">${insightText}</div>`;
+    }
+  }
+
   return `
     <h3>${data.name}</h3>
     <div class="meta">ISCO ${data.isco3} &middot; ${data.category}</div>
+    ${layerHighlight}
+    ${insightHtml}
     <div class="score-grid">
-      <div class="score-item"><div class="score-num" style="background:${colorScale(tech)}">${tech}</div><div class="score-lbl">Technical</div></div>
+      <div class="score-item"><div class="score-num" style="background:${colorScales.risk(tech)}">${tech}</div><div class="score-lbl">Technical</div></div>
       <div class="delta-arrow">&rarr; &minus;${delta}</div>
-      <div class="score-item"><div class="score-num" style="background:${colorScale(reg)}">${reg}</div><div class="score-lbl">${isUK ? "UK Regulated" : "Regulated"}</div></div>
+      <div class="score-item"><div class="score-num" style="background:${colorScales.risk(reg)}">${reg}</div><div class="score-lbl">${isUK ? "UK Regulated" : "Regulated"}</div></div>
     </div>
     <div class="detail">Employment: <strong>${formatNum(emp)}</strong>${empNote}${wage ? " &middot; Mean wage: <strong>"+formatEur(wage)+"/yr</strong>" : ""}</div>
     <div class="detail">${data.rationale}</div>
@@ -1163,13 +1530,15 @@ function renderCells(container, root, isMobileView) {
       const label = document.createElement("div");
       label.className = "cell-label";
       label.style.maxHeight = (h - 4) + "px";
-      label.innerHTML = d.data.name + `<br><span class="cell-score">${score}</span>`;
+      const displayScore = typeof score === "number" ? score.toFixed(1) : score;
+      label.innerHTML = d.data.name + `<br><span class="cell-score">${displayScore}</span>`;
       cell.appendChild(label);
     } else if (w > 20 && h > 14) {
       const s = document.createElement("div");
       s.className = "cell-label cell-score";
       s.style.padding = "2px 3px";
-      s.textContent = score;
+      const displayScore = typeof score === "number" ? score.toFixed(1) : score;
+      s.textContent = displayScore;
       cell.appendChild(s);
     }
 
@@ -1207,11 +1576,28 @@ function render() {
 
   const deltaEl = document.getElementById("delta-indicator");
   const isUKSelected = currentCountry === "UK";
-  deltaEl.innerHTML = currentScore === "regulated_score"
-    ? (isUKSelected
-      ? `Showing <strong>UK regulated</strong> exposure (Equality Act, UK GDPR, Employment Rights Act). Avg regulatory friction: <span class="delta-value">&minus;${avgDelta.toFixed(1)} points</span>`
-      : `Showing <strong>regulated</strong> exposure (EU AI Act, works councils, GDPR). Avg regulatory friction: <span class="delta-value">&minus;${avgDelta.toFixed(1)} points</span>`)
-    : `Showing <strong>technical</strong> exposure (pure AI capability). Toggle to see the effect of regulation on the exposure.`;
+  const countryName = COUNTRY_NAMES_JS[currentCountry] || currentCountry;
+  if (currentScore === "regulated_score") {
+    const regLabel = isUKSelected ? "UK" : "EU";
+    deltaEl.innerHTML = `${regLabel} regulation reduces exposure by ~${avgDelta.toFixed(1)} points on average &mdash; a &lsquo;regulatory buffer&rsquo; that buys transition time. ${countryName} shown. <span style="font-size:11px;color:var(--muted-foreground)">Source: ${isUKSelected ? "Equality Act, UK GDPR, ERA 1996" : "EU AI Act, works councils, GDPR"}.</span>`;
+  } else if (currentScore === "technical_score") {
+    deltaEl.innerHTML = `Color shows how much AI could technically reshape each occupation. Higher &ne; disappearing &mdash; it means changing fastest. <span style="font-size:11px;color:var(--muted-foreground)">Source: ESCO + Claude Sonnet 4 scoring.</span>`;
+  } else if (currentScore === "pay_score") {
+    deltaEl.innerHTML = `Higher-paid jobs face more AI exposure &mdash; the opposite of previous automation waves. <span style="font-size:11px;color:var(--muted-foreground)">${countryName}, normalized within country. Source: Eurostat SES 2022.</span>`;
+  } else if (currentScore === "growth_score") {
+    const hasGrowth = root.leaves().some(d => { const s = getScore(d.data); return s > 0; });
+    if (!hasGrowth) {
+      deltaEl.innerHTML = `<strong>No growth data</strong> available for ${countryName}. Growth data covers EU-27, EFTA, and candidate countries.`;
+    } else {
+      deltaEl.innerHTML = `Green = growing demand. High exposure + green = the augmentation sweet spot &mdash; AI is transforming these jobs but demand is rising. <span style="font-size:11px;color:var(--muted-foreground)">${countryName}. Source: Cedefop 2025 + Eurostat YoY.</span>`;
+    }
+  } else if (currentScore === "education_score") {
+    deltaEl.innerHTML = `Education doesn&rsquo;t protect against AI exposure &mdash; it correlates with it. The most exposed European workers are the most educated. <span style="font-size:11px;color:var(--muted-foreground)">${countryName}. Source: Eurostat LFS.</span>`;
+  } else if (currentScore === "augmentation_score") {
+    deltaEl.innerHTML = `Where high AI exposure meets growing demand and educated workforce = jobs most likely to be transformed, not eliminated. <span style="font-size:11px;color:var(--muted-foreground)">${countryName}. Composite: 0.5&times;Exposure + 0.3&times;Growth + 0.2&times;Education.</span>`;
+  } else if (currentScore === "adoption_score") {
+    deltaEl.innerHTML = `Theory vs. reality: AI could reshape 80%+ of knowledge work, but actual adoption is ~35%. The gap is where regulation, inertia, and opportunity live. <span style="font-size:11px;color:var(--muted-foreground)">Source: Anthropic + Microsoft + OpenAI research.</span>`;
+  }
 
   // AI Act overlay legend
   const aiLegendEl = document.getElementById("ai-act-legend");
@@ -1226,7 +1612,7 @@ function render() {
   }
 
   const maxBandEmp = Math.max(...Object.values(bandEmp));
-  const scoreLabel = currentScore === "technical_score" ? "Technical" : (currentCountry === "UK" ? "UK Regulated" : "Regulated");
+  const scoreLabel = getLayerLabel();
 
   // AI Act stats (computed live for current country)
   let aiActStatsHtml = "";
@@ -1259,20 +1645,68 @@ function render() {
     <div class="stat-card"><div class="stat-value">${avgSurface}</div><div class="stat-label">Avg Regulatory Surface</div><div class="stat-sublabel">regulations per group</div></div>`;
   }
 
+  // Build layer-specific middle stat cards
+  let middleStats = "";
+  const isExposure = currentScore === "technical_score" || currentScore === "regulated_score";
+  if (isExposure) {
+    middleStats = `
+      <div class="stat-card"><div class="stat-value">${formatEur(exposureWeightedWages)}</div><div class="stat-label">Exposure-Weighted Wages</div><div class="stat-sublabel">total wages adjusted by AI exposure intensity</div></div>
+      <div class="stat-card"><div class="stat-value">${avgDelta.toFixed(1)}</div><div class="stat-label">Avg Regulatory Delta</div></div>`;
+  } else if (currentScore === "pay_score") {
+    // Median wage for current country
+    const allWages = root.leaves().map(d => getWage(d.data)).filter(w => w != null);
+    const medianWage = allWages.length > 0 ? allWages.sort((a,b)=>a-b)[Math.floor(allWages.length/2)] : 0;
+    middleStats = `
+      <div class="stat-card"><div class="stat-value">${formatEur(medianWage)}</div><div class="stat-label">Median Wage</div><div class="stat-sublabel">${COUNTRY_NAMES_JS[currentCountry] || currentCountry}</div></div>`;
+  } else if (currentScore === "growth_score") {
+    const growingCount = root.leaves().filter(d => getScore(d.data) >= 6).length;
+    const decliningCount = root.leaves().filter(d => { const s = getScore(d.data); const cfg = LAYER_CONFIG[currentScore]; const hasData = cfg && cfg.perCountry ? (d.data[currentScore] && d.data[currentScore][currentCountry] != null) : true; return hasData && s < 4; }).length;
+    middleStats = `
+      <div class="stat-card"><div class="stat-value">${growingCount}</div><div class="stat-label">Growing (score &ge;6)</div></div>
+      <div class="stat-card"><div class="stat-value">${decliningCount}</div><div class="stat-label">Declining (score &lt;4)</div></div>`;
+  } else if (currentScore === "adoption_score") {
+    const highAdoption = root.leaves().filter(d => getScore(d.data) >= 5).length;
+    const avgGap = root.leaves().reduce((sum, d) => {
+      const gap = d.data.adoption_gap;
+      return sum + (gap != null ? gap : 0);
+    }, 0) / Math.max(1, root.leaves().filter(d => d.data.adoption_gap != null).length);
+    middleStats = `
+      <div class="stat-card"><div class="stat-value">${highAdoption}</div><div class="stat-label">High Adoption (&ge;5)</div></div>
+      <div class="stat-card"><div class="stat-value">${avgGap.toFixed(2)}</div><div class="stat-label">Avg Theory-Reality Gap</div><div class="stat-sublabel">theoretical ceiling vs observed usage</div></div>`;
+  } else if (currentScore === "education_score") {
+    // Compute average pct_tertiary for current country
+    const tertiaryVals = root.leaves().map(d => {
+      const m = d.data.pct_tertiary;
+      return m && typeof m === "object" ? m[currentCountry] : null;
+    }).filter(v => v != null);
+    const avgTertiary = tertiaryVals.length > 0 ? tertiaryVals.reduce((a,b) => a+b, 0) / tertiaryVals.length : 0;
+    const highEdCount = root.leaves().filter(d => getScore(d.data) >= 7).length;
+    middleStats = `
+      <div class="stat-card"><div class="stat-value">${avgTertiary.toFixed(0)}%</div><div class="stat-label">Avg Tertiary Workforce</div><div class="stat-sublabel">${COUNTRY_NAMES_JS[currentCountry] || currentCountry}</div></div>
+      <div class="stat-card"><div class="stat-value">${highEdCount}</div><div class="stat-label">High Education (&ge;7)</div></div>`;
+  } else if (currentScore === "augmentation_score") {
+    const highOppCount = root.leaves().filter(d => getScore(d.data) >= 7).length;
+    middleStats = `
+      <div class="stat-card"><div class="stat-value">${highOppCount}</div><div class="stat-label">High-Opportunity Groups</div><div class="stat-sublabel">augmentation score &ge; 7</div></div>`;
+  }
+
+  // Build histogram with colors from active color scale
+  const histogramHtml = Object.entries(bandEmp).map(([band,emp]) => {
+    const h = maxBandEmp > 0 ? Math.max(4, (emp/maxBandEmp)*40) : 4;
+    const midpoint = parseFloat(band.split("-")[0]) + 1;
+    const barColor = colorScale(midpoint);
+    return `<div class="bar" style="height:${h}px;background:${barColor}" title="${band}: ${formatNum(emp)}"><div class="bar-label">${band}</div></div>`;
+  }).join("");
+
   document.getElementById("stats-bar").innerHTML = `
     <div class="stat-card"><div class="stat-value">${formatNum(totalEmp)}</div><div class="stat-label">Total Jobs</div></div>
-    <div class="stat-card"><div class="stat-value">${avgExp.toFixed(1)}</div><div class="stat-label">Avg ${scoreLabel} Exposure</div></div>
-    <div class="stat-card"><div class="stat-value">${formatEur(exposureWeightedWages)}</div><div class="stat-label">Exposure-Weighted Wages</div><div class="stat-sublabel">total wages adjusted by AI exposure intensity</div></div>
-    <div class="stat-card"><div class="stat-value">${avgDelta.toFixed(1)}</div><div class="stat-label">Avg Regulatory Delta</div></div>
+    <div class="stat-card"><div class="stat-value">${avgExp.toFixed(1)}</div><div class="stat-label">Avg ${scoreLabel}</div></div>
+    ${middleStats}
     ${aiActStatsHtml}
     <div class="stat-card stat-wide">
-      <div class="stat-label" style="margin-bottom:6px">Jobs by ${scoreLabel} Exposure</div>
+      <div class="stat-label" style="margin-bottom:6px">Jobs by ${scoreLabel}</div>
       <div class="histogram" role="img" aria-label="Histogram: ${Object.entries(bandEmp).map(([b,e])=>`${b}: ${formatNum(e)}`).join(", ")}">
-        ${Object.entries(bandEmp).map(([band,emp]) => {
-          const h = maxBandEmp > 0 ? Math.max(4, (emp/maxBandEmp)*40) : 4;
-          const colors = {"0-2":"#22c55e","2-4":"#84cc16","4-6":"#eab308","6-8":"#f97316","8-10":"#ef4444"};
-          return `<div class="bar" style="height:${h}px;background:${colors[band]}" title="${band}: ${formatNum(emp)}"><div class="bar-label">${band}</div></div>`;
-        }).join("")}
+        ${histogramHtml}
       </div>
     </div>`;
 

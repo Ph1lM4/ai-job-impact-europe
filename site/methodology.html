@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology &mdash; AI Exposure of the European Job Market &mdash; Nexalps</title>
+<meta name="description" content="Full methodology: data sources, AI exposure scoring approach, layer definitions, normalization, and limitations behind the European AI Jobs Impact Map.">
+<link rel="canonical" href="https://ai-exposure.nexalps.com/methodology.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Methodology — European AI Jobs Impact Map">
+<meta property="og:description" content="Full methodology: data sources, scoring approach, layer definitions, normalization, and limitations.">
+<meta property="og:url" content="https://ai-exposure.nexalps.com/methodology.html">
+<meta property="og:image" content="https://ai-exposure.nexalps.com/og-image.png">
+<meta property="og:site_name" content="Nexalps">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Methodology — European AI Jobs Impact Map">
+<meta name="twitter:description" content="Full methodology: data sources, scoring approach, layer definitions, normalization, and limitations.">
+<meta name="twitter:image" content="https://ai-exposure.nexalps.com/og-image.png">
+
+<!-- PostHog analytics -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])}}(document,window.posthog||[]);
+posthog.init('phc_bjax6jdRxYJAaExodvALjRru8AQzUSbYFNlWlXiJM8A', {api_host: 'https://eu.i.posthog.com', person_profiles: 'identified_only'});
+</script>
+
+<!-- Geist font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #0a0a0c;
+  --card-border: rgba(255,255,255,0.08);
+  --muted: #a1a1aa;
+  --muted-foreground: #71717a;
+  --accent: #27272a;
+  --border: rgba(255,255,255,0.12);
+  --ring: #f97316;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --font: 'Geist', system-ui, -apple-system, sans-serif;
+  --transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: var(--font);
+  background: var(--background);
+  color: var(--foreground);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Site nav ── */
+.site-nav {
+  position: fixed; top: 0; right: 0; left: 0;
+  z-index: 9999;
+  display: flex; align-items: center; justify-content: flex-end;
+  padding: 12px 20px;
+  pointer-events: none;
+}
+.site-nav-links {
+  display: flex; gap: 20px; pointer-events: auto;
+  background: rgba(9,9,11,0.82);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 8px 16px;
+}
+.site-nav-links a {
+  font-size: 13px; font-weight: 500;
+  color: var(--muted); text-decoration: none;
+  transition: color 0.15s;
+}
+.site-nav-links a:hover { color: var(--foreground); }
+.site-nav-links a.active { color: var(--ring); }
+.burger {
+  display: none; pointer-events: auto;
+  background: rgba(9,9,11,0.82);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 10px 11px; cursor: pointer;
+  flex-direction: column; gap: 4px;
+}
+.burger span {
+  display: block; width: 18px; height: 2px;
+  background: var(--foreground); border-radius: 1px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.burger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.burger-panel {
+  display: none; position: fixed; top: 0; left: 0; right: 0;
+  z-index: 9998;
+  background: rgba(9,9,11,0.96);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  padding: 72px 24px 32px;
+  flex-direction: column; gap: 24px;
+}
+.burger-panel.open { display: flex; }
+.burger-panel a {
+  font-size: 20px; font-weight: 600;
+  color: var(--muted); text-decoration: none;
+  transition: color 0.15s;
+}
+.burger-panel a:hover { color: var(--foreground); }
+.burger-panel a.active { color: var(--ring); }
+@media (max-width: 768px) {
+  .site-nav-links { display: none; }
+  .burger { display: flex; }
+}
+
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+  font-size: 13px;
+  color: var(--muted-foreground);
+  padding: 16px 0 0;
+}
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.breadcrumb a:hover { color: var(--foreground); }
+
+/* ── Hero ── */
+.hero {
+  padding: 40px 0 32px;
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 40px;
+}
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.hero .lede {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+/* ── Article ── */
+.article {
+  padding-bottom: 48px;
+}
+.article h2 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 48px 0 8px;
+  line-height: 1.3;
+  color: var(--foreground);
+}
+.article h2:first-child {
+  margin-top: 0;
+}
+.article h2 .num {
+  color: var(--ring);
+  font-weight: 700;
+}
+.article h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 28px 0 8px;
+  letter-spacing: -0.01em;
+}
+.deep-link {
+  display: inline-block;
+  color: var(--ring);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+.deep-link:hover { text-decoration: underline; }
+.article p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #d4d4d8;
+  line-height: 1.8;
+  margin: 16px 0;
+}
+.article p strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+.article ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+.article li {
+  font-size: 15px;
+  color: #d4d4d8;
+  line-height: 1.7;
+  padding: 4px 0 4px 20px;
+  position: relative;
+}
+.article li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 13px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--muted-foreground);
+}
+.article a {
+  color: var(--ring);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition);
+}
+.article a:hover { color: var(--foreground); }
+.article .data-table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.article .data-table th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-foreground);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.article .data-table td {
+  padding: 10px 12px;
+  color: #d4d4d8;
+  border-bottom: 1px solid var(--card-border);
+}
+.article .data-table td a {
+  color: var(--ring);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition);
+}
+.article .data-table td a:hover {
+  color: var(--foreground);
+}
+.article code {
+  font-size: 0.9em;
+  background: rgba(255,255,255,0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #d4d4d8;
+}
+
+/* ── Disclaimer ── */
+.disclaimer {
+  margin: 48px 0 0;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.03);
+  border-left: 3px solid var(--border);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ── CTA bar ── */
+.cta-bar {
+  margin: 48px 0 0; padding: 32px 24px;
+  background: var(--card); border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg); text-align: center;
+}
+.cta-bar .cta-text { font-size: 17px; font-weight: 500; color: var(--foreground); margin-bottom: 8px; line-height: 1.5; }
+.cta-bar .cta-sub { font-size: 14px; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+.cta-bar .btn-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.cta-bar a.btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 10px 24px;
+  background: var(--ring); color: #000; font-family: var(--font);
+  font-size: 14px; font-weight: 600; border-radius: var(--radius-md);
+  text-decoration: none; transition: opacity var(--transition);
+}
+.cta-bar a.btn:hover { opacity: 0.9; }
+.cta-bar a.btn-outline { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+.cta-bar a.btn-outline:hover { color: var(--foreground); border-color: rgba(255,255,255,0.25); }
+@media (max-width: 640px) { .cta-bar .btn-row { flex-direction: column; align-items: center; } }
+
+/* ── Footer ── */
+.footer {
+  padding-top: 24px;
+  padding-bottom: 40px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+  border-top: 1px solid var(--card-border);
+  margin-top: 48px;
+}
+.footer a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition);
+}
+.footer a:hover { color: var(--foreground); }
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .container { padding: 0 16px; }
+  .hero { padding: 28px 0 24px; }
+  .hero h1 { font-size: 26px; }
+  .hero .lede { font-size: 16px; }
+  .article h2 { font-size: 19px; margin-top: 36px; }
+  .article p { font-size: 15px; }
+  .article .data-table { font-size: 13px; }
+  .article .data-table th,
+  .article .data-table td { padding: 8px 8px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="site-nav" aria-label="Site navigation">
+  <div class="site-nav-links">
+    <a href="index.html">Explore the map</a>
+    <a href="analysis.html">Analysis</a>
+    <a href="questions.html">Questions</a>
+    <a href="methodology.html" class="active">Methodology</a>
+    <a href="sources.html">Sources</a>
+  </div>
+  <button class="burger" id="burger-btn" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="burger-panel" id="burger-panel">
+  <a href="index.html">Explore the map</a>
+  <a href="analysis.html">Analysis</a>
+  <a href="questions.html">Questions</a>
+  <a href="methodology.html" class="active">Methodology</a>
+  <a href="sources.html">Sources</a>
+</div>
+
+
+<div class="container">
+
+<div class="breadcrumb">
+  <a href="index.html">Map</a> &rsaquo; Methodology
+</div>
+
+<header class="hero">
+  <h1>Methodology</h1>
+  <p class="lede">
+    How we built the European AI Jobs Impact Map: data sources, scoring approach, layer definitions, normalization, and known limitations.
+  </p>
+</header>
+
+<article class="article">
+
+  <h2><span class="num">1.</span> Data Sources</h2>
+
+  <table class="data-table" aria-label="Data sources summary">
+    <thead>
+      <tr><th>Source</th><th>Coverage</th><th>Granularity</th><th>Ref. Year</th><th>Used For</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://esco.ec.europa.eu">ESCO v1.2.1</a></td>
+        <td>3,043 occupations &rarr; 125 groups</td>
+        <td>Occupation descriptions + skills</td>
+        <td>2024 (structural)</td>
+        <td>Scoring input</td>
+      </tr>
+      <tr>
+        <td><a href="https://ec.europa.eu/eurostat">Eurostat EU-LFS</a> (lfsa_egai2d)</td>
+        <td>35 countries</td>
+        <td>ISCO 2-digit</td>
+        <td>2024</td>
+        <td>Employment counts</td>
+      </tr>
+      <tr>
+        <td><a href="https://ec.europa.eu/eurostat">Eurostat SES</a> (earn_ses22_28)</td>
+        <td>35 countries</td>
+        <td>ISCO 1-digit</td>
+        <td>2022</td>
+        <td>Wages</td>
+      </tr>
+      <tr>
+        <td><a href="https://ec.europa.eu/eurostat">Eurostat LFS</a> (lfsa_egised)</td>
+        <td>35 countries</td>
+        <td>ISCO 1-digit &times; ISCED</td>
+        <td>2024</td>
+        <td>Education levels</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.bfs.admin.ch">BFS LSE/SAKE</a></td>
+        <td>Switzerland</td>
+        <td>ISCO 2-digit / 1-digit</td>
+        <td>2024&ndash;2025</td>
+        <td>Swiss wages + employment</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.ons.gov.uk">ONS ASHE</a></td>
+        <td>United Kingdom</td>
+        <td>SOC 2-digit &rarr; ISCO</td>
+        <td>2025</td>
+        <td>UK wages + employment</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.cedefop.europa.eu/en/events-and-projects/projects/skills-forecast">Cedefop Skills Forecast 2025</a></td>
+        <td>33 countries (EU27 + IS, NO, CH, MK, TR)</td>
+        <td>ISCO 1-digit</td>
+        <td>2024&rarr;2035 projections</td>
+        <td>Employment growth</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.anthropic.com/news/the-anthropic-economic-index">Anthropic Economic Index</a></td>
+        <td>US (global by occupation)</td>
+        <td>SOC major groups</td>
+        <td>2025&ndash;2026</td>
+        <td>Observed AI adoption</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.microsoft.com/en-us/research/publication/working-with-ai-measuring-the-occupational-implications-of-generative-ai/">Microsoft Working with AI</a></td>
+        <td>US (global by occupation)</td>
+        <td>SOC detailed &rarr; major groups</td>
+        <td>2024</td>
+        <td>AI applicability scores</td>
+      </tr>
+      <tr>
+        <td><a href="https://openai.com/index/gpts-are-gpts/">OpenAI GPTs are GPTs</a></td>
+        <td>US (global by occupation)</td>
+        <td>SOC detailed &rarr; major groups</td>
+        <td>2023</td>
+        <td>Theoretical AI exposure ceiling</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h2><span class="num">2.</span> AI Exposure Scoring</h2>
+
+  <p>
+    Each of the 125 European occupation groups (ISCO-08 3-digit level) was scored by Claude Sonnet 4 (Anthropic) on two dimensions using standardised rubrics with calibration anchors.
+  </p>
+  <p>
+    <strong>Technical Exposure (0&ndash;10)</strong> measures how much AI could reshape an occupation&rsquo;s core tasks. The scoring is based on ESCO occupation descriptions covering skills, tasks, and work context for 3,043 detailed occupations, aggregated into 125 ISCO groups. The key signal is whether the work product is fundamentally digital: occupations performed entirely on a computer (writing, coding, analysing, communicating) score 7+, while occupations requiring physical presence have a natural barrier.
+  </p>
+  <p>
+    <strong>Regulated Exposure (0&ndash;10)</strong> starts from the technical score and adjusts downward for regulatory friction that slows, constrains, or redirects AI adoption. This accounts for EU AI Act obligations (Annex III high-risk classification, Art 26 worker information, Art 14 human oversight), GDPR constraints (Art 22 automated decisions, Art 35 impact assessments), works council requirements (DE: BetrVG &sect;87, AT: ArbVG &sect;96a), and sector-specific regulation. The average EU regulatory delta is 1.2 points. A separate UK regulated score reflects the UK&rsquo;s lighter framework (avg delta: 0.5 points).
+  </p>
+  <p>
+    The difference between technical and regulated scores &mdash; the <strong>regulatory delta</strong> &mdash; quantifies the friction that buys workers and institutions transition time. This is not a barrier to AI adoption but a speed bump: it slows deployment, increases compliance costs, and requires organisations to justify their AI use.
+  </p>
+  <p>
+    The full scoring rubrics are available in the collapsible disclosure on the <a href="index.html">interactive map</a>.
+  </p>
+
+
+  <h2><span class="num">3.</span> Layer Definitions</h2>
+
+  <h3>AI Exposure (Technical)</h3>
+  <p>
+    LLM-scored capability assessment of how much AI could reshape each occupation. Color scale: green (low, 0&ndash;2) &rarr; yellow (moderate, 4&ndash;6) &rarr; red (high, 8&ndash;10). A higher score does not mean the job will disappear &mdash; it means the job will change fastest.
+    <a href="index.html" class="deep-link">Explore this layer on the map &rarr;</a>
+  </p>
+
+  <h3>AI Exposure (Regulated)</h3>
+  <p>
+    Same assessment adjusted for regulatory friction. The average EU delta is 1.2 points; the UK delta is 0.5 points. Same color scale as technical exposure. Toggle between Technical and Regulated to see how regulation reshapes the exposure landscape.
+    <a href="index.html?sub=regulated" class="deep-link">Explore this layer on the map &rarr;</a>
+  </p>
+
+  <h3>Median Pay</h3>
+  <p>
+    Within-country percentile rank of mean annual wages, rescaled 0&ndash;10. Color scale: green (lower pay percentile) &rarr; red (higher pay percentile). Sources: Eurostat SES 2022 (ISCO 1-digit, 34 countries), BFS LSE 2024 (ISCO 2-digit, Switzerland), ONS ASHE 2025 (SOC 2-digit &rarr; ISCO, UK).
+    <a href="index.html?layer=pay_score" class="deep-link">Explore this layer on the map &rarr;</a>
+  </p>
+
+  <h3>Employment Growth</h3>
+  <p>
+    Blended score: 40% Eurostat year-over-year employment change + 60% Cedefop 2024&rarr;2035 CAGR. Z-score normalized, then rescaled 0&ndash;10 within country. Color scale: red (declining) &rarr; green (growing). UK shows Eurostat YoY only (no Cedefop coverage for the UK).
+    <a href="index.html?layer=growth_score" class="deep-link">Explore this layer on the map &rarr;</a>
+  </p>
+
+  <h3>Education Level</h3>
+  <p>
+    Share of workers with tertiary education (ISCED 5&ndash;8), rescaled 0&ndash;10 within country. Color scale: green (lower share of tertiary-educated workers) &rarr; red (higher share). Source: Eurostat LFS (lfsa_egised) 2024, ISCO 1-digit.
+    <a href="index.html?layer=education_score" class="deep-link">Explore this layer on the map &rarr;</a>
+  </p>
+
+  <h3>Adoption Reality</h3>
+  <p>
+    Triangulated from three lab studies: Anthropic (Claude usage data), Microsoft (Copilot usage data), and OpenAI (theoretical exposure ceiling). Shows observed AI adoption relative to theoretical potential. Applied globally per occupation (US-sourced data). Color scale: gray (low adoption) &rarr; amber &rarr; red (high adoption). The gap between theoretical ceiling and observed usage &mdash; roughly 35% across knowledge-work occupations &mdash; is where regulation, organizational inertia, and transition time live.
+    <a href="index.html?layer=adoption_score" class="deep-link">Explore this layer on the map &rarr;</a>
+  </p>
+
+  <h3>AI Augmentation</h3>
+  <p>
+    Composite score: <code>0.5 &times; Technical Exposure + 0.3 &times; Employment Growth + 0.2 &times; Education Level</code>. Z-score normalized within country before weighting, then rescaled 0&ndash;10. Identifies occupations where high AI exposure meets growing demand and an educated workforce &mdash; jobs most likely to be transformed and amplified by AI, not eliminated.
+    <a href="index.html?layer=augmentation_score" class="deep-link">Explore this layer on the map &rarr;</a>
+  </p>
+
+
+  <h2><span class="num">4.</span> Normalization &amp; Propagation</h2>
+
+  <p>
+    <strong>Within-country normalization:</strong> All layer scores are normalized to 0&ndash;10 within each country. Pay uses percentile-rank; growth, education, and augmentation use min-max rescaling after z-score normalization. This ensures meaningful comparisons within a country while respecting that absolute levels differ across countries.
+  </p>
+  <p>
+    <strong>ISCO 1-digit propagation:</strong> Growth, education, and adoption data are available at ISCO 1-digit resolution (9 major groups). These scores are propagated to all child 3-digit groups within each major group. This means all occupations within a major group (e.g., all Professionals) receive the same growth, education, and adoption scores. This approach matches Karpathy&rsquo;s original methodology of applying BLS broad-category data to detailed occupations.
+  </p>
+  <p>
+    <strong>Augmentation composite:</strong> Uses z-score normalization within country before weighting (0.5/0.3/0.2) to ensure each component contributes proportionally regardless of scale differences.
+  </p>
+  <p>
+    <strong>EU-27 aggregate:</strong> Computed as the employment-weighted average of all 27 member states. Each country&rsquo;s contribution to the aggregate is proportional to its employment count in that occupation group.
+  </p>
+
+
+  <h2><span class="num">5.</span> Limitations</h2>
+
+  <ul>
+    <li><strong>Exposure scores are LLM estimates, not rigorous predictions.</strong> They reflect the model&rsquo;s training knowledge, not empirical measurement. A high score does not predict job disappearance &mdash; it predicts the job will change.</li>
+    <li><strong>Growth and education data resolution is ISCO 1-digit.</strong> All occupations within a major group receive the same score. Real variation exists within groups &mdash; e.g., software developers and teaching professionals are both &ldquo;Professionals&rdquo; but face different growth trajectories.</li>
+    <li><strong>Cedefop projections are based on Autumn 2023 macro assumptions</strong> and may not reflect the most recent economic developments.</li>
+    <li><strong>Adoption data is US-sourced, applied globally.</strong> European adoption patterns may differ due to regulation, market structure, and cultural factors. The Adoption Reality layer should be treated as a global baseline, not a European-specific measurement.</li>
+    <li><strong>Wage data is Eurostat SES 2022</strong> without inflation adjustment. Due to 10&ndash;15% EU-wide inflation between 2022 and 2025, absolute wage figures likely understate current levels. BFS (2024) and ONS (2025) data are more current. Relative comparisons between occupation groups are unaffected.</li>
+    <li><strong>The augmentation composite weights (0.5/0.3/0.2) are editorial choices,</strong> not empirically derived. They emphasize exposure as the primary signal, with growth and education as moderating factors.</li>
+    <li><strong>All 36 countries use the same exposure scores,</strong> derived from EU-27 occupation descriptions and EU regulatory context. In practice, exposure may vary by country due to differences in industry structure, digitisation levels, and enforcement practices.</li>
+    <li><strong>UK employment figures from ASHE</strong> cover employee jobs only and exclude self-employed workers, making UK totals not directly comparable to Eurostat LFS figures.</li>
+  </ul>
+
+
+  <h2><span class="num">6.</span> Citation</h2>
+
+  <p>
+    If you use Cedefop data, please cite:
+  </p>
+  <div class="disclaimer">
+    European Centre for the Development of Vocational Training (Cedefop). Cedefop Skills Forecast 2025. Thessaloniki: Greece. Available at: <a href="https://www.cedefop.europa.eu/en/events-and-projects/projects/skills-forecast">cedefop.europa.eu</a>
+  </div>
+
+  <p style="margin-top: 24px;">
+    To cite this project:
+  </p>
+  <div class="disclaimer">
+    Philipp Maul | Nexalps. AI Exposure of the European Job Market, 2026. <a href="https://ai-exposure.nexalps.com">ai-exposure.nexalps.com</a>. Code: MIT. Data &amp; Analysis: CC-BY 4.0.
+  </div>
+
+  <p style="margin-top: 24px;">
+    <strong>Source code:</strong> The full pipeline (data preparation, Eurostat fetching, scoring, site generation) is open source on <a href="https://github.com/Ph1lM4/ai-job-impact-europe">GitHub</a>.
+  </p>
+
+</article>
+
+</div>
+
+<div class="cta-bar container">
+  <p class="cta-text">Explore the data this methodology supports.</p>
+  <p class="cta-sub">If your organisation is navigating this transition, let&rsquo;s build together.</p>
+  <div class="btn-row">
+    <a href="https://nexalps.com" class="btn" target="_blank" rel="noopener" onclick="if(typeof posthog!=='undefined')posthog.capture('cta_clicked',{page:'methodology',target:'nexalps'})">Get in touch &rarr;</a>
+    <a href="index.html" class="btn btn-outline" onclick="if(typeof posthog!=='undefined')posthog.capture('cta_clicked',{page:'methodology',target:'map'})">Open the interactive map &rarr;</a>
+    <a href="analysis.html" class="btn btn-outline" onclick="if(typeof posthog!=='undefined')posthog.capture('cta_clicked',{page:'methodology',target:'analysis'})">Read the analysis &rarr;</a>
+  </div>
+</div>
+
+<footer class="footer container" role="contentinfo">
+  EU AI Exposure Map Version 3.1 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe">Source on GitHub</a><br>
+  Built by <a href="https://www.linkedin.com/in/pmaul/">Philipp Maul</a> &middot; <a href="https://nexalps.com">Nexalps</a> &mdash; Turning complexity into competitive advantage.<br>
+  Inspired by <a href="https://karpathy.ai/jobs/">Karpathy&rsquo;s AI Exposure Map</a><br>
+  Data: <a href="https://esco.ec.europa.eu">ESCO v1.2.1</a> + <a href="https://ec.europa.eu/eurostat">Eurostat EU-LFS 2024</a> + <a href="https://www.cedefop.europa.eu/en/events-and-projects/projects/skills-forecast">Cedefop Skills Forecast 2025</a> + <a href="https://www.bfs.admin.ch">BFS LSE 2024</a> + <a href="https://www.ons.gov.uk">ONS ASHE 2025</a> &middot;
+  Scored by Claude Sonnet 4 (Anthropic) &middot;
+  36 countries &middot; wages from Eurostat SES 2022, BFS 2024 (CH), ONS 2025 (UK) &middot; <a href="sources.html">Sources</a><br>
+  Code: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-CODE">MIT</a> &middot; Data &amp; Analysis: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-DATA">CC-BY 4.0</a> Philipp Maul | Nexalps
+</footer>
+
+<script>
+(function(){
+  const btn = document.getElementById("burger-btn");
+  const panel = document.getElementById("burger-panel");
+  btn.addEventListener("click", () => {
+    const open = panel.classList.toggle("open");
+    btn.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", open);
+  });
+  document.addEventListener("click", (e) => {
+    if (!panel.contains(e.target) && !btn.contains(e.target) && panel.classList.contains("open")) {
+      panel.classList.remove("open"); btn.classList.remove("open"); btn.setAttribute("aria-expanded","false");
+    }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && panel.classList.contains("open")) {
+      panel.classList.remove("open"); btn.classList.remove("open"); btn.setAttribute("aria-expanded","false");
+    }
+  });
+})();
+</script>
+</body>
+</html>

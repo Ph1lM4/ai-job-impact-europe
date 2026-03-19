@@ -18,6 +18,7 @@ INPUT_META = ROOT / "occupations.csv"
 INPUT_COUNTRY = ROOT / "occupations_by_country.csv"
 INPUT_SCORES = ROOT / "scores.json"
 INPUT_AI_ACT = ROOT / "data" / "manual" / "ai_act_high_risk.json"
+INPUT_LAYERS = ROOT / "data" / "layer_scores.json"
 OUTPUT = ROOT / "site" / "data.json"
 
 # ── Country metadata ──
@@ -136,6 +137,15 @@ def main():
     else:
         print("  WARNING: ai_act_high_risk.json not found, skipping AI Act overlay")
 
+    print("Loading layer scores...")
+    layer_scores = {}
+    if INPUT_LAYERS.exists():
+        with open(INPUT_LAYERS, encoding="utf-8") as f:
+            layer_scores = json.load(f)
+        print(f"  {len(layer_scores)} layer score entries")
+    else:
+        print("  WARNING: layer_scores.json not found, skipping layer data")
+
     # Build employment and wage lookups: {isco3: {country: value}}
     emp_lookup = {}
     wage_lookup = {}
@@ -219,6 +229,16 @@ def main():
             child["subject_explanation"] = act.get("subject_explanation", "")
             child["deployer_explanation"] = act.get("deployer_explanation", "")
 
+        # Merge layer scores (pay, growth, education, augmentation, adoption)
+        if isco3 in layer_scores:
+            ls = layer_scores[isco3]
+            for layer_key in ("pay_score", "pay_eur", "growth_score", "growth_yoy_pct",
+                              "cedefop_cagr_pct", "education_score", "pct_tertiary",
+                              "augmentation_score", "adoption_score", "theoretical_ceiling",
+                              "observed_usage", "adoption_gap"):
+                if layer_key in ls:
+                    child[layer_key] = ls[layer_key]
+
         isco1_groups[key]["children"].append(child)
 
     treemap = {
@@ -292,9 +312,28 @@ def main():
         "wage_year": 2022,
     }
 
+    # ── Layer metadata (for frontend dropdown) ──
+    layers_meta = [
+        {"id": "technical_score", "label": "AI Exposure (Technical)", "group": "AI Exposure",
+         "scale": "risk", "legendLow": "Low", "legendHigh": "High", "perCountry": False},
+        {"id": "regulated_score", "label": "AI Exposure (Regulated)", "group": "AI Exposure",
+         "scale": "risk", "legendLow": "Low", "legendHigh": "High", "perCountry": False},
+        {"id": "pay_score", "label": "Median Pay", "group": "Labor Market",
+         "scale": "sequential", "legendLow": "Lower", "legendHigh": "Higher", "perCountry": True},
+        {"id": "growth_score", "label": "Employment Growth", "group": "Labor Market",
+         "scale": "diverging", "legendLow": "Declining", "legendHigh": "Growing", "perCountry": True},
+        {"id": "adoption_score", "label": "Adoption Reality", "group": "AI Adoption",
+         "scale": "opportunity", "legendLow": "Low Usage", "legendHigh": "High Usage", "perCountry": False},
+        {"id": "education_score", "label": "Education Level", "group": "Labor Market",
+         "scale": "sequential", "legendLow": "Lower", "legendHigh": "Higher", "perCountry": True},
+        {"id": "augmentation_score", "label": "AI Augmentation", "group": "AI Adoption",
+         "scale": "opportunity", "legendLow": "Low", "legendHigh": "High", "perCountry": True},
+    ]
+
     output_data = {
         "countries": countries_meta,
         "country_groups": GROUP_ORDER,
+        "layers": layers_meta,
         "summary": summary,
         "treemap": treemap,
     }

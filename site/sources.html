@@ -286,6 +286,7 @@ body {
     <a href="index.html">Explore the map</a>
     <a href="analysis.html">Analysis</a>
     <a href="questions.html">Questions</a>
+    <a href="methodology.html">Methodology</a>
     <a href="sources.html" class="active">Sources</a>
   </div>
   <button class="burger" id="burger-btn" aria-label="Menu" aria-expanded="false">
@@ -296,6 +297,7 @@ body {
   <a href="index.html">Explore the map</a>
   <a href="analysis.html">Analysis</a>
   <a href="questions.html">Questions</a>
+  <a href="methodology.html">Methodology</a>
   <a href="sources.html" class="active">Sources</a>
 </div>
 
@@ -543,6 +545,50 @@ body {
         <td>2024</td>
         <td><a href="https://www.eu-inc.org" target="_blank" rel="noopener">eu-inc.org</a></td>
       </tr>
+      <tr>
+        <td>Cedefop Skills Forecast 2025</td>
+        <td>European Centre for the Development of Vocational Training (Cedefop), Thessaloniki: Greece</td>
+        <td>2025</td>
+        <td><a href="https://www.cedefop.europa.eu/en/events-and-projects/projects/skills-forecast" target="_blank" rel="noopener">cedefop.europa.eu</a></td>
+      </tr>
+      <tr>
+        <td>Which Economic Tasks are Performed with AI? Evidence from Millions of Claude Conversations</td>
+        <td>Kunal Handa, Alex Tamkin, Miles McCain, Saffron Huang, Esin Durmus, Sarah Heck, Jared Mueller, Jerry Hong, Stuart Ritchie, Tim Belonax, Kevin K. Troy, Dario Amodei, Jared Kaplan, Jack Clark, Deep Ganguli</td>
+        <td>2025</td>
+        <td><a href="https://www.anthropic.com/news/the-anthropic-economic-index" target="_blank" rel="noopener">anthropic.com</a> &middot; <a href="https://huggingface.co/datasets/Anthropic/EconomicIndex" target="_blank" rel="noopener">Dataset (HuggingFace)</a> &middot; CC-BY (data), MIT (code) &middot; Used&nbsp;for: Observed AI adoption rates per SOC occupation group (Claude usage data)</td>
+      </tr>
+      <tr>
+        <td>Labor Market Impacts of AI: A New Measure and Early Evidence</td>
+        <td>Maxim Massenkoff, Peter McCrory</td>
+        <td>2026</td>
+        <td><a href="https://www.anthropic.com/research/labor-market-impacts" target="_blank" rel="noopener">anthropic.com</a> &middot; CC-BY &middot; Used&nbsp;for: Theoretical vs observed AI coverage per occupation, unemployment analysis</td>
+      </tr>
+      <tr>
+        <td>Working with AI: Measuring the Applicability of Generative AI to Occupations</td>
+        <td>Kiran Tomlinson, Sonia Jaffe, Will Wang, Scott Counts, Siddharth Suri</td>
+        <td>2025</td>
+        <td><a href="https://www.microsoft.com/en-us/research/publication/working-with-ai-measuring-the-occupational-implications-of-generative-ai/" target="_blank" rel="noopener">microsoft.com</a> &middot; <a href="https://github.com/microsoft/working-with-ai" target="_blank" rel="noopener">Dataset (GitHub)</a> &middot; Open &middot; Used&nbsp;for: AI applicability scores per SOC occupation (Bing Copilot usage data)</td>
+      </tr>
+      <tr>
+        <td>GPTs are GPTs: Labor Market Impact Potential of LLMs</td>
+        <td>Tyna Eloundou, Sam Manning, Pamela Mishkin, Daniel Rock</td>
+        <td>2023 (<a href="https://arxiv.org/abs/2303.10130" target="_blank" rel="noopener">arXiv</a>; published in <em>Science</em>, June 2024)</td>
+        <td><a href="https://openai.com/index/gpts-are-gpts/" target="_blank" rel="noopener">openai.com</a> &middot; Published research &middot; Used&nbsp;for: Theoretical AI exposure ceiling per occupation (E1+E2 scores)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Methodology</h2>
+
+  <table class="data-table" aria-label="Methodology references">
+    <thead>
+      <tr><th>Metric</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>AI Augmentation Potential</td>
+        <td>Additive composite score (0.5 &times; Technical Exposure + 0.3 &times; Employment Growth + 0.2 &times; Education Level), z-score normalized within country. Weights chosen to emphasize exposure as primary signal.</td>
+      </tr>
     </tbody>
   </table>
 
@@ -565,10 +611,10 @@ body {
 </div>
 
 <footer class="footer container" role="contentinfo">
-  EU AI Exposure Map Version 2.0 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe">Source on GitHub</a><br>
+  EU AI Exposure Map Version 3.1 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe">Source on GitHub</a><br>
   Built by <a href="https://www.linkedin.com/in/pmaul/">Philipp Maul</a> &middot; <a href="https://nexalps.com">Nexalps</a> &mdash; Turning complexity into competitive advantage.<br>
   Inspired by <a href="https://karpathy.ai/jobs/">Karpathy&rsquo;s AI Exposure Map</a><br>
-  Data: <a href="https://esco.ec.europa.eu">ESCO v1.2.1</a> + <a href="https://ec.europa.eu/eurostat">Eurostat EU-LFS 2024</a> + <a href="https://www.bfs.admin.ch">BFS LSE 2024</a> + <a href="https://www.ons.gov.uk">ONS ASHE 2025</a> &middot;
+  Data: <a href="https://esco.ec.europa.eu">ESCO v1.2.1</a> + <a href="https://ec.europa.eu/eurostat">Eurostat EU-LFS 2024</a> + <a href="https://www.cedefop.europa.eu/en/events-and-projects/projects/skills-forecast">Cedefop Skills Forecast 2025</a> + <a href="https://www.bfs.admin.ch">BFS LSE 2024</a> + <a href="https://www.ons.gov.uk">ONS ASHE 2025</a> &middot;
   Scored by Claude Sonnet 4 (Anthropic) &middot;
   36 countries &middot; wages from Eurostat SES 2022, BFS 2024 (CH), ONS 2025 (UK) &middot; <a href="sources.html">Sources</a><br>
   Code: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-CODE">MIT</a> &middot; Data &amp; Analysis: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-DATA">CC-BY 4.0</a> Philipp Maul | Nexalps

@@ -251,6 +251,18 @@ body {
   color: #d4d4d8;
   line-height: 1.7;
 }
+.article a { color: var(--ring); text-decoration: none; }
+.article a:visited { color: var(--ring); }
+.article a:hover { text-decoration: underline; }
+.deep-link {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--ring);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+.deep-link:hover { text-decoration: underline; }
 .article .data-table {
   width: 100%;
   margin: 20px 0;
@@ -493,6 +505,7 @@ body {
     <a href="index.html">Explore the map</a>
     <a href="analysis.html" class="active">Analysis</a>
     <a href="questions.html">Questions</a>
+    <a href="methodology.html">Methodology</a>
     <a href="sources.html">Sources</a>
   </div>
   <button class="burger" id="burger-btn" aria-label="Menu" aria-expanded="false">
@@ -503,6 +516,7 @@ body {
   <a href="index.html">Explore the map</a>
   <a href="analysis.html" class="active">Analysis</a>
   <a href="questions.html">Questions</a>
+  <a href="methodology.html">Methodology</a>
   <a href="sources.html">Sources</a>
 </div>
 
@@ -541,7 +555,7 @@ body {
 
 <article class="article">
 
-  <h2><span class="num">1.</span> The Screen Test
+  <h2 id="screen-test"><span class="num">1.</span> The Screen Test
     <span class="subtitle">The dividing line is physical presence, not education level.</span>
   </h2>
   <p>
@@ -556,8 +570,9 @@ body {
   <p>
     A general office clerk (8.5) faces greater AI exposure than a skilled electrician (3.5), despite the electrician receiving higher pay and more training. If your work passes through a screen, AI can access and potentially replicate it.
   </p>
+  <p><a href="index.html" class="deep-link">Explore AI Exposure on the map &rarr;</a></p>
 
-  <h2><span class="num">2.</span> Education Doesn&rsquo;t Protect
+  <h2 id="education-doesnt-protect"><span class="num">2.</span> Education Doesn&rsquo;t Protect
     <span class="subtitle">Degrees correlate with higher exposure, not lower.</span>
   </h2>
   <p>
@@ -569,8 +584,12 @@ body {
   <p>
     The exception proves the rule. Doctors and nurses need extensive education, but score moderately (4.5) since their work remains inherently physical and interpersonal. Other health professionals score 6.5, as their roles involve more documentation and analysis. Education protects only when it leads to physical practice, not a desk.
   </p>
+  <p>
+    This pattern is now directly visible in the data. <a href="index.html?layer=education_score" class="deep-link" style="display:inline;margin:0">Switch to the Education Level layer on the map</a> &mdash; the occupations with the highest share of tertiary-educated workers (Professionals at 85.6%, Managers, Technicians) are the same ones facing the highest AI exposure. The correlation runs opposite to every previous automation wave, where lower-educated workers were most affected.
+    <a href="questions.html#society" class="deep-link">What does this mean for society? &rarr;</a>
+  </p>
 
-  <h2><span class="num">3.</span> The Regulatory Buffer
+  <h2 id="regulatory-buffer"><span class="num">3.</span> The Regulatory Buffer
     <span class="subtitle">EU regulation reduces practical exposure by 1.2 points on average &mdash; but unevenly.</span>
   </h2>
   <p>
@@ -588,6 +607,9 @@ body {
   </div>
 
   <p>
+    The <a href="index.html?layer=adoption_score" class="deep-link" style="display:inline;margin:0">Adoption Reality layer</a> provides independent empirical validation. Triangulating real AI usage data from Anthropic (Claude), Microsoft (Copilot), and OpenAI reveals that actual AI adoption is roughly 35% of theoretical capability across knowledge-work occupations. This theory-reality gap is where regulation, organizational inertia, and transition time live &mdash; and it is measurable.
+  </p>
+  <p>
     The Draghi Report on European competitiveness (September 2024) puts this friction in stark terms. <strong>EU private investment in AI reached roughly &euro;8 billion in 2023 &mdash; against $68 billion in the United States.</strong> Only 11% of EU firms have adopted AI, well short of the EU&rsquo;s stated target of 75% by 2030. Meanwhile, 55% of European SMEs flag regulatory complexity as their single biggest barrier to technology adoption. The regulatory buffer may protect workers, but it also widens the gap between what European firms could deploy and what they actually do.
   </p>
 
@@ -604,8 +626,9 @@ body {
       <tr><td>Secondary education teachers</td><td>6.5</td><td>4.0</td><td>&minus;2.5</td></tr>
     </tbody>
   </table>
+  <p><a href="index.html?sub=regulated" class="deep-link">View Regulated Exposure on the map &rarr;</a> · <a href="questions.html#regulators" class="deep-link" style="display:inline;margin:0">Questions for regulators &rarr;</a></p>
 
-  <h2><span class="num">4.</span> The DACH Angle
+  <h2 id="dach-angle"><span class="num">4.</span> The DACH Angle
     <span class="subtitle">Works councils add friction beyond the EU baseline.</span>
   </h2>
   <p>
@@ -620,8 +643,11 @@ body {
   <p>
     The United Kingdom sits at the opposite extreme. Post-Brexit, the UK has <strong>deliberately chosen not to legislate AI-specific regulation</strong>, instead relying on existing sector regulators (FCA, Ofcom, CMA) to apply existing law to AI systems. There is no AI Act equivalent, no high-risk classification, no mandatory notification, and no works council system. UK employers deploying AI face the Equality Act 2010 (discrimination in AI-assisted hiring and pay decisions), the Data Protection Act 2018 (UK GDPR Art&nbsp;22 equivalent on automated decision-making), and ICE Regulations 2004 (information and consultation rights for 50+ employees) &mdash; but these are materially weaker constraints than anything in the EU or even Switzerland. The UK&rsquo;s regulatory friction is the lowest of any country in this analysis, making it the natural experiment for what happens when AI deployment is essentially a management prerogative.
   </p>
+  <p>
+    Compare on the map: <a href="index.html?country=DE&amp;sub=regulated" class="deep-link" style="display:inline;margin:0">Germany</a> · <a href="index.html?country=AT&amp;sub=regulated" class="deep-link" style="display:inline;margin:0">Austria</a> · <a href="index.html?country=CH&amp;sub=regulated" class="deep-link" style="display:inline;margin:0">Switzerland</a> · <a href="index.html?country=UK&amp;sub=regulated" class="deep-link" style="display:inline;margin:0">United Kingdom</a>
+  </p>
 
-  <h2><span class="num">5.</span> What This Means for Enterprises
+  <h2 id="enterprises"><span class="num">5.</span> What This Means for Enterprises
     <span class="subtitle">The delta between scores is your compliance gap.</span>
   </h2>
   <p>
@@ -641,9 +667,10 @@ body {
   </p>
   <p>
     One structural response is already on the table. The <strong>EU-Inc proposal</strong> &mdash; a &ldquo;28th regime&rdquo; for a pan-European legal entity &mdash; directly targets the fragmentation that makes scaling European AI companies harder than incorporating in Delaware. EU-Inc would offer digital-first registration within 24 hours, a standardised employee share option scheme (EU-ESOP) across all 27 member states, and a single convertible investment instrument (EU-FAST) that replaces 27 national frameworks. For AI enterprises specifically, this addresses two binding constraints: the cost of multi-jurisdictional compliance, which drives unicorn relocation, and the inability to offer competitive equity compensation, which drives talent to US firms. Whether EU-Inc becomes law will signal how seriously Europe treats the capital allocation problem the Draghi Report identified.
+    <a href="index.html?sub=regulated&amp;overlay=aiact" class="deep-link">View compliance surface on the map &rarr;</a> · <a href="questions.html#corporations" class="deep-link" style="display:inline;margin:0">Questions for corporations &rarr;</a>
   </p>
 
-  <h2><span class="num">6.</span> What This Means for Workers
+  <h2 id="workers"><span class="num">6.</span> What This Means for Workers
     <span class="subtitle">Exposure is a starting point, not destiny.</span>
   </h2>
   <p>
@@ -660,9 +687,10 @@ body {
   </p>
   <p>
     The data suggests a specific priority: workers in occupations scoring 6&ndash;8 on technical exposure with high regulatory deltas (administration professionals, legal professionals, education) have the most time to adapt, but the most to lose if they don&rsquo;t. These are the occupations where the regulatory buffer is widest &mdash; and where it will eventually narrow.
+    <a href="index.html?layer=augmentation_score" class="deep-link">Explore AI Augmentation on the map &rarr;</a> · <a href="questions.html#workers" class="deep-link" style="display:inline;margin:0">Questions for workers &rarr;</a>
   </p>
 
-  <h2><span class="num">7.</span> The Regulatory Compliance Surface
+  <h2 id="compliance-surface"><span class="num">7.</span> The Regulatory Compliance Surface
     <span class="subtitle">Multiple overlapping frameworks create a compliance matrix, not a single obligation.</span>
   </h2>
   <p>
@@ -685,6 +713,24 @@ body {
   </p>
   <p>
     31 occupation groups (25%) trigger the Platform Work Directive in addition to the AI Act, adding provisions against automated firing and algorithmic transparency requirements on top of existing obligations. The transposition deadline of December 2026 means employers in platform-adjacent sectors face a second regulatory wave arriving within months of the AI Act&rsquo;s full application.
+    <a href="index.html?overlay=aiact" class="deep-link">View AI Act overlay on the map &rarr;</a>
+  </p>
+
+  <h2 id="augmentation-sweet-spot"><span class="num">8.</span> The Augmentation Sweet Spot
+    <span class="subtitle">Where high exposure meets growing demand and educated workforce.</span>
+  </h2>
+  <p>
+    The AI Augmentation layer on the map identifies a specific category of occupation: those where high AI exposure, growing employment demand, and an educated workforce converge. These are the jobs most likely to be transformed &mdash; not eliminated &mdash; by AI. The composite score (<code>0.5 &times; Technical Exposure + 0.3 &times; Employment Growth + 0.2 &times; Education Level</code>) is designed to surface precisely this signal.
+  </p>
+  <p>
+    In the EU-27, Professionals and Technicians score highest on augmentation. These are occupations where AI tools amplify productivity &mdash; a software developer shipping features faster, an analyst processing larger datasets, a legal professional reviewing contracts in hours instead of days &mdash; while demand for the occupation continues to grow. The growth component is critical: it distinguishes augmentation from displacement.
+  </p>
+  <p>
+    This reframes the central question from &ldquo;which jobs will AI destroy?&rdquo; to &ldquo;which jobs will AI amplify, and how do we ensure workers benefit?&rdquo; A high augmentation score does not predict the job will disappear; it predicts the job will change fastest while remaining in demand. The policy implication is that investment in AI literacy for high-augmentation occupations has the highest expected return &mdash; these are the roles where human-AI collaboration creates the most value.
+  </p>
+  <p>
+    The weights are editorial choices (see <a href="methodology.html">full methodology</a> for details), but the signal is robust: occupations scoring above 7 on augmentation consistently combine exposure scores of 6+, positive employment growth, and tertiary education shares above 60%. These are not the occupations that need protection from AI &mdash; they are the occupations that need preparation for it.
+    <a href="index.html?layer=augmentation_score" class="deep-link">Explore the Augmentation layer on the map &rarr;</a>
   </p>
 
   <div class="cta-bar">
@@ -711,6 +757,10 @@ body {
   <p>My own answer, for what it&rsquo;s worth, is to build. This analysis exists because I believe that understanding the problem clearly is the first step toward building something useful in response to it.</p>
   <div class="sig">&mdash; Philipp Maul</div>
 </div>
+
+<p style="text-align: center; margin: 32px 0 0; padding: 0 24px;">
+  <a href="methodology.html" style="color: #f97316; text-decoration: underline; text-underline-offset: 2px; font-size: 15px; font-weight: 500;">See our full methodology &rarr;</a>
+</p>
 
 <details class="methodology container">
   <summary>Methodology &amp; Data Notes</summary>
@@ -762,7 +812,7 @@ body {
 </div>
 
 <footer class="footer container" role="contentinfo">
-  EU AI Exposure Map Version 2.0 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe">Source on GitHub</a><br>
+  EU AI Exposure Map Version 3.1 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe">Source on GitHub</a><br>
   Built by <a href="https://www.linkedin.com/in/pmaul/">Philipp Maul</a> &middot; <a href="https://nexalps.com">Nexalps</a> &mdash; Turning complexity into competitive advantage.<br>
   Inspired by <a href="https://karpathy.ai/jobs/">Karpathy&rsquo;s AI Exposure Map</a><br>
   Data: <a href="https://esco.ec.europa.eu">ESCO v1.2.1</a> + <a href="https://ec.europa.eu/eurostat">Eurostat EU-LFS 2024</a> + <a href="https://www.bfs.admin.ch">BFS LSE 2024</a> + <a href="https://www.ons.gov.uk">ONS ASHE 2025</a> &middot;

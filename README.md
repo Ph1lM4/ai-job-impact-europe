@@ -4,7 +4,7 @@ An interactive treemap visualizing AI exposure across ~130 European occupation g
 
 **What makes this different:** Two scores per occupation — **technical exposure** (what AI *can* do) and **regulated exposure** (what EU law *lets* AI do). The delta between the two reveals where European regulation creates friction for AI adoption. UK-specific scores show what happens with lighter regulation.
 
-![Treemap Screenshot](jobs.png)
+![Treemap Screenshot](jobs-v2.png)
 
 ## Live Demo
 
@@ -19,6 +19,25 @@ An interactive treemap visualizing AI exposure across ~130 European occupation g
 | [Questions](https://ai-exposure.nexalps.com/questions.html) | Questions this data raises for societies, regulators, and enterprises |
 | [Sources](https://ai-exposure.nexalps.com/sources.html) | Primary legal texts, papers, books, and reports referenced |
 | [llms.txt](https://ai-exposure.nexalps.com/llms.txt) | Machine-readable project summary |
+
+## What's New
+
+### Phase 3.1 — From Risk to Opportunity (March 2026)
+
+Added 5 new treemap layers inspired by [Karpathy's US Job Market Visualizer](https://karpathy.ai/jobs/):
+
+- **Employment Growth** — Cedefop 2035 projections + Eurostat year-over-year (33 countries)
+- **Median Pay** — within-country pay percentile (36 countries)
+- **Education Level** — tertiary education share from Eurostat LFS (35 countries)
+- **Adoption Reality** — triangulated from Anthropic, Microsoft, and OpenAI research
+- **AI Augmentation** — composite score identifying the "augmentation sweet spot"
+
+Plus: methodology page, URL parameter deep linking, per-layer narrative insights,
+cross-layer insight cards, and collapsible scoring rubrics.
+
+Key insight: *A high AI exposure score does not predict a job will disappear.
+It predicts it will change. Where high exposure meets growing demand and an
+educated workforce, AI amplifies rather than replaces.*
 
 ## The Story
 
