@@ -38,5 +38,8 @@ Thumbs.db
 *-build-plan.md
 PROJECT-SPEC.md
 
+# Drafts (internal working docs, PDFs, generators)
+drafts/
+
 # Note: scores.json and site/data.json are INCLUDED in git
 # so people can view results without re-running the scoring pipeline
