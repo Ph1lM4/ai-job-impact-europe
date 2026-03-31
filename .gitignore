@@ -41,5 +41,8 @@ PROJECT-SPEC.md
 # Drafts (internal working docs, PDFs, generators)
 drafts/
 
+# Stack Overflow Developer Survey raw extract (> GitHub 100 MB limit; download from stackoverflow.co)
+research/stack-overflow-developer-survey-2025/survey_results_public.csv
+
 # Note: scores.json and site/data.json are INCLUDED in git
 # so people can view results without re-running the scoring pipeline

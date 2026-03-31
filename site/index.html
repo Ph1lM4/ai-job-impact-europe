@@ -721,23 +721,24 @@ Conversely, occupations requiring physical presence, manual skill, or
 real-time human interaction have a natural barrier.
 
 Calibration anchors:
-0–1  Minimal exposure. Almost entirely physical or hands-on work.
+0–1  Minimal change expected. Almost entirely physical or hands-on work.
      Examples: Roofers, building caretakers, agricultural labourers.
-2–3  Low exposure. Mostly physical or interpersonal. AI helps with
-     peripheral tasks but doesn't touch the core work.
+2–3  Low change expected. Mostly physical or interpersonal. AI assists
+     with peripheral tasks; core work remains human-driven.
      Examples: Electricians, plumbers, firefighters, dental assistants.
-4–5  Moderate exposure. Mix of physical and knowledge work. AI assists
-     with information-processing parts.
+4–5  Moderate change expected. Mix of physical and knowledge work. AI
+     assists with information-processing parts; roles evolving.
      Examples: Registered nurses, police officers, veterinarians.
-6–7  High exposure. Predominantly knowledge work with some need for
-     human judgment or physical presence. AI tools already useful.
+6–7  Significant evolution. Predominantly knowledge work with some need
+     for human judgment or physical presence. AI tools reshaping workflow.
      Examples: Teaching professionals, managers, accountants, journalists.
-8–9  Very high exposure. Almost entirely computer-based. Core tasks —
+8–9  Rapid evolution. Almost entirely computer-based. Core tasks —
      writing, coding, analysing, designing — are in domains where AI
-     is rapidly improving.
+     is creating new ways of working.
      Examples: Software developers, legal associates, data analysts,
      translators, graphic designers.
-10   Maximum exposure. Routine information processing, fully digital.
+10   Maximum evolution. Routine information processing, fully digital.
+     Roles transforming into oversight, quality assurance, and exception handling.
      Examples: Data entry clerks, medical transcriptionists.</pre>
     </details>
     <details>
@@ -818,7 +819,7 @@ Average UK regulatory delta: 0.5 points.</pre>
 </div>
 
 <footer class="footer container" role="contentinfo">
-  EU AI Exposure Map v2.1.0 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe">Source on GitHub</a><br>
+  EU AI Exposure Map v2.2.0 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe">Source on GitHub</a><br>
   Built by <a href="https://www.linkedin.com/in/pmaul/">Philipp Maul</a> &middot; <a href="https://nexalps.com">Nexalps</a> &mdash; Turning complexity into competitive advantage.<br>
   Inspired by <a href="https://karpathy.ai/jobs/">Karpathy&rsquo;s AI Exposure Map</a><br>
   Data: <a href="https://esco.ec.europa.eu">ESCO v1.2.1</a> + <a href="https://ec.europa.eu/eurostat">Eurostat EU-LFS 2024</a> + <a href="https://www.cedefop.europa.eu/en/events-and-projects/projects/skills-forecast">Cedefop Skills Forecast 2025</a> + <a href="https://www.bfs.admin.ch">BFS LSE 2024</a> + <a href="https://www.ons.gov.uk">ONS ASHE 2025</a> + <a href="https://huggingface.co/datasets/Anthropic/EconomicIndex">Anthropic Economic Index</a> + <a href="https://github.com/microsoft/working-with-ai">Microsoft Working with AI</a> &middot;
@@ -1435,11 +1436,11 @@ function buildDetailHtml(data) {
     if (ts > 7 && gs != null && gs > 6) {
       insightText = "\u26A1 Augmentation signal \u2014 High AI exposure but demand is increasing. Workers using AI here likely see higher productivity.";
     } else if (ts > 7 && gs != null && gs < 4) {
-      insightText = "\u26A0\uFE0F Transition risk \u2014 High AI exposure with declining demand. Upskilling and regulatory protection matter most here.";
+      insightText = "\u26A0\uFE0F Transition window \u2014 High AI exposure with shifting demand. Adjacent skills and regulatory protection create time to reskill.";
     } else if (ts > 7 && ps != null && ps > 7) {
-      insightText = "\uD83D\uDCB0 Premium transformation \u2014 High-paying knowledge work facing maximum AI change. The regulatory buffer is critical.";
+      insightText = "\uD83D\uDCB0 Premium transformation \u2014 High-paying knowledge work evolving fastest. Workers who master AI tools here gain outsized leverage. The regulatory buffer creates time to adapt.";
     } else if (as_ != null && as_ > 5 && gs != null && gs < 4) {
-      insightText = "\uD83D\uDCC9 Active displacement signal \u2014 AI is already being used heavily here AND demand is falling.";
+      insightText = "\uD83D\uDCC9 Active transformation \u2014 AI adoption is high here and the role is evolving. Transferable skills open adjacent career paths.";
     } else if (as_ != null && as_ < 3 && ts > 7) {
       insightText = "\uD83D\uDD2E Latent potential \u2014 AI could transform this but adoption hasn\u2019t started. First-mover advantage territory.";
     } else if (augs != null && augs > 7) {
@@ -1464,8 +1465,8 @@ function buildDetailHtml(data) {
     <div class="detail">${data.rationale}</div>
     ${isUK && data.uk_rationale ? `<div class="friction">${data.uk_rationale}</div>` : ""}
     ${!isUK && data.regulatory_friction ? `<div class="friction">${data.regulatory_friction}</div>` : ""}
-    ${vulnBadges ? `<div class="tasks"><h4>Vulnerable to AI</h4><ul class="badge-list">${vulnBadges}</ul></div>` : ""}
-    ${protBadges ? `<div class="tasks"><h4>Protected from AI</h4><ul class="badge-list">${protBadges}</ul></div>` : ""}
+    ${vulnBadges ? `<div class="tasks"><h4>Tasks likely to change</h4><ul class="badge-list">${vulnBadges}</ul></div>` : ""}
+    ${protBadges ? `<div class="tasks"><h4>Tasks likely to endure</h4><ul class="badge-list">${protBadges}</ul></div>` : ""}
     ${regHtml}
   `;
 }

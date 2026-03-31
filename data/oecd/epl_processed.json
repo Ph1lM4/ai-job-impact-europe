@@ -1,0 +1,193 @@
+{
+  "source": "OECD EPL",
+  "indicator": "Strictness of employment protection \u2014 individual and collective dismissals (regular contracts)",
+  "scale": "0-6 (higher = stricter)",
+  "version": "Version 4 (2013-2019)",
+  "countries": {
+    "AT": {
+      "name": "Austria",
+      "score": 1.8,
+      "year": 2019
+    },
+    "AU": {
+      "name": "Australia",
+      "score": 1.7,
+      "year": 2019
+    },
+    "BE": {
+      "name": "Belgium",
+      "score": 2.71,
+      "year": 2019
+    },
+    "CA": {
+      "name": "Canada",
+      "score": 1.68,
+      "year": 2019
+    },
+    "CL": {
+      "name": "Chile",
+      "score": 2.34,
+      "year": 2019
+    },
+    "CO": {
+      "name": "Colombia",
+      "score": 1.98,
+      "year": 2019
+    },
+    "CR": {
+      "name": "Costa Rica",
+      "score": 0.85,
+      "year": 2019
+    },
+    "CZ": {
+      "name": "Czechia",
+      "score": 3.03,
+      "year": 2019
+    },
+    "DE": {
+      "name": "Germany",
+      "score": 2.33,
+      "year": 2019
+    },
+    "DK": {
+      "name": "Denmark",
+      "score": 1.94,
+      "year": 2019
+    },
+    "EE": {
+      "name": "Estonia",
+      "score": 1.93,
+      "year": 2019
+    },
+    "ES": {
+      "name": "Spain",
+      "score": 2.43,
+      "year": 2019
+    },
+    "FI": {
+      "name": "Finland",
+      "score": 2.48,
+      "year": 2019
+    },
+    "FR": {
+      "name": "France",
+      "score": 2.68,
+      "year": 2019
+    },
+    "GR": {
+      "name": "Greece",
+      "score": 2.54,
+      "year": 2019
+    },
+    "HU": {
+      "name": "Hungary",
+      "score": 1.89,
+      "year": 2019
+    },
+    "IE": {
+      "name": "Ireland",
+      "score": 2.13,
+      "year": 2019
+    },
+    "IL": {
+      "name": "Israel",
+      "score": 2.83,
+      "year": 2019
+    },
+    "IS": {
+      "name": "Iceland",
+      "score": 2.2,
+      "year": 2019
+    },
+    "IT": {
+      "name": "Italy",
+      "score": 2.86,
+      "year": 2019
+    },
+    "JP": {
+      "name": "Japan",
+      "score": 2.08,
+      "year": 2019
+    },
+    "KR": {
+      "name": "South Korea",
+      "score": 2.35,
+      "year": 2019
+    },
+    "LT": {
+      "name": "Lithuania",
+      "score": 2.24,
+      "year": 2019
+    },
+    "LU": {
+      "name": "Luxembourg",
+      "score": 2.54,
+      "year": 2019
+    },
+    "LV": {
+      "name": "Latvia",
+      "score": 2.71,
+      "year": 2019
+    },
+    "MX": {
+      "name": "Mexico",
+      "score": 2.46,
+      "year": 2019
+    },
+    "NL": {
+      "name": "Netherlands",
+      "score": 2.88,
+      "year": 2019
+    },
+    "NO": {
+      "name": "Norway",
+      "score": 2.37,
+      "year": 2019
+    },
+    "NZ": {
+      "name": "New Zealand",
+      "score": 2.09,
+      "year": 2019
+    },
+    "PL": {
+      "name": "Poland",
+      "score": 2.39,
+      "year": 2019
+    },
+    "PT": {
+      "name": "Portugal",
+      "score": 2.87,
+      "year": 2019
+    },
+    "SE": {
+      "name": "Sweden",
+      "score": 2.54,
+      "year": 2019
+    },
+    "SI": {
+      "name": "Slovenia",
+      "score": 2.32,
+      "year": 2019
+    },
+    "SK": {
+      "name": "Slovakia",
+      "score": 2.33,
+      "year": 2019
+    },
+    "TR": {
+      "name": "Turkey",
+      "score": 2.95,
+      "year": 2019
+    },
+    "UK": {
+      "name": "United Kingdom",
+      "score": 1.9,
+      "year": 2019
+    },
+    "US": {
+      "name": "United States",
+      "score": 1.31,
+      "year": 2019
+    }
+  }
+}

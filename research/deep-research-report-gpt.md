@@ -1,0 +1,48 @@
+# Marketing Sub-Role Demand Ranking
+
+| Sub-Role                        | Open Roles (Europe)                  | YoY Trend                | Salary Range (Mid/Senior) | 6-Month Outlook              |
+|---------------------------------|--------------------------------------|--------------------------|---------------------------|------------------------------|
+| **Growth Marketing Manager**    | High demand (thousands across EU)    | **Up** (fastest-growing) | ~£46k–£65k (UK); ~€88k median (DE)【68†L68-L72】【76†L173-L181】 | Strong growth (AI and data-driven focus) |
+| **Product Marketing Manager**   | High demand (hundreds–low thousands) | **Up** (fastest-growing) | ~£61k (UK); ~€62k (DE); ~€49k (FR)【52†L279-L287】【74†L38-L44】 | Strong growth (premium role in tech) |
+| **Demand Generation**           | Moderate demand (hundreds)           | Stable / **Up**          | ~€45–55k (UK); ~€40k–€50k (DE) | Steady (full-funnel focus)    |
+| **Marketing Operations / Analytics** | Growing demand (hundreds)       | **Up** (rising)          | ~€60k–75k (NL); ~€52k median (UK)【87†L24-L32】 | Strong growth (data focus)    |
+| **Performance / Paid Marketing**| High demand (thousands)              | **Down** (declining)     | ~£51k (UK); ~€50–60k (DE)【70†L68-L72】 | Weakening (AI automates tasks)|
+| **Content Marketing**           | High demand (thousands)              | **Down** (slowing)       | ~£44k (UK); ~€43k (DE)【72†L68-L72】【80†L22-L30】 | Moderate (AI can assist)      |
+| **Brand Marketing**             | Moderate demand (hundreds)           | **Flat/Up**              | ~€48k (FR); ~€52k (NL)     | Stable/up (brand emphasis)    |
+| **Community / Developer Marketing** | Low–Moderate demand (niche)     | **Up** (growing slowly)  | ~€50k (estimates)          | Moderate (tech community value) |
+
+- **Sources:** Broad industry data and job listings indicate that *Growth Marketing* and *Product Marketing* roles are the most in-demand in Europe (growth marketers see thousands of job ads, and product marketing roles pay a premium)【68†L68-L72】【74†L38-L44】.  For example, Glassdoor shows UK Product Marketing Managers average ~£61k vs generic Marketing Managers ~£42k【52†L279-L287】【55†L38-L46】.  By contrast, *Performance/paid marketing* roles are under pressure (globally automating) and show a relative decline【70†L68-L72】【103†L202-L209】. Entry-level content roles are also softening as companies cut junior hiring【7†L227-L230】.  In general, roles tied to brand-building, analytics or full-funnel growth (Brand Marketing, Marketing Ops, Demand Gen) are holding steady or rising, while tactical execution roles (entry-level, performance PPC) are shrinking.  
+
+## Europe vs US Hiring Patterns
+
+- **Brand vs Growth Focus:**  European marketers are currently emphasizing **brand-building and long-term growth**, whereas many US startups emphasize rapid customer acquisition.  McKinsey’s 2026 survey found *“branding was cited as the number one priority”* by European CMOs【93†L65-L72】.  In practice, Europeans favour emotional, value-driven campaigns (“shared values and trust”【64†L63-L71】) and upper-funnel spend, while US firms more often focus on short-term performance and “growth hacking.”  For example, European CMOs report shifting budgets significantly toward awareness (upper-funnel) activities【31†L887-L891】, reflecting this brand emphasis. 
+- **Hiring Difficulty:**  European marketers also report it’s getting **harder to hire skilled talent** – 45% say it’s harder than a year ago (McKinsey).  This suggests **high competition for senior marketers**.  In contrast, US tech hubs often still advertise “full-stack” growth marketers but Europe tends to staff more specialized roles.  (Some EU startups do recruit “growth/full-stack marketers” – e.g. an Italian IoT startup advertised a “Full-Stack Growth Marketer” covering funnels, content, and analytics【97†L181-L189】【97†L197-L204】 – but these remain less common than in Silicon Valley.) 
+- **Budget Trends:**  In Europe, **72% of CMOs plan to increase marketing budgets in 2026**【93†L65-L72】 (despite macro uncertainties), whereas U.S. tech companies have shown more mixed spending in late 2025.  The European upshot is likely more cautious, brand-oriented hiring (e.g. more PMMs and brand managers), whereas US hiring has historically skewed toward performance and product-led roles.
+
+## “Growing” vs “Shrinking” Roles (Europe)
+
+| **Growing Roles**                    | **Shrinking Roles**                  |
+|--------------------------------------|--------------------------------------|
+| **Product Marketing Managers** – Fastest growing marketing sub-role (tech companies prize go-to-market expertise)【52†L279-L287】【74†L38-L44】 | **Entry-level Marketing** (P1/P2) – steepest decline in hiring; junior roles “collapsed”【7†L227-L230】 |
+| **Growth Marketers / Full-Funnel Marketers** – High demand for funnel growth skills; roles commanding robust salaries in EU【68†L68-L72】【76†L173-L181】 | **Performance/Paid Marketers** – Budgets shifting up-funnel; AI tools automate many PPC tasks【70†L68-L72】【101†L106-L114】 |
+| **Marketing Ops & Analytics** – Rising demand as firms invest in data-driven marketing; salaries ~€60-75k in NL, £46-81k range (UK)【87†L24-L32】【70†L97-L100】 | **Traditional Content Creators** – Some decline as companies use AI for copywriting and cut content teams【101†L106-L114】 |
+| **Brand / Employer Marketing** – Gaining importance (brand is #1 priority【93†L65-L72】, employer brand #5【92†L19-L24】) | **Tactical Comms/PR** – Lower priority compared to brand/strategic roles (Hays reports faster pay growth in strategic roles【50†L361-L370】) |
+| **Developer / Community Marketing** – Modest growth in tech hubs (building user communities) | **Niche/Specialist Roles (flux)** – Varies by market; e.g. pure “buzzword” roles may wax and wane |
+
+**Notes:**  This two-column view highlights that roles tied to **strategy, product, data and brand** are on the upswing, whereas **entry-level and routine execution roles** (especially in agencies) are contracting. For instance, UK ad agencies saw a 41% fall in job ads in 2025 amid AI adoption【103†L202-L209】, with the youngest and most junior roles hardest hit.  
+
+## Key Data Points
+
+- **Commercial hiring up (+5%) vs Marketing down:**  Ravio’s 2026 report shows *“Commercial”* functions (sales/marketing combined) rising to 34.7% of tech hires (+5% YoY), the **only** function in Europe growing【7†L168-L172】.  By contrast, *marketing overall* is down. This suggests selected senior marketing roles (in “commercial”) are relatively hot, while general marketing headcount is contracting.
+- **Junior marketing roles collapsing:**  Ravio finds entry-level (P1/P2) marketing jobs have plunged (~73% drop), among the steepest declines【7†L227-L230】.  Young talent is scarce, reflecting both hiring freezes and AI automation at the bottom end.
+- **Brand over growth:**  In McKinsey’s State of Marketing Europe 2026 survey, **branding is #1 priority** for 2026【93†L65-L72】, whereas AI-driven tactics (and presumably short-term growth hacks) are deprioritized.  Four of the top five priorities involve long-term brand and trust building【93†L119-L126】.
+- **Budget shifts up-funnel:**  European marketers expect to allocate *+40.6%* more budget to upper-funnel (awareness) activities, vs +32.8% to mid-funnel and +33.4% to lower-funnel【31†L887-L891】.  This reallocation implies less emphasis on pure performance channels.
+- **Widespread AI use:**  Over **80% of marketers globally** now use some AI in digital marketing, and *>50% of EU marketers* report using generative AI for content drafting【101†L106-L114】.  AI is heavily applied in personalization, predictive analytics and ad targeting, automating many routine tasks (copywriting, reporting, A/B testing).
+- **Salary premium for PMMs:**  Across Europe, Product Marketing Managers earn substantially more than generic Marketing Managers. E.g., UK PMMs avg ~£61k【52†L279-L287】 vs ~£42k for a Marketing Manager【55†L38-L46】. Payscale reports similar premiums: e.g. DE PMM ~€62k avg【74†L38-L44】 vs DE Marketing Manager ~€51k【77†L9-L12】.
+- **Hiring outlook positive:**  Despite recent cutbacks, European tech leaders signal cautious optimism.  McKinsey reports *72% of CMOs plan to raise budgets in 2026*【93†L65-L72】, and 65% plan to expand headcount in early 2026 (McKinsey, Dec 2025).  This suggests marketing hiring may rebound, especially for priority roles (brand, product, growth).
+
+## Forecast: Roles with Most Hiring Growth (Next 6 Months)
+
+Based on the above trends, **Product Marketing Managers**, **Growth (Full-Funnel) Marketers**, and **Marketing Operations/Analytics** roles are likely to see the largest hiring growth in Europe over the next half-year.  These roles align with the expanding “commercial” focus and brand strategy emphasis (PMMs bridge product and marketing, growth marketers own full-funnel expansion, and ops/analytics roles support data-driven spending).  *Brand Marketing* positions may also rise moderately as companies double-down on building brand equity.  In contrast, pure *entry-level performance roles* are expected to remain weak, as AI tools and budget shifts reduce demand【101†L106-L114】【103†L202-L209】.
+
+**Sources:** European tech hiring and marketing reports by Ravio (2025/26)【7†L168-L172】【7†L227-L230】 and McKinsey (State of Marketing Europe 2026)【93†L65-L72】【92†L7-L14】; industry analyses and job data (Glassdoor, Payscale, Hays)【52†L279-L287】【72†L68-L72】; and IAB Europe/Nielsen surveys on AI and marketing spend【101†L106-L114】【106†L279-L288】.  These sources provide the figures above.

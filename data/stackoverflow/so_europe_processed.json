@@ -1,0 +1,2736 @@
+{
+  "source": "Stack Overflow Developer Survey 2025",
+  "methodology": "Annual survey, 49,191 respondents globally, self-selected sample",
+  "total_respondents": 49191,
+  "european_respondents": 16276,
+  "salary_unit": "USD (converted by SO using purchasing power parity)",
+  "countries": {
+    "DE": {
+      "name": "Germany",
+      "respondents": 3025,
+      "salary_usd": {
+        "median": 81210,
+        "p25": 61488,
+        "p75": 104413,
+        "n": 2113
+      },
+      "remote_work": {
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.206,
+        "Remote": 0.189,
+        "Hybrid (some remote, leans heavy to in-person)": 0.181,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.174,
+        "NA": 0.163,
+        "In-person": 0.088
+      },
+      "ai_threat": {
+        "threat": 0.352,
+        "unsure": 0.648,
+        "n": 901
+      },
+      "ic_vs_pm": {
+        "People manager": 0.087,
+        "Individual contributor": 0.734,
+        "NA": 0.18
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 850,
+          "pct": 0.281
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 377,
+          "pct": 0.125
+        },
+        {
+          "type": "Student",
+          "count": 216,
+          "pct": 0.071
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 214,
+          "pct": 0.071
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 177,
+          "pct": 0.059
+        },
+        {
+          "type": "Academic researcher",
+          "count": 151,
+          "pct": 0.05
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 116,
+          "pct": 0.038
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 115,
+          "pct": 0.038
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 114,
+          "pct": 0.038
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 103,
+          "pct": 0.034
+        }
+      ],
+      "ai_tool_usage_pct": 0.737,
+      "job_satisfaction": {
+        "NA": 0.269,
+        "8": 0.201,
+        "7": 0.17,
+        "6": 0.09,
+        "9": 0.09,
+        "5": 0.056,
+        "10": 0.05,
+        "3": 0.026,
+        "4": 0.023,
+        "2": 0.015,
+        "1": 0.007,
+        "0": 0.003
+      }
+    },
+    "GB": {
+      "name": "United Kingdom of Great Britain and Northern Ireland",
+      "respondents": 2042,
+      "salary_usd": {
+        "median": 95299,
+        "p25": 65348,
+        "p75": 130696,
+        "n": 1461
+      },
+      "remote_work": {
+        "Remote": 0.257,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.209,
+        "NA": 0.193,
+        "Hybrid (some remote, leans heavy to in-person)": 0.136,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.113,
+        "In-person": 0.093
+      },
+      "ai_threat": {
+        "unsure": 0.585,
+        "threat": 0.415,
+        "n": 655
+      },
+      "ic_vs_pm": {
+        "NA": 0.202,
+        "Individual contributor": 0.672,
+        "People manager": 0.125
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 597,
+          "pct": 0.292
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 319,
+          "pct": 0.156
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 120,
+          "pct": 0.059
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 97,
+          "pct": 0.048
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 92,
+          "pct": 0.045
+        },
+        {
+          "type": "Student",
+          "count": 83,
+          "pct": 0.041
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 68,
+          "pct": 0.033
+        },
+        {
+          "type": "Engineering manager",
+          "count": 66,
+          "pct": 0.032
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 66,
+          "pct": 0.032
+        },
+        {
+          "type": "Academic researcher",
+          "count": 63,
+          "pct": 0.031
+        }
+      ],
+      "ai_tool_usage_pct": 0.647,
+      "job_satisfaction": {
+        "NA": 0.254,
+        "8": 0.183,
+        "7": 0.162,
+        "6": 0.104,
+        "9": 0.096,
+        "10": 0.069,
+        "5": 0.056,
+        "3": 0.027,
+        "4": 0.024,
+        "2": 0.014,
+        "0": 0.006,
+        "1": 0.004
+      }
+    },
+    "FR": {
+      "name": "France",
+      "respondents": 1409,
+      "salary_usd": {
+        "median": 63808,
+        "p25": 47566,
+        "p75": 87011,
+        "n": 1013
+      },
+      "remote_work": {
+        "Hybrid (some remote, leans heavy to in-person)": 0.253,
+        "NA": 0.231,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.155,
+        "Remote": 0.139,
+        "In-person": 0.13,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.092
+      },
+      "ai_threat": {
+        "unsure": 0.695,
+        "threat": 0.305,
+        "n": 499
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.634,
+        "NA": 0.243,
+        "People manager": 0.122
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 380,
+          "pct": 0.27
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 179,
+          "pct": 0.127
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 103,
+          "pct": 0.073
+        },
+        {
+          "type": "Student",
+          "count": 93,
+          "pct": 0.066
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 65,
+          "pct": 0.046
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 64,
+          "pct": 0.045
+        },
+        {
+          "type": "Academic researcher",
+          "count": 63,
+          "pct": 0.045
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 50,
+          "pct": 0.035
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 47,
+          "pct": 0.033
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 46,
+          "pct": 0.033
+        }
+      ],
+      "ai_tool_usage_pct": 0.696,
+      "job_satisfaction": {
+        "NA": 0.244,
+        "8": 0.193,
+        "7": 0.17,
+        "9": 0.112,
+        "6": 0.089,
+        "10": 0.074,
+        "5": 0.048,
+        "3": 0.024,
+        "4": 0.024,
+        "2": 0.015,
+        "0": 0.004,
+        "1": 0.003
+      }
+    },
+    "UA": {
+      "name": "Ukraine",
+      "respondents": 964,
+      "salary_usd": {
+        "median": 31204,
+        "p25": 7909,
+        "p75": 59916,
+        "n": 625
+      },
+      "remote_work": {
+        "Remote": 0.559,
+        "NA": 0.197,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.111,
+        "Hybrid (some remote, leans heavy to in-person)": 0.049,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.044,
+        "In-person": 0.04
+      },
+      "ai_threat": {
+        "unsure": 0.647,
+        "threat": 0.353,
+        "n": 385
+      },
+      "ic_vs_pm": {
+        "People manager": 0.087,
+        "NA": 0.206,
+        "Individual contributor": 0.706
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, back-end",
+          "count": 268,
+          "pct": 0.278
+        },
+        {
+          "type": "Developer, full-stack",
+          "count": 207,
+          "pct": 0.215
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 101,
+          "pct": 0.105
+        },
+        {
+          "type": "Developer, mobile",
+          "count": 39,
+          "pct": 0.04
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 38,
+          "pct": 0.039
+        },
+        {
+          "type": "Developer, QA or test",
+          "count": 36,
+          "pct": 0.037
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 33,
+          "pct": 0.034
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 29,
+          "pct": 0.03
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 29,
+          "pct": 0.03
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 25,
+          "pct": 0.026
+        }
+      ],
+      "ai_tool_usage_pct": 0.854,
+      "job_satisfaction": {
+        "NA": 0.228,
+        "8": 0.227,
+        "7": 0.176,
+        "9": 0.088,
+        "10": 0.085,
+        "6": 0.078,
+        "5": 0.058,
+        "4": 0.028,
+        "3": 0.02,
+        "2": 0.005,
+        "0": 0.004,
+        "1": 0.002
+      }
+    },
+    "PL": {
+      "name": "Poland",
+      "respondents": 888,
+      "salary_usd": {
+        "median": 60336,
+        "p25": 32748,
+        "p75": 92812,
+        "n": 584
+      },
+      "remote_work": {
+        "NA": 0.304,
+        "Remote": 0.261,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.125,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.123,
+        "Hybrid (some remote, leans heavy to in-person)": 0.111,
+        "In-person": 0.075
+      },
+      "ai_threat": {
+        "unsure": 0.63,
+        "threat": 0.37,
+        "n": 341
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.597,
+        "NA": 0.315,
+        "People manager": 0.088
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, back-end",
+          "count": 204,
+          "pct": 0.23
+        },
+        {
+          "type": "Developer, full-stack",
+          "count": 174,
+          "pct": 0.196
+        },
+        {
+          "type": "Student",
+          "count": 59,
+          "pct": 0.066
+        },
+        {
+          "type": "Developer, mobile",
+          "count": 51,
+          "pct": 0.057
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 50,
+          "pct": 0.056
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 50,
+          "pct": 0.056
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 49,
+          "pct": 0.055
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 37,
+          "pct": 0.042
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 33,
+          "pct": 0.037
+        },
+        {
+          "type": "Engineering manager",
+          "count": 26,
+          "pct": 0.029
+        }
+      ],
+      "ai_tool_usage_pct": 0.773,
+      "job_satisfaction": {
+        "NA": 0.239,
+        "8": 0.204,
+        "7": 0.159,
+        "6": 0.122,
+        "9": 0.102,
+        "10": 0.048,
+        "5": 0.043,
+        "3": 0.034,
+        "4": 0.026,
+        "2": 0.012,
+        "0": 0.006,
+        "1": 0.006
+      }
+    },
+    "NL": {
+      "name": "Netherlands",
+      "respondents": 867,
+      "salary_usd": {
+        "median": 81210,
+        "p25": 59202,
+        "p75": 106733,
+        "n": 610
+      },
+      "remote_work": {
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.302,
+        "Hybrid (some remote, leans heavy to in-person)": 0.236,
+        "NA": 0.168,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.125,
+        "In-person": 0.096,
+        "Remote": 0.073
+      },
+      "ai_threat": {
+        "unsure": 0.616,
+        "threat": 0.384,
+        "n": 245
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.745,
+        "NA": 0.178,
+        "People manager": 0.077
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 260,
+          "pct": 0.3
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 139,
+          "pct": 0.16
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 65,
+          "pct": 0.075
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 41,
+          "pct": 0.047
+        },
+        {
+          "type": "Student",
+          "count": 41,
+          "pct": 0.047
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 39,
+          "pct": 0.045
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 33,
+          "pct": 0.038
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 31,
+          "pct": 0.036
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 29,
+          "pct": 0.033
+        },
+        {
+          "type": "Developer, mobile",
+          "count": 19,
+          "pct": 0.022
+        }
+      ],
+      "ai_tool_usage_pct": 0.769,
+      "job_satisfaction": {
+        "8": 0.251,
+        "NA": 0.249,
+        "7": 0.168,
+        "9": 0.114,
+        "6": 0.091,
+        "10": 0.043,
+        "5": 0.039,
+        "3": 0.021,
+        "4": 0.016,
+        "2": 0.005,
+        "0": 0.001,
+        "1": 0.001
+      }
+    },
+    "IT": {
+      "name": "Italy",
+      "respondents": 835,
+      "salary_usd": {
+        "median": 48726,
+        "p25": 34804,
+        "p75": 69609,
+        "n": 574
+      },
+      "remote_work": {
+        "NA": 0.212,
+        "Remote": 0.204,
+        "Hybrid (some remote, leans heavy to in-person)": 0.166,
+        "In-person": 0.162,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.147,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.109
+      },
+      "ai_threat": {
+        "unsure": 0.66,
+        "threat": 0.34,
+        "n": 324
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.618,
+        "NA": 0.223,
+        "People manager": 0.159
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 228,
+          "pct": 0.273
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 118,
+          "pct": 0.141
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 93,
+          "pct": 0.111
+        },
+        {
+          "type": "Student",
+          "count": 50,
+          "pct": 0.06
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 47,
+          "pct": 0.056
+        },
+        {
+          "type": "Academic researcher",
+          "count": 31,
+          "pct": 0.037
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 29,
+          "pct": 0.035
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 29,
+          "pct": 0.035
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 25,
+          "pct": 0.03
+        },
+        {
+          "type": "Developer, mobile",
+          "count": 21,
+          "pct": 0.025
+        }
+      ],
+      "ai_tool_usage_pct": 0.78,
+      "job_satisfaction": {
+        "NA": 0.255,
+        "8": 0.217,
+        "7": 0.178,
+        "6": 0.103,
+        "9": 0.096,
+        "10": 0.049,
+        "5": 0.042,
+        "4": 0.02,
+        "3": 0.02,
+        "2": 0.011,
+        "0": 0.005,
+        "1": 0.004
+      }
+    },
+    "ES": {
+      "name": "Spain",
+      "respondents": 717,
+      "salary_usd": {
+        "median": 62648,
+        "p25": 40605,
+        "p75": 87011,
+        "n": 551
+      },
+      "remote_work": {
+        "Remote": 0.365,
+        "NA": 0.173,
+        "Hybrid (some remote, leans heavy to in-person)": 0.132,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.124,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.107,
+        "In-person": 0.098
+      },
+      "ai_threat": {
+        "threat": 0.388,
+        "unsure": 0.612,
+        "n": 250
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.643,
+        "NA": 0.181,
+        "People manager": 0.176
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 190,
+          "pct": 0.265
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 106,
+          "pct": 0.148
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 84,
+          "pct": 0.117
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 36,
+          "pct": 0.05
+        },
+        {
+          "type": "Academic researcher",
+          "count": 27,
+          "pct": 0.038
+        },
+        {
+          "type": "Developer, mobile",
+          "count": 26,
+          "pct": 0.036
+        },
+        {
+          "type": "Engineering manager",
+          "count": 24,
+          "pct": 0.033
+        },
+        {
+          "type": "Data engineer",
+          "count": 23,
+          "pct": 0.032
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 22,
+          "pct": 0.031
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 22,
+          "pct": 0.031
+        }
+      ],
+      "ai_tool_usage_pct": 0.803,
+      "job_satisfaction": {
+        "8": 0.223,
+        "NA": 0.223,
+        "7": 0.181,
+        "9": 0.114,
+        "6": 0.074,
+        "10": 0.073,
+        "5": 0.046,
+        "3": 0.021,
+        "2": 0.018,
+        "4": 0.015,
+        "0": 0.007,
+        "1": 0.004
+      }
+    },
+    "SE": {
+      "name": "Sweden",
+      "respondents": 616,
+      "salary_usd": {
+        "median": 71017,
+        "p25": 56604,
+        "p75": 85534,
+        "n": 468
+      },
+      "remote_work": {
+        "Hybrid (some remote, leans heavy to in-person)": 0.268,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.185,
+        "NA": 0.174,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.136,
+        "In-person": 0.127,
+        "Remote": 0.11
+      },
+      "ai_threat": {
+        "unsure": 0.656,
+        "threat": 0.344,
+        "n": 180
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.758,
+        "People manager": 0.06,
+        "NA": 0.182
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 186,
+          "pct": 0.302
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 116,
+          "pct": 0.188
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 45,
+          "pct": 0.073
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 36,
+          "pct": 0.058
+        },
+        {
+          "type": "Student",
+          "count": 34,
+          "pct": 0.055
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 27,
+          "pct": 0.044
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 24,
+          "pct": 0.039
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 19,
+          "pct": 0.031
+        },
+        {
+          "type": "Academic researcher",
+          "count": 15,
+          "pct": 0.024
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 14,
+          "pct": 0.023
+        }
+      ],
+      "ai_tool_usage_pct": 0.756,
+      "job_satisfaction": {
+        "8": 0.221,
+        "NA": 0.201,
+        "7": 0.182,
+        "9": 0.12,
+        "6": 0.112,
+        "10": 0.075,
+        "5": 0.036,
+        "4": 0.021,
+        "3": 0.016,
+        "2": 0.008,
+        "0": 0.005,
+        "1": 0.003
+      }
+    },
+    "CH": {
+      "name": "Switzerland",
+      "respondents": 546,
+      "salary_usd": {
+        "median": 141972,
+        "p25": 110214,
+        "p75": 171110,
+        "n": 408
+      },
+      "remote_work": {
+        "Hybrid (some remote, leans heavy to in-person)": 0.306,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.207,
+        "In-person": 0.158,
+        "NA": 0.134,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.128,
+        "Remote": 0.068
+      },
+      "ai_threat": {
+        "unsure": 0.693,
+        "threat": 0.307,
+        "n": 163
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.747,
+        "NA": 0.143,
+        "People manager": 0.11
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 164,
+          "pct": 0.3
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 67,
+          "pct": 0.123
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 36,
+          "pct": 0.066
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 28,
+          "pct": 0.051
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 27,
+          "pct": 0.049
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 24,
+          "pct": 0.044
+        },
+        {
+          "type": "Academic researcher",
+          "count": 23,
+          "pct": 0.042
+        },
+        {
+          "type": "Student",
+          "count": 22,
+          "pct": 0.04
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 21,
+          "pct": 0.038
+        },
+        {
+          "type": "Developer, mobile",
+          "count": 12,
+          "pct": 0.022
+        }
+      ],
+      "ai_tool_usage_pct": 0.775,
+      "job_satisfaction": {
+        "NA": 0.273,
+        "8": 0.189,
+        "7": 0.158,
+        "6": 0.103,
+        "9": 0.097,
+        "10": 0.073,
+        "5": 0.053,
+        "3": 0.024,
+        "4": 0.02,
+        "2": 0.005,
+        "1": 0.004,
+        "0": 0.002
+      }
+    },
+    "CZ": {
+      "name": "Czech Republic",
+      "respondents": 520,
+      "salary_usd": {
+        "median": 60754,
+        "p25": 38381,
+        "p75": 84250,
+        "n": 356
+      },
+      "remote_work": {
+        "NA": 0.279,
+        "Hybrid (some remote, leans heavy to in-person)": 0.196,
+        "Remote": 0.152,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.133,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.131,
+        "In-person": 0.11
+      },
+      "ai_threat": {
+        "unsure": 0.659,
+        "threat": 0.341,
+        "n": 170
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.637,
+        "NA": 0.285,
+        "People manager": 0.079
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 126,
+          "pct": 0.242
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 112,
+          "pct": 0.215
+        },
+        {
+          "type": "Student",
+          "count": 38,
+          "pct": 0.073
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 30,
+          "pct": 0.058
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 29,
+          "pct": 0.056
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 25,
+          "pct": 0.048
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 17,
+          "pct": 0.033
+        },
+        {
+          "type": "Developer, mobile",
+          "count": 16,
+          "pct": 0.031
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 13,
+          "pct": 0.025
+        },
+        {
+          "type": "Developer, QA or test",
+          "count": 13,
+          "pct": 0.025
+        }
+      ],
+      "ai_tool_usage_pct": 0.779,
+      "job_satisfaction": {
+        "NA": 0.256,
+        "8": 0.202,
+        "7": 0.167,
+        "9": 0.125,
+        "6": 0.069,
+        "5": 0.065,
+        "10": 0.063,
+        "4": 0.017,
+        "3": 0.015,
+        "2": 0.012,
+        "1": 0.006,
+        "0": 0.002
+      }
+    },
+    "AT": {
+      "name": "Austria",
+      "respondents": 410,
+      "salary_usd": {
+        "median": 78890,
+        "p25": 58007,
+        "p75": 98612,
+        "n": 277
+      },
+      "remote_work": {
+        "Hybrid (some remote, leans heavy to in-person)": 0.241,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.198,
+        "NA": 0.178,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.166,
+        "Remote": 0.127,
+        "In-person": 0.09
+      },
+      "ai_threat": {
+        "threat": 0.346,
+        "unsure": 0.654,
+        "n": 104
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.751,
+        "NA": 0.185,
+        "People manager": 0.063
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 128,
+          "pct": 0.312
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 62,
+          "pct": 0.151
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 27,
+          "pct": 0.066
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 26,
+          "pct": 0.063
+        },
+        {
+          "type": "Student",
+          "count": 21,
+          "pct": 0.051
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 18,
+          "pct": 0.044
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 14,
+          "pct": 0.034
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 14,
+          "pct": 0.034
+        },
+        {
+          "type": "Academic researcher",
+          "count": 12,
+          "pct": 0.029
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 11,
+          "pct": 0.027
+        }
+      ],
+      "ai_tool_usage_pct": 0.768,
+      "job_satisfaction": {
+        "NA": 0.237,
+        "8": 0.207,
+        "7": 0.151,
+        "9": 0.117,
+        "6": 0.093,
+        "10": 0.071,
+        "5": 0.041,
+        "3": 0.032,
+        "4": 0.022,
+        "2": 0.012,
+        "0": 0.01,
+        "1": 0.007
+      }
+    },
+    "RO": {
+      "name": "Romania",
+      "respondents": 323,
+      "salary_usd": {
+        "median": 57437,
+        "p25": 27570,
+        "p75": 89331,
+        "n": 211
+      },
+      "remote_work": {
+        "Remote": 0.279,
+        "NA": 0.263,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.17,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.149,
+        "Hybrid (some remote, leans heavy to in-person)": 0.102,
+        "In-person": 0.037
+      },
+      "ai_threat": {
+        "unsure": 0.549,
+        "threat": 0.451,
+        "n": 122
+      },
+      "ic_vs_pm": {
+        "NA": 0.269,
+        "People manager": 0.127,
+        "Individual contributor": 0.604
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 103,
+          "pct": 0.319
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 60,
+          "pct": 0.186
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 30,
+          "pct": 0.093
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 16,
+          "pct": 0.05
+        },
+        {
+          "type": "Student",
+          "count": 16,
+          "pct": 0.05
+        },
+        {
+          "type": "Project manager",
+          "count": 10,
+          "pct": 0.031
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 10,
+          "pct": 0.031
+        },
+        {
+          "type": "Developer, mobile",
+          "count": 10,
+          "pct": 0.031
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 8,
+          "pct": 0.025
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 7,
+          "pct": 0.022
+        }
+      ],
+      "ai_tool_usage_pct": 0.786,
+      "job_satisfaction": {
+        "8": 0.238,
+        "NA": 0.22,
+        "7": 0.158,
+        "9": 0.102,
+        "10": 0.08,
+        "5": 0.074,
+        "6": 0.074,
+        "3": 0.019,
+        "4": 0.015,
+        "2": 0.015,
+        "0": 0.003
+      }
+    },
+    "BE": {
+      "name": "Belgium",
+      "respondents": 321,
+      "salary_usd": {
+        "median": 70769,
+        "p25": 49886,
+        "p75": 104413,
+        "n": 214
+      },
+      "remote_work": {
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.287,
+        "NA": 0.259,
+        "Hybrid (some remote, leans heavy to in-person)": 0.215,
+        "In-person": 0.097,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.084,
+        "Remote": 0.059
+      },
+      "ai_threat": {
+        "unsure": 0.69,
+        "threat": 0.31,
+        "n": 87
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.673,
+        "People manager": 0.059,
+        "NA": 0.268
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 101,
+          "pct": 0.315
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 40,
+          "pct": 0.125
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 23,
+          "pct": 0.072
+        },
+        {
+          "type": "Student",
+          "count": 22,
+          "pct": 0.069
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 16,
+          "pct": 0.05
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 14,
+          "pct": 0.044
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 10,
+          "pct": 0.031
+        },
+        {
+          "type": "Academic researcher",
+          "count": 10,
+          "pct": 0.031
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 9,
+          "pct": 0.028
+        },
+        {
+          "type": "Data engineer",
+          "count": 9,
+          "pct": 0.028
+        }
+      ],
+      "ai_tool_usage_pct": 0.757,
+      "job_satisfaction": {
+        "8": 0.252,
+        "NA": 0.252,
+        "7": 0.125,
+        "9": 0.112,
+        "6": 0.087,
+        "5": 0.075,
+        "10": 0.05,
+        "4": 0.019,
+        "3": 0.016,
+        "2": 0.009,
+        "1": 0.003
+      }
+    },
+    "DK": {
+      "name": "Denmark",
+      "respondents": 316,
+      "salary_usd": {
+        "median": 98600,
+        "p25": 77760,
+        "p75": 124416,
+        "n": 227
+      },
+      "remote_work": {
+        "Hybrid (some remote, leans heavy to in-person)": 0.354,
+        "In-person": 0.212,
+        "NA": 0.152,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.133,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.111,
+        "Remote": 0.038
+      },
+      "ai_threat": {
+        "unsure": 0.611,
+        "threat": 0.389,
+        "n": 90
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.734,
+        "NA": 0.177,
+        "People manager": 0.089
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 84,
+          "pct": 0.266
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 42,
+          "pct": 0.133
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 37,
+          "pct": 0.117
+        },
+        {
+          "type": "Student",
+          "count": 20,
+          "pct": 0.063
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 17,
+          "pct": 0.054
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 11,
+          "pct": 0.035
+        },
+        {
+          "type": "Data scientist",
+          "count": 10,
+          "pct": 0.032
+        },
+        {
+          "type": "Engineering manager",
+          "count": 10,
+          "pct": 0.032
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 10,
+          "pct": 0.032
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 10,
+          "pct": 0.032
+        }
+      ],
+      "ai_tool_usage_pct": 0.737,
+      "job_satisfaction": {
+        "8": 0.225,
+        "NA": 0.212,
+        "7": 0.142,
+        "9": 0.12,
+        "6": 0.12,
+        "10": 0.089,
+        "5": 0.038,
+        "3": 0.028,
+        "4": 0.016,
+        "2": 0.009
+      }
+    },
+    "PT": {
+      "name": "Portugal",
+      "respondents": 280,
+      "salary_usd": {
+        "median": 60328,
+        "p25": 40605,
+        "p75": 90000,
+        "n": 215
+      },
+      "remote_work": {
+        "Remote": 0.364,
+        "NA": 0.189,
+        "Hybrid (some remote, leans heavy to in-person)": 0.143,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.129,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.114,
+        "In-person": 0.061
+      },
+      "ai_threat": {
+        "threat": 0.412,
+        "unsure": 0.588,
+        "n": 102
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.668,
+        "People manager": 0.139,
+        "NA": 0.193
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 78,
+          "pct": 0.279
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 52,
+          "pct": 0.186
+        },
+        {
+          "type": "Student",
+          "count": 24,
+          "pct": 0.086
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 20,
+          "pct": 0.071
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 14,
+          "pct": 0.05
+        },
+        {
+          "type": "Developer, mobile",
+          "count": 10,
+          "pct": 0.036
+        },
+        {
+          "type": "Engineering manager",
+          "count": 10,
+          "pct": 0.036
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 8,
+          "pct": 0.029
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 7,
+          "pct": 0.025
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 7,
+          "pct": 0.025
+        }
+      ],
+      "ai_tool_usage_pct": 0.821,
+      "job_satisfaction": {
+        "8": 0.232,
+        "NA": 0.207,
+        "7": 0.164,
+        "9": 0.132,
+        "6": 0.114,
+        "10": 0.054,
+        "5": 0.05,
+        "2": 0.018,
+        "3": 0.014,
+        "4": 0.014
+      }
+    },
+    "FI": {
+      "name": "Finland",
+      "respondents": 254,
+      "salary_usd": {
+        "median": 74249,
+        "p25": 58007,
+        "p75": 92812,
+        "n": 189
+      },
+      "remote_work": {
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.248,
+        "Hybrid (some remote, leans heavy to in-person)": 0.189,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.173,
+        "NA": 0.165,
+        "Remote": 0.138,
+        "In-person": 0.087
+      },
+      "ai_threat": {
+        "threat": 0.385,
+        "unsure": 0.615,
+        "n": 65
+      },
+      "ic_vs_pm": {
+        "People manager": 0.063,
+        "Individual contributor": 0.752,
+        "NA": 0.185
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 75,
+          "pct": 0.295
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 28,
+          "pct": 0.11
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 19,
+          "pct": 0.075
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 15,
+          "pct": 0.059
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 15,
+          "pct": 0.059
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 14,
+          "pct": 0.055
+        },
+        {
+          "type": "Student",
+          "count": 12,
+          "pct": 0.047
+        },
+        {
+          "type": "Academic researcher",
+          "count": 12,
+          "pct": 0.047
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 7,
+          "pct": 0.028
+        },
+        {
+          "type": "Data scientist",
+          "count": 5,
+          "pct": 0.02
+        }
+      ],
+      "ai_tool_usage_pct": 0.764,
+      "job_satisfaction": {
+        "NA": 0.26,
+        "8": 0.236,
+        "7": 0.146,
+        "9": 0.146,
+        "6": 0.087,
+        "10": 0.075,
+        "5": 0.02,
+        "3": 0.016,
+        "1": 0.008,
+        "4": 0.008
+      }
+    },
+    "GR": {
+      "name": "Greece",
+      "respondents": 252,
+      "salary_usd": {
+        "median": 44666,
+        "p25": 26799,
+        "p75": 69609,
+        "n": 173
+      },
+      "remote_work": {
+        "NA": 0.238,
+        "Remote": 0.214,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.159,
+        "In-person": 0.143,
+        "Hybrid (some remote, leans heavy to in-person)": 0.139,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.107
+      },
+      "ai_threat": {
+        "threat": 0.364,
+        "unsure": 0.636,
+        "n": 99
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.591,
+        "NA": 0.242,
+        "People manager": 0.167
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 70,
+          "pct": 0.278
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 35,
+          "pct": 0.139
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 20,
+          "pct": 0.079
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 19,
+          "pct": 0.075
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 15,
+          "pct": 0.06
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 13,
+          "pct": 0.052
+        },
+        {
+          "type": "Student",
+          "count": 12,
+          "pct": 0.048
+        },
+        {
+          "type": "Engineering manager",
+          "count": 11,
+          "pct": 0.044
+        },
+        {
+          "type": "Academic researcher",
+          "count": 8,
+          "pct": 0.032
+        },
+        {
+          "type": "Data scientist",
+          "count": 7,
+          "pct": 0.028
+        }
+      ],
+      "ai_tool_usage_pct": 0.821,
+      "job_satisfaction": {
+        "NA": 0.258,
+        "8": 0.206,
+        "7": 0.151,
+        "9": 0.111,
+        "6": 0.079,
+        "10": 0.071,
+        "5": 0.056,
+        "3": 0.02,
+        "2": 0.02,
+        "4": 0.02,
+        "0": 0.008
+      }
+    },
+    "BG": {
+      "name": "Bulgaria",
+      "respondents": 244,
+      "salary_usd": {
+        "median": 53376,
+        "p25": 30140,
+        "p75": 77098,
+        "n": 151
+      },
+      "remote_work": {
+        "Remote": 0.279,
+        "Hybrid (some remote, leans heavy to in-person)": 0.197,
+        "NA": 0.148,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.131,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.131,
+        "In-person": 0.115
+      },
+      "ai_threat": {
+        "threat": 0.45,
+        "unsure": 0.55,
+        "n": 80
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.705,
+        "People manager": 0.148,
+        "NA": 0.148
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, back-end",
+          "count": 58,
+          "pct": 0.238
+        },
+        {
+          "type": "Developer, full-stack",
+          "count": 51,
+          "pct": 0.209
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 19,
+          "pct": 0.078
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 17,
+          "pct": 0.07
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 16,
+          "pct": 0.066
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 13,
+          "pct": 0.053
+        },
+        {
+          "type": "Engineering manager",
+          "count": 8,
+          "pct": 0.033
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 8,
+          "pct": 0.033
+        },
+        {
+          "type": "Developer, mobile",
+          "count": 7,
+          "pct": 0.029
+        },
+        {
+          "type": "Cloud infrastructure engineer",
+          "count": 6,
+          "pct": 0.025
+        }
+      ],
+      "ai_tool_usage_pct": 0.791,
+      "job_satisfaction": {
+        "NA": 0.205,
+        "8": 0.205,
+        "7": 0.152,
+        "9": 0.111,
+        "6": 0.094,
+        "10": 0.082,
+        "5": 0.078,
+        "3": 0.029,
+        "4": 0.025,
+        "0": 0.008,
+        "2": 0.008,
+        "1": 0.004
+      }
+    },
+    "NO": {
+      "name": "Norway",
+      "respondents": 237,
+      "salary_usd": {
+        "median": 88945,
+        "p25": 75109,
+        "p75": 109367,
+        "n": 182
+      },
+      "remote_work": {
+        "Hybrid (some remote, leans heavy to in-person)": 0.304,
+        "In-person": 0.215,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.148,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.135,
+        "NA": 0.127,
+        "Remote": 0.072
+      },
+      "ai_threat": {
+        "threat": 0.356,
+        "unsure": 0.644,
+        "n": 45
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.802,
+        "NA": 0.139,
+        "People manager": 0.059
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 88,
+          "pct": 0.371
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 45,
+          "pct": 0.19
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 15,
+          "pct": 0.063
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 11,
+          "pct": 0.046
+        },
+        {
+          "type": "Student",
+          "count": 10,
+          "pct": 0.042
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 9,
+          "pct": 0.038
+        },
+        {
+          "type": "Data engineer",
+          "count": 6,
+          "pct": 0.025
+        },
+        {
+          "type": "AI/ML engineer",
+          "count": 5,
+          "pct": 0.021
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 5,
+          "pct": 0.021
+        },
+        {
+          "type": "Academic researcher",
+          "count": 5,
+          "pct": 0.021
+        }
+      ],
+      "ai_tool_usage_pct": 0.751,
+      "job_satisfaction": {
+        "NA": 0.224,
+        "8": 0.203,
+        "7": 0.194,
+        "9": 0.135,
+        "10": 0.089,
+        "6": 0.089,
+        "5": 0.038,
+        "4": 0.017,
+        "3": 0.013
+      }
+    },
+    "HU": {
+      "name": "Hungary",
+      "respondents": 236,
+      "salary_usd": {
+        "median": 46266,
+        "p25": 28917,
+        "p75": 75183,
+        "n": 168
+      },
+      "remote_work": {
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.267,
+        "Remote": 0.237,
+        "NA": 0.203,
+        "Hybrid (some remote, leans heavy to in-person)": 0.131,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.097,
+        "In-person": 0.064
+      },
+      "ai_threat": {
+        "unsure": 0.722,
+        "threat": 0.278,
+        "n": 72
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.686,
+        "People manager": 0.089,
+        "NA": 0.225
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 70,
+          "pct": 0.297
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 38,
+          "pct": 0.161
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 19,
+          "pct": 0.081
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 14,
+          "pct": 0.059
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 14,
+          "pct": 0.059
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 10,
+          "pct": 0.042
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 9,
+          "pct": 0.038
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 9,
+          "pct": 0.038
+        },
+        {
+          "type": "Student",
+          "count": 9,
+          "pct": 0.038
+        },
+        {
+          "type": "Developer, mobile",
+          "count": 6,
+          "pct": 0.025
+        }
+      ],
+      "ai_tool_usage_pct": 0.737,
+      "job_satisfaction": {
+        "NA": 0.237,
+        "8": 0.191,
+        "7": 0.169,
+        "9": 0.093,
+        "6": 0.093,
+        "10": 0.081,
+        "5": 0.059,
+        "4": 0.038,
+        "3": 0.017,
+        "1": 0.008,
+        "2": 0.008,
+        "0": 0.004
+      }
+    },
+    "IE": {
+      "name": "Ireland",
+      "respondents": 209,
+      "salary_usd": {
+        "median": 116015,
+        "p25": 88171,
+        "p75": 150819,
+        "n": 151
+      },
+      "remote_work": {
+        "Remote": 0.278,
+        "NA": 0.215,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.172,
+        "Hybrid (some remote, leans heavy to in-person)": 0.167,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.086,
+        "In-person": 0.081
+      },
+      "ai_threat": {
+        "unsure": 0.551,
+        "threat": 0.449,
+        "n": 78
+      },
+      "ic_vs_pm": {
+        "NA": 0.225,
+        "Individual contributor": 0.699,
+        "People manager": 0.077
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 58,
+          "pct": 0.278
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 36,
+          "pct": 0.172
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 17,
+          "pct": 0.081
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 14,
+          "pct": 0.067
+        },
+        {
+          "type": "Student",
+          "count": 11,
+          "pct": 0.053
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 8,
+          "pct": 0.038
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 8,
+          "pct": 0.038
+        },
+        {
+          "type": "Engineering manager",
+          "count": 7,
+          "pct": 0.033
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 7,
+          "pct": 0.033
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 6,
+          "pct": 0.029
+        }
+      ],
+      "ai_tool_usage_pct": 0.742,
+      "job_satisfaction": {
+        "8": 0.23,
+        "NA": 0.23,
+        "7": 0.134,
+        "6": 0.11,
+        "10": 0.096,
+        "9": 0.067,
+        "5": 0.067,
+        "3": 0.024,
+        "4": 0.019,
+        "0": 0.014,
+        "1": 0.005,
+        "2": 0.005
+      }
+    },
+    "RS": {
+      "name": "Serbia",
+      "respondents": 158,
+      "salary_usd": {
+        "median": 52224,
+        "p25": 19799,
+        "p75": 83158,
+        "n": 104
+      },
+      "remote_work": {
+        "Remote": 0.278,
+        "NA": 0.234,
+        "Hybrid (some remote, leans heavy to in-person)": 0.139,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.12,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.12,
+        "In-person": 0.108
+      },
+      "ai_threat": {
+        "unsure": 0.789,
+        "threat": 0.211,
+        "n": 57
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.62,
+        "People manager": 0.139,
+        "NA": 0.241
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 43,
+          "pct": 0.272
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 27,
+          "pct": 0.171
+        },
+        {
+          "type": "Developer, mobile",
+          "count": 10,
+          "pct": 0.063
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 9,
+          "pct": 0.057
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 9,
+          "pct": 0.057
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 8,
+          "pct": 0.051
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 8,
+          "pct": 0.051
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 5,
+          "pct": 0.032
+        },
+        {
+          "type": "Student",
+          "count": 5,
+          "pct": 0.032
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 5,
+          "pct": 0.032
+        }
+      ],
+      "ai_tool_usage_pct": 0.81,
+      "job_satisfaction": {
+        "8": 0.215,
+        "NA": 0.171,
+        "6": 0.139,
+        "9": 0.133,
+        "7": 0.12,
+        "10": 0.095,
+        "5": 0.051,
+        "4": 0.032,
+        "3": 0.019,
+        "0": 0.013,
+        "1": 0.006,
+        "2": 0.006
+      }
+    },
+    "SK": {
+      "name": "Slovakia",
+      "respondents": 147,
+      "salary_usd": {
+        "median": 55687,
+        "p25": 35500,
+        "p75": 81210,
+        "n": 103
+      },
+      "remote_work": {
+        "NA": 0.272,
+        "Hybrid (some remote, leans heavy to in-person)": 0.204,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.19,
+        "Remote": 0.19,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.095,
+        "In-person": 0.048
+      },
+      "ai_threat": {
+        "unsure": 0.691,
+        "threat": 0.309,
+        "n": 55
+      },
+      "ic_vs_pm": {
+        "NA": 0.272,
+        "Individual contributor": 0.653,
+        "People manager": 0.075
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 44,
+          "pct": 0.299
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 36,
+          "pct": 0.245
+        },
+        {
+          "type": "Student",
+          "count": 13,
+          "pct": 0.088
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 10,
+          "pct": 0.068
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 6,
+          "pct": 0.041
+        },
+        {
+          "type": "Developer, mobile",
+          "count": 5,
+          "pct": 0.034
+        },
+        {
+          "type": "Data engineer",
+          "count": 4,
+          "pct": 0.027
+        },
+        {
+          "type": "System administrator",
+          "count": 4,
+          "pct": 0.027
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 4,
+          "pct": 0.027
+        },
+        {
+          "type": "Academic researcher",
+          "count": 3,
+          "pct": 0.02
+        }
+      ],
+      "ai_tool_usage_pct": 0.81,
+      "job_satisfaction": {
+        "NA": 0.245,
+        "8": 0.211,
+        "7": 0.17,
+        "9": 0.116,
+        "10": 0.075,
+        "6": 0.068,
+        "5": 0.061,
+        "2": 0.027,
+        "4": 0.014,
+        "3": 0.014
+      }
+    },
+    "HR": {
+      "name": "Croatia",
+      "respondents": 113,
+      "salary_usd": {
+        "median": 46406,
+        "p25": 31324,
+        "p75": 75410,
+        "n": 81
+      },
+      "remote_work": {
+        "NA": 0.248,
+        "Remote": 0.239,
+        "In-person": 0.195,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.15,
+        "Hybrid (some remote, leans heavy to in-person)": 0.097,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.071
+      },
+      "ai_threat": {
+        "unsure": 0.619,
+        "threat": 0.381,
+        "n": 42
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.611,
+        "People manager": 0.124,
+        "NA": 0.265
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 26,
+          "pct": 0.23
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 20,
+          "pct": 0.177
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 17,
+          "pct": 0.15
+        },
+        {
+          "type": "Student",
+          "count": 10,
+          "pct": 0.088
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 8,
+          "pct": 0.071
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 7,
+          "pct": 0.062
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 5,
+          "pct": 0.044
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 3,
+          "pct": 0.027
+        },
+        {
+          "type": "Cloud infrastructure engineer",
+          "count": 2,
+          "pct": 0.018
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 2,
+          "pct": 0.018
+        }
+      ],
+      "ai_tool_usage_pct": 0.761,
+      "job_satisfaction": {
+        "8": 0.221,
+        "NA": 0.212,
+        "7": 0.133,
+        "6": 0.097,
+        "10": 0.088,
+        "9": 0.088,
+        "5": 0.062,
+        "3": 0.044,
+        "4": 0.035,
+        "0": 0.009,
+        "2": 0.009
+      }
+    },
+    "LT": {
+      "name": "Lithuania",
+      "respondents": 101,
+      "salary_usd": {
+        "median": 66708,
+        "p25": 41765,
+        "p75": 92812,
+        "n": 69
+      },
+      "remote_work": {
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.228,
+        "NA": 0.218,
+        "Hybrid (some remote, leans heavy to in-person)": 0.178,
+        "Remote": 0.168,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.109,
+        "In-person": 0.099
+      },
+      "ai_threat": {
+        "unsure": 0.5,
+        "threat": 0.5,
+        "n": 36
+      },
+      "ic_vs_pm": {
+        "NA": 0.238,
+        "Individual contributor": 0.644,
+        "People manager": 0.119
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 26,
+          "pct": 0.257
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 20,
+          "pct": 0.198
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 9,
+          "pct": 0.089
+        },
+        {
+          "type": "Student",
+          "count": 7,
+          "pct": 0.069
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 6,
+          "pct": 0.059
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 5,
+          "pct": 0.05
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 5,
+          "pct": 0.05
+        },
+        {
+          "type": "Engineering manager",
+          "count": 3,
+          "pct": 0.03
+        },
+        {
+          "type": "Data engineer",
+          "count": 3,
+          "pct": 0.03
+        },
+        {
+          "type": "Developer, QA or test",
+          "count": 3,
+          "pct": 0.03
+        }
+      ],
+      "ai_tool_usage_pct": 0.772,
+      "job_satisfaction": {
+        "8": 0.297,
+        "NA": 0.208,
+        "9": 0.178,
+        "10": 0.109,
+        "7": 0.089,
+        "6": 0.05,
+        "5": 0.03,
+        "4": 0.02,
+        "0": 0.01,
+        "2": 0.01
+      }
+    },
+    "SI": {
+      "name": "Slovenia",
+      "respondents": 78,
+      "salary_usd": {
+        "median": 55687,
+        "p25": 39445,
+        "p75": 75410,
+        "n": 61
+      },
+      "remote_work": {
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.218,
+        "In-person": 0.192,
+        "Hybrid (some remote, leans heavy to in-person)": 0.167,
+        "NA": 0.154,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.154,
+        "Remote": 0.115
+      },
+      "ai_threat": {
+        "unsure": 0.692,
+        "threat": 0.308,
+        "n": 26
+      },
+      "ic_vs_pm": {
+        "NA": 0.167,
+        "Individual contributor": 0.744,
+        "People manager": 0.09
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 27,
+          "pct": 0.346
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 10,
+          "pct": 0.128
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 10,
+          "pct": 0.128
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 7,
+          "pct": 0.09
+        },
+        {
+          "type": "Student",
+          "count": 5,
+          "pct": 0.064
+        },
+        {
+          "type": "Academic researcher",
+          "count": 3,
+          "pct": 0.038
+        },
+        {
+          "type": "Developer, game or graphics",
+          "count": 2,
+          "pct": 0.026
+        },
+        {
+          "type": "Developer, mobile",
+          "count": 2,
+          "pct": 0.026
+        },
+        {
+          "type": "System administrator",
+          "count": 2,
+          "pct": 0.026
+        },
+        {
+          "type": "DevOps engineer or professional",
+          "count": 1,
+          "pct": 0.013
+        }
+      ],
+      "ai_tool_usage_pct": 0.782,
+      "job_satisfaction": {
+        "8": 0.205,
+        "7": 0.192,
+        "9": 0.179,
+        "NA": 0.141,
+        "6": 0.103,
+        "10": 0.051,
+        "3": 0.051,
+        "5": 0.051,
+        "4": 0.013,
+        "0": 0.013
+      }
+    },
+    "EE": {
+      "name": "Estonia",
+      "respondents": 70,
+      "salary_usd": {
+        "median": 69609,
+        "p25": 46406,
+        "p75": 100237,
+        "n": 52
+      },
+      "remote_work": {
+        "Remote": 0.243,
+        "Hybrid (some remote, leans heavy to in-person)": 0.229,
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.2,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.171,
+        "NA": 0.086,
+        "In-person": 0.071
+      },
+      "ai_threat": {
+        "threat": 0.316,
+        "unsure": 0.684,
+        "n": 19
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.786,
+        "NA": 0.129,
+        "People manager": 0.086
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 24,
+          "pct": 0.343
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 17,
+          "pct": 0.243
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 9,
+          "pct": 0.129
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 5,
+          "pct": 0.071
+        },
+        {
+          "type": "Other (please specify):",
+          "count": 4,
+          "pct": 0.057
+        },
+        {
+          "type": "Student",
+          "count": 3,
+          "pct": 0.043
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 2,
+          "pct": 0.029
+        },
+        {
+          "type": "System administrator",
+          "count": 2,
+          "pct": 0.029
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 2,
+          "pct": 0.029
+        },
+        {
+          "type": "Engineering manager",
+          "count": 1,
+          "pct": 0.014
+        }
+      ],
+      "ai_tool_usage_pct": 0.829,
+      "job_satisfaction": {
+        "8": 0.229,
+        "7": 0.214,
+        "9": 0.171,
+        "6": 0.143,
+        "NA": 0.143,
+        "10": 0.071,
+        "5": 0.029
+      }
+    },
+    "LV": {
+      "name": "Latvia",
+      "respondents": 62,
+      "salary_usd": {
+        "median": 51484,
+        "p25": 31324,
+        "p75": 78890,
+        "n": 39
+      },
+      "remote_work": {
+        "Your choice (very flexible, you can come in when you want or just as needed)": 0.194,
+        "Hybrid (some remote, leans heavy to in-person)": 0.177,
+        "Remote": 0.177,
+        "Hybrid (some in-person, leans heavy to flexibility)": 0.177,
+        "In-person": 0.161,
+        "NA": 0.113
+      },
+      "ai_threat": {
+        "threat": 0.214,
+        "unsure": 0.786,
+        "n": 14
+      },
+      "ic_vs_pm": {
+        "Individual contributor": 0.742,
+        "People manager": 0.145,
+        "NA": 0.113
+      },
+      "top_dev_types": [
+        {
+          "type": "Developer, full-stack",
+          "count": 22,
+          "pct": 0.355
+        },
+        {
+          "type": "Developer, back-end",
+          "count": 10,
+          "pct": 0.161
+        },
+        {
+          "type": "Developer, front-end",
+          "count": 5,
+          "pct": 0.081
+        },
+        {
+          "type": "Architect, software or solutions",
+          "count": 4,
+          "pct": 0.065
+        },
+        {
+          "type": "Academic researcher",
+          "count": 3,
+          "pct": 0.048
+        },
+        {
+          "type": "Developer, embedded applications or devices",
+          "count": 3,
+          "pct": 0.048
+        },
+        {
+          "type": "Senior executive (C-suite, VP, etc.)",
+          "count": 2,
+          "pct": 0.032
+        },
+        {
+          "type": "Developer, desktop or enterprise applications",
+          "count": 2,
+          "pct": 0.032
+        },
+        {
+          "type": "Engineering manager",
+          "count": 1,
+          "pct": 0.016
+        },
+        {
+          "type": "Applied scientist",
+          "count": 1,
+          "pct": 0.016
+        }
+      ],
+      "ai_tool_usage_pct": 0.758,
+      "job_satisfaction": {
+        "7": 0.242,
+        "8": 0.21,
+        "NA": 0.194,
+        "9": 0.145,
+        "6": 0.113,
+        "10": 0.048,
+        "5": 0.032,
+        "3": 0.016
+      }
+    }
+  }
+}

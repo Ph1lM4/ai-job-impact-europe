@@ -1,0 +1,79 @@
+# AI job exposure in European tech: a source analysis for DACH markets
+
+**US product job market data paints an increasingly AI-shaped picture, but structural differences mean DACH markets experience the same transformation pressures 6–18 months later and through a fundamentally different institutional filter.** Lenny Rachitsky's March 2026 report shows 7,300+ open PM roles globally (up 75% from 2023 lows) with AI roles "hockey-sticking," while TrueUp tracks ~260K open tech jobs across 2,106+ companies — but both sources are 60–70% US-centric. For a European AI job exposure tool, these datasets provide directional signals and framework scaffolding but require substantial DACH-specific augmentation from sources like Ravio, Eurostat, Bitkom, and the OECD AI exposure indices.
+
+---
+
+## A. Lenny's report reveals a bifurcating product market
+
+Lenny Rachitsky's fourth biannual "State of the Product Job Market" report (March 24, 2026) uses **TrueUp data spanning 9,000+ tech companies worldwide** to track open job postings — not actual hires. This is his "most optimistic" edition yet, though he explicitly cautions that "more openings doesn't automatically mean people are finding jobs more quickly."
+
+**AI is the dominant force reshaping product roles.** The report tracks "AI roles" as a composite: all positions at AI-native companies (OpenAI, Anthropic, Cursor, Lovable) plus AI-specific roles at non-AI companies. This category is growing exponentially. AI PM roles numbered 688 in mid-2025 and have grown significantly since. AI engineers show similar explosive demand. Andrew Ng's quote (shared by Lenny) captures the structural shift: one of his teams proposed a **1:0.5 PM-to-engineer ratio** — twice as many PMs as engineers — because AI makes engineering faster than product decision-making. Lenny frames this as product management becoming "the new bottleneck."
+
+The sub-role landscape is bifurcating sharply. PM openings stand at **7,300+ globally**, up ~20% year-to-date and the highest since 2022. Engineering openings exceed **67,000 globally** (26,000 in the US alone). Tech recruiter demand has surged nearly to 2022 peak levels — a leading indicator of sustained hiring momentum. From 2024 Live Data Technologies collaboration, growth roles ranked #1 in fastest-growing product-adjacent functions, followed by user research (#2) and product owner (#3). In stark contrast, **design roles have plateaued at ~5,700 globally**, flat since early 2023 and failing to recover alongside PM and engineering. Lenny theorizes that "AI is allowing engineers to move so quickly, there's less opportunity — and less desire — to involve the traditional design process." Scrum master is the only role with net-negative hiring.
+
+Compensation data comes from a separate February 2025 report using **Pave data (23,000+ individual PMs across 7,500+ companies)**. Median entry-level PM total compensation in the US is **$139,000**; senior IC PMs at the 90th percentile reach ~$1 million in total comp; CPOs median at **$1,425,000**. The critical European data point: **average European PMs earn less than 50% of US PM compensation**, with UK PMs at ~65% of US levels. AI/ML expertise commands a **15–25% salary premium** over generalist counterparts.
+
+**Methodology limitations worth noting:** TrueUp tracks tech companies only (excluding non-tech employers and consulting agencies), measures open postings rather than fills, and defines "AI roles" broadly. Charts span 2022–early 2026. The report's geographic data is heavily weighted toward US hubs — Bay Area alone accounts for 23%+ of PM roles (up 50% since 2022) and ~33% of all AI roles — though Berlin entered the top 10 global PM locations alongside Austin.
+
+---
+
+## B. TrueUp's data model is rich but US-centric
+
+TrueUp, founded by Amit Taylor (ex-AWS, Stanford), operates as a three-person bootstrapped team scanning job postings via AI-powered scraping of company career pages and job boards. As of late March 2026, the platform tracks approximately **260,000–267,000 open tech job listings** across **2,106+ tech companies valued above $1 billion** (533 public, 1,573 private), representing a combined valuation of $50.2 trillion and 20.3 million employees.
+
+**The data model per job listing is notably rich.** Core fields include title, company, location, salary range, posting date, seniority level (seven tiers from intern to SVP/CXO), and extracted technologies/skills (Python, AWS, SQL, LLM, CUDA, etc.). Each listing is enriched with company-level metadata: a proprietary **Trajectory Score** (0–100, compositing fundraising, hiring trends, valuation, VC investors, layoff data, Glassdoor ratings, and member interest), company stage classification, funding history, employee count, and layoff warning indicators. This enrichment layer is TrueUp's key differentiator over raw job board aggregation.
+
+The taxonomy organizes jobs across **20+ functional categories** — with Engineering (Software) leading at 64K+, Product Management at ~7K+, Artificial Intelligence at ~9K+, and Data & Analytics at ~11K+ — and **15+ tech sectors** (Consumer, B2B SaaS, Cloud Infrastructure, AI, FinTech, etc.). Cross-filtering by VC investor, curated lists (Hot 200, AI 50, Remote 200), company stage, and technology stack enables multidimensional analysis.
+
+**Layoff tracking covers 198 events impacting 59,959 people in 2026 year-to-date**, and 783 events with 245,953 people in 2025. Data points per event include company, headcount affected, percentage of workforce, date, and source link. Visualizations span monthly trends, annual comparisons, sector breakdowns, and a severance tracker. Sources are media reports, social media, their own reporting, and cross-references with Layoffs.fyi. External reviews note the tracker's "high-quality visualization" but "smaller database compared to dedicated trackers."
+
+**Geographic coverage reveals a clear US bias.** San Francisco Bay Area alone accounts for 31K+ listings, with US remote (21K+), NYC (14K+), Seattle (8K+), LA (6K+), and Austin (5K+) dominating the top positions. International coverage exists — Bengaluru (10K+), London (7K+), Singapore (5K+) — but **DACH-specific locations do not appear in any prominently featured filter**. European jobs likely represent under 10–15% of total listings. Remote jobs are handled with country-specific granularity, which partially compensates for geographic gaps, but the platform's methodology is opaque: no documentation on scraping frequency, deduplication logic, or validation processes, and the site actively blocks automated access (returning 403 errors on programmatic fetch attempts).
+
+---
+
+## C. DACH markets operate under fundamentally different structural physics
+
+### What transfers and what doesn't
+
+The most useful framework for evaluating US-to-DACH transferability distinguishes **demand-side trends** (which skills and roles the market wants) from **supply-side dynamics** (how fast the market can restructure). Demand-side signals transfer well with a 6–18 month lag: AI PM demand is exploding in Europe too, with Ravio reporting **88% year-on-year growth in AI/ML hiring** across European tech. Berlin's entry into the global top 10 PM locations confirms this convergence. Entry-level hiring has collapsed in both markets — Ravio documents a **73% decline in P1/P2 hiring** across European tech, mirroring the US junior-role squeeze. Design role stagnation is similarly global.
+
+Supply-side dynamics, however, are structurally incompatible. US-style mass layoffs — thousands terminated overnight — are **functionally impossible in DACH**. German works councils (Betriebsrat) have co-determination rights over layoff plans and restructuring for companies with as few as five employees. When Google conducted European layoffs, it was "obligated to negotiate with works councils" in Germany and France over the number and types of affected employees. Standard notice periods of **three months for senior tech staff** (versus two weeks in the US) mean hiring and firing cycles run on fundamentally different timescales. Germany's Kurzarbeit system — which paid 60–67% of lost wages to **2.35 million workers** during COVID alone — provides an institutional buffer against AI-driven displacement that has no US equivalent. This means AI's labor market impact in DACH will be **slower, more negotiated, and more cushioned**, but potentially also slower to adapt.
+
+### Compensation structure divergence
+
+DACH PM compensation operates in a different universe. Mid-level German PMs earn **€55,000–€92,000** in total compensation versus $139,000+ for US entry-level PMs. Even Switzerland's highest-in-Europe PM salaries (**CHF 118,000–137,000** median) barely match US entry-level when adjusted for cost of living. The gap widens at senior levels because European tech equity participation significantly lags the US — **only ~58% of UK tech startups** offer equity to all employees, with Germany, France, and the Netherlands further behind. This means the AI salary premium (15–25% in the US) compounds differently in Europe: the premium exists but applies to a lower base, and manifests more through job security and benefits than cash compensation.
+
+### AI exposure patterns differ in timing and mechanism
+
+The ECB's March 2026 survey of 5,000 European firms found that two-thirds report employees using AI, but only **25% actually invest in AI technology** — most use freely accessible tools. AI-intensive European firms are **4% more likely to hire additional staff**, and the ECB's headline finding is that "investment in and the intensive use of AI are not yet replacing jobs." This contrasts with more aggressive US adoption patterns. The OECD's cross-country AI exposure analysis covering Germany, Austria, and other European markets found **31–45% of job vacancies** are in occupations highly exposed to AI, with management and business services roles (directly PM-adjacent) among the most exposed. Critically, demand for **originality and creativity skills** in high-AI-exposure roles increased from 25% to 33% of vacancies — suggesting PMs who bring creative-strategic capability are becoming more rather than less valuable.
+
+### Key DACH-specific data sources for validation
+
+The strongest European-specific source is **Ravio** (ravio.com), which benchmarks real-time compensation across 300,000+ data points from 1,500+ European tech companies. Their Compensation Trends 2026 report provides function-level hiring data, salary percentiles by seniority band, and country-specific breakdowns — the closest European equivalent to what TrueUp + Pave provide for the US. **Bitkom** (Germany's digital industry association) reports 109,000 unfilled IT positions and produces annual talent shortage data. **Eurostat** provides ICT specialist employment figures (Germany had 436,200+ female ICT specialists alone in 2024). **Kununu** is the DACH-specific Glassdoor equivalent for employer ratings and salary data. **Gehalt.de** provides German salary calculators with industry benchmarks. The OECD's AI exposure indices and the **German AI Observatory** (BMAS) specifically monitor AI's impact on the German working world. No dedicated European tech layoff tracker exists — a significant gap — though Sifted provides European startup news coverage including layoffs.
+
+---
+
+## D. Integration recommendations for an AI job exposure tool
+
+### Data points and metrics to incorporate from these sources
+
+From Lenny/TrueUp, incorporate the **role category taxonomy** (PM, Engineering, Design, AI PM, Growth, UX Research, Scrum Master, Product Owner), the **directional trend signals** (which roles are growing/shrinking and at what rates), the **PM-to-engineer ratio shift** as a structural indicator of AI's organizational impact, and the **sub-role granularity** that distinguishes AI PM from general PM, growth PM from product owner. The finding that design roles are flat while PM demand rises 75% from trough is a high-signal data point for exposure modeling. TrueUp's Trajectory Score methodology — compositing fundraising, hiring trends, layoff data, and growth rates — provides a useful template for company-level AI exposure scoring.
+
+From TrueUp's data model specifically, the technology/skills extraction per listing (LLM, RLHF, Transformer, CUDA, etc.) provides a proxy for AI-readiness of roles. The layoff-to-hiring ratio by sector and the seniority distribution of openings (the dominance of Level 1–2 versus senior roles) are directly relevant to exposure modeling.
+
+### Critical adjustments needed for European context
+
+Five adjustments are non-negotiable for DACH applicability:
+
+- **Temporal lag factor**: Apply a 6–18 month delay to US trend signals when projecting DACH impact. AI PM demand that hockey-sticked in the US in mid-2025 is reaching similar growth curves in Europe by early 2026.
+- **Displacement velocity dampener**: Model a 3–5x slower displacement timeline for DACH versus US, reflecting works councils, notice periods, Kurzarbeit, and negotiated restructuring processes. A US company that eliminates 1,000 roles in a week would take 6–12 months for the equivalent action in Germany.
+- **Compensation recalibration**: Replace US salary data entirely with Ravio, Kununu, and Glassdoor DE/AT/CH data. The 40–60% cash compensation gap and fundamentally different equity culture mean US salary trends do not translate to DACH magnitude, even if directional trends align.
+- **Role taxonomy mapping**: Account for the DACH-specific prevalence of "Product Owner" as a title (often used interchangeably with PM in Scrum-heavy German engineering culture) and the traditional German "Product Manager" role in Mittelstand companies that refers to physical product marketing, not digital product management.
+- **Regulatory exposure layer**: Add a "regulatory buffer" dimension to exposure scores reflecting employment protection strength. German roles should score lower on near-term displacement risk not because the AI exposure is lower but because the institutional response time is structurally longer.
+
+### Gaps requiring European-specific research
+
+Three critical gaps remain. First, **no European tech layoff tracker** provides systematic, machine-readable data comparable to TrueUp or Layoffs.fyi — this must be built from Sifted coverage, works council disclosures, and company announcements, or accepted as a data limitation. Second, **AI adoption rates by company segment in DACH** are poorly documented at the granularity needed for role-level exposure modeling; the ECB's 25% investment figure is a macro signal but doesn't decompose into which functions or role types face the most immediate impact. Third, **DACH-specific PM hiring velocity data** — equivalent to Lenny's "2,500–4,500 PMs hired monthly in the US" — does not exist in any single source and would need to be triangulated from LinkedIn DACH job posting data, Bundesagentur für Arbeit vacancy statistics, and Ravio hiring rate data (which showed Germany at +2.8% hiring growth in 2025, the only positive European market).
+
+The OECD's finding that **72% of vacancies in high-AI-exposure occupations require management skills** and the ECB's finding that AI-intensive firms are **more likely to hire** represent the most important corrective to simplistic "AI replaces jobs" narratives. For a DACH-focused tool, the core model should be: AI exposure is high for product roles everywhere, but in the DACH context, this exposure manifests more as **role transformation** (toward AI-augmented PM work, strategic-creative emphasis, and technical AI fluency) than as role elimination — at least within the 2–5 year horizon where institutional buffers remain strong.
