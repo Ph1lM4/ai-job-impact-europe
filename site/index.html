@@ -162,8 +162,7 @@ body {
 .country-option .co-emp { font-size: 11px; color: var(--muted-foreground); }
 .country-option .co-note { display: block; font-size: 10px; color: var(--muted-foreground); margin-top: 1px; }
 
-/* ── Layer selector dropdown ── */
-.layer-select-wrap { display: flex; align-items: center; gap: 8px; flex-shrink: 0; position: relative; }
+.layer-select-wrap { display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; position: relative; width: 100%; }
 
 /* ── Layer info tooltip ── */
 .layer-info-btn {
@@ -191,18 +190,6 @@ body {
 @media (max-width: 768px) {
   .layer-info-tooltip { left: 0; right: 0; min-width: 0; max-width: none; }
 }
-.layer-select {
-  background: var(--accent); color: var(--foreground); border: 1px solid var(--border);
-  padding: 8px 32px 8px 12px; border-radius: var(--radius-md); font-family: var(--font);
-  font-size: 13px; font-weight: 500; cursor: pointer; min-height: 36px;
-  appearance: none; -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right 10px center;
-  transition: border-color var(--transition);
-}
-.layer-select:hover { border-color: rgba(255,255,255,0.25); }
-.layer-select:focus { outline: 2px solid var(--ring); outline-offset: 2px; }
-.layer-select optgroup { font-weight: 600; }
 /* ── Exposure sub-toggle ── */
 .exposure-sub-toggle { display: inline-flex; background: var(--accent); border-radius: var(--radius-md); padding: 2px; }
 .exposure-sub-toggle button {
@@ -213,6 +200,57 @@ body {
 .exposure-sub-toggle button.active { background: var(--background); color: var(--foreground); font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,0.4); }
 .exposure-sub-toggle button:hover:not(.active) { color: var(--foreground); }
 .exposure-sub-toggle.hidden { display: none; }
+
+/* ── Mode toggle ── */
+.mode-toggle {
+  display: inline-flex; background: var(--accent); border-radius: var(--radius-lg);
+  padding: 3px; gap: 2px; width: 100%;
+}
+.mode-btn {
+  background: transparent; border: none; padding: 10px 16px;
+  border-radius: calc(var(--radius-lg) - 2px); cursor: pointer;
+  font-family: var(--font); text-align: left; transition: all var(--transition);
+  display: flex; flex-direction: column; gap: 1px; flex: 1;
+}
+.mode-btn .mode-label { font-size: 13px; font-weight: 600; color: var(--muted); transition: color var(--transition); }
+.mode-btn .mode-question { font-size: 11px; color: var(--muted-foreground); font-weight: 400; line-height: 1.3; }
+.mode-btn.active {
+  background: var(--background); box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+.mode-btn.active .mode-label { color: var(--foreground); }
+.mode-btn.active .mode-question { color: var(--muted); }
+.mode-btn:hover:not(.active) .mode-label { color: var(--foreground); }
+
+/* ── Layer pill toggle ── */
+.layer-pill-toggle { display: inline-flex; background: var(--accent); border-radius: var(--radius-md); padding: 2px; }
+.layer-pill-toggle:empty { display: none; }
+.layer-pill-toggle button {
+  background: transparent; color: var(--muted); border: none; padding: 6px 14px;
+  border-radius: 6px; font-family: var(--font); font-size: 12px; font-weight: 500;
+  cursor: pointer; transition: all var(--transition); white-space: nowrap; min-height: 30px;
+}
+.layer-pill-toggle button.active { background: var(--background); color: var(--foreground); font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+.layer-pill-toggle button:hover:not(.active) { color: var(--foreground); }
+
+/* ── Mode accent overrides ── */
+body.mode-opportunity { --ring: #0d9488; }
+body.mode-context { --ring: #94a3b8; }
+
+/* ── Narrative card ── */
+.narrative-card {
+  font-size: 13px; color: var(--muted); line-height: 1.6;
+  padding: 6px 0 2px; min-height: 20px;
+  transition: opacity 150ms ease;
+}
+.narrative-card:empty { display: none; }
+
+/* ── Insight cross-layer links ── */
+.insight-link {
+  display: inline-block; margin-top: 4px;
+  color: var(--ring); font-size: 11px; font-weight: 600;
+  text-decoration: none; transition: opacity var(--transition);
+}
+.insight-link:hover { opacity: 0.8; text-decoration: underline; }
 
 .legend { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: var(--muted); }
 .legend-gradient { width: 120px; height: 10px; border-radius: 5px; }
@@ -487,7 +525,11 @@ body {
   .country-trigger { height: 44px; font-size: 15px; }
   .country-dropdown { min-width: 0; }
   .layer-select-wrap { width: 100%; flex-direction: column; align-items: stretch; }
-  .layer-select { width: 100%; min-height: 44px; font-size: 15px; }
+  .mode-toggle { width: 100%; }
+  .mode-btn { flex: 1; text-align: center; padding: 10px 8px; }
+  .mode-btn .mode-question { font-size: 10px; }
+  .layer-pill-toggle { width: 100%; display: flex; }
+  .layer-pill-toggle button { flex: 1; text-align: center; min-height: 40px; font-size: 13px; }
   .exposure-sub-toggle { width: 100%; display: flex; }
   .exposure-sub-toggle button { flex: 1; text-align: center; min-height: 40px; font-size: 14px; }
   .legend { justify-content: center; padding: 4px 0; }
@@ -655,34 +697,43 @@ body {
       </div>
     </div>
     <div class="layer-select-wrap">
-      <select class="layer-select" id="layer-select" aria-label="Select coloring layer">
-        <option value="ai_exposure" selected>AI Exposure</option>
-        <option value="pay_score">Median Pay</option>
-        <option value="growth_score">Employment Growth</option>
-        <option value="adoption_score">Adoption Reality</option>
-        <option value="education_score">Education Level</option>
-        <option value="augmentation_score">AI Augmentation</option>
-      </select>
+      <div class="mode-toggle" id="mode-toggle" role="tablist" aria-label="Analysis mode">
+        <button class="mode-btn active" data-mode="risk" role="tab" aria-selected="true">
+          <span class="mode-label">Risk</span>
+          <span class="mode-question">Where is AI disrupting jobs?</span>
+        </button>
+        <button class="mode-btn" data-mode="opportunity" role="tab" aria-selected="false">
+          <span class="mode-label">Opportunity</span>
+          <span class="mode-question">Where is AI creating opportunity?</span>
+        </button>
+        <button class="mode-btn" data-mode="context" role="tab" aria-selected="false">
+          <span class="mode-label">Context</span>
+          <span class="mode-question">What does the landscape look like?</span>
+        </button>
+      </div>
+      <div class="layer-pill-toggle" id="layer-pill-toggle" role="tablist" aria-label="Select data layer">
+        <!-- Populated dynamically by switchMode() -->
+      </div>
+      <div class="exposure-sub-toggle" id="exposure-sub-toggle" role="tablist" aria-label="Exposure type">
+        <button class="active" data-score="technical_score" role="tab" aria-selected="true">Technical</button>
+        <button data-score="regulated_score" role="tab" aria-selected="false">Regulated</button>
+      </div>
       <button class="layer-info-btn" id="layer-info-btn" type="button" aria-label="Layer descriptions" title="What each layer measures">&#9432;</button>
       <div class="layer-info-tooltip" id="layer-info-tooltip" role="tooltip">
         <dl>
           <dt>AI Exposure</dt>
           <dd>How much AI could reshape each occupation (LLM-scored, 0&ndash;10). Toggle Technical vs Regulated.</dd>
-          <dt>Median Pay</dt>
-          <dd>Pay percentile within the selected country.</dd>
           <dt>Employment Growth</dt>
           <dd>Whether demand is rising or falling (Cedefop + Eurostat).</dd>
-          <dt>Education Level</dt>
-          <dd>Share of workers with tertiary education.</dd>
+          <dt>Augmentation Potential</dt>
+          <dd>Composite: high exposure + growing demand + educated workforce.</dd>
+          <dt>Median Pay</dt>
+          <dd>Pay percentile within the selected country.</dd>
           <dt>Adoption Reality</dt>
           <dd>How much AI is actually being used vs. theoretical potential.</dd>
-          <dt>AI Augmentation</dt>
-          <dd>Composite: high exposure + growing demand + educated workforce.</dd>
+          <dt>Education Level</dt>
+          <dd>Share of workers with tertiary education.</dd>
         </dl>
-      </div>
-      <div class="exposure-sub-toggle" id="exposure-sub-toggle" role="tablist" aria-label="Exposure type">
-        <button class="active" data-score="technical_score" role="tab" aria-selected="true">Technical</button>
-        <button data-score="regulated_score" role="tab" aria-selected="false">Regulated</button>
       </div>
     </div>
     <div class="legend" aria-hidden="true">
@@ -696,6 +747,7 @@ body {
       <span>EU AI Act/equ. Overlay</span>
     </label>
   </nav>
+  <div class="narrative-card" id="narrative-card" aria-live="polite"></div>
   <div class="delta-indicator" id="delta-indicator" aria-live="polite"></div>
   <div class="ai-act-legend" id="ai-act-legend" style="display:none" aria-live="polite"></div>
   <a href="analysis.html" class="analysis-link">Read the analysis &rarr;</a>
@@ -862,6 +914,10 @@ const colorScales = {
     .range(["#22c55e","#84cc16","#eab308","#f97316","#ef4444","#dc2626"]).clamp(true),
   opportunity: d3.scaleLinear().domain([0,2,4,6,8,10])
     .range(["#64748b","#94a3b8","#eab308","#f97316","#ef4444","#dc2626"]).clamp(true),
+  opportunityGreen: d3.scaleLinear().domain([0,2,4,6,8,10])
+    .range(["#64748b","#94a3b8","#22d3ee","#06b6d4","#0d9488","#059669"]).clamp(true),
+  context: d3.scaleLinear().domain([0,2,4,6,8,10])
+    .range(["#475569","#64748b","#94a3b8","#cbd5e1","#e2e8f0","#f1f5f9"]).clamp(true),
 };
 let colorScale = colorScales.risk;
 
@@ -869,11 +925,11 @@ let colorScale = colorScales.risk;
 const LAYER_CONFIG = {
   technical_score:    { scale: "risk",       legendLow: "Low",       legendHigh: "High",    perCountry: false },
   regulated_score:    { scale: "risk",       legendLow: "Low",       legendHigh: "High",    perCountry: false },
-  pay_score:          { scale: "sequential", legendLow: "Lower",     legendHigh: "Higher",  perCountry: true },
-  growth_score:       { scale: "diverging",  legendLow: "Declining", legendHigh: "Growing", perCountry: true },
-  education_score:    { scale: "sequential", legendLow: "Lower",     legendHigh: "Higher",  perCountry: true },
-  augmentation_score: { scale: "opportunity",legendLow: "Low",       legendHigh: "High",    perCountry: true },
-  adoption_score:     { scale: "opportunity",legendLow: "Low",       legendHigh: "High",    perCountry: false },
+  pay_score:          { scale: "opportunityGreen", legendLow: "Lower",     legendHigh: "Higher",  perCountry: true },
+  growth_score:       { scale: "diverging",        legendLow: "Declining", legendHigh: "Growing", perCountry: true },
+  education_score:    { scale: "context",          legendLow: "Lower",     legendHigh: "Higher",  perCountry: true },
+  augmentation_score: { scale: "opportunityGreen", legendLow: "Low",       legendHigh: "High",    perCountry: true },
+  adoption_score:     { scale: "context",          legendLow: "Low",       legendHigh: "High",    perCountry: false },
 };
 
 // Legend gradient
@@ -883,11 +939,59 @@ canvas.width = 120; canvas.height = 10;
 function paintLegend() { for (let i = 0; i < 120; i++) { lgCtx.fillStyle = colorScale(i / 120 * 10); lgCtx.fillRect(i, 0, 1, 10); } }
 paintLegend();
 
+/* ── Mode config ── */
+const MODE_CONFIG = {
+  risk: {
+    label: "Risk",
+    question: "Where is AI disrupting jobs?",
+    layers: [
+      { value: "ai_exposure", label: "AI Exposure", hasSubToggle: true },
+    ],
+    defaultLayer: "ai_exposure",
+  },
+  opportunity: {
+    label: "Opportunity",
+    question: "Where is AI creating opportunity?",
+    layers: [
+      { value: "growth_score",       label: "Employment Growth" },
+      { value: "augmentation_score", label: "Augmentation" },
+      { value: "pay_score",          label: "Median Pay" },
+    ],
+    defaultLayer: "growth_score",
+  },
+  context: {
+    label: "Context",
+    question: "What does the landscape look like?",
+    layers: [
+      { value: "adoption_score",  label: "Adoption Reality" },
+      { value: "education_score", label: "Education Level" },
+    ],
+    defaultLayer: "adoption_score",
+  },
+};
+
+const NARRATIVE_MAP = {
+  risk: {
+    technical_score: "Clerical workers face the highest AI exposure at 8.1/10, while skilled trades remain below 3.5. Higher doesn\u2019t mean disappearing \u2014 it means changing fastest.",
+    regulated_score: "EU regulation reduces effective AI exposure by ~1.2 points on average \u2014 a regulatory buffer that buys transition time for workers and institutions.",
+  },
+  opportunity: {
+    growth_score: "Healthcare and IT occupations show the strongest employment growth across Europe. Green cells are where demand is rising despite \u2014 or because of \u2014 AI.",
+    augmentation_score: "Where high AI exposure meets growing demand and an educated workforce. These occupations are being transformed, not eliminated.",
+    pay_score: "Higher-paid jobs face more AI exposure \u2014 the opposite of previous automation waves. Knowledge workers earning the most are changing the fastest.",
+  },
+  context: {
+    adoption_score: "Theory vs. reality: AI could reshape 80%+ of knowledge work, but actual adoption varies widely. The gap reveals where regulation, inertia, and opportunity collide.",
+    education_score: "Education doesn\u2019t protect against AI exposure \u2014 it correlates with it. The most exposed European workers are also the most educated.",
+  },
+};
+
 /* ── State ── */
 let DATA;
 let currentCountry = "EU27";
 let currentScore = "technical_score";
 let currentLayer = "ai_exposure";  // dropdown value
+let currentMode = "risk";
 let lockedData = null;
 let aiActLayer = false;
 
@@ -920,11 +1024,14 @@ function getRawValue(d) {
   return null;
 }
 function getLayerLabel() {
-  const sel = document.getElementById("layer-select");
   if (currentLayer === "ai_exposure") {
     return currentScore === "technical_score" ? "Technical Exposure" : (currentCountry === "UK" ? "UK Regulated Exposure" : "Regulated Exposure");
   }
-  return sel.options[sel.selectedIndex].text;
+  for (const mode of Object.values(MODE_CONFIG)) {
+    const found = mode.layers.find(l => l.value === currentLayer);
+    if (found) return found.label;
+  }
+  return currentLayer;
 }
 
 /* ── Country selector ── */
@@ -1025,7 +1132,7 @@ function buildCountrySelector() {
     updateTrigger();
     render();
     updateURL();
-    posthog.capture("country_changed", { country: code });
+    if (typeof posthog !== "undefined") posthog.capture("country_changed", { country: code });
   }
 
   function open() {
@@ -1080,6 +1187,7 @@ function buildCountrySelector() {
 /* ── URL parameters ── */
 function updateURL() {
   const params = new URLSearchParams();
+  if (currentMode !== "risk") params.set("mode", currentMode);
   if (currentLayer !== "ai_exposure") params.set("layer", currentLayer);
   if (currentLayer === "ai_exposure" && currentScore === "regulated_score") params.set("sub", "regulated");
   if (currentCountry !== "EU27") params.set("country", currentCountry);
@@ -1088,8 +1196,16 @@ function updateURL() {
   history.replaceState(null, "", qs ? "?" + qs : location.pathname);
 }
 
+function inferModeFromLayer(layer) {
+  for (const [mode, config] of Object.entries(MODE_CONFIG)) {
+    if (config.layers.some(l => l.value === layer)) return mode;
+  }
+  return "risk";
+}
+
 function applyURLParams() {
   const params = new URLSearchParams(location.search);
+  const modeParam = params.get("mode");
   const layer = params.get("layer");
   const sub = params.get("sub");
   const country = params.get("country");
@@ -1098,7 +1214,6 @@ function applyURLParams() {
   // Apply country first (before render)
   if (country && DATA.countries[country]) {
     currentCountry = country;
-    // Update trigger display
     const triggerLabel = document.getElementById("country-trigger-label");
     if (triggerLabel) {
       const meta = DATA.countries[country];
@@ -1106,17 +1221,27 @@ function applyURLParams() {
     }
   }
 
+  // Determine mode: explicit param > inferred from layer > default
+  let mode = "risk";
+  if (modeParam && MODE_CONFIG[modeParam]) {
+    mode = modeParam;
+  } else if (layer) {
+    mode = inferModeFromLayer(layer);
+  }
+
+  // Set up mode (skip auto layer-switch if we have a specific layer to apply)
+  switchMode(mode, !!(layer || sub));
+
   // Apply layer
   if (layer && LAYER_CONFIG[layer]) {
-    document.getElementById("layer-select").value = layer;
     switchLayer(layer);
   } else if (sub === "regulated") {
-    // AI Exposure with regulated sub-toggle
     const subToggle = document.getElementById("exposure-sub-toggle");
     subToggle.querySelectorAll("button").forEach(b => { b.classList.remove("active"); b.setAttribute("aria-selected","false"); });
     const regBtn = subToggle.querySelector('[data-score="regulated_score"]');
     if (regBtn) { regBtn.classList.add("active"); regBtn.setAttribute("aria-selected","true"); }
     currentScore = "regulated_score";
+    updateNarrativeCard();
   }
 
   // Apply overlay
@@ -1135,13 +1260,22 @@ async function init() {
   applyURLParams();
   render();
 
-  // Layer dropdown
-  document.getElementById("layer-select").addEventListener("change", (e) => {
-    switchLayer(e.target.value);
-    updateURL();
+  // Mode toggle
+  document.getElementById("mode-toggle").addEventListener("click", (e) => {
+    const btn = e.target.closest(".mode-btn");
+    if (!btn || btn.classList.contains("active")) return;
+    switchMode(btn.dataset.mode);
+    if (typeof posthog !== "undefined") posthog.capture("mode_changed", { mode: btn.dataset.mode });
   });
 
-  // Exposure sub-toggle
+  // Layer pill toggle
+  document.getElementById("layer-pill-toggle").addEventListener("click", (e) => {
+    const btn = e.target.closest("button");
+    if (!btn || btn.classList.contains("active")) return;
+    switchLayer(btn.dataset.layer);
+  });
+
+  // Exposure sub-toggle (Technical/Regulated within Risk mode)
   const subToggle = document.getElementById("exposure-sub-toggle");
   subToggle.addEventListener("click", (e) => {
     const btn = e.target.closest("button");
@@ -1150,9 +1284,22 @@ async function init() {
     btn.classList.add("active");
     btn.setAttribute("aria-selected","true");
     currentScore = btn.dataset.score;
+    updateNarrativeCard();
     render();
     updateURL();
-    posthog.capture("layer_changed", { layer: currentScore });
+    if (typeof posthog !== "undefined") posthog.capture("layer_changed", { layer: currentScore });
+  });
+
+  // Cross-layer insight links (event delegation — works in sidebar and mobile sheet)
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest(".insight-link");
+    if (!link) return;
+    e.preventDefault();
+    const targetLayer = link.dataset.layer;
+    const targetMode = link.dataset.mode;
+    if (targetMode && targetMode !== currentMode) switchMode(targetMode);
+    if (targetLayer) switchLayer(targetLayer);
+    if (typeof posthog !== "undefined") posthog.capture("insight_link_clicked", { targetLayer, targetMode });
   });
 
   document.getElementById("ai-act-checkbox").addEventListener("change", (e) => {
@@ -1160,7 +1307,7 @@ async function init() {
     render();
     updateURL();
     if (lockedData) showSidebar(lockedData);
-    posthog.capture("ai_act_toggle", { enabled: aiActLayer });
+    if (typeof posthog !== "undefined") posthog.capture("ai_act_toggle", { enabled: aiActLayer });
   });
 
   document.getElementById("sidebar-close").addEventListener("click", closeSidebar);
@@ -1183,6 +1330,49 @@ async function init() {
   initSheetSwipe();
 }
 
+function switchMode(mode, skipLayerSwitch) {
+  currentMode = mode;
+  const config = MODE_CONFIG[mode];
+
+  // Update mode toggle buttons
+  document.querySelectorAll("#mode-toggle .mode-btn").forEach(btn => {
+    const isActive = btn.dataset.mode === mode;
+    btn.classList.toggle("active", isActive);
+    btn.setAttribute("aria-selected", String(isActive));
+  });
+
+  // Update body class for accent color swap
+  document.body.classList.remove("mode-opportunity", "mode-context");
+  if (mode !== "risk") document.body.classList.add("mode-" + mode);
+
+  // Rebuild secondary layer pills
+  const pillContainer = document.getElementById("layer-pill-toggle");
+  // For risk mode, the sub-toggle handles Technical/Regulated — show pills only if >1 layer
+  if (config.layers.length <= 1) {
+    pillContainer.innerHTML = "";
+  } else {
+    pillContainer.innerHTML = config.layers.map(l =>
+      '<button data-layer="' + l.value + '" role="tab" aria-selected="false">' + l.label + '</button>'
+    ).join("");
+  }
+
+  if (!skipLayerSwitch) {
+    switchLayer(config.defaultLayer);
+  }
+}
+
+function updateNarrativeCard() {
+  const el = document.getElementById("narrative-card");
+  if (!el) return;
+  const narratives = NARRATIVE_MAP[currentMode] || {};
+  const text = narratives[currentScore] || narratives[currentLayer] || "";
+  el.style.opacity = "0";
+  setTimeout(() => {
+    el.textContent = text;
+    el.style.opacity = "1";
+  }, 150);
+}
+
 function switchLayer(layerValue) {
   currentLayer = layerValue;
   const subToggle = document.getElementById("exposure-sub-toggle");
@@ -1190,14 +1380,22 @@ function switchLayer(layerValue) {
   const legendHigh = document.querySelector(".legend span:last-child");
 
   if (layerValue === "ai_exposure") {
-    // Show sub-toggle, use whichever exposure type is active
     subToggle.classList.remove("hidden");
     const activeBtn = subToggle.querySelector("button.active");
     currentScore = activeBtn ? activeBtn.dataset.score : "technical_score";
   } else {
-    // Hide sub-toggle, set currentScore directly
     subToggle.classList.add("hidden");
     currentScore = layerValue;
+  }
+
+  // Sync layer pill active state
+  const pillContainer = document.getElementById("layer-pill-toggle");
+  if (pillContainer) {
+    pillContainer.querySelectorAll("button").forEach(b => {
+      const isActive = b.dataset.layer === layerValue;
+      b.classList.toggle("active", isActive);
+      b.setAttribute("aria-selected", String(isActive));
+    });
   }
 
   // Update color scale and legend
@@ -1222,7 +1420,9 @@ function switchLayer(layerValue) {
   };
   subtitleEl.innerHTML = subtitleMap[currentScore] || "~130 occupation groups &middot; area&nbsp;=&nbsp;employment &middot; color&nbsp;=&nbsp;selected metric (0&ndash;10)";
 
+  updateNarrativeCard();
   render();
+  updateURL();
   if (typeof posthog !== "undefined") posthog.capture("layer_changed", { layer: currentScore });
 }
 
@@ -1434,17 +1634,17 @@ function buildDetailHtml(data) {
 
     let insightText = null;
     if (ts > 7 && gs != null && gs > 6) {
-      insightText = "\u26A1 Augmentation signal \u2014 High AI exposure but demand is increasing. Workers using AI here likely see higher productivity.";
+      insightText = '\u26A1 Augmentation signal \u2014 High AI exposure but demand is increasing. Workers using AI here likely see higher productivity. <a href="#" class="insight-link" data-layer="growth_score" data-mode="opportunity">See growth pattern \u2192</a>';
     } else if (ts > 7 && gs != null && gs < 4) {
-      insightText = "\u26A0\uFE0F Transition window \u2014 High AI exposure with shifting demand. Adjacent skills and regulatory protection create time to reskill.";
+      insightText = '\u26A0\uFE0F Transition window \u2014 High AI exposure with shifting demand. Adjacent skills and regulatory protection create time to reskill. <a href="#" class="insight-link" data-layer="growth_score" data-mode="opportunity">See growth trend \u2192</a>';
     } else if (ts > 7 && ps != null && ps > 7) {
-      insightText = "\uD83D\uDCB0 Premium transformation \u2014 High-paying knowledge work evolving fastest. Workers who master AI tools here gain outsized leverage. The regulatory buffer creates time to adapt.";
+      insightText = '\uD83D\uDCB0 Premium transformation \u2014 High-paying knowledge work evolving fastest. The regulatory buffer creates time to adapt. <a href="#" class="insight-link" data-layer="pay_score" data-mode="opportunity">See pay pattern \u2192</a>';
     } else if (as_ != null && as_ > 5 && gs != null && gs < 4) {
-      insightText = "\uD83D\uDCC9 Active transformation \u2014 AI adoption is high here and the role is evolving. Transferable skills open adjacent career paths.";
+      insightText = '\uD83D\uDCC9 Active transformation \u2014 AI adoption is high here and the role is evolving. Transferable skills open adjacent career paths. <a href="#" class="insight-link" data-layer="adoption_score" data-mode="context">See adoption reality \u2192</a>';
     } else if (as_ != null && as_ < 3 && ts > 7) {
-      insightText = "\uD83D\uDD2E Latent potential \u2014 AI could transform this but adoption hasn\u2019t started. First-mover advantage territory.";
+      insightText = '\uD83D\uDD2E Latent potential \u2014 AI could transform this but adoption hasn\u2019t started. First-mover advantage territory. <a href="#" class="insight-link" data-layer="adoption_score" data-mode="context">See adoption levels \u2192</a>';
     } else if (augs != null && augs > 7) {
-      insightText = "\uD83D\uDE80 Augmentation sweet spot \u2014 This occupation combines high AI potential with strong demand and educated workforce.";
+      insightText = '\uD83D\uDE80 Augmentation sweet spot \u2014 High AI potential with strong demand and educated workforce. <a href="#" class="insight-link" data-layer="augmentation_score" data-mode="opportunity">Explore augmentation \u2192</a>';
     }
     if (insightText) {
       insightHtml = `<div style="margin:8px 0;padding:8px 10px;background:rgba(255,255,255,0.04);border:1px solid var(--card-border);border-radius:var(--radius-sm);font-size:12px;color:var(--muted);line-height:1.5;">${insightText}</div>`;
@@ -1489,13 +1689,13 @@ function attachCellEvents(cell, data, isMobileView) {
       document.getElementById("sidebar").classList.add("locked");
       showSidebar(data);
       hideHoverTip();
-      posthog.capture("cell_clicked", { occupation: data.name, isco3: data.isco3, technical_score: data.technical_score, regulated_score: data.regulated_score });
+      if (typeof posthog !== "undefined") posthog.capture("cell_clicked", { occupation: data.name, isco3: data.isco3, technical_score: data.technical_score, regulated_score: data.regulated_score });
     });
     cell.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); cell.click(); } });
   } else {
     cell.addEventListener("click", () => {
       openSheet(buildDetailHtml(data));
-      posthog.capture("cell_clicked", { occupation: data.name, isco3: data.isco3, technical_score: data.technical_score, regulated_score: data.regulated_score });
+      if (typeof posthog !== "undefined") posthog.capture("cell_clicked", { occupation: data.name, isco3: data.isco3, technical_score: data.technical_score, regulated_score: data.regulated_score });
     });
   }
 }
