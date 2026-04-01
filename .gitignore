@@ -46,3 +46,4 @@ research/stack-overflow-developer-survey-2025/survey_results_public.csv
 
 # Note: scores.json and site/data.json are INCLUDED in git
 # so people can view results without re-running the scoring pipeline
+data/aioe/
