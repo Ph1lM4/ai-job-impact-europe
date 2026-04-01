@@ -191,7 +191,7 @@ body {
   .layer-info-tooltip { left: 0; right: 0; min-width: 0; max-width: none; }
 }
 /* ── Exposure sub-toggle ── */
-.exposure-sub-toggle { display: inline-flex; background: var(--accent); border-radius: var(--radius-md); padding: 2px; }
+.exposure-sub-toggle { display: inline-flex; background: var(--accent); border-radius: var(--radius-md); padding: 2px; align-self: flex-start; }
 .exposure-sub-toggle button {
   background: transparent; color: var(--muted); border: none; padding: 6px 14px;
   border-radius: 6px; font-family: var(--font); font-size: 12px; font-weight: 500;
@@ -530,8 +530,8 @@ body.mode-context { --ring: #94a3b8; }
   .mode-btn .mode-question { font-size: 10px; }
   .layer-pill-toggle { width: 100%; display: flex; }
   .layer-pill-toggle button { flex: 1; text-align: center; min-height: 40px; font-size: 13px; }
-  .exposure-sub-toggle { width: 100%; display: flex; }
-  .exposure-sub-toggle button { flex: 1; text-align: center; min-height: 40px; font-size: 14px; }
+  .exposure-sub-toggle { display: inline-flex; }
+  .exposure-sub-toggle button { min-height: 40px; font-size: 14px; padding: 6px 20px; }
   .legend { justify-content: center; padding: 4px 0; }
   .ai-act-toggle { justify-content: center; }
 
