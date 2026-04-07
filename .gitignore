@@ -47,3 +47,17 @@ research/stack-overflow-developer-survey-2025/survey_results_public.csv
 # Note: scores.json and site/data.json are INCLUDED in git
 # so people can view results without re-running the scoring pipeline
 data/aioe/
+
+# Internal/proprietary or non-reproducible research material
+# Keep repository focused on assets required to recreate this project.
+research/
+data/dalio/
+data/mazzucato/
+
+# Internal planning/status docs
+*phase-3.1*.md
+*phase 3.1*.md
+*project-status*.md
+*project status*.md
+*ai-labs-labor-research*.md
+*ai labs labor research*.md
