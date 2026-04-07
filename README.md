@@ -1,6 +1,6 @@
 # AI Exposure of the European Job Market
 
-An interactive treemap visualizing AI exposure across ~130 European occupation groups in 36 countries, inspired by [Karpathy's AI Exposure Map](https://karpathy.ai/jobs/).
+An interactive treemap visualizing AI exposure across ~130 European occupation groups in 36 countries, inspired by [Karpathy's AI Exposure Map](https://karpathy.ai/jobs/). Part 1 of 7 in the European AI Labour Market suite. Companion to the [Job Market Map](https://github.com/Ph1lM4/job-market-europe?tab=readme-ov-file).
 
 **What makes this different:** Two scores per occupation — **technical exposure** (what AI *can* do) and **regulated exposure** (what EU law *lets* AI do). The delta between the two reveals where European regulation creates friction for AI adoption. UK-specific scores show what happens with lighter regulation.
 
@@ -71,6 +71,18 @@ scripts/07_score_ai_act.py       → Map EU AI Act Annex III categories + obliga
 scripts/08_fetch_bfs.py          → Fetch Swiss wage data from BFS
 scripts/09_fetch_ons.py          → Fetch UK wage data from ONS
 ```
+
+## The Suite
+
+This is Part 1 of 7 in the European AI Labour Market suite:
+
+1. [AI Exposure Map](https://ai-exposure.nexalps.com) — AI exposure scores for ~130 occupation groups
+2. [Job Market](https://job-market.nexalps.com) — Hiring trends and career intelligence
+3. Coming soon
+4. Coming soon
+5. Coming soon
+6. Coming soon
+7. Coming soon
 
 ## Setup
 
