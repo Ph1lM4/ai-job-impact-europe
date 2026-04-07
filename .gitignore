@@ -11,15 +11,6 @@ __pycache__/
 dist/
 build/
 
-# Fetched data (reproducible via scripts)
-data/eurostat/*.csv
-
-# ESCO source CSVs (large, download from esco.ec.europa.eu)
-data/esco/*.csv
-
-# Cedefop Skills Forecast (redistribution not permitted, derived data only)
-data/cedefop/
-
 # OS
 .DS_Store
 Thumbs.db
@@ -33,26 +24,91 @@ Thumbs.db
 # Claude Code
 .claude/
 
+# ──────────────────────────────────────────────
+# Data: raw / bulk downloads (reproducible via scripts or public download)
+# Only processed JSONs and derived CSVs needed for the site are tracked.
+# ──────────────────────────────────────────────
+
+# ESCO source CSVs (large, download from esco.ec.europa.eu)
+data/esco/*.csv
+
+# Eurostat raw CSVs (reproducible via scripts/02_fetch_eurostat.py)
+data/eurostat/*.csv
+
+# Cedefop Skills Forecast (redistribution not permitted, derived data only)
+data/cedefop/
+
+# O*NET database (CC-BY 4.0, download from onetcenter.org/database.html)
+data/onet/
+
+# ONS ASHE tables (Open Government Licence, download from ons.gov.uk)
+data/ons/
+
+# Swiss BFS employment/wage data (download from bfs.admin.ch)
+data/bfs/
+
+# Austrian AMS labour shortage data (download from ams.at)
+data/ams/
+
+# German BA Engpassanalyse (download from statistik.arbeitsagentur.de)
+data/ba/
+
+# Ravio compensation data (proprietary commercial data, not for redistribution)
+data/ravio/
+
+# Adoption scores extracted from research papers (Anthropic, OpenAI, Microsoft)
+# Gray area for bulk redistribution; re-derive via scripts if needed
+data/adoption/
+
+# AIOE academic dataset (has its own git repo)
+data/aioe/
+
+# OECD data (download from data.oecd.org)
+data/oecd/*.csv
+
+# Stack Overflow Developer Survey (ODbL, download from stackoverflow.com)
+research/stack-overflow-developer-survey-2025/survey_results_public.csv
+
+# ──────────────────────────────────────────────
+# PDFs: legislative texts, government reports, policy papers
+# All freely available from official sources; no need to track binaries.
+# ──────────────────────────────────────────────
+
+# EU legal texts (EUR-Lex, Official Journal)
+data/legal/
+
+# UK legislation and policy papers (legislation.gov.uk, GOV.UK)
+data/uk/
+
+# Draghi competitiveness reports (EC publications office)
+data/draghi/
+
+# EURES labour shortage reports (EURES portal)
+data/eures/
+
+# EU policy proposals
+data/FINAL_EU-Inc_Policy_Proposal_*.pdf
+
+# ──────────────────────────────────────────────
+# Internal / proprietary / non-reproducible
+# ──────────────────────────────────────────────
+
+# Dalio books (copyrighted)
+data/dalio/
+
+# Mazzucato books (copyrighted)
+data/mazzucato/
+
+# Internal research material (reports, PDFs, working docs)
+research/
+
+# Draft documents
+drafts/
+
 # Build planning docs (internal)
 *-BUILD_PLAN.md
 *-build-plan.md
 PROJECT-SPEC.md
-
-# Drafts (internal working docs, PDFs, generators)
-drafts/
-
-# Stack Overflow Developer Survey raw extract (> GitHub 100 MB limit; download from stackoverflow.com)
-research/stack-overflow-developer-survey-2025/survey_results_public.csv
-
-# Note: scores.json and site/data.json are INCLUDED in git
-# so people can view results without re-running the scoring pipeline
-data/aioe/
-
-# Internal/proprietary or non-reproducible research material
-# Keep repository focused on assets required to recreate this project.
-research/
-data/dalio/
-data/mazzucato/
 
 # Internal planning/status docs
 *phase-3.1*.md
@@ -63,3 +119,4 @@ data/mazzucato/
 *ai labs labor research*.md
 AI labs' labor market research.md
 phase3.1-build-plan-final.md
+phase2-build-plan.md

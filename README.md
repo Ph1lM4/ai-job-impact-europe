@@ -61,15 +61,24 @@ That delta is the gap between what AI technology can do and what European law al
 ### Data Pipeline
 
 ```
-scripts/01_prepare_esco.py       → Parse ESCO CSVs, extract occupation descriptions + ISCO codes
-scripts/02_fetch_eurostat.py     → Fetch employment + wage data from Eurostat API
-scripts/03_build_occupations.py  → Merge ESCO + Eurostat, build 3-digit occupation groups
-scripts/04_score.py              → Score each group via Anthropic API (Claude Sonnet)
-scripts/05_build_site_data.py    → Build site/data.json for the frontend
-scripts/06_score_uk.py           → Score UK-specific regulated exposure
-scripts/07_score_ai_act.py       → Map EU AI Act Annex III categories + obligations
-scripts/08_fetch_bfs.py          → Fetch Swiss wage data from BFS
-scripts/09_fetch_ons.py          → Fetch UK wage data from ONS
+scripts/01_prepare_esco.py          → Parse ESCO CSVs, extract occupation descriptions + ISCO codes
+scripts/02_fetch_eurostat.py        → Fetch employment + wage data from Eurostat API
+scripts/03_build_occupations.py     → Merge ESCO + Eurostat, build 3-digit occupation groups
+scripts/04_score.py                 → Score each group via Anthropic API (Claude Sonnet)
+scripts/05_build_site_data.py       → Build site/data.json for the frontend
+scripts/06_ai_act_classify.py       → Map EU AI Act Annex III categories + obligations
+scripts/06_fetch_bfs.py             → Fetch Swiss wage data from BFS
+scripts/07_fetch_ons.py             → Fetch UK wage data from ONS
+scripts/09_score_uk_regulated.py    → Score UK-specific regulated exposure
+scripts/10_fetch_growth.py          → Fetch Cedefop + Eurostat employment growth data
+scripts/11_fetch_education.py       → Fetch Eurostat education-by-occupation data
+scripts/12_compute_layers.py        → Compute all treemap layer scores
+scripts/13_fetch_adoption_data.py   → Fetch AI adoption data from Eurostat
+scripts/14_process_ai_adoption.py   → Process enterprise AI adoption rates
+scripts/15_process_ict_specialists.py → Process ICT specialist share data
+scripts/16_process_oecd_epl.py      → Process OECD employment protection scores
+scripts/17_process_stackoverflow.py → Process Stack Overflow developer survey data
+scripts/18_build_country_signals.py → Build per-country signal overlays
 ```
 
 ## The Suite
@@ -106,6 +115,20 @@ cp .env.example .env
 # Edit .env and add your ANTHROPIC_API_KEY
 ```
 
+### Download source data
+
+Most raw data files are **not included** in the repository to respect licensing terms and keep the repo lean. Download them from their official sources before running the pipeline:
+
+| Data | Download from | Place in |
+|------|--------------|----------|
+| ESCO v1.2.1 CSVs | [esco.ec.europa.eu](https://esco.ec.europa.eu/en/use-esco/download) | `data/esco/` |
+| O*NET 30.2 Database | [onetcenter.org](https://www.onetcenter.org/database.html) | `data/onet/` |
+| Cedefop Skills Forecast 2025 | [cedefop.europa.eu](https://www.cedefop.europa.eu/en/data-visualisations/skills-forecast) | `data/cedefop/` |
+| OECD EPL scores | [data.oecd.org](https://data.oecd.org) | `data/oecd/` |
+| Stack Overflow Dev Survey 2025 | [stackoverflow.com](https://survey.stackoverflow.co/) | `research/stack-overflow-developer-survey-2025/` |
+
+Eurostat, BFS, and ONS data are fetched automatically by the pipeline scripts.
+
 ### Run the pipeline
 
 ```bash
@@ -123,6 +146,21 @@ python scripts/04_score.py
 
 # 5. Build frontend data file
 python scripts/05_build_site_data.py
+
+# 6+ Additional layers (growth, education, adoption, country signals)
+python scripts/06_ai_act_classify.py
+python scripts/06_fetch_bfs.py
+python scripts/07_fetch_ons.py
+python scripts/09_score_uk_regulated.py
+python scripts/10_fetch_growth.py
+python scripts/11_fetch_education.py
+python scripts/12_compute_layers.py
+python scripts/13_fetch_adoption_data.py
+python scripts/14_process_ai_adoption.py
+python scripts/15_process_ict_specialists.py
+python scripts/16_process_oecd_epl.py
+python scripts/17_process_stackoverflow.py
+python scripts/18_build_country_signals.py
 ```
 
 ### Preview locally
@@ -145,11 +183,18 @@ cd site && python -m http.server 8000
 | Source | License | What we use |
 |--------|---------|-------------|
 | [ESCO v1.2.1](https://esco.ec.europa.eu) | EU Commission reuse policy | Occupation descriptions, ISCO codes, skill linkages |
-| [Eurostat EU-LFS](https://ec.europa.eu/eurostat) | Eurostat copyright policy | Employment counts by ISCO-08 2-digit |
+| [Eurostat EU-LFS](https://ec.europa.eu/eurostat) | Eurostat copyright policy | Employment counts, education levels, AI adoption, ICT specialists |
 | [Eurostat SES 2022](https://ec.europa.eu/eurostat) | Eurostat copyright policy | Mean wages by ISCO-08 2-digit |
+| [O*NET 30.2](https://www.onetcenter.org) | CC-BY 4.0 | Task statements, abilities, work activities for scoring |
+| [Cedefop Skills Forecast 2025](https://www.cedefop.europa.eu) | Cedefop reuse policy (cite, no raw redistribution) | Employment growth projections to 2035 |
+| [OECD EPL](https://data.oecd.org) | OECD terms of use | Employment protection legislation scores |
 | [BFS LSE 2024](https://www.bfs.admin.ch) | Swiss open data | Swiss wages by ISCO-08 |
-| [ONS ASHE 2025](https://www.ons.gov.uk) | UK Open Government Licence | UK wages by SOC/ISCO |
+| [ONS ASHE 2025](https://www.ons.gov.uk) | UK Open Government Licence | UK wages and employment by SOC/ISCO |
+| [AMS Fachkräftebarometer](https://www.ams.at) | Austrian open data | Austrian labour shortage indicators |
+| [BA Engpassanalyse](https://statistik.arbeitsagentur.de) | German open data | German skills shortage data |
+| [Stack Overflow Dev Survey 2025](https://survey.stackoverflow.co) | ODbL | European developer tool adoption and AI usage |
 | [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/) | ILO public standard | Occupation classification hierarchy |
+| Anthropic, OpenAI, Microsoft research | Published research papers | AI exposure and applicability scores (triangulated) |
 
 ## License
 

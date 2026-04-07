@@ -1,4 +1,4 @@
-## v1.1.0 — 2026-04-01
+## v2.3.0 — 2026-04-01
 
 ### UX Simplification: Risk / Opportunity / Context Mode Toggle
 
