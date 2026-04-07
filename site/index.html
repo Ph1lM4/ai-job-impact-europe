@@ -113,6 +113,9 @@ body {
 .header { padding-top: 28px; padding-bottom: 16px; }
 .header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 4px; }
 .header .subtitle { font-size: 14px; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
+.header .byline { font-size: 12px; color: var(--muted-foreground); line-height: 1.6; margin-bottom: 8px; }
+.header .byline a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+.header .byline a:hover { color: var(--foreground); }
 
 /* ── Controls ── */
 .controls { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
@@ -187,6 +190,8 @@ body {
 .layer-info-tooltip dt:first-child { margin-top: 0; }
 .layer-info-tooltip dd { margin: 0 0 2px; padding-left: 0; }
 
+.nav-sep { width: 1px; background: var(--border); margin: 0 4px; align-self: stretch; }
+.burger-sep { height: 1px; background: var(--border); margin: 4px 0; }
 @media (max-width: 768px) {
   .layer-info-tooltip { left: 0; right: 0; min-width: 0; max-width: none; }
 }
@@ -515,6 +520,8 @@ body.mode-context { --ring: #94a3b8; }
 .footer a:hover { color: var(--foreground); }
 
 /* ── Responsive ── */
+.nav-sep { width: 1px; background: var(--border); margin: 0 4px; align-self: stretch; }
+.burger-sep { height: 1px; background: var(--border); margin: 4px 0; }
 @media (max-width: 768px) {
   .container { padding-left: 16px; padding-right: 16px; }
   .header { padding-top: 20px; padding-bottom: 12px; }
@@ -576,7 +583,7 @@ body.mode-context { --ring: #94a3b8; }
   transition: color 0.15s;
 }
 .site-nav-links a:hover { color: var(--foreground); }
-.site-nav-links a.active { color: var(--ring); }
+.site-nav-links a[aria-current="page"] { color: var(--ring); }
 .burger {
   display: none; pointer-events: auto;
   background: rgba(9,9,11,0.82);
@@ -609,7 +616,9 @@ body.mode-context { --ring: #94a3b8; }
   transition: color 0.15s;
 }
 .burger-panel a:hover { color: var(--foreground); }
-.burger-panel a.active { color: var(--ring); }
+.burger-panel a[aria-current="page"] { color: var(--ring); }
+.nav-sep { width: 1px; background: var(--border); margin: 0 4px; align-self: stretch; }
+.burger-sep { height: 1px; background: var(--border); margin: 4px 0; }
 @media (max-width: 768px) {
   .site-nav-links { display: none; }
   .burger { display: flex; }
@@ -617,6 +626,8 @@ body.mode-context { --ring: #94a3b8; }
 
 /* ── Mobile hero ── */
 .mobile-hero { display: none; }
+.nav-sep { width: 1px; background: var(--border); margin: 0 4px; align-self: stretch; }
+.burger-sep { height: 1px; background: var(--border); margin: 4px 0; }
 @media (max-width: 768px) {
   .mobile-hero {
     display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -654,22 +665,32 @@ body.mode-context { --ring: #94a3b8; }
 
 <nav class="site-nav" id="site-nav" aria-label="Site navigation">
   <div class="site-nav-links">
-    <a href="index.html" class="active">Explore the map</a>
+    <a href="index.html" aria-current="page">Explore the map</a>
     <a href="analysis.html">Analysis</a>
     <a href="questions.html">Questions</a>
     <a href="methodology.html">Methodology</a>
     <a href="sources.html">Sources</a>
+    <span class="nav-sep"></span>
+    <a href="https://job-market.nexalps.com/" target="_blank" rel="noopener">Job Market &#8599;</a>
+    <a href="https://disruptions.nexalps.com/" target="_blank" rel="noopener">Disruptions &#8599;</a>
+    <a href="https://demographics.nexalps.com/" target="_blank" rel="noopener">Demographics &#8599;</a>
+    <a href="https://reskilling.nexalps.com/" target="_blank" rel="noopener">Reskilling &#8599;</a>
   </div>
-  <button class="burger" id="burger-btn" aria-label="Menu" aria-expanded="false">
+  <button class="burger" id="burger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="burger-panel">
     <span></span><span></span><span></span>
   </button>
 </nav>
-<div class="burger-panel" id="burger-panel">
-  <a href="index.html" class="active">Explore the map</a>
+<div class="burger-panel" id="burger-panel" role="dialog" aria-label="Navigation menu">
+  <a href="index.html" aria-current="page">Explore the map</a>
   <a href="analysis.html">Analysis</a>
   <a href="questions.html">Questions</a>
   <a href="methodology.html">Methodology</a>
   <a href="sources.html">Sources</a>
+  <span class="burger-sep"></span>
+  <a href="https://job-market.nexalps.com/" target="_blank" rel="noopener">Job Market &#8599;</a>
+  <a href="https://disruptions.nexalps.com/" target="_blank" rel="noopener">Disruptions &#8599;</a>
+  <a href="https://demographics.nexalps.com/" target="_blank" rel="noopener">Demographics &#8599;</a>
+  <a href="https://reskilling.nexalps.com/" target="_blank" rel="noopener">Reskilling &#8599;</a>
 </div>
 
 <div class="mobile-hero" id="mobile-hero">
@@ -686,6 +707,8 @@ body.mode-context { --ring: #94a3b8; }
 <header class="header container" id="main-content" role="banner">
   <h1>AI Exposure of the European Job Market</h1>
   <p class="subtitle" id="subtitle">~130 occupation groups &middot; area&nbsp;=&nbsp;employment &middot; color&nbsp;=&nbsp;AI exposure score (0&ndash;10)</p>
+  <p class="byline">By <a href="https://www.linkedin.com/in/pmaul/" target="_blank" rel="noopener">Philipp Maul</a> &middot; <a href="https://nexalps.com" target="_blank" rel="noopener">Nexalps</a> &middot; 2026 &middot; Part 1 of 7 in the European AI Labour Market suite</p>
+  <p class="byline">Based on <a href="sources.html">35 primary sources</a> including ESCO, Eurostat, Anthropic Economic Index, Cedefop and O*NET.</p>
   <nav class="controls" aria-label="Visualization controls">
     <div class="country-select" id="country-select" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-label="Select country or region">
       <button class="country-trigger" id="country-trigger" type="button" aria-label="Select country">
@@ -715,7 +738,7 @@ body.mode-context { --ring: #94a3b8; }
         <!-- Populated dynamically by switchMode() -->
       </div>
       <div class="exposure-sub-toggle" id="exposure-sub-toggle" role="tablist" aria-label="Exposure type">
-        <button class="active" data-score="technical_score" role="tab" aria-selected="true">Technical</button>
+        <button aria-current="page" data-score="technical_score" role="tab" aria-selected="true">Technical</button>
         <button data-score="regulated_score" role="tab" aria-selected="false">Regulated</button>
       </div>
       <button class="layer-info-btn" id="layer-info-btn" type="button" aria-label="Layer descriptions" title="What each layer measures">&#9432;</button>
@@ -871,13 +894,11 @@ Average UK regulatory delta: 0.5 points.</pre>
 </div>
 
 <footer class="footer container" role="contentinfo">
-  EU AI Exposure Map v2.2.0 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe">Source on GitHub</a><br>
-  Built by <a href="https://www.linkedin.com/in/pmaul/">Philipp Maul</a> &middot; <a href="https://nexalps.com">Nexalps</a> &mdash; Turning complexity into competitive advantage.<br>
-  Inspired by <a href="https://karpathy.ai/jobs/">Karpathy&rsquo;s AI Exposure Map</a><br>
-  Data: <a href="https://esco.ec.europa.eu">ESCO v1.2.1</a> + <a href="https://ec.europa.eu/eurostat">Eurostat EU-LFS 2024</a> + <a href="https://www.cedefop.europa.eu/en/events-and-projects/projects/skills-forecast">Cedefop Skills Forecast 2025</a> + <a href="https://www.bfs.admin.ch">BFS LSE 2024</a> + <a href="https://www.ons.gov.uk">ONS ASHE 2025</a> + <a href="https://huggingface.co/datasets/Anthropic/EconomicIndex">Anthropic Economic Index</a> + <a href="https://github.com/microsoft/working-with-ai">Microsoft Working with AI</a> &middot;
-  Scored by Claude Sonnet 4 (Anthropic) &middot;
-  36 countries &middot; wages from Eurostat SES 2022, BFS 2024 (CH), ONS 2025 (UK) &middot; <a href="sources.html">Sources</a><br>
-  Code: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-CODE">MIT</a> &middot; Data &amp; Analysis: <a href="https://github.com/Ph1lM4/ai-job-impact-europe/blob/main/LICENSE-DATA">CC-BY 4.0</a> Philipp Maul | Nexalps
+  AI Exposure of the European Job Market v2.4.0 &middot; 2026 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe" target="_blank" rel="noopener">Source on GitHub<span class="sr-only"> (opens in new tab)</span></a><br>
+  <a href="index.html">Explore the Map</a> &middot; <a href="analysis.html">Analysis</a> &middot; <a href="questions.html">Questions</a> &middot; <a href="implications.html">Implications</a> &middot; <a href="methodology.html">Methodology</a> &middot; <a href="sources.html">Sources</a><br>
+  Built by <a href="https://www.linkedin.com/in/pmaul/" target="_blank" rel="noopener">Philipp Maul<span class="sr-only"> (opens in new tab)</span></a> &middot; <a href="https://nexalps.com" target="_blank" rel="noopener">Nexalps<span class="sr-only"> (opens in new tab)</span></a><br>
+  Inspired by <a href="https://karpathy.ai/" target="_blank" rel="noopener">Karpathy&rsquo;s AI Exposure Map<span class="sr-only"> (opens in new tab)</span></a><br>
+  Code: <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT<span class="sr-only"> (opens in new tab)</span></a> &middot; Data &amp; Analysis: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC-BY 4.0<span class="sr-only"> (opens in new tab)</span></a> Philipp Maul | Nexalps
 </footer>
 
 <script>
