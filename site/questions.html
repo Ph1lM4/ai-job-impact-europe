@@ -176,6 +176,10 @@ body {
   line-height: 1.7;
   max-width: 640px;
 }
+.hero .byline { font-size: 12px; color: var(--muted-foreground); line-height: 1.6; }
+.hero .byline a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+.hero .byline a:hover { color: var(--foreground); }
+.hero .byline + .byline { margin-top: 4px; }
 
 /* ── Accordion ── */
 .accordion-section {
@@ -400,6 +404,8 @@ body {
   <p class="lede">
     Scoring 199.6 million European jobs for &ldquo;AI exposure&rdquo;&mdash;that is, assessing how likely roles are to be affected by advances in artificial intelligence&mdash;produces more questions than answers. These are the ones we think matter most&mdash;for societies, regulators, enterprises, and individuals navigating the transition.
   </p>
+  <p class="byline">By <a href="https://www.linkedin.com/in/pmaul/" target="_blank" rel="noopener">Philipp Maul</a> &middot; <a href="https://nexalps.com" target="_blank" rel="noopener">Nexalps</a> &middot; 2026 &middot; Part 1 of 7 in the European AI Labour Market suite</p>
+  <p class="byline">Based on <a href="sources.html">35 primary sources</a> including ESCO, Eurostat, Anthropic Economic Index, Cedefop and O*NET.</p>
 </header>
 
 <div class="accordion-group" role="region" aria-label="Question sections">

@@ -167,6 +167,10 @@ body {
   line-height: 1.7;
   max-width: 640px;
 }
+.hero .byline { font-size: 12px; color: var(--muted-foreground); line-height: 1.6; }
+.hero .byline a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+.hero .byline a:hover { color: var(--foreground); }
+.hero .byline + .byline { margin-top: 4px; }
 
 /* ── Article ── */
 .article {
@@ -385,6 +389,8 @@ body {
   <p class="lede">
     How we built the European AI Jobs Impact Map: data sources, scoring approach, layer definitions, normalization, and known limitations.
   </p>
+  <p class="byline">By <a href="https://www.linkedin.com/in/pmaul/" target="_blank" rel="noopener">Philipp Maul</a> &middot; <a href="https://nexalps.com" target="_blank" rel="noopener">Nexalps</a> &middot; 2026 &middot; Part 1 of 7 in the European AI Labour Market suite</p>
+  <p class="byline">Based on <a href="sources.html">35 primary sources</a> including ESCO, Eurostat, Anthropic Economic Index, Cedefop and O*NET.</p>
 </header>
 
 <article class="article">
