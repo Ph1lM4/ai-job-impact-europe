@@ -297,7 +297,7 @@ body.mode-context { --ring: #94a3b8; }
   visibility: hidden;
   transition: transform 200ms ease, visibility 0s 200ms;
   overflow-y: auto;
-  padding: 24px 20px;
+  padding: 80px 20px 24px;
   -webkit-overflow-scrolling: touch;
 }
 .sidebar.open { transform: translateX(0); visibility: visible; transition: transform 200ms ease, visibility 0s; }
@@ -407,6 +407,20 @@ body.mode-context { --ring: #94a3b8; }
 .reg-tag-platform { background: rgba(234, 179, 8, 0.15); color: #fde047; }
 .reg-surface { display: flex; align-items: center; gap: 6px; margin: 8px 0; padding: 6px 10px; background: rgba(255,255,255,0.03); border-radius: var(--radius-sm); font-size: 12px; color: var(--muted); }
 .reg-surface-count { font-size: 18px; font-weight: 700; color: var(--foreground); }
+
+/* ── Capability floor (Gostev) panel ── */
+.cap-floor-section { margin-top: 14px; padding: 10px 12px; background: rgba(124, 58, 237, 0.06); border: 1px solid rgba(167, 139, 250, 0.20); border-radius: var(--radius-sm); }
+.cap-floor-section h4 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #c4b5fd; margin-bottom: 6px; }
+.cap-floor-bound { font-size: 12px; color: var(--muted); line-height: 1.55; margin-bottom: 6px; }
+.cap-floor-bound strong { color: #fafafa; font-weight: 600; }
+.cap-floor-cat { font-size: 12px; color: var(--muted); line-height: 1.55; margin-bottom: 6px; }
+.cap-cat-badge { display: inline-block; padding: 1px 7px; border-radius: 9999px; font-size: 11px; font-weight: 600; margin-left: 4px; border: 1px solid rgba(255,255,255,0.10); }
+.cap-cat-quantitative { background: rgba(34, 197, 94, 0.10); color: #86efac; }
+.cap-cat-general { background: rgba(212, 212, 216, 0.10); color: #d4d4d8; }
+.cap-cat-slow { background: rgba(249, 115, 22, 0.10); color: #fdba74; }
+.cap-floor-rs { font-size: 12px; color: #fca5a5; line-height: 1.55; margin: 6px 0; padding: 6px 8px; background: rgba(220, 38, 38, 0.06); border-left: 2px solid #f87171; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+.cap-floor-rs strong { color: #fecaca; font-weight: 600; }
+.cap-floor-note { font-size: 10px; color: var(--muted-foreground); line-height: 1.4; margin-top: 4px; font-style: italic; }
 
 /* ── Treemap cells ── */
 .cell {
@@ -580,6 +594,7 @@ body.mode-context { --ring: #94a3b8; }
 .site-nav-links a {
   font-size: 13px; font-weight: 500;
   color: var(--muted); text-decoration: none;
+  white-space: nowrap;
   transition: color 0.15s;
 }
 .site-nav-links a:hover { color: var(--foreground); }
@@ -619,7 +634,7 @@ body.mode-context { --ring: #94a3b8; }
 .burger-panel a[aria-current="page"] { color: var(--ring); }
 .nav-sep { width: 1px; background: var(--border); margin: 0 4px; align-self: stretch; }
 .burger-sep { height: 1px; background: var(--border); margin: 4px 0; }
-@media (max-width: 768px) {
+@media (max-width: 940px) {
   .site-nav-links { display: none; }
   .burger { display: flex; }
 }
@@ -674,6 +689,7 @@ body.mode-context { --ring: #94a3b8; }
     <a href="https://job-market.nexalps.com/" target="_blank" rel="noopener">Job Market &#8599;</a>
     <a href="https://disruptions.nexalps.com/" target="_blank" rel="noopener">Disruptions &#8599;</a>
     <a href="https://demographics.nexalps.com/" target="_blank" rel="noopener">Demographics &#8599;</a>
+    <a href="https://reskilling.nexalps.com/" target="_blank" rel="noopener">Reskilling &#8599;</a>
   </div>
   <button class="burger" id="burger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="burger-panel">
     <span></span><span></span><span></span>
@@ -689,6 +705,7 @@ body.mode-context { --ring: #94a3b8; }
   <a href="https://job-market.nexalps.com/" target="_blank" rel="noopener">Job Market &#8599;</a>
   <a href="https://disruptions.nexalps.com/" target="_blank" rel="noopener">Disruptions &#8599;</a>
   <a href="https://demographics.nexalps.com/" target="_blank" rel="noopener">Demographics &#8599;</a>
+  <a href="https://reskilling.nexalps.com/" target="_blank" rel="noopener">Reskilling &#8599;</a>
 </div>
 
 <div class="mobile-hero" id="mobile-hero">
@@ -1525,6 +1542,52 @@ function getBand(s) { if (s<2) return "0-2"; if (s<4) return "2-4"; if (s<6) ret
 function round1(n) { return Math.round(n * 10) / 10; }
 
 /* ── Detail HTML builder ── */
+// ── Gostev capability-floor mapping (per ISCO 3-digit, Apr 2026) ──
+// Source: Peter Gostev (Arena.ai) AIE Europe keynote, April 2026, ~6M votes Q2 2023→Q1 2026.
+// Categories: quantitative (fast-improving), general (headline benchmarks), slow (gaming/magical/finance/law).
+// Reasoning-Sensitive: occupations whose core task is refusing wrong-premise inputs — legal triage, audit,
+// regulatory advisory, medical. Reasoning-mode reduces deployment quality on the Gostev "BS benchmark".
+const GOSTEV_BY_ISCO3 = {
+  // Quantitative — strong recent capability gains
+  "212": "quantitative", "251": "quantitative", "252": "quantitative", "351": "quantitative",
+  "352": "quantitative", "311": "quantitative", "313": "quantitative", "315": "quantitative",
+  // Slow — finance/law/creative/strategy (general, not RS-flagged)
+  "121": "slow", "242": "slow", "262": "slow", "264": "slow",
+  "265": "slow", "343": "slow",
+  // Slow + Reasoning-Sensitive (legal triage / audit / regulatory advisory / medical)
+  "221": "slow_rs", "222": "slow_rs", "225": "slow_rs", "226": "slow_rs",
+  "321": "slow_rs", "322": "slow_rs", "325": "slow_rs",
+  "241": "slow_rs", "261": "slow_rs", "331": "slow_rs", "335": "slow_rs", "341": "slow_rs"
+};
+function gostevCategoryFor(isco3){
+  if (!isco3) return "general";
+  const cat = GOSTEV_BY_ISCO3[isco3];
+  if (cat) return cat;
+  return "general";
+}
+function buildCapabilityFloorHtml(data){
+  const cat = gostevCategoryFor(data.isco3);
+  const reasoningSensitive = (cat === "slow_rs");
+  const labelMap = {
+    quantitative: { cls: "cap-cat-quantitative", text: "Quantitative — fast-improving" },
+    general: { cls: "cap-cat-general", text: "General — tracks headline benchmarks" },
+    slow: { cls: "cap-cat-slow", text: "Slow-improving (finance / law / creative)" },
+    slow_rs: { cls: "cap-cat-slow", text: "Slow-improving + Reasoning-Sensitive (medical / regulatory)" }
+  };
+  const lbl = labelMap[cat] || labelMap.general;
+  const rsHtml = reasoningSensitive
+    ? `<div class="cap-floor-rs">⚠️ <strong>Reasoning-Sensitive</strong> — deploying reasoning-mode AI <strong>reduces</strong> deployment quality. On the Gostev BS-benchmark, reasoning increases nonsense-acceptance; for occupations where refusing the wrong question is the work (legal triage, audit, regulatory advisory, medical), reasoning models actively degrade output.</div>`
+    : "";
+  return `
+    <div class="cap-floor-section" aria-label="Capability floor">
+      <h4>Capability Floor (Gostev Q1 2026)</h4>
+      <div class="cap-floor-bound">Frontier dissatisfaction floor: <strong>~9%</strong> of expert prompts (Q1 2026, down from ~17% pre-reasoning, ~12% post-o1). Apply as sensitivity bound on any deployment forecast for this occupation.</div>
+      <div class="cap-floor-cat">Gostev category: <span class="cap-cat-badge ${lbl.cls}">${lbl.text}</span></div>
+      ${rsHtml}
+      <div class="cap-floor-note">Source: Peter Gostev (Arena.ai), AI Engineer Europe keynote, April 2026 · ~6M votes, Q2 2023–Q1 2026. Mapped per ISCO 3-digit group; identical across all 36 countries.</div>
+    </div>`;
+}
+
 function buildDetailHtml(data) {
   const emp = getEmp(data);
   const wage = getWage(data);
@@ -1686,6 +1749,7 @@ function buildDetailHtml(data) {
     ${!isUK && data.regulatory_friction ? `<div class="friction">${data.regulatory_friction}</div>` : ""}
     ${vulnBadges ? `<div class="tasks"><h4>Tasks likely to change</h4><ul class="badge-list">${vulnBadges}</ul></div>` : ""}
     ${protBadges ? `<div class="tasks"><h4>Tasks likely to endure</h4><ul class="badge-list">${protBadges}</ul></div>` : ""}
+    ${buildCapabilityFloorHtml(data)}
     ${regHtml}
   `;
 }
