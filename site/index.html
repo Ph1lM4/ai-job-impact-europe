@@ -227,7 +227,7 @@ body {
 .mode-btn:hover:not(.active) .mode-label { color: var(--foreground); }
 
 /* ── Layer pill toggle ── */
-.layer-pill-toggle { display: inline-flex; background: var(--accent); border-radius: var(--radius-md); padding: 2px; }
+.layer-pill-toggle { display: inline-flex; background: var(--accent); border-radius: var(--radius-md); padding: 2px; align-self: flex-start; }
 .layer-pill-toggle:empty { display: none; }
 .layer-pill-toggle button {
   background: transparent; color: var(--muted); border: none; padding: 6px 14px;
@@ -598,7 +598,7 @@ body.mode-context { --ring: #94a3b8; }
   transition: color 0.15s;
 }
 .site-nav-links a:hover { color: var(--foreground); }
-.site-nav-links a[aria-current="page"] { color: var(--ring); }
+.site-nav-links a[aria-current="page"] { color: #f97316; }
 .burger {
   display: none; pointer-events: auto;
   background: rgba(9,9,11,0.82);
@@ -631,7 +631,7 @@ body.mode-context { --ring: #94a3b8; }
   transition: color 0.15s;
 }
 .burger-panel a:hover { color: var(--foreground); }
-.burger-panel a[aria-current="page"] { color: var(--ring); }
+.burger-panel a[aria-current="page"] { color: #f97316; }
 .nav-sep { width: 1px; background: var(--border); margin: 0 4px; align-self: stretch; }
 .burger-sep { height: 1px; background: var(--border); margin: 4px 0; }
 @media (max-width: 940px) {
