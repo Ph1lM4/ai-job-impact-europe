@@ -90,7 +90,7 @@ This is Part 1 of 7 in the European AI Labour Market suite:
 3. [Disruptions](https://disruptions.nexalps.com) — 580 years of technology shocks, 20 case studies, 5 disruption patterns
 4. [Demographics](https://demographics.nexalps.com) — Population decline × AI substitution through 2050
 5. [Reskilling](https://reskilling.nexalps.com) — The bottleneck is evaluation, not acquisition: 7.55M deep-reskilling need by 2035 vs ~450K/year throughput, six European system models ranked
-6. Coming soon
+6. [Synthesis](https://synthesis.nexalps.com) — 36 markets stress-tested across five lenses and eight scenarios, bracketed by four fragility classes; 9 hold up under a softer rule, 0 under the strict one
 7. Coming soon
 
 ## Setup
