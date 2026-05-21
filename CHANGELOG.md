@@ -1,3 +1,12 @@
+## v2.5.0 — 2026-05-21
+
+Versions the Gostev capability-floor work (see the two [Unreleased] notes below) and ships a suite-wide editorial pass.
+
+- **Methodology: Reasoning-Sensitive Occupations subsection** added after the Data Sources table. Plain-language explanation of why reasoning-tuned models can reduce output value in some expert occupations, plus the 12 ISCO-08 3-digit groups (medicine, law, finance, audit, regulation) that carry the flag. Cross-checked against the `GOSTEV_BY_ISCO3` map in `index.html` that drives the per-occupation warning.
+- **Methodology: Gostev / Arena primary-source row** added to the Data Sources table. Figures verified word-for-word against `contemporary-claims-registry.md` Source 8: ~6M Arena votes, ~40k expert prompts, Q2 2023–Q1 2026 span, ~9% Q1 2026 dissatisfaction rate.
+- **Suite-wide prose pass:** em-dashes removed from all user-facing prose across the six pages and `data.json`, fixed by restructuring rather than character substitution. Minor plain-language clarity edits.
+- Closes two of the three open Gostev-backlog items (methodology row, Reasoning-Sensitive watchlist). Layer 6 synthesis copy remains open.
+
 ## [Unreleased] — Gostev Capability Floor panel deployed (2026-04-29)
 
 Implements the panel planned in the 2026-04-28 Gostev empirical-floor ingestion. Plus CSS regression fix introduced by panel container styling.

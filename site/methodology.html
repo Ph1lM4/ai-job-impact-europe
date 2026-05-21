@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Methodology &mdash; AI Exposure of the European Job Market &mdash; Nexalps</title>
+<title>Methodology &middot; AI Exposure of the European Job Market &middot; Nexalps</title>
 <meta name="description" content="Full methodology: data sources, AI exposure scoring approach, layer definitions, normalization, and limitations behind the European AI Jobs Impact Map.">
 <link rel="canonical" href="https://ai-exposure.nexalps.com/methodology.html">
 
 <!-- Open Graph -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="Methodology — European AI Jobs Impact Map">
+<meta property="og:title" content="Methodology · European AI Jobs Impact Map">
 <meta property="og:description" content="Full methodology: data sources, scoring approach, layer definitions, normalization, and limitations.">
 <meta property="og:url" content="https://ai-exposure.nexalps.com/methodology.html">
 <meta property="og:image" content="https://ai-exposure.nexalps.com/og-image.png">
@@ -17,7 +17,7 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Methodology — European AI Jobs Impact Map">
+<meta name="twitter:title" content="Methodology · European AI Jobs Impact Map">
 <meta name="twitter:description" content="Full methodology: data sources, scoring approach, layer definitions, normalization, and limitations.">
 <meta name="twitter:image" content="https://ai-exposure.nexalps.com/og-image.png">
 
@@ -479,8 +479,48 @@ body {
         <td>2023</td>
         <td>Theoretical AI exposure ceiling</td>
       </tr>
+      <tr>
+        <td>Peter Gostev, Arena, AI Engineer Europe 2026 (London, 9-10 April)</td>
+        <td>~6M Arena votes; ~40k expert prompts</td>
+        <td>ISCO 3-digit (mapped from capability category)</td>
+        <td>Q2 2023&ndash;Q1 2026</td>
+        <td>Capability-floor bound (~9% dissatisfaction rate)</td>
+      </tr>
     </tbody>
   </table>
+
+  <h3>Reasoning-Sensitive Occupations (Gostev Capability Floor)</h3>
+  <p>
+    The Gostev / Arena row above feeds one further signal into the occupation detail panels. Arena is a public platform where people compare two AI models side by side and vote for the better answer; the dataset behind this analysis covers roughly 6 million such votes from mid-2023 to early 2026. Across the hardest expert prompts, even the strongest models still give an unsatisfactory answer about 9% of the time. That 9% is the <strong>capability floor</strong>: the share of expert work where today&rsquo;s best AI is not yet reliable.
+  </p>
+  <p>
+    A <strong>reasoning model</strong> is a model tuned to work through a problem in explicit steps before answering, rather than replying straight away. Reasoning usually improves the answer. The Gostev data found one exception. On a test of 155 deliberately nonsensical questions, raising the reasoning effort made models <em>more</em> likely to accept a question built on a false assumption. Instead of pushing back and naming the problem, they answered it anyway. For most work this does not matter. For occupations whose core task is catching a wrong assumption before acting on it, a model that confidently elaborates on a bad question is worse than a plain, faster one.
+  </p>
+  <p>
+    We call these <strong>Reasoning-Sensitive occupations</strong>: occupations where deploying a reasoning model can lower the value of the output rather than raise it. They cluster in medicine, law, finance, audit, and regulation, where refusing the wrong question is part of the job. Twelve occupation groups carry this flag, each marked with a warning in the occupation detail panel. They are listed below by ISCO-08 code. ISCO-08 is the international standard for classifying occupations; its 3-digit level gives the roughly 130 occupation groups in this map.
+  </p>
+  <table class="data-table" aria-label="Reasoning-Sensitive occupations watchlist">
+    <thead>
+      <tr><th>ISCO-08 code</th><th>Occupation group</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>221</td><td>Medical doctors</td></tr>
+      <tr><td>222</td><td>Nursing and midwifery professionals</td></tr>
+      <tr><td>225</td><td>Veterinarians</td></tr>
+      <tr><td>226</td><td>Other health professionals</td></tr>
+      <tr><td>241</td><td>Finance professionals</td></tr>
+      <tr><td>261</td><td>Legal professionals</td></tr>
+      <tr><td>321</td><td>Medical and pharmaceutical technicians</td></tr>
+      <tr><td>322</td><td>Nursing and midwifery associate professionals</td></tr>
+      <tr><td>325</td><td>Other health associate professionals</td></tr>
+      <tr><td>331</td><td>Financial and mathematical associate professionals</td></tr>
+      <tr><td>335</td><td>Regulatory government associate professionals</td></tr>
+      <tr><td>341</td><td>Legal, social and religious associate professionals</td></tr>
+    </tbody>
+  </table>
+  <p>
+    This is an advisory signal, not a map layer. It does not change an occupation&rsquo;s exposure or regulated score. It flags where an organisation choosing an AI tool should prefer a fast non-reasoning model, or keep a human reviewer on the wrong-question check, until reasoning models close this gap.
+  </p>
 
 
   <h2><span class="num">2.</span> AI Exposure Scoring</h2>
@@ -495,7 +535,7 @@ body {
     <strong>Regulated Exposure (0&ndash;10)</strong> starts from the technical score and adjusts downward for regulatory friction that slows, constrains, or redirects AI adoption. This accounts for EU AI Act obligations (Annex III high-risk classification, Art 26 worker information, Art 14 human oversight), GDPR constraints (Art 22 automated decisions, Art 35 impact assessments), works council requirements (DE: BetrVG &sect;87, AT: ArbVG &sect;96a), and sector-specific regulation. The average EU regulatory delta is 1.2 points. A separate UK regulated score reflects the UK&rsquo;s lighter framework (avg delta: 0.5 points).
   </p>
   <p>
-    The difference between technical and regulated scores &mdash; the <strong>regulatory delta</strong> &mdash; quantifies the friction that buys workers and institutions transition time. This is not a barrier to AI adoption but a speed bump: it slows deployment, increases compliance costs, and requires organisations to justify their AI use.
+    The difference between technical and regulated scores (the <strong>regulatory delta</strong>) quantifies the friction that buys workers and institutions transition time. This is not a barrier to AI adoption but a speed bump: it slows deployment, increases compliance costs, and requires organisations to justify their AI use.
   </p>
   <p>
     The full scoring rubrics are available in the collapsible disclosure on the <a href="index.html">interactive map</a>.
@@ -506,7 +546,7 @@ body {
 
   <h3>AI Exposure (Technical)</h3>
   <p>
-    LLM-scored capability assessment of how much AI could reshape each occupation. Color scale: green (low, 0&ndash;2) &rarr; yellow (moderate, 4&ndash;6) &rarr; red (high, 8&ndash;10). A higher score does not mean the job will disappear &mdash; it means the job will change fastest.
+    LLM-scored capability assessment of how much AI could reshape each occupation. Color scale: green (low, 0&ndash;2) &rarr; yellow (moderate, 4&ndash;6) &rarr; red (high, 8&ndash;10). A higher score does not mean the job will disappear. It means the job will change fastest.
     <a href="index.html" class="deep-link">Explore this layer on the map &rarr;</a>
   </p>
 
@@ -536,13 +576,13 @@ body {
 
   <h3>Adoption Reality</h3>
   <p>
-    Triangulated from three lab studies: Anthropic (Claude usage data), Microsoft (Copilot usage data), and OpenAI (theoretical exposure ceiling). Shows observed AI adoption relative to theoretical potential. Applied globally per occupation (US-sourced data). Color scale: gray (low adoption) &rarr; amber &rarr; red (high adoption). The gap between theoretical ceiling and observed usage &mdash; roughly 35% across knowledge-work occupations &mdash; is where regulation, organizational inertia, and transition time live.
+    Triangulated from three lab studies: Anthropic (Claude usage data), Microsoft (Copilot usage data), and OpenAI (theoretical exposure ceiling). Shows observed AI adoption relative to theoretical potential. Applied globally per occupation (US-sourced data). Color scale: gray (low adoption) &rarr; amber &rarr; red (high adoption). The gap between theoretical ceiling and observed usage (roughly 35% across knowledge-work occupations) is where regulation, organizational inertia, and transition time live.
     <a href="index.html?layer=adoption_score" class="deep-link">Explore this layer on the map &rarr;</a>
   </p>
 
   <h3>AI Augmentation</h3>
   <p>
-    Composite score: <code>0.5 &times; Technical Exposure + 0.3 &times; Employment Growth + 0.2 &times; Education Level</code>. Z-score normalized within country before weighting, then rescaled 0&ndash;10. Identifies occupations where high AI exposure meets growing demand and an educated workforce &mdash; jobs most likely to be transformed and amplified by AI, not eliminated.
+    Composite score: <code>0.5 &times; Technical Exposure + 0.3 &times; Employment Growth + 0.2 &times; Education Level</code>. Z-score normalized within country before weighting, then rescaled 0&ndash;10. Identifies occupations where high AI exposure meets growing demand and an educated workforce: jobs most likely to be transformed and amplified by AI, not eliminated.
     <a href="index.html?layer=augmentation_score" class="deep-link">Explore this layer on the map &rarr;</a>
   </p>
 
@@ -566,8 +606,8 @@ body {
   <h2><span class="num">5.</span> Limitations</h2>
 
   <ul>
-    <li><strong>Exposure scores are LLM estimates, not rigorous predictions.</strong> They reflect the model&rsquo;s training knowledge, not empirical measurement. A high score does not predict job disappearance &mdash; it predicts the job will change.</li>
-    <li><strong>Growth and education data resolution is ISCO 1-digit.</strong> All occupations within a major group receive the same score. Real variation exists within groups &mdash; e.g., software developers and teaching professionals are both &ldquo;Professionals&rdquo; but face different growth trajectories.</li>
+    <li><strong>Exposure scores are LLM estimates, not rigorous predictions.</strong> They reflect the model&rsquo;s training knowledge, not empirical measurement. A high score does not predict job disappearance. It predicts the job will change.</li>
+    <li><strong>Growth and education data resolution is ISCO 1-digit.</strong> All occupations within a major group receive the same score. Real variation exists within groups. For example, software developers and teaching professionals are both &ldquo;Professionals&rdquo; but face different growth trajectories.</li>
     <li><strong>Cedefop projections are based on Autumn 2023 macro assumptions</strong> and may not reflect the most recent economic developments.</li>
     <li><strong>Adoption data is US-sourced, applied globally.</strong> European adoption patterns may differ due to regulation, market structure, and cultural factors. The Adoption Reality layer should be treated as a global baseline, not a European-specific measurement.</li>
     <li><strong>Wage data is Eurostat SES 2022</strong> without inflation adjustment. Due to 10&ndash;15% EU-wide inflation between 2022 and 2025, absolute wage figures likely understate current levels. BFS (2024) and ONS (2025) data are more current. Relative comparisons between occupation groups are unaffected.</li>
@@ -612,7 +652,7 @@ body {
 </div>
 
 <footer class="footer container" role="contentinfo">
-  AI Exposure of the European Job Market v2.4.0 &middot; 2026 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe" target="_blank" rel="noopener">Source on GitHub</a><br>
+  AI Exposure of the European Job Market v2.5.0 &middot; 2026 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe" target="_blank" rel="noopener">Source on GitHub</a><br>
   <a href="index.html">Explore the Map</a> &middot; <a href="analysis.html">Analysis</a> &middot; <a href="questions.html">Questions</a> &middot; <a href="implications.html">Implications</a> &middot; <a href="methodology.html">Methodology</a> &middot; <a href="sources.html">Sources</a><br>
   Built by <a href="https://www.linkedin.com/in/pmaul/" target="_blank" rel="noopener">Philipp Maul</a> &middot; <a href="https://nexalps.com" target="_blank" rel="noopener">Nexalps</a><br>
   Inspired by <a href="https://karpathy.ai/" target="_blank" rel="noopener">Karpathy&rsquo;s AI Exposure Map</a><br>

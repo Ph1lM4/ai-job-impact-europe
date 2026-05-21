@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Exposure of the European Job Market &mdash; Nexalps</title>
+<title>AI Exposure of the European Job Market &middot; Nexalps</title>
 <meta name="description" content="Interactive map of AI exposure across 130 European occupation groups in 36 countries. 199.6M EU-27 jobs scored for technical and regulated AI impact. Built on ESCO, Eurostat, BFS, and ONS data.">
 <link rel="canonical" href="https://ai-exposure.nexalps.com/">
 
@@ -795,7 +795,7 @@ body.mode-context { --ring: #94a3b8; }
     <summary>How we score AI exposure</summary>
     <p>Each of the 125 European occupation groups was scored by Claude Sonnet 4 on two dimensions:</p>
     <p><strong>Technical Exposure (0-10):</strong> How much could AI reshape this occupation's core tasks? Based on ESCO occupation descriptions covering skills, tasks, and work context for 3,043 detailed occupations aggregated into 125 ISCO groups.</p>
-    <p><strong>Regulated Exposure (0-10):</strong> Same assessment but accounting for EU AI Act obligations, GDPR constraints, works council requirements (DE: BetrVG &sect;87, AT: ArbVG &sect;96a), and sector-specific regulation. The average EU regulatory delta is 1.2 points &mdash; meaning regulation reduces effective AI exposure.</p>
+    <p><strong>Regulated Exposure (0-10):</strong> Same assessment but accounting for EU AI Act obligations, GDPR constraints, works council requirements (DE: BetrVG &sect;87, AT: ArbVG &sect;96a), and sector-specific regulation. The average EU regulatory delta is 1.2 points, meaning regulation reduces effective AI exposure.</p>
     <p><strong>UK Regulated Exposure:</strong> Separate scoring reflecting the UK's lighter regulatory framework (avg friction: 0.5 vs EU's 1.2).</p>
     <p><strong>Additional layers</strong> use official statistical sources: Cedefop Skills Forecast 2025 (employment growth to 2035), Eurostat Labour Force Survey (education levels, pay), and triangulated AI adoption data from Anthropic, Microsoft, and OpenAI research.</p>
     <details>
@@ -911,7 +911,7 @@ Average UK regulatory delta: 0.5 points.</pre>
 </div>
 
 <footer class="footer container" role="contentinfo">
-  AI Exposure of the European Job Market v2.4.0 &middot; 2026 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe" target="_blank" rel="noopener">Source on GitHub</a><br>
+  AI Exposure of the European Job Market v2.5.0 &middot; 2026 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe" target="_blank" rel="noopener">Source on GitHub</a><br>
   <a href="index.html">Explore the Map</a> &middot; <a href="analysis.html">Analysis</a> &middot; <a href="questions.html">Questions</a> &middot; <a href="implications.html">Implications</a> &middot; <a href="methodology.html">Methodology</a> &middot; <a href="sources.html">Sources</a><br>
   Built by <a href="https://www.linkedin.com/in/pmaul/" target="_blank" rel="noopener">Philipp Maul</a> &middot; <a href="https://nexalps.com" target="_blank" rel="noopener">Nexalps</a><br>
   Inspired by <a href="https://karpathy.ai/" target="_blank" rel="noopener">Karpathy&rsquo;s AI Exposure Map</a><br>
@@ -1010,17 +1010,17 @@ const MODE_CONFIG = {
 
 const NARRATIVE_MAP = {
   risk: {
-    technical_score: "Clerical workers face the highest AI exposure at 8.1/10, while skilled trades remain below 3.5. Higher doesn\u2019t mean disappearing \u2014 it means changing fastest.",
-    regulated_score: "EU regulation reduces effective AI exposure by ~1.2 points on average \u2014 a regulatory buffer that buys transition time for workers and institutions.",
+    technical_score: "Clerical workers face the highest AI exposure at 8.1/10, while skilled trades remain below 3.5. Higher doesn\u2019t mean disappearing. It means changing fastest.",
+    regulated_score: "EU regulation reduces effective AI exposure by ~1.2 points on average, a regulatory buffer that buys transition time for workers and institutions.",
   },
   opportunity: {
-    growth_score: "Healthcare and IT occupations show the strongest employment growth across Europe. Green cells are where demand is rising despite \u2014 or because of \u2014 AI.",
+    growth_score: "Healthcare and IT occupations show the strongest employment growth across Europe. Green cells are where demand is rising despite (or because of) AI.",
     augmentation_score: "Where high AI exposure meets growing demand and an educated workforce. These occupations are being transformed, not eliminated.",
-    pay_score: "Higher-paid jobs face more AI exposure \u2014 the opposite of previous automation waves. Knowledge workers earning the most are changing the fastest.",
+    pay_score: "Higher-paid jobs face more AI exposure, the opposite of previous automation waves. Knowledge workers earning the most are changing the fastest.",
   },
   context: {
     adoption_score: "Theory vs. reality: AI could reshape 80%+ of knowledge work, but actual adoption varies widely. The gap reveals where regulation, inertia, and opportunity collide.",
-    education_score: "Education doesn\u2019t protect against AI exposure \u2014 it correlates with it. The most exposed European workers are also the most educated.",
+    education_score: "Education doesn\u2019t protect against AI exposure. It correlates with it. The most exposed European workers are also the most educated.",
   },
 };
 
@@ -1571,14 +1571,14 @@ function buildCapabilityFloorHtml(data){
   const cat = gostevCategoryFor(data.isco3);
   const reasoningSensitive = (cat === "slow_rs");
   const labelMap = {
-    quantitative: { cls: "cap-cat-quantitative", text: "Quantitative — fast-improving" },
-    general: { cls: "cap-cat-general", text: "General — tracks headline benchmarks" },
+    quantitative: { cls: "cap-cat-quantitative", text: "Quantitative (fast-improving)" },
+    general: { cls: "cap-cat-general", text: "General (tracks headline benchmarks)" },
     slow: { cls: "cap-cat-slow", text: "Slow-improving (finance / law / creative)" },
     slow_rs: { cls: "cap-cat-slow", text: "Slow-improving + Reasoning-Sensitive (medical / regulatory)" }
   };
   const lbl = labelMap[cat] || labelMap.general;
   const rsHtml = reasoningSensitive
-    ? `<div class="cap-floor-rs">⚠️ <strong>Reasoning-Sensitive</strong> — deploying reasoning-mode AI <strong>reduces</strong> deployment quality. On the Gostev BS-benchmark, reasoning increases nonsense-acceptance; for occupations where refusing the wrong question is the work (legal triage, audit, regulatory advisory, medical), reasoning models actively degrade output.</div>`
+    ? `<div class="cap-floor-rs">⚠️ <strong>Reasoning-Sensitive</strong>: deploying reasoning-mode AI <strong>reduces</strong> deployment quality. On the Gostev BS-benchmark, reasoning increases nonsense-acceptance; for occupations where refusing the wrong question is the work (legal triage, audit, regulatory advisory, medical), reasoning models actively degrade output.</div>`
     : "";
   return `
     <div class="cap-floor-section" aria-label="Capability floor">
@@ -1643,7 +1643,7 @@ function buildDetailHtml(data) {
       const ch = data.switzerland;
       wcHtml = `<div class="friction" style="border-left-color:#dc2626;background:rgba(220,38,38,0.08);">
         <span class="reg-tag reg-tag-works">Swiss Framework</span>
-        ${ch.description || "Swiss FADP Art. 21 + OR Art. 328b apply. Consultation-only model (Mitwirkungsgesetz) — no co-determination right."}
+        ${ch.description || "Swiss FADP Art. 21 + OR Art. 328b apply. Consultation-only model (Mitwirkungsgesetz), no co-determination right."}
       </div>`;
     } else if (isUK) {
       wcHtml = `<div class="friction" style="border-left-color:#60a5fa;background:rgba(59,130,246,0.08);">
@@ -1651,7 +1651,7 @@ function buildDetailHtml(data) {
       </div>`;
     } else if (isNonEU) {
       wcHtml = `<div class="friction" style="border-left-color:#a1a1aa;background:rgba(161,161,170,0.06);">
-        ${COUNTRY_NAMES_JS[currentCountry] || currentCountry} — EU AI Act obligations apply only to the extent AI systems are placed on the EU market or affect EU persons.
+        ${COUNTRY_NAMES_JS[currentCountry] || currentCountry}: EU AI Act obligations apply only to the extent AI systems are placed on the EU market or affect EU persons.
       </div>`;
     } else if (data.high_risk_as_subject && !isUK && !isNonEU && !isCH) {
       // Generic EU: Art 26(7)
@@ -1718,17 +1718,17 @@ function buildDetailHtml(data) {
 
     let insightText = null;
     if (ts > 7 && gs != null && gs > 6) {
-      insightText = '\u26A1 Augmentation signal \u2014 High AI exposure but demand is increasing. Workers using AI here likely see higher productivity. <a href="#" class="insight-link" data-layer="growth_score" data-mode="opportunity">See growth pattern \u2192</a>';
+      insightText = '\u26A1 Augmentation signal: High AI exposure but demand is increasing. Workers using AI here likely see higher productivity. <a href="#" class="insight-link" data-layer="growth_score" data-mode="opportunity">See growth pattern \u2192</a>';
     } else if (ts > 7 && gs != null && gs < 4) {
-      insightText = '\u26A0\uFE0F Transition window \u2014 High AI exposure with shifting demand. Adjacent skills and regulatory protection create time to reskill. <a href="#" class="insight-link" data-layer="growth_score" data-mode="opportunity">See growth trend \u2192</a>';
+      insightText = '\u26A0\uFE0F Transition window: High AI exposure with shifting demand. Adjacent skills and regulatory protection create time to reskill. <a href="#" class="insight-link" data-layer="growth_score" data-mode="opportunity">See growth trend \u2192</a>';
     } else if (ts > 7 && ps != null && ps > 7) {
-      insightText = '\uD83D\uDCB0 Premium transformation \u2014 High-paying knowledge work evolving fastest. The regulatory buffer creates time to adapt. <a href="#" class="insight-link" data-layer="pay_score" data-mode="opportunity">See pay pattern \u2192</a>';
+      insightText = '\uD83D\uDCB0 Premium transformation: High-paying knowledge work evolving fastest. The regulatory buffer creates time to adapt. <a href="#" class="insight-link" data-layer="pay_score" data-mode="opportunity">See pay pattern \u2192</a>';
     } else if (as_ != null && as_ > 5 && gs != null && gs < 4) {
-      insightText = '\uD83D\uDCC9 Active transformation \u2014 AI adoption is high here and the role is evolving. Transferable skills open adjacent career paths. <a href="#" class="insight-link" data-layer="adoption_score" data-mode="context">See adoption reality \u2192</a>';
+      insightText = '\uD83D\uDCC9 Active transformation: AI adoption is high here and the role is evolving. Transferable skills open adjacent career paths. <a href="#" class="insight-link" data-layer="adoption_score" data-mode="context">See adoption reality \u2192</a>';
     } else if (as_ != null && as_ < 3 && ts > 7) {
-      insightText = '\uD83D\uDD2E Latent potential \u2014 AI could transform this but adoption hasn\u2019t started. First-mover advantage territory. <a href="#" class="insight-link" data-layer="adoption_score" data-mode="context">See adoption levels \u2192</a>';
+      insightText = '\uD83D\uDD2E Latent potential: AI could transform this but adoption hasn\u2019t started. First-mover advantage territory. <a href="#" class="insight-link" data-layer="adoption_score" data-mode="context">See adoption levels \u2192</a>';
     } else if (augs != null && augs > 7) {
-      insightText = '\uD83D\uDE80 Augmentation sweet spot \u2014 High AI potential with strong demand and educated workforce. <a href="#" class="insight-link" data-layer="augmentation_score" data-mode="opportunity">Explore augmentation \u2192</a>';
+      insightText = '\uD83D\uDE80 Augmentation sweet spot: High AI potential with strong demand and educated workforce. <a href="#" class="insight-link" data-layer="augmentation_score" data-mode="opportunity">Explore augmentation \u2192</a>';
     }
     if (insightText) {
       insightHtml = `<div style="margin:8px 0;padding:8px 10px;background:rgba(255,255,255,0.04);border:1px solid var(--card-border);border-radius:var(--radius-sm);font-size:12px;color:var(--muted);line-height:1.5;">${insightText}</div>`;
@@ -1865,20 +1865,20 @@ function render() {
   const countryName = COUNTRY_NAMES_JS[currentCountry] || currentCountry;
   if (currentScore === "regulated_score") {
     const regLabel = isUKSelected ? "UK" : "EU";
-    deltaEl.innerHTML = `${regLabel} regulation reduces exposure by ~${avgDelta.toFixed(1)} points on average &mdash; a &lsquo;regulatory buffer&rsquo; that buys transition time. ${countryName} shown. <span style="font-size:11px;color:var(--muted-foreground)">Source: ${isUKSelected ? "Equality Act, UK GDPR, ERA 1996" : "EU AI Act, works councils, GDPR"}.</span>`;
+    deltaEl.innerHTML = `${regLabel} regulation reduces exposure by ~${avgDelta.toFixed(1)} points on average, a &lsquo;regulatory buffer&rsquo; that buys transition time. ${countryName} shown. <span style="font-size:11px;color:var(--muted-foreground)">Source: ${isUKSelected ? "Equality Act, UK GDPR, ERA 1996" : "EU AI Act, works councils, GDPR"}.</span>`;
   } else if (currentScore === "technical_score") {
-    deltaEl.innerHTML = `Color shows how much AI could technically reshape each occupation. Higher &ne; disappearing &mdash; it means changing fastest. <span style="font-size:11px;color:var(--muted-foreground)">Source: ESCO + Claude Sonnet 4 scoring.</span>`;
+    deltaEl.innerHTML = `Color shows how much AI could technically reshape each occupation. Higher &ne; disappearing. It means changing fastest. <span style="font-size:11px;color:var(--muted-foreground)">Source: ESCO + Claude Sonnet 4 scoring.</span>`;
   } else if (currentScore === "pay_score") {
-    deltaEl.innerHTML = `Higher-paid jobs face more AI exposure &mdash; the opposite of previous automation waves. <span style="font-size:11px;color:var(--muted-foreground)">${countryName}, normalized within country. Source: Eurostat SES 2022.</span>`;
+    deltaEl.innerHTML = `Higher-paid jobs face more AI exposure, the opposite of previous automation waves. <span style="font-size:11px;color:var(--muted-foreground)">${countryName}, normalized within country. Source: Eurostat SES 2022.</span>`;
   } else if (currentScore === "growth_score") {
     const hasGrowth = root.leaves().some(d => { const s = getScore(d.data); return s > 0; });
     if (!hasGrowth) {
       deltaEl.innerHTML = `<strong>No growth data</strong> available for ${countryName}. Growth data covers EU-27, EFTA, and candidate countries.`;
     } else {
-      deltaEl.innerHTML = `Green = growing demand. High exposure + green = the augmentation sweet spot &mdash; AI is transforming these jobs but demand is rising. <span style="font-size:11px;color:var(--muted-foreground)">${countryName}. Source: Cedefop 2025 + Eurostat YoY.</span>`;
+      deltaEl.innerHTML = `Green = growing demand. High exposure + green = the augmentation sweet spot. AI is transforming these jobs but demand is rising. <span style="font-size:11px;color:var(--muted-foreground)">${countryName}. Source: Cedefop 2025 + Eurostat YoY.</span>`;
     }
   } else if (currentScore === "education_score") {
-    deltaEl.innerHTML = `Education doesn&rsquo;t protect against AI exposure &mdash; it correlates with it. The most exposed European workers are the most educated. <span style="font-size:11px;color:var(--muted-foreground)">${countryName}. Source: Eurostat LFS.</span>`;
+    deltaEl.innerHTML = `Education doesn&rsquo;t protect against AI exposure. It correlates with it. The most exposed European workers are the most educated. <span style="font-size:11px;color:var(--muted-foreground)">${countryName}. Source: Eurostat LFS.</span>`;
   } else if (currentScore === "augmentation_score") {
     deltaEl.innerHTML = `Where high AI exposure meets growing demand and educated workforce = jobs most likely to be transformed, not eliminated. <span style="font-size:11px;color:var(--muted-foreground)">${countryName}. Composite: 0.5&times;Exposure + 0.3&times;Growth + 0.2&times;Education.</span>`;
   } else if (currentScore === "adoption_score") {
