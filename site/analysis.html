@@ -182,6 +182,36 @@ body {
 .hero .byline a:hover { color: var(--foreground); }
 .hero .byline + .byline { margin-top: 4px; }
 
+/* ── Minto bottom-line block ── */
+.hero .bottom-line {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--foreground);
+  line-height: 1.6;
+  max-width: 680px;
+  margin: 0 0 24px;
+  padding-left: 16px;
+  border-left: 3px solid var(--ring);
+}
+.hero .bottom-line strong { color: var(--ring); }
+.lede-pillars {
+  max-width: 680px;
+  margin: 0 0 24px;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+}
+.lede-pillars li {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.lede-pillars li strong { color: var(--foreground); font-weight: 600; }
+.hero .lede.method {
+  font-size: 15px;
+  color: var(--muted-foreground);
+}
+
 /* ── Stat cards ── */
 .stat-row {
   display: grid;
@@ -544,8 +574,16 @@ body {
 
 <header class="hero">
   <h1>What AI Exposure Means for the European Job Market</h1>
-  <p class="lede">
-    We scored 125 European occupation groups covering 199.6 million jobs for AI exposure, measuring both raw technical capability and practical impact under EU regulation. The gap between these two numbers reveals where the European regulatory framework creates real friction for AI adoption, and where it doesn&rsquo;t.
+  <p class="bottom-line">
+    <strong>The bottom line:</strong> in Europe, AI exposure tracks one thing above all else: whether your work passes through a screen. Not pay, not years of education. Across 125 occupation groups and 199.6 million jobs, that fault line holds. Europe&rsquo;s regulatory framework softens the blow by about 1.2 points on average, but the buffer is uneven by country, and it buys time, not safety.
+  </p>
+  <ol class="lede-pillars">
+    <li><strong>The fault line is the screen, not the diploma.</strong> Digital work scores 7 to 9; more education usually means more exposure, not less.</li>
+    <li><strong>Regulation slows AI, it does not stop it.</strong> The 1.2-point gap between technical and regulated exposure is real, concentrated in DACH, and erodes as the rules adapt.</li>
+    <li><strong>The response splits by who you are.</strong> Enterprises and workers face different moves, and the augmentation sweet spot is where high exposure meets growing demand.</li>
+  </ol>
+  <p class="lede method">
+    We scored both raw technical capability and practical impact under EU regulation; the gap between those two numbers is where this analysis lives.
   </p>
 
   <div class="stat-row">
@@ -662,7 +700,7 @@ body {
     Switzerland faces a different landscape. Not bound by the EU AI Act, Switzerland is instead developing its own framework under the new Federal Act on Data Protection (nFADG). Swiss employers face fewer procedural barriers to AI deployment but operate under stricter general data protection requirements. For equivalent occupational groups, regulatory friction in Switzerland is typically lower than in Germany or Austria, reflecting the absence of mandatory co-determination and a lighter-touch AI governance regime.
   </p>
   <p>
-    The United Kingdom sits at the opposite extreme. Post-Brexit, the UK has <strong>deliberately chosen not to legislate AI-specific regulation</strong>, instead relying on existing sector regulators (FCA, Ofcom, CMA) to apply existing law to AI systems. There is no AI Act equivalent, no high-risk classification, no mandatory notification, and no works council system. UK employers deploying AI face the Equality Act 2010 (discrimination in AI-assisted hiring and pay decisions), the Data Protection Act 2018 (UK GDPR Art&nbsp;22 equivalent on automated decision-making), and ICE Regulations 2004 (information and consultation rights for 50+ employees), but these are materially weaker constraints than anything in the EU or even Switzerland. The UK&rsquo;s regulatory friction is the lowest of any country in this analysis, making it the natural experiment for what happens when AI deployment is essentially a management prerogative.
+    The United Kingdom sits at the opposite extreme. Post-Brexit, the UK has <strong>deliberately chosen not to legislate AI-specific regulation</strong>, instead relying on existing sector regulators (FCA, Ofcom, CMA) to apply existing law to AI systems. There is no AI Act equivalent, no high-risk classification, no mandatory notification, and no works council system. UK employers deploying AI face the Equality Act 2010 (discrimination in AI-assisted hiring and pay decisions), the Data Protection Act 2018 (UK GDPR Art&nbsp;22 equivalent on automated decision-making), and ICE Regulations 2004 (information and consultation rights for 50+ employees), but these are materially weaker constraints than anything in the EU or even Switzerland. The UK&rsquo;s regulatory friction is the lowest of any country in this analysis, at 0.5 points on average against the EU&rsquo;s 1.2, making it the natural experiment for what happens when AI deployment is essentially a management prerogative.
   </p>
   <p>
     Compare on the map: <a href="index.html?country=DE&amp;sub=regulated" class="deep-link" style="display:inline;margin:0">Germany</a> · <a href="index.html?country=AT&amp;sub=regulated" class="deep-link" style="display:inline;margin:0">Austria</a> · <a href="index.html?country=CH&amp;sub=regulated" class="deep-link" style="display:inline;margin:0">Switzerland</a> · <a href="index.html?country=UK&amp;sub=regulated" class="deep-link" style="display:inline;margin:0">United Kingdom</a>
@@ -837,7 +875,7 @@ body {
 
 <footer class="footer container" role="contentinfo">
   AI Exposure of the European Job Market v2.5.0 &middot; 2026 &middot; <a href="https://github.com/Ph1lM4/ai-job-impact-europe" target="_blank" rel="noopener">Source on GitHub</a><br>
-  <a href="index.html">Explore the Map</a> &middot; <a href="analysis.html">Analysis</a> &middot; <a href="questions.html">Questions</a> &middot; <a href="implications.html">Implications</a> &middot; <a href="methodology.html">Methodology</a> &middot; <a href="sources.html">Sources</a><br>
+  <a href="index.html">Explore the Map</a> &middot; <a href="analysis.html">Analysis</a> &middot; <a href="questions.html">Questions</a> &middot; <a href="methodology.html">Methodology</a> &middot; <a href="sources.html">Sources</a><br>
   Built by <a href="https://www.linkedin.com/in/pmaul/" target="_blank" rel="noopener">Philipp Maul</a> &middot; <a href="https://nexalps.com" target="_blank" rel="noopener">Nexalps</a><br>
   Inspired by <a href="https://karpathy.ai/" target="_blank" rel="noopener">Karpathy&rsquo;s AI Exposure Map</a><br>
   Code: <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT</a> &middot; Data &amp; Analysis: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC-BY 4.0</a> Philipp Maul | Nexalps
