@@ -52,26 +52,29 @@ posthog.init('phc_bjax6jdRxYJAaExodvALjRru8AQzUSbYFNlWlXiJM8A', {api_host: 'http
 <!-- Geist font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-:root {
+:root {/* Nexalps brand tokens v1 (2026-06-11) — SSOT: nexalps-website/DESIGN-TOKEN-UNIFICATION.md */--brand-teal:#0D9488;--brand-teal-text:#087569;--font-mono:'Geist Mono',ui-monospace,'SF Mono',Menlo,monospace;--font-serif:'Source Serif 4',Georgia,serif;/* data ink — governed, values unchanged; charts keep literals in JS */--data-orange:#f97316;--data-red:#ef4444;--data-yellow:#eab308;--data-green:#22c55e;--data-blue:#3b82f6;--data-cyan:#06b6d4;
   --background: #09090b;
   --foreground: #fafafa;
   --card: #0a0a0c;
   --card-border: rgba(255,255,255,0.08);
   --muted: #a1a1aa;
-  --muted-foreground: #71717a;
+  --muted-foreground: #7d7d86;
   --accent: #27272a;
   --border: rgba(255,255,255,0.12);
-  --ring: #f97316;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  --ring: var(--brand-teal);
+  --radius-md: 0px;
+  --radius-lg: 0px;
   --font: 'Geist', system-ui, -apple-system, sans-serif;
   --transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* Nexalps type: mono for data ink (tokens v1) */
+.stat-value,.num,svg .tick text{font-family:var(--font-mono);font-variant-numeric:tabular-nums;}
+
 
 body {
   font-family: var(--font);

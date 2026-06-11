@@ -30,26 +30,35 @@ posthog.init('phc_bjax6jdRxYJAaExodvALjRru8AQzUSbYFNlWlXiJM8A', {api_host: 'http
 <!-- Geist font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-:root {
+:root {/* Nexalps brand tokens v1 (2026-06-11) — SSOT: nexalps-website/DESIGN-TOKEN-UNIFICATION.md */--brand-teal:#0D9488;--brand-teal-text:#087569;--font-mono:'Geist Mono',ui-monospace,'SF Mono',Menlo,monospace;--font-serif:'Source Serif 4',Georgia,serif;/* data ink — governed, values unchanged; charts keep literals in JS */--data-orange:#f97316;--data-red:#ef4444;--data-yellow:#eab308;--data-green:#22c55e;--data-blue:#3b82f6;--data-cyan:#06b6d4;
   --background: #09090b;
   --foreground: #fafafa;
   --card: #0a0a0c;
   --card-border: rgba(255,255,255,0.08);
   --muted: #a1a1aa;
-  --muted-foreground: #71717a;
+  --muted-foreground: #7d7d86;
   --accent: #27272a;
   --border: rgba(255,255,255,0.12);
-  --ring: #f97316;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  --ring: var(--brand-teal);
+  --radius-md: 0px;
+  --radius-lg: 0px;
   --font: 'Geist', system-ui, -apple-system, sans-serif;
   --transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* Nexalps type: mono for data ink (tokens v1) */
+.stat-value,.num,svg .tick text{font-family:var(--font-mono);font-variant-numeric:tabular-nums;}
+
+/* Nexalps type: serif for long-form prose (tokens v1.1) */
+body.prose-serif p{font-family:var(--font-serif);font-weight:300;line-height:1.65;}
+body.prose-serif p a{font-size:inherit;}
+body.prose-serif .trailing-links{display:block;margin-top:10px;}
+body.prose-serif .hero p,body.prose-serif nav p,body.prose-serif .cta-bar p,body.prose-serif footer p{font-family:var(--font);font-weight:400;line-height:1.5;}
+
 
 body {
   font-family: var(--font);
@@ -350,7 +359,7 @@ body {
 }
 </style>
 </head>
-<body>
+<body class="prose-serif">
 
 <nav class="site-nav" id="site-nav" aria-label="Site navigation">
   <div class="site-nav-links">
@@ -547,43 +556,43 @@ body {
   <h3>AI Exposure (Technical)</h3>
   <p>
     LLM-scored capability assessment of how much AI could reshape each occupation. Color scale: green (low, 0&ndash;2) &rarr; yellow (moderate, 4&ndash;6) &rarr; red (high, 8&ndash;10). A higher score does not mean the job will disappear. It means the job will change fastest.
-    <a href="index.html" class="deep-link">Explore this layer on the map &rarr;</a>
+    <span class="trailing-links"><a href="index.html" class="deep-link">Explore this layer on the map &rarr;</a></span>
   </p>
 
   <h3>AI Exposure (Regulated)</h3>
   <p>
     Same assessment adjusted for regulatory friction. The average EU delta is 1.2 points; the UK delta is 0.5 points. Same color scale as technical exposure. Toggle between Technical and Regulated to see how regulation reshapes the exposure landscape.
-    <a href="index.html?sub=regulated" class="deep-link">Explore this layer on the map &rarr;</a>
+    <span class="trailing-links"><a href="index.html?sub=regulated" class="deep-link">Explore this layer on the map &rarr;</a></span>
   </p>
 
   <h3>Median Pay</h3>
   <p>
     Within-country percentile rank of mean annual wages, rescaled 0&ndash;10. Color scale: green (lower pay percentile) &rarr; red (higher pay percentile). Sources: Eurostat SES 2022 (ISCO 1-digit, 34 countries), BFS LSE 2024 (ISCO 2-digit, Switzerland), ONS ASHE 2025 (SOC 2-digit &rarr; ISCO, UK).
-    <a href="index.html?layer=pay_score" class="deep-link">Explore this layer on the map &rarr;</a>
+    <span class="trailing-links"><a href="index.html?layer=pay_score" class="deep-link">Explore this layer on the map &rarr;</a></span>
   </p>
 
   <h3>Employment Growth</h3>
   <p>
     Blended score: 40% Eurostat year-over-year employment change + 60% Cedefop 2024&rarr;2035 CAGR. Z-score normalized, then rescaled 0&ndash;10 within country. Color scale: red (declining) &rarr; green (growing). UK shows Eurostat YoY only (no Cedefop coverage for the UK).
-    <a href="index.html?layer=growth_score" class="deep-link">Explore this layer on the map &rarr;</a>
+    <span class="trailing-links"><a href="index.html?layer=growth_score" class="deep-link">Explore this layer on the map &rarr;</a></span>
   </p>
 
   <h3>Education Level</h3>
   <p>
     Share of workers with tertiary education (ISCED 5&ndash;8), rescaled 0&ndash;10 within country. Color scale: green (lower share of tertiary-educated workers) &rarr; red (higher share). Source: Eurostat LFS (lfsa_egised) 2024, ISCO 1-digit.
-    <a href="index.html?layer=education_score" class="deep-link">Explore this layer on the map &rarr;</a>
+    <span class="trailing-links"><a href="index.html?layer=education_score" class="deep-link">Explore this layer on the map &rarr;</a></span>
   </p>
 
   <h3>Adoption Reality</h3>
   <p>
     Triangulated from three lab studies: Anthropic (Claude usage data), Microsoft (Copilot usage data), and OpenAI (theoretical exposure ceiling). Shows observed AI adoption relative to theoretical potential. Applied globally per occupation (US-sourced data). Color scale: gray (low adoption) &rarr; amber &rarr; red (high adoption). The gap between theoretical ceiling and observed usage (roughly 35% across knowledge-work occupations) is where regulation, organizational inertia, and transition time live.
-    <a href="index.html?layer=adoption_score" class="deep-link">Explore this layer on the map &rarr;</a>
+    <span class="trailing-links"><a href="index.html?layer=adoption_score" class="deep-link">Explore this layer on the map &rarr;</a></span>
   </p>
 
   <h3>AI Augmentation</h3>
   <p>
     Composite score: <code>0.5 &times; Technical Exposure + 0.3 &times; Employment Growth + 0.2 &times; Education Level</code>. Z-score normalized within country before weighting, then rescaled 0&ndash;10. Identifies occupations where high AI exposure meets growing demand and an educated workforce: jobs most likely to be transformed and amplified by AI, not eliminated.
-    <a href="index.html?layer=augmentation_score" class="deep-link">Explore this layer on the map &rarr;</a>
+    <span class="trailing-links"><a href="index.html?layer=augmentation_score" class="deep-link">Explore this layer on the map &rarr;</a></span>
   </p>
 
 

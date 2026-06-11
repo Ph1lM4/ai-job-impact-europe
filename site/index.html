@@ -49,7 +49,7 @@
 <!-- Geist font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 
@@ -65,25 +65,28 @@ posthog.init('phc_bjax6jdRxYJAaExodvALjRru8AQzUSbYFNlWlXiJM8A', {api_host: 'http
 html { scroll-behavior: smooth; }
 
 /* ── Design tokens (shadcn dark) ── */
-:root {
+:root {/* Nexalps brand tokens v1 (2026-06-11) — SSOT: nexalps-website/DESIGN-TOKEN-UNIFICATION.md */--brand-teal:#0D9488;--brand-teal-text:#087569;--font-mono:'Geist Mono',ui-monospace,'SF Mono',Menlo,monospace;--font-serif:'Source Serif 4',Georgia,serif;/* data ink — governed, values unchanged; charts keep literals in JS */--data-orange:#f97316;--data-red:#ef4444;--data-yellow:#eab308;--data-green:#22c55e;--data-blue:#3b82f6;--data-cyan:#06b6d4;
   --background: #09090b;
   --foreground: #fafafa;
   --card: #0a0a0c;
   --card-border: rgba(255,255,255,0.08);
   --muted: #a1a1aa;
-  --muted-foreground: #71717a;
+  --muted-foreground: #7d7d86;
   --accent: #27272a;
   --border: rgba(255,255,255,0.12);
   --input-border: rgba(255,255,255,0.15);
-  --ring: #f97316;
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
+  --ring: var(--brand-teal);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
   --sidebar-w: 400px;
   --font: 'Geist', system-ui, -apple-system, sans-serif;
   --transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* Nexalps type: mono for data ink (tokens v1) */
+.stat-value,.num,svg .tick text{font-family:var(--font-mono);font-variant-numeric:tabular-nums;}
+
 
 html, body { overflow-x: hidden; }
 
@@ -159,7 +162,7 @@ body {
   font-size: 13px; color: var(--foreground); transition: background 80ms ease;
 }
 .country-option:hover, .country-option.focused { background: rgba(255,255,255,0.06); }
-.country-option.active { background: rgba(249,115,22,0.12); }
+.country-option.active { background: rgba(13,148,136,0.22); }
 .country-option.disabled { opacity: 0.35; cursor: default; pointer-events: none; }
 .country-option .co-name { flex: 1; }
 .country-option .co-emp { font-size: 11px; color: var(--muted-foreground); }
@@ -369,7 +372,7 @@ body.mode-context { --ring: #94a3b8; }
   width: 16px; height: 16px; background: var(--muted); border-radius: 50%;
   transition: transform 150ms ease, background 150ms ease;
 }
-.ai-act-toggle input:checked + .ai-act-switch { background: #f97316; }
+.ai-act-toggle input:checked + .ai-act-switch { background: var(--ring); }
 .ai-act-toggle input:checked + .ai-act-switch::after { transform: translateX(16px); background: #fff; }
 
 /* ── AI Act legend ── */
@@ -598,7 +601,7 @@ body.mode-context { --ring: #94a3b8; }
   transition: color 0.15s;
 }
 .site-nav-links a:hover { color: var(--foreground); }
-.site-nav-links a[aria-current="page"] { color: #f97316; }
+.site-nav-links a[aria-current="page"] { color: var(--ring); }
 .burger {
   display: none; pointer-events: auto;
   background: rgba(9,9,11,0.82);
@@ -631,7 +634,7 @@ body.mode-context { --ring: #94a3b8; }
   transition: color 0.15s;
 }
 .burger-panel a:hover { color: var(--foreground); }
-.burger-panel a[aria-current="page"] { color: #f97316; }
+.burger-panel a[aria-current="page"] { color: var(--ring); }
 .nav-sep { width: 1px; background: var(--border); margin: 0 4px; align-self: stretch; }
 .burger-sep { height: 1px; background: var(--border); margin: 4px 0; }
 @media (max-width: 940px) {
